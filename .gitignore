@@ -12,3 +12,7 @@ venv/
 # mac
 .DS_Store
 
+# venv 제외
+ai-engine/venv/
+ai-engine/__pycache__/
+ai-engine/.env
