@@ -1,0 +1,11 @@
+page=0 items=50 url=https://web.joongna.com/_next/data/h0ZBTp8QguUS6pcWFFXzx/search/%EC%BA%A0%ED%95%91%EC%9A%A9%ED%92%88.json?keyword=%EC%BA%A0%ED%95%91%EC%9A%A9%ED%92%88&keywordSource=INPUT_KEYWORD&page=0
+page=1 items=50 url=https://web.joongna.com/_next/data/h0ZBTp8QguUS6pcWFFXzx/search/%EC%BA%A0%ED%95%91%EC%9A%A9%ED%92%88.json?keyword=%EC%BA%A0%ED%95%91%EC%9A%A9%ED%92%88&keywordSource=INPUT_KEYWORD&page=1
+page=2 items=50 url=https://web.joongna.com/_next/data/h0ZBTp8QguUS6pcWFFXzx/search/%EC%BA%A0%ED%95%91%EC%9A%A9%ED%92%88.json?keyword=%EC%BA%A0%ED%95%91%EC%9A%A9%ED%92%88&keywordSource=INPUT_KEYWORD&page=2
+page=3 items=50 url=https://web.joongna.com/_next/data/h0ZBTp8QguUS6pcWFFXzx/search/%EC%BA%A0%ED%95%91%EC%9A%A9%ED%92%88.json?keyword=%EC%BA%A0%ED%95%91%EC%9A%A9%ED%92%88&keywordSource=INPUT_KEYWORD&page=3
+page=4 items=50 url=https://web.joongna.com/_next/data/h0ZBTp8QguUS6pcWFFXzx/search/%EC%BA%A0%ED%95%91%EC%9A%A9%ED%92%88.json?keyword=%EC%BA%A0%ED%95%91%EC%9A%A9%ED%92%88&keywordSource=INPUT_KEYWORD&page=4
+page=5 items=50 url=https://web.joongna.com/_next/data/h0ZBTp8QguUS6pcWFFXzx/search/%EC%BA%A0%ED%95%91%EC%9A%A9%ED%92%88.json?keyword=%EC%BA%A0%ED%95%91%EC%9A%A9%ED%92%88&keywordSource=INPUT_KEYWORD&page=5
+page=6 items=50 url=https://web.joongna.com/_next/data/h0ZBTp8QguUS6pcWFFXzx/search/%EC%BA%A0%ED%95%91%EC%9A%A9%ED%92%88.json?keyword=%EC%BA%A0%ED%95%91%EC%9A%A9%ED%92%88&keywordSource=INPUT_KEYWORD&page=6
+page=7 items=50 url=https://web.joongna.com/_next/data/h0ZBTp8QguUS6pcWFFXzx/search/%EC%BA%A0%ED%95%91%EC%9A%A9%ED%92%88.json?keyword=%EC%BA%A0%ED%95%91%EC%9A%A9%ED%92%88&keywordSource=INPUT_KEYWORD&page=7
+page=8 items=50 url=https://web.joongna.com/_next/data/h0ZBTp8QguUS6pcWFFXzx/search/%EC%BA%A0%ED%95%91%EC%9A%A9%ED%92%88.json?keyword=%EC%BA%A0%ED%95%91%EC%9A%A9%ED%92%88&keywordSource=INPUT_KEYWORD&page=8
+page=9 items=10 url=https://web.joongna.com/_next/data/h0ZBTp8QguUS6pcWFFXzx/search/%EC%BA%A0%ED%95%91%EC%9A%A9%ED%92%88.json?keyword=%EC%BA%A0%ED%95%91%EC%9A%A9%ED%92%88&keywordSource=INPUT_KEYWORD&page=9
+page=10 items=0 url=https://web.joongna.com/_next/data/h0ZBTp8QguUS6pcWFFXzx/search/%EC%BA%A0%ED%95%91%EC%9A%A9%ED%92%88.json?keyword=%EC%BA%A0%ED%95%91%EC%9A%A9%ED%92%88&keywordSource=INPUT_KEYWORD&page=10

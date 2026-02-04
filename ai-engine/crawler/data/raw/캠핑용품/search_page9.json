@@ -1,0 +1,674 @@
+{
+  "pageProps": {
+    "dehydratedState": {
+      "mutations": [],
+      "queries": [
+        {
+          "state": {
+            "data": {
+              "meta": {
+                "code": 0,
+                "message": "SUCCESS"
+              },
+              "data": [
+                {
+                  "gnbSeq": 95,
+                  "sortNum": 1,
+                  "menuName": "레고",
+                  "exposeStartDate": "2024-08-02 00:00:00",
+                  "exposeEndDate": "2024-09-01 23:59:00",
+                  "badgeType": 0,
+                  "badgeExposeStartDate": "2025-04-15 10:32:09",
+                  "badgeExposeEndDate": "9999-12-31 23:59:59"
+                },
+                {
+                  "gnbSeq": 97,
+                  "sortNum": 999,
+                  "menuName": "미개봉상품",
+                  "exposeStartDate": "2024-10-14 00:00:00",
+                  "exposeEndDate": "2024-10-31 23:59:00",
+                  "badgeType": 0,
+                  "badgeExposeStartDate": "2025-04-15 10:32:09",
+                  "badgeExposeEndDate": "9999-12-31 23:59:59"
+                },
+                {
+                  "gnbSeq": 99,
+                  "sortNum": 999,
+                  "menuName": "미개봉상품",
+                  "exposeStartDate": "2024-11-01 09:00:00",
+                  "exposeEndDate": "2024-11-22 23:59:00",
+                  "badgeType": 0,
+                  "badgeExposeStartDate": "2025-04-15 10:32:09",
+                  "badgeExposeEndDate": "9999-12-31 23:59:59"
+                },
+                {
+                  "gnbSeq": 100,
+                  "sortNum": 999,
+                  "menuName": "미개봉 키덜트",
+                  "exposeStartDate": "2024-12-16 00:00:00",
+                  "exposeEndDate": "2025-01-12 23:59:00",
+                  "badgeType": 0,
+                  "badgeExposeStartDate": "2025-04-15 10:32:09",
+                  "badgeExposeEndDate": "9999-12-31 23:59:59"
+                },
+                {
+                  "gnbSeq": 101,
+                  "sortNum": 999,
+                  "menuName": "콘서트/공연티켓",
+                  "exposeStartDate": "2024-12-24 00:00:00",
+                  "exposeEndDate": "2025-01-14 23:59:00",
+                  "badgeType": 0,
+                  "badgeExposeStartDate": "2025-04-15 10:32:09",
+                  "badgeExposeEndDate": "9999-12-31 23:59:59"
+                },
+                {
+                  "gnbSeq": 102,
+                  "sortNum": 999,
+                  "menuName": "닌텐도 ",
+                  "exposeStartDate": "2025-01-20 00:00:00",
+                  "exposeEndDate": "2025-02-17 23:59:00",
+                  "badgeType": 0,
+                  "badgeExposeStartDate": "2025-04-15 10:32:00",
+                  "badgeExposeEndDate": "9999-12-31 23:59:00"
+                },
+                {
+                  "gnbSeq": 103,
+                  "sortNum": 999,
+                  "menuName": "신학기 노트북",
+                  "exposeStartDate": "2025-02-25 00:00:00",
+                  "exposeEndDate": "2025-03-11 23:59:00",
+                  "badgeType": 0,
+                  "badgeExposeStartDate": "2025-04-15 10:32:09",
+                  "badgeExposeEndDate": "9999-12-31 23:59:59"
+                },
+                {
+                  "gnbSeq": 105,
+                  "sortNum": 999,
+                  "menuName": "그래픽카드",
+                  "exposeStartDate": "2025-03-12 00:00:00",
+                  "exposeEndDate": "2025-04-02 23:59:00",
+                  "badgeType": 0,
+                  "badgeExposeStartDate": "2025-04-15 10:32:09",
+                  "badgeExposeEndDate": "9999-12-31 23:59:59"
+                },
+                {
+                  "gnbSeq": 107,
+                  "sortNum": 999,
+                  "menuName": "자전거",
+                  "exposeStartDate": "2025-05-07 00:00:00",
+                  "exposeEndDate": "2025-05-28 23:59:00",
+                  "badgeType": 1,
+                  "badgeExposeStartDate": "2025-05-07 00:00:00",
+                  "badgeExposeEndDate": "2025-05-28 00:00:00"
+                },
+                {
+                  "gnbSeq": 108,
+                  "sortNum": 999,
+                  "menuName": "닌텐도",
+                  "exposeStartDate": "2025-05-12 00:00:00",
+                  "exposeEndDate": "2025-06-02 23:59:00",
+                  "badgeType": 1,
+                  "badgeExposeStartDate": "2025-05-12 00:00:00",
+                  "badgeExposeEndDate": "2025-06-02 00:00:00"
+                },
+                {
+                  "gnbSeq": 111,
+                  "sortNum": 999,
+                  "menuName": "라부부",
+                  "exposeStartDate": "2025-07-07 15:00:00",
+                  "exposeEndDate": "2025-07-20 23:59:00",
+                  "badgeType": 1,
+                  "badgeExposeStartDate": "2025-07-07 15:00:00",
+                  "badgeExposeEndDate": "2025-07-20 23:59:00"
+                },
+                {
+                  "gnbSeq": 114,
+                  "sortNum": 999,
+                  "menuName": "A/S 보증 노트북",
+                  "exposeStartDate": "2025-11-14 00:00:00",
+                  "exposeEndDate": "2025-12-07 23:59:00",
+                  "badgeType": 1,
+                  "badgeExposeStartDate": "2025-11-14 00:00:00",
+                  "badgeExposeEndDate": "2025-12-07 00:00:00"
+                }
+              ]
+            },
+            "dataUpdateCount": 1,
+            "dataUpdatedAt": 1770187475087,
+            "error": null,
+            "errorUpdateCount": 0,
+            "errorUpdatedAt": 0,
+            "fetchFailureCount": 0,
+            "fetchFailureReason": null,
+            "fetchMeta": null,
+            "isInvalidated": false,
+            "status": "success",
+            "fetchStatus": "idle"
+          },
+          "queryKey": [
+            "get-gnb-list"
+          ],
+          "queryHash": "[\"get-gnb-list\"]"
+        },
+        {
+          "state": {
+            "data": {
+              "meta": {
+                "code": 0,
+                "message": "SUCCESS"
+              },
+              "data": {
+                "autoCompleteItemList": [
+                  {
+                    "keyword": "캠핑용품"
+                  },
+                  {
+                    "keyword": "캠핑용품 일괄"
+                  },
+                  {
+                    "keyword": "캠핑용품 정리"
+                  },
+                  {
+                    "keyword": "캠핑용품탠트"
+                  },
+                  {
+                    "keyword": "캠핑용품세트 일괄 팝니다"
+                  },
+                  {
+                    "keyword": "캠핑용품일괄"
+                  },
+                  {
+                    "keyword": "캠핑용품 의자"
+                  },
+                  {
+                    "keyword": "캠핑용품 차박"
+                  },
+                  {
+                    "keyword": "캠핑용품 체어"
+                  },
+                  {
+                    "keyword": "캠핑용품 발전기"
+                  }
+                ],
+                "keywordCnt": 10
+              }
+            },
+            "dataUpdateCount": 1,
+            "dataUpdatedAt": 1770187475069,
+            "error": null,
+            "errorUpdateCount": 0,
+            "errorUpdatedAt": 0,
+            "fetchFailureCount": 0,
+            "fetchFailureReason": null,
+            "fetchMeta": null,
+            "isInvalidated": false,
+            "status": "success",
+            "fetchStatus": "idle"
+          },
+          "queryKey": [
+            "post-search-product-auto-complete",
+            "캠핑용품"
+          ],
+          "queryHash": "[\"post-search-product-auto-complete\",\"캠핑용품\"]"
+        },
+        {
+          "state": {
+            "data": {
+              "meta": {
+                "code": 0,
+                "message": "SUCCESS"
+              },
+              "data": {
+                "transactionId": "1770187475061_7262911466009505331",
+                "emptyResult": {
+                  "joongnaWebUrl": null,
+                  "noticeCode": null,
+                  "type": 0,
+                  "buttonText": "알림 등록",
+                  "buttonUrl": "",
+                  "notice": "검색 결과가 없습니다.",
+                  "subNotice": [
+                    "검색어의 단어 수를 줄이거나",
+                    "보다 일반적인 검색어로 검색해 보세요!"
+                  ],
+                  "image": {
+                    "width": 48,
+                    "height": 48,
+                    "url": "https://img2.joongna.com/search/graySpeechBubble.png"
+                  },
+                  "loginCheck": true
+                },
+                "abTests": null,
+                "size": 10,
+                "sortOptions": [
+                  {
+                    "sortType": "RECOMMEND_SORT",
+                    "sortName": "추천순",
+                    "sortOrder": 0
+                  },
+                  {
+                    "sortType": "RECOMMEND_SORT",
+                    "sortName": "추천순",
+                    "sortOrder": 0
+                  },
+                  {
+                    "sortType": "RECENT_SORT",
+                    "sortName": "최신순",
+                    "sortOrder": 1
+                  },
+                  {
+                    "sortType": "PRICE_ASC_SORT",
+                    "sortName": "낮은가격순",
+                    "sortOrder": 2
+                  },
+                  {
+                    "sortType": "PRICE_DESC_SORT",
+                    "sortName": "높은가격순",
+                    "sortOrder": 3
+                  }
+                ],
+                "searchFilterComponent": null,
+                "filter": null,
+                "totalSize": 410,
+                "searchStartDT": "2026-02-04 15:44:34",
+                "items": [
+                  {
+                    "seq": 201336443,
+                    "productPositionNo": 401,
+                    "platformType": 1,
+                    "price": 30000,
+                    "parcelFee": 0,
+                    "url": "https://img2.joongna.com/cafe-article-data/live/2025/02/14/1095778207/1739487359512_000_7SZuw_main.jpg?impolicy=thumb&size=150",
+                    "title": "캠핑용품 판매 합니다.양털러그,혼다 발전기2.2,알미늄 척박스,캥거루털,미니카라반,캠핑트레일러",
+                    "state": 0,
+                    "sortDate": "2025-02-14 07:55:50",
+                    "mainLocationName": "",
+                    "articleSeq": 1095778207,
+                    "articleUrl": "",
+                    "videoProductYn": "N",
+                    "wishCount": 0,
+                    "jnPayBadgeFlag": false,
+                    "pickupBadgeFlag": false,
+                    "highlightedTitle": "",
+                    "storeSeq": 3360701,
+                    "chatCount": 0,
+                    "selfAuditFlag": false,
+                    "userType": 0,
+                    "certifySellerFlag": false,
+                    "detailImgUrl": "",
+                    "locationNames": [],
+                    "objectType": "product",
+                    "wishYn": 0
+                  },
+                  {
+                    "seq": 185430040,
+                    "productPositionNo": 402,
+                    "platformType": 1,
+                    "price": 3000,
+                    "parcelFee": 0,
+                    "url": "https://img2.joongna.com/media/original/2024/09/18/1726641558184QIc_WOu6d.jpg?impolicy=thumb&size=150",
+                    "title": "LOGOS 캠핑용품가챠",
+                    "state": 0,
+                    "sortDate": "2025-02-12 21:35:33",
+                    "mainLocationName": "구로제5동",
+                    "articleSeq": 0,
+                    "articleUrl": "",
+                    "videoProductYn": "N",
+                    "wishCount": 1,
+                    "jnPayBadgeFlag": true,
+                    "pickupBadgeFlag": true,
+                    "highlightedTitle": "",
+                    "storeSeq": 1419696,
+                    "chatCount": 1,
+                    "selfAuditFlag": false,
+                    "userType": 0,
+                    "certifySellerFlag": false,
+                    "detailImgUrl": "",
+                    "locationNames": [
+                      "서울특별시 구로구 구로제5동"
+                    ],
+                    "objectType": "product",
+                    "wishYn": 0
+                  },
+                  {
+                    "seq": 201099744,
+                    "productPositionNo": 403,
+                    "platformType": 1,
+                    "price": 125000,
+                    "parcelFee": 0,
+                    "url": "https://img2.joongna.com/media/original/2025/02/11/1739263215201HqT_jH9c4.jpg?impolicy=thumb&size=150",
+                    "title": "캠핑용품",
+                    "state": 0,
+                    "sortDate": "2025-02-11 17:43:18",
+                    "mainLocationName": "광교1동",
+                    "articleSeq": 0,
+                    "articleUrl": "",
+                    "videoProductYn": "N",
+                    "wishCount": 0,
+                    "jnPayBadgeFlag": true,
+                    "pickupBadgeFlag": false,
+                    "highlightedTitle": "",
+                    "storeSeq": 1929787,
+                    "chatCount": 0,
+                    "selfAuditFlag": false,
+                    "userType": 0,
+                    "certifySellerFlag": false,
+                    "detailImgUrl": "",
+                    "locationNames": [
+                      "경기도 수원시 영통구 광교1동"
+                    ],
+                    "objectType": "product",
+                    "wishYn": 0
+                  },
+                  {
+                    "seq": 183660802,
+                    "productPositionNo": 404,
+                    "platformType": 1,
+                    "price": 90000,
+                    "parcelFee": 1,
+                    "url": "https://img2.joongna.com/media/original/2024/09/04/1725448797309he2_hIKGh.jpg?impolicy=thumb&size=150",
+                    "title": "새상품 그래뉴 초대용량 보온보냉병 2.5L 캠핑용품",
+                    "state": 0,
+                    "sortDate": "2025-02-10 13:22:52",
+                    "mainLocationName": "",
+                    "articleSeq": 0,
+                    "articleUrl": "",
+                    "videoProductYn": "N",
+                    "wishCount": 1,
+                    "jnPayBadgeFlag": true,
+                    "pickupBadgeFlag": false,
+                    "highlightedTitle": "",
+                    "storeSeq": 2030386,
+                    "chatCount": 0,
+                    "selfAuditFlag": false,
+                    "userType": 0,
+                    "certifySellerFlag": false,
+                    "detailImgUrl": "",
+                    "locationNames": [],
+                    "objectType": "product",
+                    "wishYn": 0
+                  },
+                  {
+                    "seq": 200964834,
+                    "productPositionNo": 405,
+                    "platformType": 1,
+                    "price": 85000,
+                    "parcelFee": 0,
+                    "url": "https://img2.joongna.com/media/original/2025/02/10/1739153311254hdk_TJt2n.jpg?impolicy=thumb&size=150",
+                    "title": "캠핑용품 KOVEA 가스 라이트 TKL-961 휴대용",
+                    "state": 0,
+                    "sortDate": "2025-02-10 11:08:39",
+                    "mainLocationName": "",
+                    "articleSeq": 0,
+                    "articleUrl": "",
+                    "videoProductYn": "N",
+                    "wishCount": 0,
+                    "jnPayBadgeFlag": true,
+                    "pickupBadgeFlag": false,
+                    "highlightedTitle": "",
+                    "storeSeq": 3304579,
+                    "chatCount": 0,
+                    "selfAuditFlag": false,
+                    "userType": 0,
+                    "certifySellerFlag": false,
+                    "detailImgUrl": "",
+                    "locationNames": [],
+                    "objectType": "product",
+                    "wishYn": 0
+                  },
+                  {
+                    "seq": 200889854,
+                    "productPositionNo": 406,
+                    "platformType": 1,
+                    "price": 1300000,
+                    "parcelFee": 0,
+                    "url": "https://img2.joongna.com/cafe-article-data/live/2025/02/09/1095258588/1739079012965_000_gw0NK_main.png?impolicy=thumb&size=150",
+                    "title": "캠핑용품 일괄판매합니다(개별구매가능)",
+                    "state": 0,
+                    "sortDate": "2025-02-09 14:29:54",
+                    "mainLocationName": "",
+                    "articleSeq": 1095258588,
+                    "articleUrl": "",
+                    "videoProductYn": "N",
+                    "wishCount": 1,
+                    "jnPayBadgeFlag": false,
+                    "pickupBadgeFlag": false,
+                    "highlightedTitle": "",
+                    "storeSeq": 10869032,
+                    "chatCount": 0,
+                    "selfAuditFlag": false,
+                    "userType": 0,
+                    "certifySellerFlag": false,
+                    "detailImgUrl": "",
+                    "locationNames": [],
+                    "objectType": "product",
+                    "wishYn": 0
+                  },
+                  {
+                    "seq": 200854875,
+                    "productPositionNo": 407,
+                    "platformType": 1,
+                    "price": 30000,
+                    "parcelFee": 0,
+                    "url": "https://img2.joongna.com/cafe-article-data/live/2025/02/09/1095218894/1739052909170_000_gjcaE_main.jpg?impolicy=thumb&size=150",
+                    "title": "캠핑용품 판매 합니다.양털러그,혼다 발전기2.2,알미늄 척박스,캥거루털,미니카라반,캠핑트레일러",
+                    "state": 0,
+                    "sortDate": "2025-02-09 07:14:57",
+                    "mainLocationName": "",
+                    "articleSeq": 1095218894,
+                    "articleUrl": "",
+                    "videoProductYn": "N",
+                    "wishCount": 0,
+                    "jnPayBadgeFlag": false,
+                    "pickupBadgeFlag": false,
+                    "highlightedTitle": "",
+                    "storeSeq": 3360701,
+                    "chatCount": 0,
+                    "selfAuditFlag": false,
+                    "userType": 0,
+                    "certifySellerFlag": false,
+                    "detailImgUrl": "",
+                    "locationNames": [],
+                    "objectType": "product",
+                    "wishYn": 0
+                  },
+                  {
+                    "seq": 200754294,
+                    "productPositionNo": 408,
+                    "platformType": 1,
+                    "price": 50000,
+                    "parcelFee": 0,
+                    "url": "https://img2.joongna.com/media/original/2025/02/07/1738937849820Hn2_KjL7g.jpg?impolicy=thumb&size=150",
+                    "title": "캠핑용품",
+                    "state": 0,
+                    "sortDate": "2025-02-07 23:19:19",
+                    "mainLocationName": "",
+                    "articleSeq": 0,
+                    "articleUrl": "",
+                    "videoProductYn": "N",
+                    "wishCount": 0,
+                    "jnPayBadgeFlag": true,
+                    "pickupBadgeFlag": false,
+                    "highlightedTitle": "",
+                    "storeSeq": 6024312,
+                    "chatCount": 0,
+                    "selfAuditFlag": false,
+                    "userType": 0,
+                    "certifySellerFlag": false,
+                    "detailImgUrl": "",
+                    "locationNames": [],
+                    "objectType": "product",
+                    "wishYn": 0
+                  },
+                  {
+                    "seq": 200676138,
+                    "productPositionNo": 409,
+                    "platformType": 1,
+                    "price": 2000,
+                    "parcelFee": 0,
+                    "url": "https://img2.joongna.com/cafe-article-data/live/2025/02/07/1095011099/1738883017210_000_5KTGR_main.jpg?impolicy=thumb&size=150",
+                    "title": "6(가격추가내림)생활용품(이중커텐,마호가니바이올린통원목도마,반려견포우즈XS,L신발,캔들워머 이동형할로겐 캠핑이벤트 코트볼전구,노트북쿨링패드,페도라햇모자,식탁매트,임부원피스,유아동용",
+                    "state": 0,
+                    "sortDate": "2025-02-07 08:03:09",
+                    "mainLocationName": "",
+                    "articleSeq": 1095011099,
+                    "articleUrl": "",
+                    "videoProductYn": "N",
+                    "wishCount": 0,
+                    "jnPayBadgeFlag": true,
+                    "pickupBadgeFlag": false,
+                    "highlightedTitle": "",
+                    "storeSeq": 3647759,
+                    "chatCount": 0,
+                    "selfAuditFlag": false,
+                    "userType": 0,
+                    "certifySellerFlag": false,
+                    "detailImgUrl": "",
+                    "locationNames": [],
+                    "objectType": "product",
+                    "wishYn": 0
+                  },
+                  {
+                    "seq": 200615930,
+                    "productPositionNo": 410,
+                    "platformType": 1,
+                    "price": 30000,
+                    "parcelFee": 0,
+                    "url": "https://img2.joongna.com/cafe-article-data/live/2025/02/06/1094940917/1738818849157_000_9W8lu_main.jpg?impolicy=thumb&size=150",
+                    "title": "캠핑용품 판매 합니다.양털러그,혼다 발전기2.2,알미늄 척박스,캥거루털,미니카라반,캠핑트레일러",
+                    "state": 0,
+                    "sortDate": "2025-02-06 14:13:49",
+                    "mainLocationName": "",
+                    "articleSeq": 1094940917,
+                    "articleUrl": "",
+                    "videoProductYn": "N",
+                    "wishCount": 0,
+                    "jnPayBadgeFlag": false,
+                    "pickupBadgeFlag": false,
+                    "highlightedTitle": "",
+                    "storeSeq": 3360701,
+                    "chatCount": 0,
+                    "selfAuditFlag": false,
+                    "userType": 0,
+                    "certifySellerFlag": false,
+                    "detailImgUrl": "",
+                    "locationNames": [],
+                    "objectType": "product",
+                    "wishYn": 0
+                  }
+                ],
+                "changedProductFilterType": false,
+                "changedKeyword": {
+                  "isChangedKeyword": false,
+                  "originKeyword": "캠핑용품",
+                  "changedKeyword": "캠핑용품"
+                },
+                "selfAuditRecommendItems": [],
+                "standardPriceShow": 0,
+                "resultType": 0
+              }
+            },
+            "dataUpdateCount": 1,
+            "dataUpdatedAt": 1770187475068,
+            "error": null,
+            "errorUpdateCount": 0,
+            "errorUpdatedAt": 0,
+            "fetchFailureCount": 0,
+            "fetchFailureReason": null,
+            "fetchMeta": null,
+            "isInvalidated": false,
+            "status": "success",
+            "fetchStatus": "idle"
+          },
+          "queryKey": [
+            "get-search-products",
+            {
+              "categoryFilter": [
+                {
+                  "categoryDepth": 0,
+                  "categorySeq": 0
+                }
+              ],
+              "firstQuantity": 50,
+              "jnPayYn": "ALL",
+              "keywordSource": "INPUT_KEYWORD",
+              "osType": 2,
+              "page": 8,
+              "parcelFeeYn": "ALL",
+              "priceFilter": {
+                "maxPrice": 100000000,
+                "minPrice": 0
+              },
+              "quantity": 50,
+              "registPeriod": "ALL",
+              "saleYn": "SALE_N",
+              "sort": "RECOMMEND_SORT",
+              "filterTypeCheckoutByUser": false,
+              "adjustSearchKeyword": true,
+              "searchWord": "캠핑용품"
+            }
+          ],
+          "queryHash": "[\"get-search-products\",{\"adjustSearchKeyword\":true,\"categoryFilter\":[{\"categoryDepth\":0,\"categorySeq\":0}],\"filterTypeCheckoutByUser\":false,\"firstQuantity\":50,\"jnPayYn\":\"ALL\",\"keywordSource\":\"INPUT_KEYWORD\",\"osType\":2,\"page\":8,\"parcelFeeYn\":\"ALL\",\"priceFilter\":{\"maxPrice\":100000000,\"minPrice\":0},\"quantity\":50,\"registPeriod\":\"ALL\",\"saleYn\":\"SALE_N\",\"searchWord\":\"캠핑용품\",\"sort\":\"RECOMMEND_SORT\"}]"
+        },
+        {
+          "state": {
+            "data": {
+              "meta": {
+                "code": 0,
+                "message": "SUCCESS"
+              },
+              "data": {
+                "searchKeyword": [],
+                "relatedKeywordList": []
+              }
+            },
+            "dataUpdateCount": 1,
+            "dataUpdatedAt": 1770187474979,
+            "error": null,
+            "errorUpdateCount": 0,
+            "errorUpdatedAt": 0,
+            "fetchFailureCount": 0,
+            "fetchFailureReason": null,
+            "fetchMeta": null,
+            "isInvalidated": false,
+            "status": "success",
+            "fetchStatus": "idle"
+          },
+          "queryKey": [
+            "get-search-related-keyword",
+            "캠핑용품"
+          ],
+          "queryHash": "[\"get-search-related-keyword\",\"캠핑용품\"]"
+        },
+        {
+          "state": {
+            "data": {
+              "storeSeq": null
+            },
+            "dataUpdateCount": 1,
+            "dataUpdatedAt": 1770187474958,
+            "error": null,
+            "errorUpdateCount": 0,
+            "errorUpdatedAt": 0,
+            "fetchFailureCount": 0,
+            "fetchFailureReason": null,
+            "fetchMeta": null,
+            "isInvalidated": false,
+            "status": "success",
+            "fetchStatus": "idle"
+          },
+          "queryKey": [
+            "my-store-seq"
+          ],
+          "queryHash": "[\"my-store-seq\"]"
+        }
+      ]
+    },
+    "session": {
+      "status": "unauthenticated"
+    },
+    "_sentryTraceData": "79dddfe6b682479291d880fc80e82497-1e2a1cab1644d517",
+    "_sentryBaggage": "sentry-environment=live,sentry-release=h0ZBTp8QguUS6pcWFFXzx,sentry-public_key=a8d4ca8a3deee185a932c6711cbfc02c,sentry-trace_id=79dddfe6b682479291d880fc80e82497"
+  },
+  "__N_SSP": true
+}
