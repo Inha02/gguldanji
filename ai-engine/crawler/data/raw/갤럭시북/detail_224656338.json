@@ -1,0 +1,282 @@
+{
+  "pageProps": {
+    "dehydratedState": {
+      "mutations": [],
+      "queries": [
+        {
+          "state": {
+            "data": {
+              "meta": {
+                "code": 0,
+                "message": "SUCCESS"
+              },
+              "data": [
+                {
+                  "gnbSeq": 95,
+                  "sortNum": 1,
+                  "menuName": "레고",
+                  "exposeStartDate": "2024-08-02 00:00:00",
+                  "exposeEndDate": "2024-09-01 23:59:00",
+                  "badgeType": 0,
+                  "badgeExposeStartDate": "2025-04-15 10:32:09",
+                  "badgeExposeEndDate": "9999-12-31 23:59:59"
+                },
+                {
+                  "gnbSeq": 97,
+                  "sortNum": 999,
+                  "menuName": "미개봉상품",
+                  "exposeStartDate": "2024-10-14 00:00:00",
+                  "exposeEndDate": "2024-10-31 23:59:00",
+                  "badgeType": 0,
+                  "badgeExposeStartDate": "2025-04-15 10:32:09",
+                  "badgeExposeEndDate": "9999-12-31 23:59:59"
+                },
+                {
+                  "gnbSeq": 99,
+                  "sortNum": 999,
+                  "menuName": "미개봉상품",
+                  "exposeStartDate": "2024-11-01 09:00:00",
+                  "exposeEndDate": "2024-11-22 23:59:00",
+                  "badgeType": 0,
+                  "badgeExposeStartDate": "2025-04-15 10:32:09",
+                  "badgeExposeEndDate": "9999-12-31 23:59:59"
+                },
+                {
+                  "gnbSeq": 100,
+                  "sortNum": 999,
+                  "menuName": "미개봉 키덜트",
+                  "exposeStartDate": "2024-12-16 00:00:00",
+                  "exposeEndDate": "2025-01-12 23:59:00",
+                  "badgeType": 0,
+                  "badgeExposeStartDate": "2025-04-15 10:32:09",
+                  "badgeExposeEndDate": "9999-12-31 23:59:59"
+                },
+                {
+                  "gnbSeq": 101,
+                  "sortNum": 999,
+                  "menuName": "콘서트/공연티켓",
+                  "exposeStartDate": "2024-12-24 00:00:00",
+                  "exposeEndDate": "2025-01-14 23:59:00",
+                  "badgeType": 0,
+                  "badgeExposeStartDate": "2025-04-15 10:32:09",
+                  "badgeExposeEndDate": "9999-12-31 23:59:59"
+                },
+                {
+                  "gnbSeq": 102,
+                  "sortNum": 999,
+                  "menuName": "닌텐도 ",
+                  "exposeStartDate": "2025-01-20 00:00:00",
+                  "exposeEndDate": "2025-02-17 23:59:00",
+                  "badgeType": 0,
+                  "badgeExposeStartDate": "2025-04-15 10:32:00",
+                  "badgeExposeEndDate": "9999-12-31 23:59:00"
+                },
+                {
+                  "gnbSeq": 103,
+                  "sortNum": 999,
+                  "menuName": "신학기 노트북",
+                  "exposeStartDate": "2025-02-25 00:00:00",
+                  "exposeEndDate": "2025-03-11 23:59:00",
+                  "badgeType": 0,
+                  "badgeExposeStartDate": "2025-04-15 10:32:09",
+                  "badgeExposeEndDate": "9999-12-31 23:59:59"
+                },
+                {
+                  "gnbSeq": 105,
+                  "sortNum": 999,
+                  "menuName": "그래픽카드",
+                  "exposeStartDate": "2025-03-12 00:00:00",
+                  "exposeEndDate": "2025-04-02 23:59:00",
+                  "badgeType": 0,
+                  "badgeExposeStartDate": "2025-04-15 10:32:09",
+                  "badgeExposeEndDate": "9999-12-31 23:59:59"
+                },
+                {
+                  "gnbSeq": 107,
+                  "sortNum": 999,
+                  "menuName": "자전거",
+                  "exposeStartDate": "2025-05-07 00:00:00",
+                  "exposeEndDate": "2025-05-28 23:59:00",
+                  "badgeType": 1,
+                  "badgeExposeStartDate": "2025-05-07 00:00:00",
+                  "badgeExposeEndDate": "2025-05-28 00:00:00"
+                },
+                {
+                  "gnbSeq": 108,
+                  "sortNum": 999,
+                  "menuName": "닌텐도",
+                  "exposeStartDate": "2025-05-12 00:00:00",
+                  "exposeEndDate": "2025-06-02 23:59:00",
+                  "badgeType": 1,
+                  "badgeExposeStartDate": "2025-05-12 00:00:00",
+                  "badgeExposeEndDate": "2025-06-02 00:00:00"
+                },
+                {
+                  "gnbSeq": 111,
+                  "sortNum": 999,
+                  "menuName": "라부부",
+                  "exposeStartDate": "2025-07-07 15:00:00",
+                  "exposeEndDate": "2025-07-20 23:59:00",
+                  "badgeType": 1,
+                  "badgeExposeStartDate": "2025-07-07 15:00:00",
+                  "badgeExposeEndDate": "2025-07-20 23:59:00"
+                },
+                {
+                  "gnbSeq": 114,
+                  "sortNum": 999,
+                  "menuName": "A/S 보증 노트북",
+                  "exposeStartDate": "2025-11-14 00:00:00",
+                  "exposeEndDate": "2025-12-07 23:59:00",
+                  "badgeType": 1,
+                  "badgeExposeStartDate": "2025-11-14 00:00:00",
+                  "badgeExposeEndDate": "2025-12-07 00:00:00"
+                }
+              ]
+            },
+            "dataUpdateCount": 1,
+            "dataUpdatedAt": 1770118472910,
+            "error": null,
+            "errorUpdateCount": 0,
+            "errorUpdatedAt": 0,
+            "fetchFailureCount": 0,
+            "fetchFailureReason": null,
+            "fetchMeta": null,
+            "isInvalidated": false,
+            "status": "success",
+            "fetchStatus": "idle"
+          },
+          "queryKey": [
+            "get-gnb-list"
+          ],
+          "queryHash": "[\"get-gnb-list\"]"
+        },
+        {
+          "state": {
+            "data": {
+              "meta": {
+                "code": 0,
+                "message": "SUCCESS"
+              },
+              "data": {
+                "paymentBenefits": [
+                  {
+                    "content": "토스페이 최대 4천원 즉시할인"
+                  },
+                  {
+                    "content": "페이코 최대 2만원 즉시할인"
+                  },
+                  {
+                    "content": "KB국민카드 12개월 5% 특별 할부 수수료"
+                  }
+                ],
+                "interestFreeBenefits": []
+              }
+            },
+            "dataUpdateCount": 1,
+            "dataUpdatedAt": 1770118472877,
+            "error": null,
+            "errorUpdateCount": 0,
+            "errorUpdatedAt": 0,
+            "fetchFailureCount": 0,
+            "fetchFailureReason": null,
+            "fetchMeta": null,
+            "isInvalidated": false,
+            "status": "success",
+            "fetchStatus": "idle"
+          },
+          "queryKey": [
+            "benefits"
+          ],
+          "queryHash": "[\"benefits\"]"
+        },
+        {
+          "state": {
+            "data": {
+              "meta": {
+                "code": 0,
+                "message": "SUCCESS"
+              },
+              "data": {
+                "paymentBenefits": [
+                  {
+                    "title": "편의점 픽업",
+                    "content": "편의점 픽업 이용 시 수수료 전액 지원"
+                  },
+                  {
+                    "title": "토스페이",
+                    "content": "계좌/머니로 10만원 이상 결제 시 2% 즉시할인"
+                  },
+                  {
+                    "title": "페이코",
+                    "content": "포인트로 100원 이상 결제 시 1% 즉시할인"
+                  },
+                  {
+                    "title": "KB국민카드",
+                    "content": "12개월 할부 결제 시 5% 특별 할부 수수료"
+                  }
+                ]
+              }
+            },
+            "dataUpdateCount": 1,
+            "dataUpdatedAt": 1770118472883,
+            "error": null,
+            "errorUpdateCount": 0,
+            "errorUpdatedAt": 0,
+            "fetchFailureCount": 0,
+            "fetchFailureReason": null,
+            "fetchMeta": null,
+            "isInvalidated": false,
+            "status": "success",
+            "fetchStatus": "idle"
+          },
+          "queryKey": [
+            "payment-benefit-detail"
+          ],
+          "queryHash": "[\"payment-benefit-detail\"]"
+        }
+      ]
+    },
+    "error": {
+      "meta": {
+        "code": 400999,
+        "message": "삭제된 상품입니다."
+      },
+      "data": {
+        "productSeq": 224656338,
+        "productTitle": "[신품급] 갤럭시북5 프로16 / 울트라7-2세대 32GB 노트북",
+        "productDescription": "삼성전자 갤럭시북5 프로 16 NT960XHA-KP72G 판매합니다.\n\n사양\n• CPU: 인텔 코어 Ultra 7 258V (2세대 / 최대 4.8GHz)\n• GPU: 인텔 Arc 140V (내장그래픽, 8코어)\n• RAM: 32GB LPDDR5X (온보드 / 교체 불가)\n• 저장장치: SSD 512GB NVMe (저장 슬롯 2개)\n\n• 화면: 16인치 WQXGA+ (2880×1800) / 120Hz / 400nit /  !터치스크린 지원!\n• 무게: 약 1.56kg\n• 배터리: 76Wh (최대 25시간), 사이클4/ 성능 100%\n• OS: Windows 11 Home 정품\n• 기타: AI 노트북 / USB-PD 충전 / 썬더볼트 지원\n\nUltra 7 최신 CPU + 32GB 램 구성으로\n사무·학업부터 코딩·영상·AI 작업까지 쾌적합니다.\n발열·소음 적고 배터리 효율 좋아\n외부 작업용으로 잘 맞는 모델입니다.\n\n25년 8월 31일 삼성스토어에서 269만원에 구매했습니다.\n글라스커버 등 케이스를 바로 낀 상태고, 사용 거의 없는 신품급 상태입니다\n\n구성품은 충전기, 가죽커버, 구매영수증/내역서입니다\n\n중고거래 특성상 교환·환불 불가하며,\n안전거래는 중고나라에서 가능합니다.",
+        "productStatus": 4,
+        "categoryName": "노트북/PC,노트북/넷북,삼성",
+        "categorySeq": "8,158,1193",
+        "productPrice": 1950000,
+        "parcelFeeYn": 0,
+        "productTradeType": 0,
+        "additional": {
+          "perPersonPurchaseCnt": null,
+          "arMediaFlag": false,
+          "arMediaUrl": null
+        },
+        "productType": "",
+        "existLoginUserDeliveryLocationInfo": false,
+        "isConsignment": 0,
+        "partnerCenterConsignment": 0,
+        "askDefaultAddress": false,
+        "empty": false
+      },
+      "error": {
+        "code": 400999,
+        "detail": "삭제된 상품입니다.",
+        "title": "com.joongna.api.product.core.exception.SearchDeletedProductException",
+        "status": 422
+      }
+    },
+    "isMyStore": false,
+    "isMobile": false,
+    "session": {
+      "status": "unauthenticated"
+    },
+    "_sentryTraceData": "2ba88a994d6a498f8abf25a2980699d1-7ed40784bca00860",
+    "_sentryBaggage": "sentry-environment=live,sentry-release=h0ZBTp8QguUS6pcWFFXzx,sentry-public_key=a8d4ca8a3deee185a932c6711cbfc02c,sentry-trace_id=2ba88a994d6a498f8abf25a2980699d1"
+  },
+  "__N_SSP": true
+}

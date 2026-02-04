@@ -1,0 +1,691 @@
+{
+  "pageProps": {
+    "dehydratedState": {
+      "mutations": [],
+      "queries": [
+        {
+          "state": {
+            "data": {
+              "meta": {
+                "code": 0,
+                "message": "SUCCESS"
+              },
+              "data": [
+                {
+                  "gnbSeq": 95,
+                  "sortNum": 1,
+                  "menuName": "레고",
+                  "exposeStartDate": "2024-08-02 00:00:00",
+                  "exposeEndDate": "2024-09-01 23:59:00",
+                  "badgeType": 0,
+                  "badgeExposeStartDate": "2025-04-15 10:32:09",
+                  "badgeExposeEndDate": "9999-12-31 23:59:59"
+                },
+                {
+                  "gnbSeq": 97,
+                  "sortNum": 999,
+                  "menuName": "미개봉상품",
+                  "exposeStartDate": "2024-10-14 00:00:00",
+                  "exposeEndDate": "2024-10-31 23:59:00",
+                  "badgeType": 0,
+                  "badgeExposeStartDate": "2025-04-15 10:32:09",
+                  "badgeExposeEndDate": "9999-12-31 23:59:59"
+                },
+                {
+                  "gnbSeq": 99,
+                  "sortNum": 999,
+                  "menuName": "미개봉상품",
+                  "exposeStartDate": "2024-11-01 09:00:00",
+                  "exposeEndDate": "2024-11-22 23:59:00",
+                  "badgeType": 0,
+                  "badgeExposeStartDate": "2025-04-15 10:32:09",
+                  "badgeExposeEndDate": "9999-12-31 23:59:59"
+                },
+                {
+                  "gnbSeq": 100,
+                  "sortNum": 999,
+                  "menuName": "미개봉 키덜트",
+                  "exposeStartDate": "2024-12-16 00:00:00",
+                  "exposeEndDate": "2025-01-12 23:59:00",
+                  "badgeType": 0,
+                  "badgeExposeStartDate": "2025-04-15 10:32:09",
+                  "badgeExposeEndDate": "9999-12-31 23:59:59"
+                },
+                {
+                  "gnbSeq": 101,
+                  "sortNum": 999,
+                  "menuName": "콘서트/공연티켓",
+                  "exposeStartDate": "2024-12-24 00:00:00",
+                  "exposeEndDate": "2025-01-14 23:59:00",
+                  "badgeType": 0,
+                  "badgeExposeStartDate": "2025-04-15 10:32:09",
+                  "badgeExposeEndDate": "9999-12-31 23:59:59"
+                },
+                {
+                  "gnbSeq": 102,
+                  "sortNum": 999,
+                  "menuName": "닌텐도 ",
+                  "exposeStartDate": "2025-01-20 00:00:00",
+                  "exposeEndDate": "2025-02-17 23:59:00",
+                  "badgeType": 0,
+                  "badgeExposeStartDate": "2025-04-15 10:32:00",
+                  "badgeExposeEndDate": "9999-12-31 23:59:00"
+                },
+                {
+                  "gnbSeq": 103,
+                  "sortNum": 999,
+                  "menuName": "신학기 노트북",
+                  "exposeStartDate": "2025-02-25 00:00:00",
+                  "exposeEndDate": "2025-03-11 23:59:00",
+                  "badgeType": 0,
+                  "badgeExposeStartDate": "2025-04-15 10:32:09",
+                  "badgeExposeEndDate": "9999-12-31 23:59:59"
+                },
+                {
+                  "gnbSeq": 105,
+                  "sortNum": 999,
+                  "menuName": "그래픽카드",
+                  "exposeStartDate": "2025-03-12 00:00:00",
+                  "exposeEndDate": "2025-04-02 23:59:00",
+                  "badgeType": 0,
+                  "badgeExposeStartDate": "2025-04-15 10:32:09",
+                  "badgeExposeEndDate": "9999-12-31 23:59:59"
+                },
+                {
+                  "gnbSeq": 107,
+                  "sortNum": 999,
+                  "menuName": "자전거",
+                  "exposeStartDate": "2025-05-07 00:00:00",
+                  "exposeEndDate": "2025-05-28 23:59:00",
+                  "badgeType": 1,
+                  "badgeExposeStartDate": "2025-05-07 00:00:00",
+                  "badgeExposeEndDate": "2025-05-28 00:00:00"
+                },
+                {
+                  "gnbSeq": 108,
+                  "sortNum": 999,
+                  "menuName": "닌텐도",
+                  "exposeStartDate": "2025-05-12 00:00:00",
+                  "exposeEndDate": "2025-06-02 23:59:00",
+                  "badgeType": 1,
+                  "badgeExposeStartDate": "2025-05-12 00:00:00",
+                  "badgeExposeEndDate": "2025-06-02 00:00:00"
+                },
+                {
+                  "gnbSeq": 111,
+                  "sortNum": 999,
+                  "menuName": "라부부",
+                  "exposeStartDate": "2025-07-07 15:00:00",
+                  "exposeEndDate": "2025-07-20 23:59:00",
+                  "badgeType": 1,
+                  "badgeExposeStartDate": "2025-07-07 15:00:00",
+                  "badgeExposeEndDate": "2025-07-20 23:59:00"
+                },
+                {
+                  "gnbSeq": 114,
+                  "sortNum": 999,
+                  "menuName": "A/S 보증 노트북",
+                  "exposeStartDate": "2025-11-14 00:00:00",
+                  "exposeEndDate": "2025-12-07 23:59:00",
+                  "badgeType": 1,
+                  "badgeExposeStartDate": "2025-11-14 00:00:00",
+                  "badgeExposeEndDate": "2025-12-07 00:00:00"
+                }
+              ]
+            },
+            "dataUpdateCount": 1,
+            "dataUpdatedAt": 1770127090554,
+            "error": null,
+            "errorUpdateCount": 0,
+            "errorUpdatedAt": 0,
+            "fetchFailureCount": 0,
+            "fetchFailureReason": null,
+            "fetchMeta": null,
+            "isInvalidated": false,
+            "status": "success",
+            "fetchStatus": "idle"
+          },
+          "queryKey": [
+            "get-gnb-list"
+          ],
+          "queryHash": "[\"get-gnb-list\"]"
+        },
+        {
+          "state": {
+            "data": {
+              "meta": {
+                "code": 0,
+                "message": "SUCCESS"
+              },
+              "data": {
+                "autoCompleteItemList": [
+                  {
+                    "keyword": "캣타워"
+                  },
+                  {
+                    "keyword": "일룸 캣타워"
+                  },
+                  {
+                    "keyword": "고양이 캣타워"
+                  },
+                  {
+                    "keyword": "위시캣 캣타워"
+                  },
+                  {
+                    "keyword": "가리모쿠 캣타워"
+                  },
+                  {
+                    "keyword": "까사미아 캣타워"
+                  },
+                  {
+                    "keyword": "일룸캐스터네츠 캣타워"
+                  },
+                  {
+                    "keyword": "디어캣 캣타워"
+                  },
+                  {
+                    "keyword": "에어로 캣타워"
+                  },
+                  {
+                    "keyword": "소형 캣타워"
+                  }
+                ],
+                "keywordCnt": 10
+              }
+            },
+            "dataUpdateCount": 1,
+            "dataUpdatedAt": 1770127090541,
+            "error": null,
+            "errorUpdateCount": 0,
+            "errorUpdatedAt": 0,
+            "fetchFailureCount": 0,
+            "fetchFailureReason": null,
+            "fetchMeta": null,
+            "isInvalidated": false,
+            "status": "success",
+            "fetchStatus": "idle"
+          },
+          "queryKey": [
+            "post-search-product-auto-complete",
+            "캣타워"
+          ],
+          "queryHash": "[\"post-search-product-auto-complete\",\"캣타워\"]"
+        },
+        {
+          "state": {
+            "data": {
+              "meta": {
+                "code": 0,
+                "message": "SUCCESS"
+              },
+              "data": {
+                "transactionId": "1770127090495_-2217839954097342660",
+                "emptyResult": {
+                  "joongnaWebUrl": null,
+                  "noticeCode": null,
+                  "type": 0,
+                  "buttonText": "알림 등록",
+                  "buttonUrl": "",
+                  "notice": "검색 결과가 없습니다.",
+                  "subNotice": [
+                    "검색어의 단어 수를 줄이거나",
+                    "보다 일반적인 검색어로 검색해 보세요!"
+                  ],
+                  "image": {
+                    "width": 48,
+                    "height": 48,
+                    "url": "https://img2.joongna.com/search/graySpeechBubble.png"
+                  },
+                  "loginCheck": true
+                },
+                "abTests": null,
+                "size": 10,
+                "sortOptions": [
+                  {
+                    "sortType": "RECOMMEND_SORT",
+                    "sortName": "추천순",
+                    "sortOrder": 0
+                  },
+                  {
+                    "sortType": "RECOMMEND_SORT",
+                    "sortName": "추천순",
+                    "sortOrder": 0
+                  },
+                  {
+                    "sortType": "RECENT_SORT",
+                    "sortName": "최신순",
+                    "sortOrder": 1
+                  },
+                  {
+                    "sortType": "PRICE_ASC_SORT",
+                    "sortName": "낮은가격순",
+                    "sortOrder": 2
+                  },
+                  {
+                    "sortType": "PRICE_DESC_SORT",
+                    "sortName": "높은가격순",
+                    "sortOrder": 3
+                  }
+                ],
+                "searchFilterComponent": null,
+                "filter": null,
+                "totalSize": 160,
+                "searchStartDT": "2026-02-03 22:58:10",
+                "items": [
+                  {
+                    "seq": 206264943,
+                    "productPositionNo": 151,
+                    "platformType": 1,
+                    "price": 150000,
+                    "parcelFee": 0,
+                    "url": "https://img2.joongna.com/media/original/2025/04/06/1743915286275pAL_HWMpE.jpg?impolicy=thumb&size=150",
+                    "title": "가또블랑코 캣타워 부속품",
+                    "state": 0,
+                    "sortDate": "2025-04-06 13:56:47",
+                    "mainLocationName": "신백동",
+                    "articleSeq": 0,
+                    "articleUrl": "",
+                    "videoProductYn": "N",
+                    "wishCount": 4,
+                    "jnPayBadgeFlag": true,
+                    "pickupBadgeFlag": false,
+                    "highlightedTitle": "",
+                    "storeSeq": 6720039,
+                    "chatCount": 2,
+                    "selfAuditFlag": false,
+                    "userType": 0,
+                    "certifySellerFlag": false,
+                    "detailImgUrl": "",
+                    "locationNames": [
+                      "충청북도 제천시 신백동"
+                    ],
+                    "objectType": "product",
+                    "wishYn": 0
+                  },
+                  {
+                    "seq": 206216389,
+                    "productPositionNo": 152,
+                    "platformType": 1,
+                    "price": 12345,
+                    "parcelFee": 0,
+                    "url": "https://img2.joongna.com/cafe-article-data/live/2025/04/05/1101382104/1743857569401_000_slVwh_main.jpg?impolicy=thumb&size=150",
+                    "title": "디어캣 캣타워 판매 합니다",
+                    "state": 0,
+                    "sortDate": "2025-04-05 21:52:37",
+                    "mainLocationName": "가락본동",
+                    "articleSeq": 1101382104,
+                    "articleUrl": "",
+                    "videoProductYn": "N",
+                    "wishCount": 4,
+                    "jnPayBadgeFlag": false,
+                    "pickupBadgeFlag": false,
+                    "highlightedTitle": "",
+                    "storeSeq": 2987808,
+                    "chatCount": 1,
+                    "selfAuditFlag": false,
+                    "userType": 0,
+                    "certifySellerFlag": false,
+                    "detailImgUrl": "",
+                    "locationNames": [
+                      "서울특별시 송파구 가락본동"
+                    ],
+                    "objectType": "product",
+                    "wishYn": 0
+                  },
+                  {
+                    "seq": 205931797,
+                    "productPositionNo": 153,
+                    "platformType": 1,
+                    "price": 25000,
+                    "parcelFee": 0,
+                    "url": "https://img2.joongna.com/cafe-article-data/live/2025/04/02/1101060692/1743593293979_000_5133a_main.jpg?impolicy=thumb&size=150",
+                    "title": "캣타워 미사용/미조립 새상품",
+                    "state": 0,
+                    "sortDate": "2025-04-02 20:27:58",
+                    "mainLocationName": "오학동",
+                    "articleSeq": 1101060692,
+                    "articleUrl": "",
+                    "videoProductYn": "N",
+                    "wishCount": 0,
+                    "jnPayBadgeFlag": false,
+                    "pickupBadgeFlag": false,
+                    "highlightedTitle": "",
+                    "storeSeq": 11179382,
+                    "chatCount": 0,
+                    "selfAuditFlag": false,
+                    "userType": 0,
+                    "certifySellerFlag": false,
+                    "detailImgUrl": "",
+                    "locationNames": [
+                      "경기도 여주시 오학동"
+                    ],
+                    "objectType": "product",
+                    "wishYn": 0
+                  },
+                  {
+                    "seq": 202881340,
+                    "productPositionNo": 154,
+                    "platformType": 1,
+                    "price": 120000,
+                    "parcelFee": 0,
+                    "url": "https://img2.joongna.com/cafe-article-data/live/2025/03/02/1097569797/1740877492398_003_WH9gi.jpg?impolicy=thumb&size=150",
+                    "title": "캣타워 판매합니다.",
+                    "state": 0,
+                    "sortDate": "2025-03-31 17:05:59",
+                    "mainLocationName": "향남읍",
+                    "articleSeq": 1097569797,
+                    "articleUrl": "",
+                    "videoProductYn": "N",
+                    "wishCount": 6,
+                    "jnPayBadgeFlag": false,
+                    "pickupBadgeFlag": false,
+                    "highlightedTitle": "",
+                    "storeSeq": 10960780,
+                    "chatCount": 1,
+                    "selfAuditFlag": false,
+                    "userType": 0,
+                    "certifySellerFlag": false,
+                    "detailImgUrl": "",
+                    "locationNames": [
+                      "경기도 화성시 향남읍"
+                    ],
+                    "objectType": "product",
+                    "wishYn": 0
+                  },
+                  {
+                    "seq": 204511444,
+                    "productPositionNo": 155,
+                    "platformType": 1,
+                    "price": 100000,
+                    "parcelFee": 0,
+                    "url": "https://img2.joongna.com/cafe-article-data/live/2025/03/19/1099452368/1742328009245_000_Q4UkV_main.jpg?impolicy=thumb&size=150",
+                    "title": "[의정부직거래만] 캣앤트리 캣타워",
+                    "state": 0,
+                    "sortDate": "2025-03-19 04:59:56",
+                    "mainLocationName": "의정부1동",
+                    "articleSeq": 1099452368,
+                    "articleUrl": "",
+                    "videoProductYn": "N",
+                    "wishCount": 0,
+                    "jnPayBadgeFlag": false,
+                    "pickupBadgeFlag": false,
+                    "highlightedTitle": "",
+                    "storeSeq": 9972764,
+                    "chatCount": 1,
+                    "selfAuditFlag": false,
+                    "userType": 0,
+                    "certifySellerFlag": false,
+                    "detailImgUrl": "",
+                    "locationNames": [
+                      "경기도 의정부시 의정부1동"
+                    ],
+                    "objectType": "product",
+                    "wishYn": 0
+                  },
+                  {
+                    "seq": 203641689,
+                    "productPositionNo": 156,
+                    "platformType": 1,
+                    "price": 90000,
+                    "parcelFee": 0,
+                    "url": "https://img2.joongna.com/cafe-article-data/live/2025/03/10/1098455307/1741568689150_001_Cw4uy_main.jpg?impolicy=thumb&size=150",
+                    "title": "고양이 창문 캣타워 캣워크 창문캣볼 해먹 (부산 직거래)",
+                    "state": 0,
+                    "sortDate": "2025-03-10 10:04:31",
+                    "mainLocationName": "전포제1동",
+                    "articleSeq": 1098455307,
+                    "articleUrl": "",
+                    "videoProductYn": "N",
+                    "wishCount": 1,
+                    "jnPayBadgeFlag": false,
+                    "pickupBadgeFlag": false,
+                    "highlightedTitle": "",
+                    "storeSeq": 9008784,
+                    "chatCount": 0,
+                    "selfAuditFlag": false,
+                    "userType": 0,
+                    "certifySellerFlag": false,
+                    "detailImgUrl": "",
+                    "locationNames": [
+                      "부산광역시 부산진구 전포제1동"
+                    ],
+                    "objectType": "product",
+                    "wishYn": 0
+                  },
+                  {
+                    "seq": 202731958,
+                    "productPositionNo": 157,
+                    "platformType": 1,
+                    "price": 19000,
+                    "parcelFee": 0,
+                    "url": "https://img2.joongna.com/cafe-article-data/live/2025/02/28/1097393699/1740722190469_000_ngm6G_main.jpg?impolicy=thumb&size=150",
+                    "title": "모넬로 창문에 붙이는 캣타워 캣워커 캣스텝",
+                    "state": 0,
+                    "sortDate": "2025-02-28 14:56:05",
+                    "mainLocationName": "용신동",
+                    "articleSeq": 1097393699,
+                    "articleUrl": "",
+                    "videoProductYn": "N",
+                    "wishCount": 2,
+                    "jnPayBadgeFlag": false,
+                    "pickupBadgeFlag": false,
+                    "highlightedTitle": "",
+                    "storeSeq": 5826463,
+                    "chatCount": 2,
+                    "selfAuditFlag": false,
+                    "userType": 0,
+                    "certifySellerFlag": false,
+                    "detailImgUrl": "",
+                    "locationNames": [
+                      "서울특별시 동대문구 용신동",
+                      "서울특별시 송파구 문정1동"
+                    ],
+                    "objectType": "product",
+                    "wishYn": 0
+                  },
+                  {
+                    "seq": 202088906,
+                    "productPositionNo": 158,
+                    "platformType": 1,
+                    "price": 400000,
+                    "parcelFee": 0,
+                    "url": "https://img2.joongna.com/media/original/2025/02/21/1740142845984RlU_4zlbf.jpg?impolicy=thumb&size=150",
+                    "title": "퍼르르펙트 냥푼젤 캣타워 핑크",
+                    "state": 0,
+                    "sortDate": "2025-02-21 22:02:26",
+                    "mainLocationName": "광교1동",
+                    "articleSeq": 0,
+                    "articleUrl": "",
+                    "videoProductYn": "N",
+                    "wishCount": 1,
+                    "jnPayBadgeFlag": true,
+                    "pickupBadgeFlag": false,
+                    "highlightedTitle": "",
+                    "storeSeq": 8425930,
+                    "chatCount": 0,
+                    "selfAuditFlag": false,
+                    "userType": 0,
+                    "certifySellerFlag": false,
+                    "detailImgUrl": "",
+                    "locationNames": [
+                      "경기도 수원시 영통구 광교1동"
+                    ],
+                    "objectType": "product",
+                    "wishYn": 0
+                  },
+                  {
+                    "seq": 201946988,
+                    "productPositionNo": 159,
+                    "platformType": 1,
+                    "price": 230000,
+                    "parcelFee": 0,
+                    "url": "https://img2.joongna.com/media/original/2025/02/20/1740026510172ncP_AYZK3.jpg?impolicy=thumb&size=150",
+                    "title": "일룸 캐스터네츠 클로캣 2단 800폭 캣타워 세트",
+                    "state": 0,
+                    "sortDate": "2025-02-20 13:44:59",
+                    "mainLocationName": "금호1동",
+                    "articleSeq": 0,
+                    "articleUrl": "",
+                    "videoProductYn": "N",
+                    "wishCount": 6,
+                    "jnPayBadgeFlag": true,
+                    "pickupBadgeFlag": false,
+                    "highlightedTitle": "",
+                    "storeSeq": 2011900,
+                    "chatCount": 1,
+                    "selfAuditFlag": false,
+                    "userType": 0,
+                    "certifySellerFlag": false,
+                    "detailImgUrl": "",
+                    "locationNames": [
+                      "광주광역시 서구 금호1동",
+                      "광주광역시 서구 상무1동",
+                      "광주광역시 서구 상무2동"
+                    ],
+                    "objectType": "product",
+                    "wishYn": 0
+                  },
+                  {
+                    "seq": 201938678,
+                    "productPositionNo": 160,
+                    "platformType": 1,
+                    "price": 130000,
+                    "parcelFee": 0,
+                    "url": "https://img2.joongna.com/cafe-article-data/live/2025/02/20/1096473439/1740022062122_000_6WDCV_main.jpg?impolicy=thumb&size=150",
+                    "title": "캣타워팔아요",
+                    "state": 0,
+                    "sortDate": "2025-02-20 12:27:23",
+                    "mainLocationName": "",
+                    "articleSeq": 1096473439,
+                    "articleUrl": "",
+                    "videoProductYn": "N",
+                    "wishCount": 1,
+                    "jnPayBadgeFlag": false,
+                    "pickupBadgeFlag": false,
+                    "highlightedTitle": "",
+                    "storeSeq": 9361946,
+                    "chatCount": 3,
+                    "selfAuditFlag": false,
+                    "userType": 0,
+                    "certifySellerFlag": false,
+                    "detailImgUrl": "",
+                    "locationNames": [],
+                    "objectType": "product",
+                    "wishYn": 0
+                  }
+                ],
+                "changedProductFilterType": false,
+                "changedKeyword": {
+                  "isChangedKeyword": false,
+                  "originKeyword": "캣타워",
+                  "changedKeyword": "캣타워"
+                },
+                "selfAuditRecommendItems": [],
+                "standardPriceShow": 0,
+                "resultType": 0
+              }
+            },
+            "dataUpdateCount": 1,
+            "dataUpdatedAt": 1770127090498,
+            "error": null,
+            "errorUpdateCount": 0,
+            "errorUpdatedAt": 0,
+            "fetchFailureCount": 0,
+            "fetchFailureReason": null,
+            "fetchMeta": null,
+            "isInvalidated": false,
+            "status": "success",
+            "fetchStatus": "idle"
+          },
+          "queryKey": [
+            "get-search-products",
+            {
+              "categoryFilter": [
+                {
+                  "categoryDepth": 0,
+                  "categorySeq": 0
+                }
+              ],
+              "firstQuantity": 50,
+              "jnPayYn": "ALL",
+              "keywordSource": "INPUT_KEYWORD",
+              "osType": 2,
+              "page": 3,
+              "parcelFeeYn": "ALL",
+              "priceFilter": {
+                "maxPrice": 100000000,
+                "minPrice": 0
+              },
+              "quantity": 50,
+              "registPeriod": "ALL",
+              "saleYn": "SALE_N",
+              "sort": "RECOMMEND_SORT",
+              "filterTypeCheckoutByUser": false,
+              "adjustSearchKeyword": true,
+              "searchWord": "캣타워"
+            }
+          ],
+          "queryHash": "[\"get-search-products\",{\"adjustSearchKeyword\":true,\"categoryFilter\":[{\"categoryDepth\":0,\"categorySeq\":0}],\"filterTypeCheckoutByUser\":false,\"firstQuantity\":50,\"jnPayYn\":\"ALL\",\"keywordSource\":\"INPUT_KEYWORD\",\"osType\":2,\"page\":3,\"parcelFeeYn\":\"ALL\",\"priceFilter\":{\"maxPrice\":100000000,\"minPrice\":0},\"quantity\":50,\"registPeriod\":\"ALL\",\"saleYn\":\"SALE_N\",\"searchWord\":\"캣타워\",\"sort\":\"RECOMMEND_SORT\"}]"
+        },
+        {
+          "state": {
+            "data": {
+              "meta": {
+                "code": 0,
+                "message": "SUCCESS"
+              },
+              "data": {
+                "searchKeyword": [],
+                "relatedKeywordList": []
+              }
+            },
+            "dataUpdateCount": 1,
+            "dataUpdatedAt": 1770127090495,
+            "error": null,
+            "errorUpdateCount": 0,
+            "errorUpdatedAt": 0,
+            "fetchFailureCount": 0,
+            "fetchFailureReason": null,
+            "fetchMeta": null,
+            "isInvalidated": false,
+            "status": "success",
+            "fetchStatus": "idle"
+          },
+          "queryKey": [
+            "get-search-related-keyword",
+            "캣타워"
+          ],
+          "queryHash": "[\"get-search-related-keyword\",\"캣타워\"]"
+        },
+        {
+          "state": {
+            "data": {
+              "storeSeq": null
+            },
+            "dataUpdateCount": 1,
+            "dataUpdatedAt": 1770127090420,
+            "error": null,
+            "errorUpdateCount": 0,
+            "errorUpdatedAt": 0,
+            "fetchFailureCount": 0,
+            "fetchFailureReason": null,
+            "fetchMeta": null,
+            "isInvalidated": false,
+            "status": "success",
+            "fetchStatus": "idle"
+          },
+          "queryKey": [
+            "my-store-seq"
+          ],
+          "queryHash": "[\"my-store-seq\"]"
+        }
+      ]
+    },
+    "session": {
+      "status": "unauthenticated"
+    },
+    "_sentryTraceData": "24c348d2c41c4320b515e20ce01c216a-f04a28699dd59446",
+    "_sentryBaggage": "sentry-environment=live,sentry-release=h0ZBTp8QguUS6pcWFFXzx,sentry-public_key=a8d4ca8a3deee185a932c6711cbfc02c,sentry-trace_id=24c348d2c41c4320b515e20ce01c216a"
+  },
+  "__N_SSP": true
+}
