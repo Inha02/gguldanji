@@ -1,8 +1,7 @@
-# data/processed/*/*_clean.jsonl 전부 합치고 seq 기준 전역 중복 제거
 import os
 import glob
 import json
-from typing import Dict, List, Tuple
+from typing import Dict, List
 
 
 BASE_DIR = os.path.dirname(__file__)
@@ -28,9 +27,12 @@ def write_jsonl(path: str, rows: List[Dict]):
             f.write(json.dumps(r, ensure_ascii=False) + "\n")
 
 
-def find_clean_files() -> List[str]:
-    # data/processed/<keyword>/<keyword>_clean.jsonl 전부 수집
-    files = sorted(glob.glob(os.path.join(PROCESSED_DIR, "*", "*_clean.jsonl")))
+def find_final_files() -> List[str]:
+    """
+    data/processed/<anchor>/<anchor>_final_100.jsonl 전부 수집
+    """
+    pattern = os.path.join(PROCESSED_DIR, "*", "*_final_100.jsonl")
+    files = sorted(glob.glob(pattern))
     return files
 
 
@@ -38,32 +40,43 @@ def main():
     import argparse
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("--out", type=str, default=os.path.join(MERGED_DIR, "clean_merged_dedup.jsonl"))
-    parser.add_argument("--keep", type=str, default="first", choices=["first", "last"])
+    parser.add_argument(
+        "--out",
+        type=str,
+        default=os.path.join(MERGED_DIR, "final_merged_dedup.jsonl"),
+        help="merged output jsonl path",
+    )
+    parser.add_argument(
+        "--keep",
+        type=str,
+        default="first",
+        choices=["first", "last"],
+        help="duplicate seq handling policy",
+    )
     args = parser.parse_args()
 
-    files = find_clean_files()
+    files = find_final_files()
     if not files:
-        raise SystemExit(f"[ERR] clean 파일이 없음: {PROCESSED_DIR}")
+        raise SystemExit(f"[ERR] final_100 파일이 없음: {PROCESSED_DIR}")
 
-    # seq 기준 전역 중복 제거
     by_seq: Dict[int, Dict] = {}
-    sources: Dict[int, List[str]] = {}  # seq가 어떤 키워드 폴더에서 왔는지 기록
+    sources: Dict[int, List[str]] = {}
 
     total_rows = 0
     dup_rows = 0
     missing_seq = 0
 
     for fp in files:
-        keyword_dir = os.path.basename(os.path.dirname(fp))  # processed/<keyword_dir>/
+        anchor = os.path.basename(os.path.dirname(fp))  # processed/<anchor>/
         for row in iter_jsonl(fp):
             total_rows += 1
+
             seq = row.get("seq")
             if not isinstance(seq, int):
                 missing_seq += 1
                 continue
 
-            sources.setdefault(seq, []).append(keyword_dir)
+            sources.setdefault(seq, []).append(anchor)
 
             if seq in by_seq:
                 dup_rows += 1
@@ -74,11 +87,12 @@ def main():
 
     merged = list(by_seq.values())
 
-    # 중복 정보도 저장
-    dup_report = []
-    for seq, ks in sources.items():
-        if len(ks) >= 2:
-            dup_report.append({"seq": seq, "keywords": ks})
+    # 중복 리포트 저장
+    dup_report = [
+        {"seq": seq, "anchors": anchors}
+        for seq, anchors in sources.items()
+        if len(anchors) >= 2
+    ]
 
     dup_report_path = os.path.join(MERGED_DIR, "duplicates_by_seq.json")
     with open(dup_report_path, "w", encoding="utf-8") as f:
@@ -86,8 +100,8 @@ def main():
 
     write_jsonl(args.out, merged)
 
-    print("\n===== MERGE & DEDUPE =====")
-    print(f"clean_files: {len(files)}")
+    print("\n===== MERGE & DEDUPE (FINAL_100) =====")
+    print(f"final_files: {len(files)}")
     print(f"total_rows(read): {total_rows}")
     print(f"unique_by_seq: {len(merged)}")
     print(f"duplicate_rows(skipped): {dup_rows}")
