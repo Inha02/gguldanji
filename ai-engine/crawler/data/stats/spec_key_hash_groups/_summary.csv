@@ -1,0 +1,17 @@
+category,rows_used,groups,singleton_groups,singleton_group_rate_pct,top1_group_size,top5_share_pct
+01_digital_devices,200,185,172,92.97,3,6.0
+02_furniture_interior,200,165,155,93.94,17,17.5
+03_baby_kids,200,173,152,87.86,4,8.0
+04_womens_clothing,200,183,175,95.63,10,9.5
+05_fashion_accessories,200,185,177,95.68,7,8.5
+06_mens_clothing,200,172,152,88.37,4,8.5
+07_home_appliances,200,157,133,84.71,8,13.5
+08_daily_goods,148,126,117,92.86,9,15.54
+09_sports_leisure,200,168,154,91.67,9,14.0
+10_hobby_games,200,191,184,96.34,4,6.0
+11_beauty,200,186,178,95.7,5,8.0
+12_pet_supplies,200,171,163,95.32,21,15.5
+13_food,200,177,165,93.22,4,9.0
+14_books,200,184,179,97.28,11,10.5
+15_tickets_vouchers,200,189,182,96.3,5,7.0
+16_etc,200,156,147,94.23,18,22.5
