@@ -1,0 +1,569 @@
+{
+  "category_code": "06",
+  "category_name": "06_mens_clothing",
+  "category_item_coverage": [
+    "니트/가디건",
+    "셔츠/남방",
+    "티셔츠/맨투맨",
+    "폴로/카라티",
+    "자켓/코트",
+    "점퍼/패딩",
+    "골프웨어",
+    "등산복",
+    "데님/팬츠",
+    "수입명품 의류"
+  ],
+  "category_spec_fields": [
+    {
+      "field": "item_type",
+      "importance": "high",
+      "type": "enum",
+      "examples": [
+        "가디건",
+        "셔츠"
+      ],
+      "extraction_hints": [
+        "제목의 품목 단어",
+        "카테고리명",
+        "설명 첫줄 품목"
+      ],
+      "attribute_group_seed": "common"
+    },
+    {
+      "field": "gender",
+      "importance": "medium",
+      "type": "enum",
+      "examples": [
+        "남성",
+        "공용"
+      ],
+      "extraction_hints": [
+        "제목의 남성/남자/공용",
+        "카테고리",
+        "설명 내 남녀 표기"
+      ],
+      "attribute_group_seed": "common"
+    },
+    {
+      "field": "brand",
+      "importance": "high",
+      "type": "string",
+      "examples": [
+        "라코스테",
+        "유니클로"
+      ],
+      "extraction_hints": [
+        "제목 첫 영문/브랜드",
+        "설명 첫 문장",
+        "정품 언급 앞 단어"
+      ],
+      "attribute_group_seed": "major"
+    },
+    {
+      "field": "is_luxury",
+      "importance": "medium",
+      "type": "bool",
+      "examples": [
+        "true",
+        "false"
+      ],
+      "extraction_hints": [
+        "카테고리 수입명품",
+        "브랜드가 명품군",
+        "설명에 명품/하이엔드"
+      ],
+      "attribute_group_seed": "major"
+    },
+    {
+      "field": "size_tag",
+      "importance": "high",
+      "type": "string",
+      "examples": [
+        "100",
+        "L"
+      ],
+      "extraction_hints": [
+        "숫자/알파벳 사이즈",
+        "괄호 안 KR사이즈",
+        "택기준 사이즈"
+      ],
+      "attribute_group_seed": "common"
+    },
+    {
+      "field": "size_estimated_kr",
+      "importance": "medium",
+      "type": "enum",
+      "examples": [
+        "95",
+        "105"
+      ],
+      "extraction_hints": [
+        "설명에 ~사이즈 권장",
+        "가슴단면 기반 추정",
+        "없으면 null"
+      ],
+      "attribute_group_seed": "major"
+    },
+    {
+      "field": "fit_style",
+      "importance": "medium",
+      "type": "enum",
+      "examples": [
+        "슬림",
+        "오버"
+      ],
+      "extraction_hints": [
+        "슬림/레귤러/오버 단어",
+        "오버핏/루즈핏 표현",
+        "없으면 null"
+      ],
+      "attribute_group_seed": "major"
+    },
+    {
+      "field": "material_main",
+      "importance": "high",
+      "type": "enum",
+      "examples": [
+        "면",
+        "울"
+      ],
+      "extraction_hints": [
+        "소재: 뒤 단어들",
+        "% 비율 가장 높은 것",
+        "복수면 혼방"
+      ],
+      "attribute_group_seed": "major"
+    },
+    {
+      "field": "season",
+      "importance": "medium",
+      "type": "enum",
+      "examples": [
+        "봄가을",
+        "겨울"
+      ],
+      "extraction_hints": [
+        "두께/기모/경량 패딩 표현",
+        "여름/린넨/반팔",
+        "설명에 계절"
+      ],
+      "attribute_group_seed": "major"
+    },
+    {
+      "field": "thickness",
+      "importance": "medium",
+      "type": "enum",
+      "examples": [
+        "얇음",
+        "두꺼움"
+      ],
+      "extraction_hints": [
+        "경량/두툼/헤비 단어",
+        "니트짜임/패딩 유무",
+        "없으면 null"
+      ],
+      "attribute_group_seed": "major"
+    }
+  ],
+  "category_spec_key_templates": [
+    {
+      "name": "mens_top_basic",
+      "fields": [
+        "item_type",
+        "brand",
+        "size_estimated_kr",
+        "season",
+        "condition_grade"
+      ],
+      "rationale": "일반 상의 가격 비교용"
+    },
+    {
+      "name": "luxury_top_strict",
+      "fields": [
+        "item_type",
+        "brand",
+        "is_luxury",
+        "size_tag",
+        "condition_grade",
+        "authenticity"
+      ],
+      "rationale": "명품 상의 정밀 비교"
+    },
+    {
+      "name": "outerwear_heavy",
+      "fields": [
+        "item_type",
+        "brand",
+        "size_estimated_kr",
+        "thickness",
+        "season",
+        "condition_grade"
+      ],
+      "rationale": "점퍼/코트 등 아우터 비교용"
+    }
+  ],
+  "subtypes": [
+    {
+      "subtype": "knit_cardigan",
+      "examples": [
+        "니트 가디건",
+        "집업 가디건"
+      ],
+      "notes": "니트/스웨터/가디건류"
+    },
+    {
+      "subtype": "shirt_wovens",
+      "examples": [
+        "드레스셔츠",
+        "캐주얼남방"
+      ],
+      "notes": "직조 셔츠 전반"
+    },
+    {
+      "subtype": "tee_sweat",
+      "examples": [
+        "반팔티",
+        "맨투맨"
+      ],
+      "notes": "티셔츠/스웻셔츠"
+    },
+    {
+      "subtype": "polo_golf_top",
+      "examples": [
+        "카라티",
+        "골프셔츠"
+      ],
+      "notes": "폴로/골프 상의"
+    },
+    {
+      "subtype": "outer_jacket",
+      "examples": [
+        "자켓",
+        "점퍼"
+      ],
+      "notes": "자켓/코트/블루종"
+    },
+    {
+      "subtype": "sports_outdoor",
+      "examples": [
+        "등산복",
+        "기능성 셔츠"
+      ],
+      "notes": "등산/트레킹/테크웨어"
+    },
+    {
+      "subtype": "luxury_designer",
+      "examples": [
+        "루이비통 셔츠",
+        "프라다 자켓"
+      ],
+      "notes": "수입명품 전반"
+    }
+  ],
+  "subtype_spec_key_templates": [
+    {
+      "subtype": "knit_cardigan",
+      "template_name": "knit_top",
+      "fields": [
+        "item_type",
+        "brand",
+        "size_estimated_kr",
+        "material_main",
+        "thickness",
+        "condition_grade"
+      ],
+      "rationale": "니트류는 소재/두께 영향 큼"
+    },
+    {
+      "subtype": "shirt_wovens",
+      "template_name": "shirt_core",
+      "fields": [
+        "item_type",
+        "brand",
+        "fit_style",
+        "fabric_pattern",
+        "size_estimated_kr",
+        "condition_grade"
+      ],
+      "rationale": "핏/패턴이 가격 영향"
+    },
+    {
+      "subtype": "tee_sweat",
+      "template_name": "tee_core",
+      "fields": [
+        "item_type",
+        "brand",
+        "sleeve_length",
+        "size_estimated_kr",
+        "condition_grade"
+      ],
+      "rationale": "반팔/맨투맨 구분 위주"
+    },
+    {
+      "subtype": "polo_golf_top",
+      "template_name": "polo_golf",
+      "fields": [
+        "item_type",
+        "brand",
+        "is_golf_brand",
+        "size_estimated_kr",
+        "season",
+        "condition_grade"
+      ],
+      "rationale": "골프용 여부 중요"
+    },
+    {
+      "subtype": "outer_jacket",
+      "template_name": "outer_core",
+      "fields": [
+        "item_type",
+        "brand",
+        "size_estimated_kr",
+        "thickness",
+        "has_insulation",
+        "condition_grade"
+      ],
+      "rationale": "보온성/충전재 중요"
+    },
+    {
+      "subtype": "luxury_designer",
+      "template_name": "luxury_full",
+      "fields": [
+        "item_type",
+        "brand",
+        "is_luxury",
+        "collection_year",
+        "size_tag",
+        "condition_grade",
+        "authenticity"
+      ],
+      "rationale": "연식/정품이 핵심"
+    },
+    {
+      "subtype": "sports_outdoor",
+      "template_name": "outdoor_top",
+      "fields": [
+        "item_type",
+        "brand",
+        "is_outdoor_brand",
+        "size_estimated_kr",
+        "season",
+        "condition_grade"
+      ],
+      "rationale": "전문 아웃도어 브랜드 여부"
+    }
+  ],
+  "normalization_rules": [
+    {
+      "field": "item_type",
+      "rules": [
+        "셔츠/남방/와이셔츠→셔츠",
+        "니트/스웨터→니트",
+        "집업 가디건/니트집업→집업 가디건",
+        "후드집업/후디→후드 집업",
+        "맨투맨/스웻셔츠→맨투맨"
+      ]
+    },
+    {
+      "field": "gender",
+      "rules": [
+        "남성/남자→남성",
+        "남녀공용/유니섹스→공용",
+        "표기없고 카테고리가 남성의류면 남성"
+      ]
+    },
+    {
+      "field": "size_tag",
+      "rules": [
+        "공백 제거 후 저장",
+        "KR100/105→100,105로 분리 시 첫 값 우선",
+        "L(100)/M(95) 같이 표기시 괄호 안 KR만 저장"
+      ]
+    },
+    {
+      "field": "size_estimated_kr",
+      "rules": [
+        "'95사이즈','남성100정도' 등 숫자 추출",
+        "없으면 size_tag에서 90~115 추출",
+        "범위표현(100~105)은 큰쪽 기준"
+      ]
+    },
+    {
+      "field": "material_main",
+      "rules": [
+        "울/모 동일 처리→울",
+        "앙고라/캐시미어/알파카→해당명 유지",
+        "면100/코튼100→면",
+        "폴리/폴리에스터→폴리에스터"
+      ]
+    },
+    {
+      "field": "season",
+      "rules": [
+        "여름/린넨/반팔/아이스→여름",
+        "기모/두꺼운 니트/패딩→겨울",
+        "봄가을/간절기→봄가을",
+        "언급없으면 null"
+      ]
+    },
+    {
+      "field": "thickness",
+      "rules": [
+        "경량/얇은/린넨→얇음",
+        "기모/두툼/헤비→두꺼움",
+        "보통/표기없음→보통"
+      ]
+    },
+    {
+      "field": "condition_grade",
+      "rules": [
+        "새상품/택있음/미사용→N",
+        "1~2회/새것수준/A급/9.5/10→A",
+        "생활사용감/8~9/10→B",
+        "보풀/오염/수선/하자 언급→C"
+      ]
+    },
+    {
+      "field": "fabric_pattern",
+      "rules": [
+        "체크/깅엄/타탄→체크",
+        "스트라이프/줄무늬→스트라이프",
+        "무늬없음/솔리드→무지"
+      ]
+    },
+    {
+      "field": "color_main",
+      "rules": [
+        "네이비/곤색→네이비",
+        "라이트블루/소라→블루",
+        "다크그린/카키→그린",
+        "베이지/아이보리/크림은 원단 표현 따라 단일값 선택"
+      ]
+    }
+  ],
+  "anchor_overrides": [
+    {
+      "anchor": "남성가디건",
+      "additional_fields": [
+        "closure_type",
+        "neckline",
+        "knit_pattern",
+        "has_fill"
+      ],
+      "preferred_template": "knit_top",
+      "notes": "지퍼/단추,V넥/라운드, 케이블/골지 필요"
+    },
+    {
+      "anchor": "남성셔츠",
+      "additional_fields": [
+        "fabric_pattern",
+        "sleeve_length",
+        "dress_code"
+      ],
+      "preferred_template": "shirt_core",
+      "notes": "와이셔츠 vs 캐주얼 구분"
+    }
+  ],
+  "missing_but_important_specs": [
+    {
+      "field": "condition_grade",
+      "why_important": "상태가 중고 가격 핵심",
+      "how_to_capture": "설명의 사용감/하자 단어를 등급 N/A/B/C로 매핑"
+    },
+    {
+      "field": "chest_width_cm",
+      "why_important": "실측이 핏/사이즈 판단에 가장 직관적",
+      "how_to_capture": "'가슴단면','가슴' 숫자+cm 패턴 추출"
+    },
+    {
+      "field": "total_length_cm",
+      "why_important": "셔츠/가디건 기장에 따라 수요 상이",
+      "how_to_capture": "'총장','총기장' 숫자+cm 패턴 추출"
+    },
+    {
+      "field": "authenticity",
+      "why_important": "명품 정품 여부가 가격 크게 좌우",
+      "how_to_capture": "'정품/가품/이미테이션/정가품믹스/감정서' 문맥으로 true/false/unknown"
+    },
+    {
+      "field": "has_tag",
+      "why_important": "택 유무로 새상품가 근접 가능",
+      "how_to_capture": "제목/설명 '새상품','택','미착용','시착' 등 규칙 매핑"
+    },
+    {
+      "field": "is_set_or_bundle",
+      "why_important": "여러 장 일괄 판매는 단가 비교 필요",
+      "how_to_capture": "'일괄','n장','세트','3종' 등 표현 탐지"
+    }
+  ],
+  "downstream": {
+    "attribute_grouping_guidance": {
+      "common": [
+        "item_type",
+        "gender",
+        "size_tag",
+        "color_main",
+        "sleeve_length"
+      ],
+      "major": [
+        "brand",
+        "is_luxury",
+        "size_estimated_kr",
+        "fit_style",
+        "material_main",
+        "season",
+        "thickness",
+        "fabric_pattern",
+        "condition_grade",
+        "authenticity",
+        "has_tag",
+        "has_fill",
+        "is_golf_brand",
+        "is_outdoor_brand"
+      ],
+      "sensitive": [
+        "collection_year",
+        "origin_retail_price",
+        "purchase_channel",
+        "owner_body_info"
+      ],
+      "notes": "민감 그룹은 노출 최소화, 가격 모델에만 사용"
+    },
+    "extraction_policy": {
+      "missing_value_strategy": "없으면 null, 추정 가능한 값만 규칙 기반 채움",
+      "confidence_strategy": "키워드/패턴 일치 강하면 high, 추론/간접표현은 medium, 애매하면 low로 두고 미사용",
+      "conflict_strategy": "제목>설명>카테고리 우선; 상충시 다수 표현·신뢰도 높은 출처 채택"
+    },
+    "synthetic_data_policy": {
+      "value_ranges": [
+        {
+          "field": "size_estimated_kr",
+          "range_or_vocab": "90,95,100,105,110,115"
+        },
+        {
+          "field": "condition_grade",
+          "range_or_vocab": "N,A,B,C"
+        },
+        {
+          "field": "season",
+          "range_or_vocab": "봄가을,여름,겨울,사계절"
+        },
+        {
+          "field": "material_main",
+          "range_or_vocab": "면,폴리에스터,울,아크릴,나일론,린넨,캐시미어,앙고라"
+        },
+        {
+          "field": "thickness",
+          "range_or_vocab": "얇음,보통,두꺼움"
+        }
+      ],
+      "avoid_leakage_fields": [
+        "purchase_price",
+        "purchase_channel",
+        "owner_body_info",
+        "exact_purchase_date"
+      ],
+      "generation_notes": "합성시 브랜드·사이즈·계절 조합 현실적으로 생성; 명품엔 is_luxury=true, authenticity 대부분 true로 설정"
+    }
+  }
+}

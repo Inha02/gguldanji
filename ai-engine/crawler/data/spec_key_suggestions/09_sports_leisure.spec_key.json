@@ -1,0 +1,709 @@
+{
+  "category_code": "09",
+  "category_name": "09_sports_leisure",
+  "category_item_coverage": [
+    "자전거",
+    "전기자전거",
+    "실내자전거",
+    "헬스기구",
+    "골프채",
+    "골프풀세트",
+    "파크골프채",
+    "그라운드골프채",
+    "야외스포츠장비",
+    "실내스포츠장비",
+    "유아자전거",
+    "스포츠악세서리"
+  ],
+  "category_spec_fields": [
+    {
+      "field": "item_type",
+      "importance": "high",
+      "type": "enum",
+      "examples": [
+        "자전거",
+        "골프채"
+      ],
+      "extraction_hints": [
+        "제목 품목명 인식",
+        "카테고리명 활용",
+        "설명 첫줄 참고"
+      ],
+      "attribute_group_seed": "common"
+    },
+    {
+      "field": "sport_category",
+      "importance": "high",
+      "type": "enum",
+      "examples": [
+        "사이클",
+        "골프"
+      ],
+      "extraction_hints": [
+        "카테고리 경로",
+        "제목 키워드",
+        "브랜드/모델 주변"
+      ],
+      "attribute_group_seed": "common"
+    },
+    {
+      "field": "brand",
+      "importance": "high",
+      "type": "string",
+      "examples": [
+        "자이언트",
+        "테일러메이드"
+      ],
+      "extraction_hints": [
+        "제목 괄호 전후",
+        "설명 ‘브랜드’ 인근",
+        "로마자 대문자 묶음"
+      ],
+      "attribute_group_seed": "common"
+    },
+    {
+      "field": "model_name",
+      "importance": "high",
+      "type": "string",
+      "examples": [
+        "프로펠 어드밴스1",
+        "JPX921 TOUR"
+      ],
+      "extraction_hints": [
+        "브랜드 뒤 연속 문자열",
+        "영문+숫자 조합",
+        "설명 ‘모델’ 주변"
+      ],
+      "attribute_group_seed": "common"
+    },
+    {
+      "field": "gender_target",
+      "importance": "medium",
+      "type": "enum",
+      "examples": [
+        "남성용",
+        "여성용"
+      ],
+      "extraction_hints": [
+        "제목 ‘남성용/여성용’",
+        "설명 ‘여성용 세트’",
+        "없으면 null"
+      ],
+      "attribute_group_seed": "major"
+    },
+    {
+      "field": "handedness",
+      "importance": "medium",
+      "type": "enum",
+      "examples": [
+        "우타",
+        "좌타"
+      ],
+      "extraction_hints": [
+        "제목 ‘좌타/왼손’",
+        "골프 설명 부분",
+        "없으면 우타 추정 금지"
+      ],
+      "attribute_group_seed": "major"
+    },
+    {
+      "field": "frame_material",
+      "importance": "medium",
+      "type": "enum",
+      "examples": [
+        "알루미늄",
+        "카본"
+      ],
+      "extraction_hints": [
+        "‘알루미늄/알루’",
+        "‘카본/풀카본’",
+        "없으면 null"
+      ],
+      "attribute_group_seed": "major"
+    },
+    {
+      "field": "bike_type_detail",
+      "importance": "high",
+      "type": "enum",
+      "examples": [
+        "로드",
+        "MTB"
+      ],
+      "extraction_hints": [
+        "카테고리 소분류",
+        "제목 ‘로드/그래블/픽시’",
+        "설명 첫줄"
+      ],
+      "attribute_group_seed": "major"
+    },
+    {
+      "field": "golf_set_type",
+      "importance": "high",
+      "type": "enum",
+      "examples": [
+        "단품",
+        "풀세트"
+      ],
+      "extraction_hints": [
+        "카테고리 ‘풀세트’",
+        "아이언 번호 나열",
+        "‘풀세트’ 단어"
+      ],
+      "attribute_group_seed": "major"
+    },
+    {
+      "field": "club_role",
+      "importance": "medium",
+      "type": "enum",
+      "examples": [
+        "드라이버",
+        "아이언"
+      ],
+      "extraction_hints": [
+        "카테고리",
+        "제목 ‘드라이버/우드/유틸/웨지/퍼터’",
+        "설명 첫문장"
+      ],
+      "attribute_group_seed": "major"
+    }
+  ],
+  "category_spec_key_templates": [
+    {
+      "name": "generic_sports_gear_basic",
+      "fields": [
+        "item_type",
+        "sport_category",
+        "brand",
+        "model_name",
+        "gender_target",
+        "condition_grade",
+        "usage_level",
+        "included_accessories",
+        "original_price",
+        "trade_type"
+      ],
+      "rationale": "대부분 스포츠/레저 장비에 공통 적용"
+    },
+    {
+      "name": "cycle_gear_core",
+      "fields": [
+        "item_type",
+        "sport_category",
+        "brand",
+        "model_name",
+        "bike_type_detail",
+        "frame_material",
+        "wheel_size_inch",
+        "drivetrain_speed",
+        "brake_type",
+        "size_label",
+        "user_height_range",
+        "mileage_km",
+        "usage_level",
+        "condition_grade"
+      ],
+      "rationale": "자전거/전기자전거 가격 비교용 핵심"
+    },
+    {
+      "name": "golf_club_single_core",
+      "fields": [
+        "item_type",
+        "sport_category",
+        "brand",
+        "model_name",
+        "golf_set_type",
+        "club_role",
+        "club_number",
+        "loft_deg",
+        "shaft_material",
+        "shaft_flex",
+        "club_length_inch",
+        "gender_target",
+        "handedness",
+        "condition_grade"
+      ],
+      "rationale": "골프 단품(드라이버·아이언·웨지 등) 비교용 기본 스펙 추출용"
+    }
+  ],
+  "subtypes": [
+    {
+      "subtype": "자전거_로드",
+      "examples": [
+        "로드바이크/사이클",
+        "그래블로드"
+      ],
+      "notes": "온로드 장거리·레이싱용"
+    },
+    {
+      "subtype": "자전거_MTB",
+      "examples": [
+        "산악자전거",
+        "트레일 MTB"
+      ],
+      "notes": "오프로드 용도"
+    },
+    {
+      "subtype": "자전거_전기/자토바이",
+      "examples": [
+        "전기자전거",
+        "자토바이"
+      ],
+      "notes": "모터·배터리 포함 자전거류"
+    },
+    {
+      "subtype": "실내자전거/헬스사이클",
+      "examples": [
+        "스피닝 바이크",
+        "엑사이더 실내자전거"
+      ],
+      "notes": "고정식 사이클·헬스기구"
+    },
+    {
+      "subtype": "골프채_단품",
+      "examples": [
+        "드라이버만",
+        "웨지만"
+      ],
+      "notes": "1~2개 클럽 단위"
+    },
+    {
+      "subtype": "골프채_풀세트",
+      "examples": [
+        "남성 풀세트",
+        "여성 풀세트"
+      ],
+      "notes": "드라이버~퍼터까지 세트"
+    },
+    {
+      "subtype": "파크/그라운드골프채",
+      "examples": [
+        "파크골프채",
+        "그라운드골프채"
+      ],
+      "notes": "길이·무게 규격이 다름"
+    },
+    {
+      "subtype": "스포츠악세서리",
+      "examples": [
+        "자전거 라이트",
+        "골프 그립"
+      ],
+      "notes": "부속·소형 용품"
+    }
+  ],
+  "subtype_spec_key_templates": [
+    {
+      "subtype": "자전거_로드",
+      "template_name": "road_bike_price_core",
+      "fields": [
+        "brand",
+        "model_name",
+        "bike_type_detail",
+        "frame_material",
+        "fork_material",
+        "wheel_size_inch",
+        "drivetrain_brand",
+        "drivetrain_grade",
+        "drivetrain_speed",
+        "brake_type",
+        "size_label",
+        "user_height_range",
+        "purchase_year",
+        "mileage_km",
+        "usage_level",
+        "condition_grade"
+      ],
+      "rationale": "로드 가격은 프레임·구동계·브레이크·사이즈 영향이 큼"
+    },
+    {
+      "subtype": "자전거_MTB",
+      "template_name": "mtb_price_core",
+      "fields": [
+        "brand",
+        "model_name",
+        "bike_type_detail",
+        "frame_material",
+        "suspension_type",
+        "wheel_size_inch",
+        "drivetrain_brand",
+        "drivetrain_grade",
+        "drivetrain_speed",
+        "brake_type",
+        "size_label",
+        "purchase_year",
+        "mileage_km",
+        "usage_level",
+        "condition_grade"
+      ],
+      "rationale": "MTB는 서스펜션·휠·브레이크 비중 큼"
+    },
+    {
+      "subtype": "자전거_전기/자토바이",
+      "template_name": "ebike_price_core",
+      "fields": [
+        "brand",
+        "model_name",
+        "bike_type_detail",
+        "frame_material",
+        "electric_flag",
+        "motor_power_W",
+        "battery_voltage_V",
+        "battery_capacity_Ah",
+        "battery_brand",
+        "assist_mode_type",
+        "est_range_km",
+        "purchase_year",
+        "mileage_km",
+        "usage_level",
+        "condition_grade"
+      ],
+      "rationale": "전기 사양과 배터리 상태가 가격 좌우"
+    },
+    {
+      "subtype": "실내자전거/헬스사이클",
+      "template_name": "indoor_bike_core",
+      "fields": [
+        "brand",
+        "model_name",
+        "item_type",
+        "resistance_type",
+        "max_user_weight_kg",
+        "console_features",
+        "foldable_flag",
+        "purchase_year",
+        "usage_level",
+        "condition_grade"
+      ],
+      "rationale": "내구성·저항방식·부피가 핵심"
+    },
+    {
+      "subtype": "골프채_단품",
+      "template_name": "golf_single_core",
+      "fields": [
+        "brand",
+        "model_name",
+        "golf_set_type",
+        "club_role",
+        "club_number",
+        "loft_deg",
+        "shaft_material",
+        "shaft_flex",
+        "club_length_inch",
+        "gender_target",
+        "handedness",
+        "purchase_year",
+        "usage_level",
+        "condition_grade"
+      ],
+      "rationale": "단품 비교는 롤·로프트·샤프트·길이 중심"
+    },
+    {
+      "subtype": "골프채_풀세트",
+      "template_name": "golf_set_core",
+      "fields": [
+        "brand",
+        "model_name",
+        "golf_set_type",
+        "pieces_count",
+        "included_club_types",
+        "shaft_material",
+        "shaft_flex",
+        "gender_target",
+        "handedness",
+        "bag_included_flag",
+        "purchase_year",
+        "usage_level",
+        "condition_grade"
+      ],
+      "rationale": "구성·타겟·샤프트 스펙이 가격 핵심"
+    },
+    {
+      "subtype": "파크/그라운드골프채",
+      "template_name": "park_golf_core",
+      "fields": [
+        "brand",
+        "model_name",
+        "item_type",
+        "golf_set_type",
+        "club_length_cm",
+        "club_weight_g",
+        "shaft_material",
+        "shaft_flex",
+        "approval_flag",
+        "purchase_year",
+        "usage_level",
+        "condition_grade"
+      ],
+      "rationale": "규격·공인 여부가 가치에 중요"
+    },
+    {
+      "subtype": "스포츠악세서리",
+      "template_name": "sports_accessory_core",
+      "fields": [
+        "item_type",
+        "sport_category",
+        "brand",
+        "model_name",
+        "compat_target",
+        "condition_grade",
+        "usage_level",
+        "included_accessories"
+      ],
+      "rationale": "악세서리는 호환 대상과 상태 위주"
+    }
+  ],
+  "normalization_rules": [
+    {
+      "field": "usage_level",
+      "rules": [
+        "‘미개봉/새제품/신품급’→‘거의사용안함’",
+        "‘몇번/두세번 탔어요’→‘사용적음’",
+        "‘자주/매일/헬스장용’→‘사용많음’"
+      ]
+    },
+    {
+      "field": "condition_grade",
+      "rules": [
+        "설명에 ‘하자없음/최상/새것같음’→‘A’",
+        "‘생활기스 조금’→‘B’",
+        "‘기스많음/교체필요/하자있음’→‘C’"
+      ]
+    },
+    {
+      "field": "trade_type",
+      "rules": [
+        "‘직거래만’→‘직거래’",
+        "‘택배 가능/화물’ 포함→‘택배’ 추가",
+        "둘 다 언급→‘직거래+택배’"
+      ]
+    },
+    {
+      "field": "electric_flag",
+      "rules": [
+        "제목/카테고리 ‘전기/전동/자토바이’ 포함→true",
+        "실내자전거·헬스기구는 모터보조 없으면 false",
+        "언급없으면 null 유지"
+      ]
+    },
+    {
+      "field": "sport_category",
+      "rules": [
+        "자전거·전기자전거·실내사이클→‘사이클’",
+        "골프채·파크골프·그라운드골프→‘골프’",
+        "기타 헬스기구→‘피트니스’"
+      ]
+    },
+    {
+      "field": "wheel_size_inch",
+      "rules": [
+        "‘27.5’ ‘29인치’ 등 숫자 추출",
+        "700C는 28로 매핑",
+        "16/20인치 미니벨로는 그대로 정수 저장"
+      ]
+    },
+    {
+      "field": "shaft_flex",
+      "rules": [
+        "‘L/LL’ 유지",
+        "‘R1/SR’→각각 그대로",
+        "‘R대’→‘R’",
+        "없으면 null"
+      ]
+    },
+    {
+      "field": "purchase_year",
+      "rules": [
+        "‘2024년식/24년식’→2024",
+        "‘25년 7월 구매’→2025",
+        "연도 범위 1990~올해만 허용"
+      ]
+    },
+    {
+      "field": "gender_target",
+      "rules": [
+        "‘여성용/레이디’→‘여성용’",
+        "‘남성용/맨즈’→‘남성용’",
+        "미표기시 null"
+      ]
+    },
+    {
+      "field": "handedness",
+      "rules": [
+        "‘좌타/왼손’→‘좌타’",
+        "그 외 명시 없으면 null 유지"
+      ]
+    }
+  ],
+  "anchor_overrides": [
+    {
+      "anchor": "자전거",
+      "additional_fields": [
+        "bike_type_detail",
+        "frame_material",
+        "fork_material",
+        "wheel_size_inch",
+        "drivetrain_brand",
+        "drivetrain_grade",
+        "drivetrain_speed",
+        "brake_type",
+        "suspension_type",
+        "electric_flag",
+        "motor_power_W",
+        "battery_capacity_Ah",
+        "mileage_km"
+      ],
+      "preferred_template": "road_bike_price_core",
+      "notes": "사이클류는 가격 편차 커서 세부 스펙 최대 추출"
+    },
+    {
+      "anchor": "골프채",
+      "additional_fields": [
+        "golf_set_type",
+        "club_role",
+        "club_number",
+        "loft_deg",
+        "shaft_material",
+        "shaft_flex",
+        "club_length_inch",
+        "pieces_count",
+        "included_club_types",
+        "handedness"
+      ],
+      "preferred_template": "golf_single_core",
+      "notes": "풀세트 여부와 샤프트 스펙 중점"
+    }
+  ],
+  "missing_but_important_specs": [
+    {
+      "field": "mileage_km",
+      "why_important": "자전거·전기자전거 마일리지에 따라 감가 폭이 큼",
+      "how_to_capture": "‘주행…km’ 숫자 추출, 없으면 ‘자주/거의 안탐’에서 usage_level만 설정"
+    },
+    {
+      "field": "battery_health_note",
+      "why_important": "전기자전거·헬스기구 배터리 상태가 가격에 큰 영향",
+      "how_to_capture": "‘효율 최상/방전 없음/교체 필요’ 같은 문장을 요약 텍스트로 저장"
+    },
+    {
+      "field": "usage_level",
+      "why_important": "정확한 사용시간을 모를 때 상대적 사용도 지표로 필요",
+      "how_to_capture": "‘몇번/자주/1년 방치’ 같은 표현을 규칙 기반으로 매핑"
+    },
+    {
+      "field": "size_label",
+      "why_important": "자전거 적정 신장과 재판매 수요에 직접 영향",
+      "how_to_capture": "‘S/M/L’ 또는 ‘50사이즈/17인치’ 등 프레임 표기 추출"
+    },
+    {
+      "field": "handedness",
+      "why_important": "골프채 좌우 타겟이 달라 가격과 수요 차이 큼",
+      "how_to_capture": "제목·설명 ‘좌타/왼손’ 유무 탐지, 없으면 미기재"
+    },
+    {
+      "field": "pieces_count",
+      "why_important": "골프 풀세트 구성 개수에 따라 시세가 달라짐",
+      "how_to_capture": "설명 숫자(‘11개’) 또는 클럽 리스트 길이로 계산"
+    }
+  ],
+  "downstream": {
+    "attribute_grouping_guidance": {
+      "common": [
+        "item_type",
+        "sport_category",
+        "brand",
+        "model_name",
+        "gender_target",
+        "handedness",
+        "trade_type",
+        "location_area"
+      ],
+      "major": [
+        "bike_type_detail",
+        "frame_material",
+        "fork_material",
+        "wheel_size_inch",
+        "drivetrain_brand",
+        "drivetrain_grade",
+        "drivetrain_speed",
+        "brake_type",
+        "suspension_type",
+        "electric_flag",
+        "motor_power_W",
+        "battery_voltage_V",
+        "battery_capacity_Ah",
+        "est_range_km",
+        "golf_set_type",
+        "club_role",
+        "club_number",
+        "loft_deg",
+        "shaft_material",
+        "shaft_flex",
+        "club_length_inch",
+        "pieces_count",
+        "included_club_types",
+        "size_label",
+        "user_height_range",
+        "usage_level",
+        "condition_grade",
+        "purchase_year",
+        "original_price"
+      ],
+      "sensitive": [
+        "mileage_km",
+        "battery_health_note",
+        "defects_note",
+        "serial_number",
+        "exact_address"
+      ],
+      "notes": "sensitive는 가격 모델에는 쓰되 UI 노출은 축약 또는 비노출 권장"
+    },
+    "extraction_policy": {
+      "missing_value_strategy": "명시 없으면 null; 추정 필요한 경우 usage_level·condition_grade 등 파생 필드만 규칙 기반 생성",
+      "confidence_strategy": "키워드 일치+수치 패턴일 때 high, 서술형 해석 필요시 medium, 모호 문맥은 low로 표시",
+      "conflict_strategy": "동일 필드 다중 값은 제목>구조화 카테고리>본문 순으로 우선; 불일치 심하면 low-confidence로 모두 보존"
+    },
+    "synthetic_data_policy": {
+      "value_ranges": [
+        {
+          "field": "wheel_size_inch",
+          "range_or_vocab": "12,14,16,18,20,24,26,27.5,28,29"
+        },
+        {
+          "field": "drivetrain_speed",
+          "range_or_vocab": "1,7,8,9,10,11,12,18,20,22,24,27,30"
+        },
+        {
+          "field": "motor_power_W",
+          "range_or_vocab": "250–1500"
+        },
+        {
+          "field": "battery_capacity_Ah",
+          "range_or_vocab": "7–30"
+        },
+        {
+          "field": "club_length_inch",
+          "range_or_vocab": "32–46"
+        },
+        {
+          "field": "pieces_count",
+          "range_or_vocab": "6–15"
+        },
+        {
+          "field": "purchase_year",
+          "range_or_vocab": "2000–현재년도"
+        },
+        {
+          "field": "price",
+          "range_or_vocab": "1,000–20,000,000"
+        }
+      ],
+      "avoid_leakage_fields": [
+        "serial_number",
+        "exact_address",
+        "phone_number",
+        "seller_name"
+      ],
+      "generation_notes": "합성 시 실제 브랜드·모델은 일부만 사용하고, 나머지는 패턴 유지한 가명; 전기 사양·마일리지·연식 간 물리적으로 말이 되게 조합할 것"
+    }
+  }
+}

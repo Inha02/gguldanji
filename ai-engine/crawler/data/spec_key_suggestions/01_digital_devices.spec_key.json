@@ -1,0 +1,613 @@
+{
+  "category_code": "01",
+  "category_name": "01_digital_devices",
+  "category_item_coverage": [
+    "스마트폰",
+    "태블릿",
+    "노트북",
+    "데스크탑",
+    "모니터",
+    "스마트워치",
+    "무선이어폰",
+    "헤드셋",
+    "스피커",
+    "공유기",
+    "키보드/마우스",
+    "기타 주변기기"
+  ],
+  "category_spec_fields": [
+    {
+      "field": "device_type",
+      "importance": "high",
+      "type": "enum",
+      "examples": [
+        "스마트폰",
+        "노트북"
+      ],
+      "extraction_hints": [
+        "제품군 키워드 근처",
+        "카테고리명 참고",
+        "브랜드명 뒤 단어"
+      ],
+      "attribute_group_seed": "common"
+    },
+    {
+      "field": "brand",
+      "importance": "high",
+      "type": "string",
+      "examples": [
+        "삼성",
+        "애플"
+      ],
+      "extraction_hints": [
+        "제목 첫 단어",
+        "모델명 앞",
+        "로고/제조사 표현"
+      ],
+      "attribute_group_seed": "common"
+    },
+    {
+      "field": "model_name",
+      "importance": "high",
+      "type": "string",
+      "examples": [
+        "NT960XGQ-A51A",
+        "아이폰 14 프로"
+      ],
+      "extraction_hints": [
+        "영문+숫자 조합",
+        "브랜드 뒤 괄호/공백 뒤",
+        "모델명: 패턴"
+      ],
+      "attribute_group_seed": "common"
+    },
+    {
+      "field": "product_line",
+      "importance": "medium",
+      "type": "string",
+      "examples": [
+        "갤럭시북",
+        "아이폰"
+      ],
+      "extraction_hints": [
+        "브랜드 바로 뒤",
+        "시리즈/프로/울트라 등 포함",
+        "반복되는 상표명"
+      ],
+      "attribute_group_seed": "common"
+    },
+    {
+      "field": "storage_capacity",
+      "importance": "high",
+      "type": "string",
+      "examples": [
+        "256GB",
+        "1TB"
+      ],
+      "extraction_hints": [
+        "GB/TB 단위",
+        "용량:, 저장공간: 주변",
+        "256G 등 축약형"
+      ],
+      "attribute_group_seed": "major"
+    },
+    {
+      "field": "memory_ram",
+      "importance": "medium",
+      "type": "string",
+      "examples": [
+        "8GB",
+        "16GB"
+      ],
+      "extraction_hints": [
+        "RAM/램 앞뒤",
+        "메모리:, DDR 표기",
+        "GB 단위 숫자"
+      ],
+      "attribute_group_seed": "major"
+    },
+    {
+      "field": "color",
+      "importance": "medium",
+      "type": "string",
+      "examples": [
+        "실버",
+        "블랙"
+      ],
+      "extraction_hints": [
+        "색상:, 컬러: 근처",
+        "제목 내 색상 단어",
+        "골드/블루 등"
+      ],
+      "attribute_group_seed": "common"
+    },
+    {
+      "field": "condition_grade",
+      "importance": "high",
+      "type": "enum",
+      "examples": [
+        "새상품",
+        "중고"
+      ],
+      "extraction_hints": [
+        "새상품/미개봉/단순개봉",
+        "S급/A급/B급",
+        "상태좋음/생활기스"
+      ],
+      "attribute_group_seed": "common"
+    },
+    {
+      "field": "usage_duration_text",
+      "importance": "medium",
+      "type": "string",
+      "examples": [
+        "1년 사용",
+        "두세번 사용"
+      ],
+      "extraction_hints": [
+        "사용:, 실사용 근처",
+        "~개월/년/번 표현",
+        "보관/방치 기간"
+      ],
+      "attribute_group_seed": "major"
+    },
+    {
+      "field": "battery_health",
+      "importance": "high",
+      "type": "string",
+      "examples": [
+        "배터리 90%",
+        "사이클 20회"
+      ],
+      "extraction_hints": [
+        "배터리 성능/효율",
+        "사이클/싸이클",
+        "교체/새배터리"
+      ],
+      "attribute_group_seed": "major"
+    }
+  ],
+  "category_spec_key_templates": [
+    {
+      "name": "generic_digital_core",
+      "fields": [
+        "device_type",
+        "brand",
+        "product_line",
+        "model_name",
+        "storage_capacity",
+        "color",
+        "condition_grade"
+      ],
+      "rationale": "모든 디지털 기기 공통 핵심"
+    },
+    {
+      "name": "smartphone_core",
+      "fields": [
+        "device_type",
+        "brand",
+        "product_line",
+        "model_name",
+        "storage_capacity",
+        "color",
+        "condition_grade",
+        "battery_health"
+      ],
+      "rationale": "휴대폰 가격에 중요한 스펙"
+    },
+    {
+      "name": "laptop_core",
+      "fields": [
+        "device_type",
+        "brand",
+        "product_line",
+        "model_name",
+        "screen_size_inch",
+        "cpu_model",
+        "gpu_model",
+        "memory_ram",
+        "storage_capacity",
+        "battery_health"
+      ],
+      "rationale": "노트북 성능·상태 핵심 비교용"
+    }
+  ],
+  "subtypes": [
+    {
+      "subtype": "smartphone",
+      "examples": [
+        "아이폰",
+        "갤럭시폰"
+      ],
+      "notes": "통화 가능 휴대폰"
+    },
+    {
+      "subtype": "tablet",
+      "examples": [
+        "아이패드",
+        "갤럭시탭"
+      ],
+      "notes": "태블릿/패드류"
+    },
+    {
+      "subtype": "laptop",
+      "examples": [
+        "갤럭시북",
+        "맥북"
+      ],
+      "notes": "휴대용 노트북"
+    },
+    {
+      "subtype": "desktop_pc",
+      "examples": [
+        "본체",
+        "게이밍PC"
+      ],
+      "notes": "조립/완제품 데스크탑"
+    },
+    {
+      "subtype": "monitor",
+      "examples": [
+        "모니터",
+        "스탠바이미"
+      ],
+      "notes": "외장 디스플레이"
+    },
+    {
+      "subtype": "wearable",
+      "examples": [
+        "스마트워치",
+        "밴드"
+      ],
+      "notes": "손목·웨어러블"
+    },
+    {
+      "subtype": "audio",
+      "examples": [
+        "이어폰",
+        "헤드셋"
+      ],
+      "notes": "음향장치"
+    },
+    {
+      "subtype": "network_device",
+      "examples": [
+        "공유기",
+        "메시와이파이"
+      ],
+      "notes": "네트워크 기기"
+    },
+    {
+      "subtype": "accessory",
+      "examples": [
+        "케이스",
+        "가방"
+      ],
+      "notes": "주변 액세서리"
+    }
+  ],
+  "subtype_spec_key_templates": [
+    {
+      "subtype": "smartphone",
+      "template_name": "smartphone_core",
+      "fields": [
+        "device_type",
+        "brand",
+        "product_line",
+        "model_name",
+        "storage_capacity",
+        "color",
+        "condition_grade",
+        "battery_health",
+        "network_lock_status",
+        "carrier",
+        "sim_type"
+      ],
+      "rationale": "아이폰/안드 공통 휴대폰 특화"
+    },
+    {
+      "subtype": "tablet",
+      "template_name": "tablet_core",
+      "fields": [
+        "device_type",
+        "brand",
+        "product_line",
+        "model_name",
+        "screen_size_inch",
+        "storage_capacity",
+        "network_type",
+        "color",
+        "condition_grade"
+      ],
+      "rationale": "화면·용량·LTE 여부 중점"
+    },
+    {
+      "subtype": "laptop",
+      "template_name": "laptop_core",
+      "fields": [
+        "device_type",
+        "brand",
+        "product_line",
+        "model_name",
+        "screen_size_inch",
+        "cpu_model",
+        "gpu_model",
+        "memory_ram",
+        "storage_capacity",
+        "os_version",
+        "battery_health"
+      ],
+      "rationale": "CPU·RAM·GPU·배터리로 시세 비교"
+    },
+    {
+      "subtype": "monitor",
+      "template_name": "monitor_core",
+      "fields": [
+        "device_type",
+        "brand",
+        "model_name",
+        "screen_size_inch",
+        "resolution",
+        "panel_type",
+        "refresh_rate",
+        "condition_grade"
+      ],
+      "rationale": "화면 사양 위주"
+    },
+    {
+      "subtype": "wearable",
+      "template_name": "wearable_core",
+      "fields": [
+        "device_type",
+        "brand",
+        "model_name",
+        "case_size_mm",
+        "storage_capacity",
+        "color",
+        "condition_grade",
+        "battery_health"
+      ],
+      "rationale": "케이스 크기·배터리 중요"
+    },
+    {
+      "subtype": "audio",
+      "template_name": "audio_core",
+      "fields": [
+        "device_type",
+        "brand",
+        "model_name",
+        "connection_type",
+        "noise_canceling",
+        "condition_grade"
+      ],
+      "rationale": "유·무선 및 노캔 여부"
+    },
+    {
+      "subtype": "network_device",
+      "template_name": "network_core",
+      "fields": [
+        "device_type",
+        "brand",
+        "model_name",
+        "wifi_standard",
+        "port_config",
+        "condition_grade"
+      ],
+      "rationale": "규격·포트 구성이 핵심"
+    },
+    {
+      "subtype": "accessory",
+      "template_name": "accessory_simple",
+      "fields": [
+        "device_type",
+        "brand",
+        "model_name",
+        "color",
+        "condition_grade"
+      ],
+      "rationale": "사양보다 상태·정품 여부 위주"
+    }
+  ],
+  "normalization_rules": [
+    {
+      "field": "storage_capacity",
+      "rules": [
+        "GB/TB 단위로 통일",
+        "예: 256G→256GB",
+        "1테라→1TB"
+      ]
+    },
+    {
+      "field": "memory_ram",
+      "rules": [
+        "숫자+GB 형식",
+        "예: 램 16→16GB",
+        "8기가→8GB"
+      ]
+    },
+    {
+      "field": "color",
+      "rules": [
+        "대표 색상명만 추출",
+        "혼합색은 첫 색상 기준",
+        "영문 색은 한글 또는 영문 한쪽으로 통일"
+      ]
+    },
+    {
+      "field": "condition_grade",
+      "rules": [
+        "새상품/미개봉/단순개봉→새상품",
+        "사용감 적음/거의 새것→중고_S급",
+        "생활기스 있음→중고_A급 등 내부 등급 맵"
+      ]
+    },
+    {
+      "field": "battery_health",
+      "rules": [
+        "배터리 성능 n%는 그대로",
+        "사이클 n회 별도 숫자 추출",
+        "새배터리/교체→replaced 플래그"
+      ]
+    },
+    {
+      "field": "device_type",
+      "rules": [
+        "카테고리+키워드로 매핑",
+        "폰/휴대폰/아이폰→스마트폰",
+        "북/노트→노트북"
+      ]
+    },
+    {
+      "field": "screen_size_inch",
+      "rules": [
+        "인치/\" 단위 숫자만",
+        "cm 표기시 인치 환산은 생략 또는 별도 필드",
+        "대략 15.6형 등은 15.6으로"
+      ]
+    },
+    {
+      "field": "network_lock_status",
+      "rules": [
+        "자급제/공기계→언락",
+        "선약/약정/선택약정표현만 있고 락 언급 없으면 unknown",
+        "해지 완료는 언락으로 간주"
+      ]
+    },
+    {
+      "field": "os_version",
+      "rules": [
+        "iOS/Android/Windows 접두어 유지",
+        "버전 숫자만 정규화",
+        "예: IOS 18→iOS 18"
+      ]
+    }
+  ],
+  "anchor_overrides": [
+    {
+      "anchor": "갤럭시북",
+      "additional_fields": [
+        "screen_size_inch",
+        "cpu_model",
+        "gpu_model",
+        "os_version",
+        "battery_cycle_count"
+      ],
+      "preferred_template": "laptop_core",
+      "notes": "노트북이므로 성능·배터리 정보 강화"
+    },
+    {
+      "anchor": "아이폰",
+      "additional_fields": [
+        "battery_cycle_count",
+        "network_lock_status",
+        "carrier",
+        "repair_history"
+      ],
+      "preferred_template": "smartphone_core",
+      "notes": "배터리·락·수리 이력 가격 영향 큼"
+    }
+  ],
+  "missing_but_important_specs": [
+    {
+      "field": "battery_cycle_count",
+      "why_important": "배터리 실사용·수명 판단",
+      "how_to_capture": "사이클/싸이클/회 표현 숫자만 분리"
+    },
+    {
+      "field": "repair_history",
+      "why_important": "액정·리퍼 여부가 시세 크게 좌우",
+      "how_to_capture": "리퍼/교체/수리 키워드 문장 요약"
+    },
+    {
+      "field": "warranty_until",
+      "why_important": "무상 AS/애케플 남은 기간 가치 반영",
+      "how_to_capture": "보증/애플케어/케어플러스와 날짜 인식"
+    },
+    {
+      "field": "original_purchase_date",
+      "why_important": "연식·소비자보호법 기준 판단",
+      "how_to_capture": "구매일/제조년월/개통일 주변 날짜 추출"
+    },
+    {
+      "field": "network_lock_status",
+      "why_important": "자급제·락 여부에 따라 사용 제약",
+      "how_to_capture": "자급제/공기계/해지/선택약정 등의 문맥 분류"
+    },
+    {
+      "field": "accessories_included",
+      "why_important": "충전기·박스·케이스 포함시 체감가 상승",
+      "how_to_capture": "구성품:, 풀박스 등 나열 문장에서 품목 리스트"
+    }
+  ],
+  "downstream": {
+    "attribute_grouping_guidance": {
+      "common": [
+        "device_type",
+        "brand",
+        "product_line",
+        "model_name",
+        "color",
+        "condition_grade"
+      ],
+      "major": [
+        "storage_capacity",
+        "memory_ram",
+        "screen_size_inch",
+        "cpu_model",
+        "gpu_model",
+        "battery_health",
+        "battery_cycle_count",
+        "network_lock_status",
+        "carrier",
+        "os_version"
+      ],
+      "sensitive": [
+        "original_purchase_date",
+        "warranty_until",
+        "purchase_price",
+        "repair_history",
+        "owner_contact_info"
+      ],
+      "notes": "sensitive는 가격 산정엔 쓰되 UI 노출 최소화"
+    },
+    "extraction_policy": {
+      "missing_value_strategy": "값 없으면 null 유지, 추정 생성 금지",
+      "confidence_strategy": "문장 구조·단위 일치시 고신뢰, 모호하면 low로 태깅",
+      "conflict_strategy": "제목>스펙표>본문 순 신뢰, 서로 상충시 다중 후보와 출처 위치 보존"
+    },
+    "synthetic_data_policy": {
+      "value_ranges": [
+        {
+          "field": "storage_capacity",
+          "range_or_vocab": "스마트폰: 16GB~1TB, 노트북: 128GB~4TB"
+        },
+        {
+          "field": "memory_ram",
+          "range_or_vocab": "스마트폰: 2~16GB, 노트북: 4~64GB"
+        },
+        {
+          "field": "battery_health",
+          "range_or_vocab": "중고 70~100%, 새상품은 100% 또는 표기 없음"
+        },
+        {
+          "field": "screen_size_inch",
+          "range_or_vocab": "폰 4.7~7.3, 노트북 11~18, 모니터 19~49"
+        },
+        {
+          "field": "condition_grade",
+          "range_or_vocab": "['새상품','중고_S급','중고_A급','중고_B급']"
+        },
+        {
+          "field": "device_type",
+          "range_or_vocab": "['스마트폰','태블릿','노트북','데스크탑','모니터','웨어러블','오디오','네트워크','액세서리']"
+        }
+      ],
+      "avoid_leakage_fields": [
+        "purchase_price",
+        "owner_contact_info",
+        "정확한 일련번호/IMEI"
+      ],
+      "generation_notes": "합성 데이터는 한국 중고시장 관행 범위 내 스펙·가격 조합 사용, 실제 게시글 복사 금지"
+    }
+  }
+}

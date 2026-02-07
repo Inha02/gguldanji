@@ -1,0 +1,583 @@
+{
+  "category_code": "07",
+  "category_name": "07_home_appliances",
+  "category_item_coverage": [
+    "일반 냉장고",
+    "김치냉장고",
+    "업소용 냉장고",
+    "소형/미니 냉장고",
+    "차량/캠핑 냉장고",
+    "통돌이 세탁기",
+    "드럼 세탁기",
+    "세탁+건조 겸용기",
+    "세탁기+건조기 세트",
+    "미니 세탁기",
+    "호텔/미니바 냉장고"
+  ],
+  "category_spec_fields": [
+    {
+      "field": "brand",
+      "importance": "high",
+      "type": "string",
+      "examples": [
+        "삼성",
+        "LG"
+      ],
+      "extraction_hints": [
+        "제목 앞 브랜드 단어",
+        "모델명 앞 제조사",
+        "설명 첫 줄 제조사"
+      ],
+      "attribute_group_seed": "common"
+    },
+    {
+      "field": "product_type",
+      "importance": "high",
+      "type": "enum",
+      "examples": [
+        "냉장고",
+        "세탁기"
+      ],
+      "extraction_hints": [
+        "카테고리명",
+        "제목 내 냉장고/세탁기",
+        "설명 첫 문장 품목"
+      ],
+      "attribute_group_seed": "common"
+    },
+    {
+      "field": "subtype",
+      "importance": "high",
+      "type": "enum",
+      "examples": [
+        "양문형 냉장고",
+        "통돌이 세탁기"
+      ],
+      "extraction_hints": [
+        "양문형/4도어/김치/업소용 등 형태",
+        "통돌이/드럼/워시타워",
+        "소형/미니/차량용/캠핑"
+      ],
+      "attribute_group_seed": "common"
+    },
+    {
+      "field": "model_name",
+      "importance": "high",
+      "type": "string",
+      "examples": [
+        "RH81R8040SA",
+        "WA19A8370KV"
+      ],
+      "extraction_hints": [
+        "영문+숫자 조합",
+        "모델/모델명 키워드 뒤",
+        "스펙 리스트의 첫 항목"
+      ],
+      "attribute_group_seed": "major"
+    },
+    {
+      "field": "capacity_main",
+      "importance": "high",
+      "type": "float",
+      "examples": [
+        "815",
+        "19"
+      ],
+      "extraction_hints": [
+        "L,리터,kg 숫자 추출",
+        "대용량/소형 뒤 용량",
+        "제목·스펙에 있는 최대 용량"
+      ],
+      "attribute_group_seed": "major"
+    },
+    {
+      "field": "capacity_unit",
+      "importance": "high",
+      "type": "enum",
+      "examples": [
+        "L",
+        "kg"
+      ],
+      "extraction_hints": [
+        "capacity_main 주변 단위",
+        "냉장고=L 세탁기=kg 기본",
+        "김치통리터도 L"
+      ],
+      "attribute_group_seed": "major"
+    },
+    {
+      "field": "door_type",
+      "importance": "medium",
+      "type": "enum",
+      "examples": [
+        "2도어",
+        "4도어"
+      ],
+      "extraction_hints": [
+        "제목의 도어 수",
+        "양문형/4문형/테이블/서랍형",
+        "상냉장 하냉동 언급"
+      ],
+      "attribute_group_seed": "major"
+    },
+    {
+      "field": "freezer_position",
+      "importance": "medium",
+      "type": "enum",
+      "examples": [
+        "상냉장 하냉동",
+        "양문 분리형"
+      ],
+      "extraction_hints": [
+        "상냉장/하냉동 문장",
+        "양문형=좌냉동 우냉장",
+        "테이블/서랍은 기타"
+      ],
+      "attribute_group_seed": "major"
+    },
+    {
+      "field": "washer_type",
+      "importance": "high",
+      "type": "enum",
+      "examples": [
+        "통돌이",
+        "드럼"
+      ],
+      "extraction_hints": [
+        "통돌이/드럼/워시타워 단어",
+        "상단뚜껑=통돌이, 전면도어=드럼",
+        "아가사랑/미니도 포함"
+      ],
+      "attribute_group_seed": "major"
+    },
+    {
+      "field": "has_dryer",
+      "importance": "high",
+      "type": "bool",
+      "examples": [
+        "true",
+        "false"
+      ],
+      "extraction_hints": [
+        "건조기/건조 기능 단어",
+        "세탁건조기/콤보/일체형",
+        "세탁기만 언급 시 false"
+      ],
+      "attribute_group_seed": "major"
+    }
+  ],
+  "category_spec_key_templates": [
+    {
+      "name": "generic_fridge",
+      "fields": [
+        "brand",
+        "product_type",
+        "subtype",
+        "model_name",
+        "capacity_main",
+        "capacity_unit",
+        "door_type",
+        "freezer_position"
+      ],
+      "rationale": "대부분 냉장고 가격비교용 핵심 스펙"
+    },
+    {
+      "name": "generic_washer",
+      "fields": [
+        "brand",
+        "product_type",
+        "subtype",
+        "model_name",
+        "capacity_main",
+        "capacity_unit",
+        "washer_type",
+        "has_dryer"
+      ],
+      "rationale": "세탁기/세탁건조기 공통 핵심 스펙"
+    }
+  ],
+  "subtypes": [
+    {
+      "subtype": "일반 냉장고",
+      "examples": [
+        "가정용 양문형",
+        "2도어 냉장고"
+      ],
+      "notes": "냉장+냉동 기본형"
+    },
+    {
+      "subtype": "김치냉장고",
+      "examples": [
+        "딤채 김치냉장고",
+        "LG 김치톡톡"
+      ],
+      "notes": "김치/저온숙성 전용"
+    },
+    {
+      "subtype": "업소용 냉장고",
+      "examples": [
+        "테이블 냉장고",
+        "반찬냉장고"
+      ],
+      "notes": "카페·식당용 스텐/간냉식"
+    },
+    {
+      "subtype": "소형/미니 냉장고",
+      "examples": [
+        "미니바 냉장고",
+        "화장품 냉장고"
+      ],
+      "notes": "100L 이하 또는 미니바형"
+    },
+    {
+      "subtype": "차량/캠핑 냉장고",
+      "examples": [
+        "차량용 냉장고",
+        "캠핑 아이스박스형"
+      ],
+      "notes": "DC전원·배터리 사용"
+    },
+    {
+      "subtype": "통돌이 세탁기",
+      "examples": [
+        "삼성 통돌이",
+        "LG 통돌이"
+      ],
+      "notes": "상단도어 회전통"
+    },
+    {
+      "subtype": "드럼 세탁기",
+      "examples": [
+        "LG 트롬",
+        "삼성 그랑데"
+      ],
+      "notes": "전면 도어 드럼식"
+    },
+    {
+      "subtype": "세탁+건조 겸용기",
+      "examples": [
+        "드럼 세탁건조기",
+        "AI콤보"
+      ],
+      "notes": "일체형 콤보"
+    },
+    {
+      "subtype": "세탁기+건조기 세트",
+      "examples": [
+        "워시타워",
+        "세탁기+건조기 타워"
+      ],
+      "notes": "분리형 세트 판매"
+    }
+  ],
+  "subtype_spec_key_templates": [
+    {
+      "subtype": "일반 냉장고",
+      "template_name": "generic_fridge",
+      "fields": [
+        "brand",
+        "product_type",
+        "subtype",
+        "model_name",
+        "capacity_main",
+        "capacity_unit",
+        "door_type",
+        "freezer_position"
+      ],
+      "rationale": "용량·도어 구조가 가격에 크게 영향"
+    },
+    {
+      "subtype": "김치냉장고",
+      "template_name": "kimchi_fridge",
+      "fields": [
+        "brand",
+        "product_type",
+        "subtype",
+        "model_name",
+        "capacity_main",
+        "capacity_unit",
+        "door_type"
+      ],
+      "rationale": "김치 전용은 용량·브랜드 중심 비교"
+    },
+    {
+      "subtype": "업소용 냉장고",
+      "template_name": "commercial_fridge",
+      "fields": [
+        "brand",
+        "product_type",
+        "subtype",
+        "model_name",
+        "capacity_main",
+        "capacity_unit",
+        "door_type"
+      ],
+      "rationale": "업소용은 용량·브랜드 비중 큼"
+    },
+    {
+      "subtype": "소형/미니 냉장고",
+      "template_name": "mini_fridge",
+      "fields": [
+        "brand",
+        "product_type",
+        "subtype",
+        "capacity_main",
+        "capacity_unit"
+      ],
+      "rationale": "용량·용도 위주 간단 비교"
+    },
+    {
+      "subtype": "차량/캠핑 냉장고",
+      "template_name": "camp_fridge",
+      "fields": [
+        "brand",
+        "product_type",
+        "subtype",
+        "capacity_main",
+        "capacity_unit"
+      ],
+      "rationale": "캠핑은 부피·브랜드 중심"
+    },
+    {
+      "subtype": "통돌이 세탁기",
+      "template_name": "top_load_washer",
+      "fields": [
+        "brand",
+        "product_type",
+        "subtype",
+        "washer_type",
+        "capacity_main",
+        "capacity_unit",
+        "has_dryer"
+      ],
+      "rationale": "용량·통돌이 여부가 핵심"
+    },
+    {
+      "subtype": "드럼 세탁기",
+      "template_name": "front_load_washer",
+      "fields": [
+        "brand",
+        "product_type",
+        "subtype",
+        "washer_type",
+        "capacity_main",
+        "capacity_unit",
+        "has_dryer"
+      ],
+      "rationale": "드럼·건조 포함 여부가 중요"
+    },
+    {
+      "subtype": "세탁+건조 겸용기",
+      "template_name": "combo_wd",
+      "fields": [
+        "brand",
+        "product_type",
+        "subtype",
+        "washer_type",
+        "capacity_main",
+        "capacity_unit",
+        "has_dryer"
+      ],
+      "rationale": "세탁/건조 일체 스펙 단순화"
+    },
+    {
+      "subtype": "세탁기+건조기 세트",
+      "template_name": "washer_dryer_set",
+      "fields": [
+        "brand",
+        "product_type",
+        "subtype",
+        "capacity_main",
+        "capacity_unit",
+        "has_dryer"
+      ],
+      "rationale": "세트 전체 용량 기반 비교"
+    }
+  ],
+  "normalization_rules": [
+    {
+      "field": "capacity_main",
+      "rules": [
+        "문자에서 숫자와 소수만 추출",
+        "뒤에 L,리터,ℓ 있으면 L로 해석",
+        "뒤에 kg 있으면 kg로 해석"
+      ]
+    },
+    {
+      "field": "capacity_unit",
+      "rules": [
+        "냉장고/김치냉장고/냉동고는 기본 L",
+        "세탁기/콤보/세트는 기본 kg",
+        "명시 단위가 있으면 우선 사용"
+      ]
+    },
+    {
+      "field": "product_type",
+      "rules": [
+        "카테고리 또는 제목에 냉장고 있으면 냉장고",
+        "카테고리 또는 제목에 세탁기/건조기 있으면 세탁기",
+        "모호하면 모델명으로 검색해 결정(후처리)"
+      ]
+    },
+    {
+      "field": "subtype",
+      "rules": [
+        "김치 단어 포함시 김치냉장고",
+        "업소용/테이블/반찬/우유냉장고 등은 업소용 냉장고",
+        "통돌이/드럼/워시타워/콤보/미니 명칭으로 세탁기 계열 세분"
+      ]
+    },
+    {
+      "field": "door_type",
+      "rules": [
+        "'4도어','4문형'은 4도어",
+        "'양문','양문형','SBS'는 양문형으로 통일",
+        "테이블/서랍/업소용은 서랍형/테이블형 등 기타로 매핑"
+      ]
+    },
+    {
+      "field": "washer_type",
+      "rules": [
+        "통돌이/탑로드/상단도어는 통돌이",
+        "드럼/전면도어/트롬/그랑데 드럼은 드럼",
+        "콤보도 드럼으로 통일"
+      ]
+    },
+    {
+      "field": "has_dryer",
+      "rules": [
+        "'건조', '콤보', '세탁건조기' 포함시 true",
+        "세탁기+건조기 세트는 true",
+        "건조 언급 없으면 기본 false"
+      ]
+    },
+    {
+      "field": "brand",
+      "rules": [
+        "삼성전자/삼성비스포크 등은 삼성으로 통일",
+        "LG전자/디오스/트롬/오브제 등은 LG로 통일"
+      ]
+    },
+    {
+      "field": "freezer_position",
+      "rules": [
+        "'상냉장 하냉동' 문구 그대로 사용",
+        "양문형 기본값은 양문 분리형"
+      ]
+    },
+    {
+      "field": "model_name",
+      "rules": [
+        "공백 제거한 영문+숫자 조합 사용",
+        "'.',',' 등 특수문자 제거"
+      ]
+    }
+  ],
+  "anchor_overrides": [
+    {
+      "anchor": "냉장고",
+      "additional_fields": [
+        "door_type",
+        "freezer_position"
+      ],
+      "preferred_template": "generic_fridge",
+      "notes": "가정용/업소용 모두 도어 구조가 중요"
+    },
+    {
+      "anchor": "세탁기",
+      "additional_fields": [
+        "washer_type",
+        "has_dryer"
+      ],
+      "preferred_template": "generic_washer",
+      "notes": "통돌이·드럼·건조 여부로 시세 차이 큼"
+    }
+  ],
+  "missing_but_important_specs": [
+    {
+      "field": "condition_grade",
+      "why_important": "상태에 따라 중고 시세 편차 큼",
+      "how_to_capture": "설명에서 A급/B급/생활기스/하자 키워드로 3~5단계 등급화"
+    },
+    {
+      "field": "manufacture_ym",
+      "why_important": "제조연월이 감가의 핵심",
+      "how_to_capture": "'2018,7제조' 등 패턴을 찾아 YYYY-MM 형식으로 저장"
+    },
+    {
+      "field": "usage_duration",
+      "why_important": "실사용 기간이 남은 수명 추정에 필요",
+      "how_to_capture": "'1년 사용','몇 번 안씀' 등 기간·빈도 표현을 개월 단위로 근사"
+    },
+    {
+      "field": "installation_delivery",
+      "why_important": "무료배송설치/직접수거 여부가 실질 가격에 영향",
+      "how_to_capture": "'무료배송설치','직접 가져가야','용달비 별도' 문구를 패턴 분류"
+    },
+    {
+      "field": "commercial_use",
+      "why_important": "업소용/가정용은 감가와 비교군이 다름",
+      "how_to_capture": "'업소용','카페','식당','반찬테이블' 등 업소 키워드로 boolean"
+    },
+    {
+      "field": "included_parts",
+      "why_important": "김치통/선반/설명서 부족 시 가치 하락",
+      "how_to_capture": "'김치통 6개','선반 1개 없음' 등 구성품/누락 표현 리스트화"
+    }
+  ],
+  "downstream": {
+    "attribute_grouping_guidance": {
+      "common": [
+        "brand",
+        "product_type",
+        "subtype"
+      ],
+      "major": [
+        "model_name",
+        "capacity_main",
+        "capacity_unit",
+        "door_type",
+        "freezer_position",
+        "washer_type",
+        "has_dryer"
+      ],
+      "sensitive": [],
+      "notes": "상태·거래조건 등은 별도 거래 메타 그룹에서 관리 예정"
+    },
+    "extraction_policy": {
+      "missing_value_strategy": "필드 미존재 시 null; 주요 스펙(capacity, model_name)은 추론 시 낮은 신뢰도로 표기",
+      "confidence_strategy": "문장 구조·단위 일치 시 high, 다중 후보 또는 추론 시 medium, 불명확 시 low",
+      "conflict_strategy": "제목>스펙표>본문 순으로 우선; 단위 상충 시 capacity_unit 우선 정규화 후 재계산"
+    },
+    "synthetic_data_policy": {
+      "value_ranges": [
+        {
+          "field": "capacity_main",
+          "range_or_vocab": "냉장고 50~1000L, 세탁기 2~25kg"
+        },
+        {
+          "field": "brand",
+          "range_or_vocab": "삼성,LG,위니아,대우,캐리어,딤채,하이얼 등 5~10개"
+        },
+        {
+          "field": "door_type",
+          "range_or_vocab": "1도어,2도어,3도어,4도어,양문형,테이블형,서랍형"
+        },
+        {
+          "field": "washer_type",
+          "range_or_vocab": "통돌이,드럼"
+        },
+        {
+          "field": "has_dryer",
+          "range_or_vocab": "true/false"
+        }
+      ],
+      "avoid_leakage_fields": [
+        "전화번호",
+        "정확한 주소",
+        "계좌번호"
+      ],
+      "generation_notes": "한국 중고시장 실제 분포(대용량 위주, 5~10년 연식) 반영; 과도하게 새제품만 생성하지 말 것"
+    }
+  }
+}
