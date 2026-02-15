@@ -13,4 +13,10 @@ router.post("/", async (req, res) => {
   }
 });
 
+// routes/user.js
+router.get("/test", (req, res) => {
+  res.json({ message: "백엔드 연결 성공" });
+});
+
+
 export default router;
