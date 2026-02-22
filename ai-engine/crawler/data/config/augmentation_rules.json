@@ -1,0 +1,344 @@
+{
+  "가구/인테리어": {
+    "condition_multipliers": {
+      "B급": 0.875,
+      "S급": 0.75,
+      "A급": 1.25,
+      "C급": 3.125,
+      "부품용": 0.25
+    },
+    "depreciation": {
+      "monthly_rate": 0.01,
+      "min_ratio": 0.25
+    },
+    "price_noise_range": 0.25,
+    "price_distribution": {
+      "p10": 20000,
+      "p25": 37000,
+      "median": 80000,
+      "p75": 180000,
+      "p90": 350000
+    }
+  },
+  "가전제품": {
+    "condition_multipliers": {
+      "B급": 0.967,
+      "S급": 1.067,
+      "A급": 1.333,
+      "C급": 1.0,
+      "부품용": 0.25
+    },
+    "depreciation": {
+      "monthly_rate": 0.015,
+      "min_ratio": 0.15
+    },
+    "price_noise_range": 0.25,
+    "price_distribution": {
+      "p10": 70000,
+      "p25": 150000,
+      "median": 300000,
+      "p75": 600000,
+      "p90": 1100000
+    }
+  },
+  "기타 중고물품": {
+    "condition_multipliers": {
+      "S급": 0.895,
+      "B급": 1.0,
+      "A급": 1.5,
+      "C급": 0.1,
+      "부품용": 0.1
+    },
+    "depreciation": {
+      "monthly_rate": 0.02,
+      "min_ratio": 0.15
+    },
+    "price_noise_range": 0.25,
+    "price_distribution": {
+      "p10": 1004,
+      "p25": 4000,
+      "median": 20000,
+      "p75": 75000,
+      "p90": 210000
+    }
+  },
+  "남성의류": {
+    "condition_multipliers": {
+      "A급": 1.061,
+      "B급": 0.909,
+      "S급": 1.212,
+      "A": 5.0,
+      "A+": 6.212,
+      "C급": 0.5,
+      "부품용": 0.25
+    },
+    "depreciation": {
+      "monthly_rate": 0.025,
+      "min_ratio": 0.1
+    },
+    "price_noise_range": 0.25,
+    "price_distribution": {
+      "p10": 10000,
+      "p25": 20000,
+      "median": 33000,
+      "p75": 68000,
+      "p90": 140000
+    }
+  },
+  "도서": {
+    "condition_multipliers": {
+      "A급": 1.133,
+      "S급": 1.067,
+      "B급": 0.867,
+      "C급": 0.367,
+      "부품용": 0.25
+    },
+    "depreciation": {
+      "monthly_rate": 0.005,
+      "min_ratio": 0.3
+    },
+    "price_noise_range": 0.25,
+    "price_distribution": {
+      "p10": 5000,
+      "p25": 9200,
+      "median": 15000,
+      "p75": 30000,
+      "p90": 65000
+    }
+  },
+  "디지털기기": {
+    "condition_multipliers": {
+      "A급": 1.228,
+      "B급": 0.789,
+      "S급": 1.404,
+      "부품용": 0.289,
+      "C급": 0.263
+    },
+    "depreciation": {
+      "monthly_rate": 0.02,
+      "min_ratio": 0.2
+    },
+    "price_noise_range": 0.25,
+    "price_distribution": {
+      "p10": 75000,
+      "p25": 190000,
+      "median": 570000,
+      "p75": 1000000,
+      "p90": 1680000
+    }
+  },
+  "반려동물용품": {
+    "condition_multipliers": {
+      "S급": 0.75,
+      "B급": 1.375,
+      "A급": 1.5,
+      "C급": 0.5,
+      "부품용": 0.25
+    },
+    "depreciation": {
+      "monthly_rate": 0.02,
+      "min_ratio": 0.15
+    },
+    "price_noise_range": 0.25,
+    "price_distribution": {
+      "p10": 10000,
+      "p25": 20000,
+      "median": 40000,
+      "p75": 150000,
+      "p90": 330000
+    }
+  },
+  "뷰티/미용": {
+    "condition_multipliers": {
+      "S급": 1.0,
+      "B급": 1.0,
+      "A급": 1.182,
+      "C급": 1.273,
+      "부품용": 0.25
+    },
+    "depreciation": {
+      "monthly_rate": 0.03,
+      "min_ratio": 0.15
+    },
+    "price_noise_range": 0.25,
+    "price_distribution": {
+      "p10": 13000,
+      "p25": 30000,
+      "median": 55000,
+      "p75": 110000,
+      "p90": 195000
+    }
+  },
+  "생활용품": {
+    "condition_multipliers": {
+      "B급": 0.909,
+      "C급": 1.091,
+      "S급": 0.605,
+      "A급": 1.515,
+      "부품용": 0.25
+    },
+    "depreciation": {
+      "monthly_rate": 0.015,
+      "min_ratio": 0.15
+    },
+    "price_noise_range": 0.25,
+    "price_distribution": {
+      "p10": 15000,
+      "p25": 30000,
+      "median": 66000,
+      "p75": 160000,
+      "p90": 350000
+    }
+  },
+  "스포츠/레저": {
+    "condition_multipliers": {
+      "B급": 0.8,
+      "S급": 0.68,
+      "A급": 1.8,
+      "A+": 0.92,
+      "A": 0.66,
+      "C급": 0.24,
+      "A++": 0.76,
+      "부품용": 0.088
+    },
+    "depreciation": {
+      "monthly_rate": 0.012,
+      "min_ratio": 0.2
+    },
+    "price_noise_range": 0.25,
+    "price_distribution": {
+      "p10": 30000,
+      "p25": 70000,
+      "median": 250000,
+      "p75": 650000,
+      "p90": 1280000
+    }
+  },
+  "식품": {
+    "condition_multipliers": {
+      "S급": 0.962,
+      "B급": 1.154,
+      "A급": 1.135,
+      "C급": 0.5,
+      "부품용": 0.25
+    },
+    "depreciation": {
+      "monthly_rate": 0.05,
+      "min_ratio": 0.1
+    },
+    "price_noise_range": 0.25,
+    "price_distribution": {
+      "p10": 9000,
+      "p25": 17700,
+      "median": 26000,
+      "p75": 50000,
+      "p90": 84000
+    }
+  },
+  "여성의류": {
+    "condition_multipliers": {
+      "B급": 0.646,
+      "S급": 1.231,
+      "A급": 1.277,
+      "C급": 0.5,
+      "부품용": 0.25
+    },
+    "depreciation": {
+      "monthly_rate": 0.03,
+      "min_ratio": 0.1
+    },
+    "price_noise_range": 0.25,
+    "price_distribution": {
+      "p10": 12000,
+      "p25": 28000,
+      "median": 65000,
+      "p75": 138000,
+      "p90": 257000
+    }
+  },
+  "출산/유아동": {
+    "condition_multipliers": {
+      "A급": 1.02,
+      "S급": 1.3,
+      "B급": 1.0,
+      "C급": 0.5,
+      "부품용": 0.25
+    },
+    "depreciation": {
+      "monthly_rate": 0.025,
+      "min_ratio": 0.15
+    },
+    "price_noise_range": 0.25,
+    "price_distribution": {
+      "p10": 10000,
+      "p25": 20000,
+      "median": 50000,
+      "p75": 170000,
+      "p90": 450000
+    }
+  },
+  "취미/게임": {
+    "condition_multipliers": {
+      "A급": 1.444,
+      "B급": 0.889,
+      "S급": 1.444,
+      "C급": 2.111,
+      "부품용": 0.25
+    },
+    "depreciation": {
+      "monthly_rate": 0.02,
+      "min_ratio": 0.25
+    },
+    "price_noise_range": 0.25,
+    "price_distribution": {
+      "p10": 12500,
+      "p25": 22000,
+      "median": 45000,
+      "p75": 125000,
+      "p90": 250000
+    }
+  },
+  "티켓/교환권": {
+    "condition_multipliers": {
+      "S급": 1.108,
+      "A급": 0.76,
+      "B급": 0.6,
+      "C급": 0.5,
+      "부품용": 0.25
+    },
+    "depreciation": {
+      "monthly_rate": 0.01,
+      "min_ratio": 0.5
+    },
+    "price_noise_range": 0.25,
+    "price_distribution": {
+      "p10": 3000,
+      "p25": 7500,
+      "median": 25000,
+      "p75": 130000,
+      "p90": 180000
+    }
+  },
+  "패션잡화": {
+    "condition_multipliers": {
+      "S급": 0.75,
+      "B급": 0.875,
+      "A급": 2.094,
+      "C급": 0.5,
+      "A": 6.5,
+      "부품용": 0.25
+    },
+    "depreciation": {
+      "monthly_rate": 0.015,
+      "min_ratio": 0.2
+    },
+    "price_noise_range": 0.25,
+    "price_distribution": {
+      "p10": 12000,
+      "p25": 30000,
+      "median": 80000,
+      "p75": 260000,
+      "p90": 450000
+    }
+  }
+}
