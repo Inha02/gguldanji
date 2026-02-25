@@ -1,0 +1,194 @@
+[
+  {
+    "keyword": "가방",
+    "original": 500,
+    "after_exact": 492,
+    "after_embedding": 487
+  },
+  {
+    "keyword": "갤럭시북",
+    "original": 500,
+    "after_exact": 475,
+    "after_embedding": 451
+  },
+  {
+    "keyword": "골프채",
+    "original": 500,
+    "after_exact": 431,
+    "after_embedding": 395
+  },
+  {
+    "keyword": "공인중개사",
+    "original": 500,
+    "after_exact": 476,
+    "after_embedding": 452
+  },
+  {
+    "keyword": "기프티콘",
+    "original": 500,
+    "after_exact": 410,
+    "after_embedding": 382
+  },
+  {
+    "keyword": "남성가디건",
+    "original": 500,
+    "after_exact": 488,
+    "after_embedding": 477
+  },
+  {
+    "keyword": "남성셔츠",
+    "original": 500,
+    "after_exact": 481,
+    "after_embedding": 451
+  },
+  {
+    "keyword": "냉장고",
+    "original": 500,
+    "after_exact": 484,
+    "after_embedding": 448
+  },
+  {
+    "keyword": "닌텐도",
+    "original": 500,
+    "after_exact": 498,
+    "after_embedding": 484
+  },
+  {
+    "keyword": "드라이기",
+    "original": 500,
+    "after_exact": 433,
+    "after_embedding": 425
+  },
+  {
+    "keyword": "목줄",
+    "original": 170,
+    "after_exact": 168,
+    "after_embedding": 163
+  },
+  {
+    "keyword": "무료나눔",
+    "original": 451,
+    "after_exact": 446,
+    "after_embedding": 442
+  },
+  {
+    "keyword": "세탁기",
+    "original": 500,
+    "after_exact": 457,
+    "after_embedding": 389
+  },
+  {
+    "keyword": "수납장",
+    "original": 500,
+    "after_exact": 461,
+    "after_embedding": 440
+  },
+  {
+    "keyword": "아기띠",
+    "original": 469,
+    "after_exact": 458,
+    "after_embedding": 449
+  },
+  {
+    "keyword": "아이폰",
+    "original": 500,
+    "after_exact": 484,
+    "after_embedding": 458
+  },
+  {
+    "keyword": "원두",
+    "original": 500,
+    "after_exact": 236,
+    "after_embedding": 226
+  },
+  {
+    "keyword": "원피스",
+    "original": 500,
+    "after_exact": 485,
+    "after_embedding": 475
+  },
+  {
+    "keyword": "유모차",
+    "original": 500,
+    "after_exact": 497,
+    "after_embedding": 451
+  },
+  {
+    "keyword": "의자",
+    "original": 500,
+    "after_exact": 488,
+    "after_embedding": 483
+  },
+  {
+    "keyword": "자전거",
+    "original": 500,
+    "after_exact": 468,
+    "after_embedding": 461
+  },
+  {
+    "keyword": "지갑",
+    "original": 500,
+    "after_exact": 483,
+    "after_embedding": 475
+  },
+  {
+    "keyword": "책상",
+    "original": 500,
+    "after_exact": 466,
+    "after_embedding": 442
+  },
+  {
+    "keyword": "청소용품",
+    "original": 51,
+    "after_exact": 46,
+    "after_embedding": 44
+  },
+  {
+    "keyword": "캠핑용품",
+    "original": 410,
+    "after_exact": 352,
+    "after_embedding": 329
+  },
+  {
+    "keyword": "캣타워",
+    "original": 160,
+    "after_exact": 152,
+    "after_embedding": 149
+  },
+  {
+    "keyword": "코트",
+    "original": 500,
+    "after_exact": 482,
+    "after_embedding": 475
+  },
+  {
+    "keyword": "토익",
+    "original": 500,
+    "after_exact": 497,
+    "after_embedding": 492
+  },
+  {
+    "keyword": "티켓",
+    "original": 500,
+    "after_exact": 476,
+    "after_embedding": 353
+  },
+  {
+    "keyword": "플스",
+    "original": 500,
+    "after_exact": 493,
+    "after_embedding": 482
+  },
+  {
+    "keyword": "향수",
+    "original": 500,
+    "after_exact": 490,
+    "after_embedding": 473
+  },
+  {
+    "keyword": "홍삼",
+    "original": 312,
+    "after_exact": 285,
+    "after_embedding": 279
+  }
+]

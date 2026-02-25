@@ -1,0 +1,408 @@
+{
+  "pageProps": {
+    "dehydratedState": {
+      "mutations": [],
+      "queries": [
+        {
+          "state": {
+            "data": {
+              "meta": {
+                "code": 0,
+                "message": "SUCCESS"
+              },
+              "data": [
+                {
+                  "gnbSeq": 95,
+                  "sortNum": 1,
+                  "menuName": "레고",
+                  "exposeStartDate": "2024-08-02 00:00:00",
+                  "exposeEndDate": "2024-09-01 23:59:00",
+                  "badgeType": 0,
+                  "badgeExposeStartDate": "2025-04-15 10:32:09",
+                  "badgeExposeEndDate": "9999-12-31 23:59:59"
+                },
+                {
+                  "gnbSeq": 97,
+                  "sortNum": 999,
+                  "menuName": "미개봉상품",
+                  "exposeStartDate": "2024-10-14 00:00:00",
+                  "exposeEndDate": "2024-10-31 23:59:00",
+                  "badgeType": 0,
+                  "badgeExposeStartDate": "2025-04-15 10:32:09",
+                  "badgeExposeEndDate": "9999-12-31 23:59:59"
+                },
+                {
+                  "gnbSeq": 99,
+                  "sortNum": 999,
+                  "menuName": "미개봉상품",
+                  "exposeStartDate": "2024-11-01 09:00:00",
+                  "exposeEndDate": "2024-11-22 23:59:00",
+                  "badgeType": 0,
+                  "badgeExposeStartDate": "2025-04-15 10:32:09",
+                  "badgeExposeEndDate": "9999-12-31 23:59:59"
+                },
+                {
+                  "gnbSeq": 100,
+                  "sortNum": 999,
+                  "menuName": "미개봉 키덜트",
+                  "exposeStartDate": "2024-12-16 00:00:00",
+                  "exposeEndDate": "2025-01-12 23:59:00",
+                  "badgeType": 0,
+                  "badgeExposeStartDate": "2025-04-15 10:32:09",
+                  "badgeExposeEndDate": "9999-12-31 23:59:59"
+                },
+                {
+                  "gnbSeq": 101,
+                  "sortNum": 999,
+                  "menuName": "콘서트/공연티켓",
+                  "exposeStartDate": "2024-12-24 00:00:00",
+                  "exposeEndDate": "2025-01-14 23:59:00",
+                  "badgeType": 0,
+                  "badgeExposeStartDate": "2025-04-15 10:32:09",
+                  "badgeExposeEndDate": "9999-12-31 23:59:59"
+                },
+                {
+                  "gnbSeq": 102,
+                  "sortNum": 999,
+                  "menuName": "닌텐도 ",
+                  "exposeStartDate": "2025-01-20 00:00:00",
+                  "exposeEndDate": "2025-02-17 23:59:00",
+                  "badgeType": 0,
+                  "badgeExposeStartDate": "2025-04-15 10:32:00",
+                  "badgeExposeEndDate": "9999-12-31 23:59:00"
+                },
+                {
+                  "gnbSeq": 103,
+                  "sortNum": 999,
+                  "menuName": "신학기 노트북",
+                  "exposeStartDate": "2025-02-25 00:00:00",
+                  "exposeEndDate": "2025-03-11 23:59:00",
+                  "badgeType": 0,
+                  "badgeExposeStartDate": "2025-04-15 10:32:09",
+                  "badgeExposeEndDate": "9999-12-31 23:59:59"
+                },
+                {
+                  "gnbSeq": 105,
+                  "sortNum": 999,
+                  "menuName": "그래픽카드",
+                  "exposeStartDate": "2025-03-12 00:00:00",
+                  "exposeEndDate": "2025-04-02 23:59:00",
+                  "badgeType": 0,
+                  "badgeExposeStartDate": "2025-04-15 10:32:09",
+                  "badgeExposeEndDate": "9999-12-31 23:59:59"
+                },
+                {
+                  "gnbSeq": 107,
+                  "sortNum": 999,
+                  "menuName": "자전거",
+                  "exposeStartDate": "2025-05-07 00:00:00",
+                  "exposeEndDate": "2025-05-28 23:59:00",
+                  "badgeType": 1,
+                  "badgeExposeStartDate": "2025-05-07 00:00:00",
+                  "badgeExposeEndDate": "2025-05-28 00:00:00"
+                },
+                {
+                  "gnbSeq": 108,
+                  "sortNum": 999,
+                  "menuName": "닌텐도",
+                  "exposeStartDate": "2025-05-12 00:00:00",
+                  "exposeEndDate": "2025-06-02 23:59:00",
+                  "badgeType": 1,
+                  "badgeExposeStartDate": "2025-05-12 00:00:00",
+                  "badgeExposeEndDate": "2025-06-02 00:00:00"
+                },
+                {
+                  "gnbSeq": 111,
+                  "sortNum": 999,
+                  "menuName": "라부부",
+                  "exposeStartDate": "2025-07-07 15:00:00",
+                  "exposeEndDate": "2025-07-20 23:59:00",
+                  "badgeType": 1,
+                  "badgeExposeStartDate": "2025-07-07 15:00:00",
+                  "badgeExposeEndDate": "2025-07-20 23:59:00"
+                },
+                {
+                  "gnbSeq": 114,
+                  "sortNum": 999,
+                  "menuName": "A/S 보증 노트북",
+                  "exposeStartDate": "2025-11-14 00:00:00",
+                  "exposeEndDate": "2025-12-07 23:59:00",
+                  "badgeType": 1,
+                  "badgeExposeStartDate": "2025-11-14 00:00:00",
+                  "badgeExposeEndDate": "2025-12-07 00:00:00"
+                }
+              ]
+            },
+            "dataUpdateCount": 1,
+            "dataUpdatedAt": 1770124526728,
+            "error": null,
+            "errorUpdateCount": 0,
+            "errorUpdatedAt": 0,
+            "fetchFailureCount": 0,
+            "fetchFailureReason": null,
+            "fetchMeta": null,
+            "isInvalidated": false,
+            "status": "success",
+            "fetchStatus": "idle"
+          },
+          "queryKey": [
+            "get-gnb-list"
+          ],
+          "queryHash": "[\"get-gnb-list\"]"
+        },
+        {
+          "state": {
+            "data": {
+              "meta": {
+                "code": 0,
+                "message": "SUCCESS"
+              },
+              "data": {
+                "autoCompleteItemList": [
+                  {
+                    "keyword": "청소용품"
+                  },
+                  {
+                    "keyword": "청소용품 일괄"
+                  },
+                  {
+                    "keyword": "입주 청소용품"
+                  },
+                  {
+                    "keyword": "청소용품 청소포 행주 고무장갑 밀대"
+                  },
+                  {
+                    "keyword": "에어컨 청소용품"
+                  },
+                  {
+                    "keyword": "청소용품 세트"
+                  }
+                ],
+                "keywordCnt": 6
+              }
+            },
+            "dataUpdateCount": 1,
+            "dataUpdatedAt": 1770124526689,
+            "error": null,
+            "errorUpdateCount": 0,
+            "errorUpdatedAt": 0,
+            "fetchFailureCount": 0,
+            "fetchFailureReason": null,
+            "fetchMeta": null,
+            "isInvalidated": false,
+            "status": "success",
+            "fetchStatus": "idle"
+          },
+          "queryKey": [
+            "post-search-product-auto-complete",
+            "청소용품"
+          ],
+          "queryHash": "[\"post-search-product-auto-complete\",\"청소용품\"]"
+        },
+        {
+          "state": {
+            "data": {
+              "meta": {
+                "code": 0,
+                "message": "SUCCESS"
+              },
+              "data": {
+                "transactionId": "1770124526696_-1943943816855785890",
+                "emptyResult": {
+                  "joongnaWebUrl": null,
+                  "noticeCode": null,
+                  "type": 0,
+                  "buttonText": "알림 등록",
+                  "buttonUrl": "",
+                  "notice": "검색 결과가 없습니다.",
+                  "subNotice": [
+                    "검색어의 단어 수를 줄이거나",
+                    "보다 일반적인 검색어로 검색해 보세요!"
+                  ],
+                  "image": {
+                    "width": 48,
+                    "height": 48,
+                    "url": "https://img2.joongna.com/search/graySpeechBubble.png"
+                  },
+                  "loginCheck": true
+                },
+                "abTests": null,
+                "size": 1,
+                "sortOptions": [
+                  {
+                    "sortType": "RECOMMEND_SORT",
+                    "sortName": "추천순",
+                    "sortOrder": 0
+                  },
+                  {
+                    "sortType": "RECOMMEND_SORT",
+                    "sortName": "추천순",
+                    "sortOrder": 0
+                  },
+                  {
+                    "sortType": "RECENT_SORT",
+                    "sortName": "최신순",
+                    "sortOrder": 1
+                  },
+                  {
+                    "sortType": "PRICE_ASC_SORT",
+                    "sortName": "낮은가격순",
+                    "sortOrder": 2
+                  },
+                  {
+                    "sortType": "PRICE_DESC_SORT",
+                    "sortName": "높은가격순",
+                    "sortOrder": 3
+                  }
+                ],
+                "searchFilterComponent": null,
+                "filter": null,
+                "totalSize": 51,
+                "searchStartDT": "2026-02-03 22:15:26",
+                "items": [
+                  {
+                    "seq": 200321450,
+                    "productPositionNo": 51,
+                    "platformType": 1,
+                    "price": 400000,
+                    "parcelFee": 0,
+                    "url": "https://img2.joongna.com/cafe-article-data/live/2025/02/03/1094598356/1738560724189_000_5GlX2_main.jpg?impolicy=thumb&size=150",
+                    "title": "(동탄직거래)청소용품 일괄판매/25년1월구입",
+                    "state": 0,
+                    "sortDate": "2025-02-03 14:31:47",
+                    "mainLocationName": "동탄8동",
+                    "articleSeq": 1094598356,
+                    "articleUrl": "",
+                    "videoProductYn": "N",
+                    "wishCount": 10,
+                    "jnPayBadgeFlag": false,
+                    "pickupBadgeFlag": false,
+                    "highlightedTitle": "",
+                    "storeSeq": 7421197,
+                    "chatCount": 3,
+                    "selfAuditFlag": false,
+                    "userType": 0,
+                    "certifySellerFlag": false,
+                    "detailImgUrl": "",
+                    "locationNames": [
+                      "경기도 화성시 동탄8동"
+                    ],
+                    "objectType": "product",
+                    "wishYn": 0
+                  }
+                ],
+                "changedProductFilterType": false,
+                "changedKeyword": {
+                  "isChangedKeyword": false,
+                  "originKeyword": "청소용품",
+                  "changedKeyword": "청소용품"
+                },
+                "selfAuditRecommendItems": [],
+                "standardPriceShow": 0,
+                "resultType": 0
+              }
+            },
+            "dataUpdateCount": 1,
+            "dataUpdatedAt": 1770124526698,
+            "error": null,
+            "errorUpdateCount": 0,
+            "errorUpdatedAt": 0,
+            "fetchFailureCount": 0,
+            "fetchFailureReason": null,
+            "fetchMeta": null,
+            "isInvalidated": false,
+            "status": "success",
+            "fetchStatus": "idle"
+          },
+          "queryKey": [
+            "get-search-products",
+            {
+              "categoryFilter": [
+                {
+                  "categoryDepth": 0,
+                  "categorySeq": 0
+                }
+              ],
+              "firstQuantity": 50,
+              "jnPayYn": "ALL",
+              "keywordSource": "INPUT_KEYWORD",
+              "osType": 2,
+              "page": 1,
+              "parcelFeeYn": "ALL",
+              "priceFilter": {
+                "maxPrice": 100000000,
+                "minPrice": 0
+              },
+              "quantity": 50,
+              "registPeriod": "ALL",
+              "saleYn": "SALE_N",
+              "sort": "RECOMMEND_SORT",
+              "filterTypeCheckoutByUser": false,
+              "adjustSearchKeyword": true,
+              "searchWord": "청소용품"
+            }
+          ],
+          "queryHash": "[\"get-search-products\",{\"adjustSearchKeyword\":true,\"categoryFilter\":[{\"categoryDepth\":0,\"categorySeq\":0}],\"filterTypeCheckoutByUser\":false,\"firstQuantity\":50,\"jnPayYn\":\"ALL\",\"keywordSource\":\"INPUT_KEYWORD\",\"osType\":2,\"page\":1,\"parcelFeeYn\":\"ALL\",\"priceFilter\":{\"maxPrice\":100000000,\"minPrice\":0},\"quantity\":50,\"registPeriod\":\"ALL\",\"saleYn\":\"SALE_N\",\"searchWord\":\"청소용품\",\"sort\":\"RECOMMEND_SORT\"}]"
+        },
+        {
+          "state": {
+            "data": {
+              "meta": {
+                "code": 0,
+                "message": "SUCCESS"
+              },
+              "data": {
+                "searchKeyword": [],
+                "relatedKeywordList": []
+              }
+            },
+            "dataUpdateCount": 1,
+            "dataUpdatedAt": 1770124526647,
+            "error": null,
+            "errorUpdateCount": 0,
+            "errorUpdatedAt": 0,
+            "fetchFailureCount": 0,
+            "fetchFailureReason": null,
+            "fetchMeta": null,
+            "isInvalidated": false,
+            "status": "success",
+            "fetchStatus": "idle"
+          },
+          "queryKey": [
+            "get-search-related-keyword",
+            "청소용품"
+          ],
+          "queryHash": "[\"get-search-related-keyword\",\"청소용품\"]"
+        },
+        {
+          "state": {
+            "data": {
+              "storeSeq": null
+            },
+            "dataUpdateCount": 1,
+            "dataUpdatedAt": 1770124526578,
+            "error": null,
+            "errorUpdateCount": 0,
+            "errorUpdatedAt": 0,
+            "fetchFailureCount": 0,
+            "fetchFailureReason": null,
+            "fetchMeta": null,
+            "isInvalidated": false,
+            "status": "success",
+            "fetchStatus": "idle"
+          },
+          "queryKey": [
+            "my-store-seq"
+          ],
+          "queryHash": "[\"my-store-seq\"]"
+        }
+      ]
+    },
+    "session": {
+      "status": "unauthenticated"
+    },
+    "_sentryTraceData": "95c481745c8e48e0aec57427a37c78a1-9ab2e4d3d59799fb",
+    "_sentryBaggage": "sentry-environment=live,sentry-release=h0ZBTp8QguUS6pcWFFXzx,sentry-public_key=a8d4ca8a3deee185a932c6711cbfc02c,sentry-trace_id=95c481745c8e48e0aec57427a37c78a1"
+  },
+  "__N_SSP": true
+}

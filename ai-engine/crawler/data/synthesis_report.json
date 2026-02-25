@@ -1,0 +1,14 @@
+{
+  "target_per_category": 3000,
+  "total_original": 12142,
+  "total_synthetic": 48000,
+  "categories": 16,
+  "strategy_breakdown": {
+    "original": 12142,
+    "condition": 9302,
+    "usage": 6027,
+    "noise": 14520,
+    "brand": 2243,
+    "accessories": 3766
+  }
+}

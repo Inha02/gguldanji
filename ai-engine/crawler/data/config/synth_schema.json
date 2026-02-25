@@ -1,0 +1,259 @@
+{
+  "version": 1,
+  "target_fields": 8,
+  "exclude": [
+    "account_id",
+    "chat_id",
+    "days_to_expiry",
+    "event_date",
+    "exact_location",
+    "purchase_date",
+    "seller_contact",
+    "serial",
+    "serial_number",
+    "valid_from_date",
+    "valid_until_date"
+  ],
+  "categories": {
+    "01_digital_devices": {
+      "category_code": "01",
+      "synth_fields": [
+        "device_type",
+        "brand",
+        "product_line",
+        "model_name",
+        "color",
+        "condition_grade",
+        "storage_capacity",
+        "memory_ram"
+      ],
+      "drop_sensitive": true,
+      "notes": "auto-generated; edit synth_fields per category if needed"
+    },
+    "02_furniture_interior": {
+      "category_code": "02",
+      "synth_fields": [
+        "item_type",
+        "subtype",
+        "brand",
+        "model_name",
+        "color_main",
+        "condition_grade",
+        "usage_period",
+        "material_main"
+      ],
+      "drop_sensitive": true,
+      "notes": "auto-generated; edit synth_fields per category if needed"
+    },
+    "03_baby_kids": {
+      "category_code": "03",
+      "synth_fields": [
+        "product_type",
+        "brand",
+        "model_name",
+        "color",
+        "usage_stage",
+        "condition_grade",
+        "defect_notes",
+        "purchase_time"
+      ],
+      "drop_sensitive": true,
+      "notes": "auto-generated; edit synth_fields per category if needed"
+    },
+    "04_womens_clothing": {
+      "category_code": "04",
+      "synth_fields": [
+        "brand",
+        "official_size",
+        "material_main",
+        "season",
+        "length_type",
+        "total_length_cm",
+        "bust_width_cm",
+        "waist_width_cm"
+      ],
+      "drop_sensitive": true,
+      "notes": "auto-generated; edit synth_fields per category if needed"
+    },
+    "05_fashion_accessories": {
+      "category_code": "05",
+      "synth_fields": [
+        "item_subtype",
+        "brand",
+        "color_main",
+        "gender_target",
+        "bag_style",
+        "wallet_style",
+        "line_or_model",
+        "material_main"
+      ],
+      "drop_sensitive": true,
+      "notes": "auto-generated; edit synth_fields per category if needed"
+    },
+    "06_mens_clothing": {
+      "category_code": "06",
+      "synth_fields": [
+        "item_type",
+        "gender",
+        "size_tag",
+        "color_main",
+        "sleeve_length",
+        "brand",
+        "is_luxury",
+        "size_estimated_kr"
+      ],
+      "drop_sensitive": true,
+      "notes": "auto-generated; edit synth_fields per category if needed"
+    },
+    "07_home_appliances": {
+      "category_code": "07",
+      "synth_fields": [
+        "brand",
+        "product_type",
+        "subtype",
+        "model_name",
+        "capacity_main",
+        "capacity_unit",
+        "door_type",
+        "freezer_position"
+      ],
+      "drop_sensitive": true,
+      "notes": "auto-generated; edit synth_fields per category if needed"
+    },
+    "08_daily_goods": {
+      "category_code": "08",
+      "synth_fields": [
+        "item_type",
+        "use_space",
+        "brand",
+        "mobility",
+        "set_components",
+        "main_material",
+        "dimensions_cm",
+        "shelf_drawer_count"
+      ],
+      "drop_sensitive": true,
+      "notes": "auto-generated; edit synth_fields per category if needed"
+    },
+    "09_sports_leisure": {
+      "category_code": "09",
+      "synth_fields": [
+        "item_type",
+        "sport_category",
+        "brand",
+        "model_name",
+        "gender_target",
+        "handedness",
+        "trade_type",
+        "location_area"
+      ],
+      "drop_sensitive": true,
+      "notes": "auto-generated; edit synth_fields per category if needed"
+    },
+    "10_hobby_games": {
+      "category_code": "10",
+      "synth_fields": [
+        "item_type",
+        "title_or_model",
+        "condition_grade",
+        "box_included",
+        "platform",
+        "product_form",
+        "edition_detail",
+        "region_version"
+      ],
+      "drop_sensitive": true,
+      "notes": "auto-generated; edit synth_fields per category if needed"
+    },
+    "11_beauty": {
+      "category_code": "11",
+      "synth_fields": [
+        "brand",
+        "product_name",
+        "item_type",
+        "capacity_ml",
+        "condition",
+        "piece_count",
+        "line_series",
+        "fragrance_type"
+      ],
+      "drop_sensitive": true,
+      "notes": "auto-generated; edit synth_fields per category if needed"
+    },
+    "12_pet_supplies": {
+      "category_code": "12",
+      "synth_fields": [
+        "species",
+        "main_item_type",
+        "brand",
+        "product_name",
+        "size_label",
+        "material_main",
+        "color_main",
+        "dimensions_cm"
+      ],
+      "drop_sensitive": true,
+      "notes": "auto-generated; edit synth_fields per category if needed"
+    },
+    "13_food": {
+      "category_code": "13",
+      "synth_fields": [
+        "brand",
+        "product_name",
+        "food_subtype",
+        "form",
+        "unit_count",
+        "expiry_date",
+        "is_giftset",
+        "net_weight_g"
+      ],
+      "drop_sensitive": true,
+      "notes": "auto-generated; edit synth_fields per category if needed"
+    },
+    "14_books": {
+      "category_code": "14",
+      "synth_fields": [
+        "book_type",
+        "exam_name",
+        "exam_stage",
+        "subject_or_part",
+        "publisher_brand",
+        "volume_type",
+        "edition_or_target_year",
+        "set_included_count"
+      ],
+      "drop_sensitive": true,
+      "notes": "auto-generated; edit synth_fields per category if needed"
+    },
+    "15_tickets_vouchers": {
+      "category_code": "15",
+      "synth_fields": [
+        "merchant_name",
+        "product_name",
+        "ticket_type",
+        "usage_category",
+        "discount_price_krw",
+        "face_value_krw",
+        "quantity",
+        "event_time"
+      ],
+      "drop_sensitive": true,
+      "notes": "auto-generated; edit synth_fields per category if needed"
+    },
+    "16_etc": {
+      "category_code": "16",
+      "synth_fields": [
+        "item_main_type",
+        "item_sub_type",
+        "brand",
+        "model_name",
+        "condition_grade",
+        "set_or_single",
+        "component_count",
+        "key_components"
+      ],
+      "drop_sensitive": true,
+      "notes": "auto-generated; edit synth_fields per category if needed"
+    }
+  }
+}

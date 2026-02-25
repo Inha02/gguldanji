@@ -1,0 +1,158 @@
+[
+  {
+    "category": "가구/인테리어",
+    "total": 728,
+    "need_impute": 639,
+    "imputed": 0,
+    "fields_filled": 0,
+    "errors": 0,
+    "skipped": 688
+  },
+  {
+    "category": "가전제품",
+    "total": 731,
+    "need_impute": 714,
+    "imputed": 0,
+    "fields_filled": 0,
+    "errors": 0,
+    "skipped": 716
+  },
+  {
+    "category": "기타 중고물품",
+    "total": 705,
+    "need_impute": 542,
+    "imputed": 0,
+    "fields_filled": 0,
+    "errors": 0,
+    "skipped": 553
+  },
+  {
+    "category": "남성의류",
+    "total": 825,
+    "need_impute": 713,
+    "imputed": 0,
+    "fields_filled": 0,
+    "errors": 0,
+    "skipped": 817
+  },
+  {
+    "category": "도서",
+    "total": 826,
+    "need_impute": 826,
+    "imputed": 826,
+    "fields_filled": 2429,
+    "errors": 0,
+    "skipped": 0,
+    "quota_hit": false
+  },
+  {
+    "category": "디지털기기",
+    "total": 831,
+    "need_impute": 831,
+    "imputed": 831,
+    "fields_filled": 3123,
+    "errors": 0,
+    "skipped": 0,
+    "quota_hit": false
+  },
+  {
+    "category": "반려동물용품",
+    "total": 251,
+    "need_impute": 249,
+    "imputed": 249,
+    "fields_filled": 592,
+    "errors": 0,
+    "skipped": 2,
+    "quota_hit": false
+  },
+  {
+    "category": "뷰티/미용",
+    "total": 749,
+    "need_impute": 748,
+    "imputed": 748,
+    "fields_filled": 1882,
+    "errors": 0,
+    "skipped": 1,
+    "quota_hit": false
+  },
+  {
+    "category": "생활용품",
+    "total": 412,
+    "need_impute": 411,
+    "imputed": 411,
+    "fields_filled": 1453,
+    "errors": 0,
+    "skipped": 1,
+    "quota_hit": false
+  },
+  {
+    "category": "스포츠/레저",
+    "total": 785,
+    "need_impute": 784,
+    "imputed": 784,
+    "fields_filled": 1798,
+    "errors": 0,
+    "skipped": 1,
+    "quota_hit": false
+  },
+  {
+    "category": "식품",
+    "total": 270,
+    "need_impute": 264,
+    "imputed": 264,
+    "fields_filled": 382,
+    "errors": 0,
+    "skipped": 6,
+    "quota_hit": false
+  },
+  {
+    "category": "여성의류",
+    "total": 690,
+    "need_impute": 687,
+    "imputed": 687,
+    "fields_filled": 2329,
+    "errors": 0,
+    "skipped": 3,
+    "quota_hit": false
+  },
+  {
+    "category": "출산/유아동",
+    "total": 769,
+    "need_impute": 769,
+    "imputed": 769,
+    "fields_filled": 2386,
+    "errors": 0,
+    "skipped": 0,
+    "quota_hit": false
+  },
+  {
+    "category": "취미/게임",
+    "total": 725,
+    "need_impute": 725,
+    "imputed": 725,
+    "fields_filled": 2336,
+    "errors": 0,
+    "skipped": 0,
+    "quota_hit": false
+  },
+  {
+    "category": "티켓/교환권",
+    "total": 646,
+    "need_impute": 621,
+    "imputed": 621,
+    "fields_filled": 1029,
+    "errors": 0,
+    "skipped": 25,
+    "quota_hit": false
+  },
+  {
+    "category": "패션잡화",
+    "total": 804,
+    "need_impute": 803,
+    "imputed": 803,
+    "fields_filled": 1775,
+    "errors": 0,
+    "skipped": 1,
+    "quota_hit": false
+  }
+]

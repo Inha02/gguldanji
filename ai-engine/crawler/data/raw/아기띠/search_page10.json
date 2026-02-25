@@ -1,0 +1,943 @@
+{
+  "pageProps": {
+    "dehydratedState": {
+      "mutations": [],
+      "queries": [
+        {
+          "state": {
+            "data": {
+              "meta": {
+                "code": 0,
+                "message": "SUCCESS"
+              },
+              "data": [
+                {
+                  "gnbSeq": 95,
+                  "sortNum": 1,
+                  "menuName": "레고",
+                  "exposeStartDate": "2024-08-02 00:00:00",
+                  "exposeEndDate": "2024-09-01 23:59:00",
+                  "badgeType": 0,
+                  "badgeExposeStartDate": "2025-04-15 10:32:09",
+                  "badgeExposeEndDate": "9999-12-31 23:59:59"
+                },
+                {
+                  "gnbSeq": 97,
+                  "sortNum": 999,
+                  "menuName": "미개봉상품",
+                  "exposeStartDate": "2024-10-14 00:00:00",
+                  "exposeEndDate": "2024-10-31 23:59:00",
+                  "badgeType": 0,
+                  "badgeExposeStartDate": "2025-04-15 10:32:09",
+                  "badgeExposeEndDate": "9999-12-31 23:59:59"
+                },
+                {
+                  "gnbSeq": 99,
+                  "sortNum": 999,
+                  "menuName": "미개봉상품",
+                  "exposeStartDate": "2024-11-01 09:00:00",
+                  "exposeEndDate": "2024-11-22 23:59:00",
+                  "badgeType": 0,
+                  "badgeExposeStartDate": "2025-04-15 10:32:09",
+                  "badgeExposeEndDate": "9999-12-31 23:59:59"
+                },
+                {
+                  "gnbSeq": 100,
+                  "sortNum": 999,
+                  "menuName": "미개봉 키덜트",
+                  "exposeStartDate": "2024-12-16 00:00:00",
+                  "exposeEndDate": "2025-01-12 23:59:00",
+                  "badgeType": 0,
+                  "badgeExposeStartDate": "2025-04-15 10:32:09",
+                  "badgeExposeEndDate": "9999-12-31 23:59:59"
+                },
+                {
+                  "gnbSeq": 101,
+                  "sortNum": 999,
+                  "menuName": "콘서트/공연티켓",
+                  "exposeStartDate": "2024-12-24 00:00:00",
+                  "exposeEndDate": "2025-01-14 23:59:00",
+                  "badgeType": 0,
+                  "badgeExposeStartDate": "2025-04-15 10:32:09",
+                  "badgeExposeEndDate": "9999-12-31 23:59:59"
+                },
+                {
+                  "gnbSeq": 102,
+                  "sortNum": 999,
+                  "menuName": "닌텐도 ",
+                  "exposeStartDate": "2025-01-20 00:00:00",
+                  "exposeEndDate": "2025-02-17 23:59:00",
+                  "badgeType": 0,
+                  "badgeExposeStartDate": "2025-04-15 10:32:00",
+                  "badgeExposeEndDate": "9999-12-31 23:59:00"
+                },
+                {
+                  "gnbSeq": 103,
+                  "sortNum": 999,
+                  "menuName": "신학기 노트북",
+                  "exposeStartDate": "2025-02-25 00:00:00",
+                  "exposeEndDate": "2025-03-11 23:59:00",
+                  "badgeType": 0,
+                  "badgeExposeStartDate": "2025-04-15 10:32:09",
+                  "badgeExposeEndDate": "9999-12-31 23:59:59"
+                },
+                {
+                  "gnbSeq": 105,
+                  "sortNum": 999,
+                  "menuName": "그래픽카드",
+                  "exposeStartDate": "2025-03-12 00:00:00",
+                  "exposeEndDate": "2025-04-02 23:59:00",
+                  "badgeType": 0,
+                  "badgeExposeStartDate": "2025-04-15 10:32:09",
+                  "badgeExposeEndDate": "9999-12-31 23:59:59"
+                },
+                {
+                  "gnbSeq": 107,
+                  "sortNum": 999,
+                  "menuName": "자전거",
+                  "exposeStartDate": "2025-05-07 00:00:00",
+                  "exposeEndDate": "2025-05-28 23:59:00",
+                  "badgeType": 1,
+                  "badgeExposeStartDate": "2025-05-07 00:00:00",
+                  "badgeExposeEndDate": "2025-05-28 00:00:00"
+                },
+                {
+                  "gnbSeq": 108,
+                  "sortNum": 999,
+                  "menuName": "닌텐도",
+                  "exposeStartDate": "2025-05-12 00:00:00",
+                  "exposeEndDate": "2025-06-02 23:59:00",
+                  "badgeType": 1,
+                  "badgeExposeStartDate": "2025-05-12 00:00:00",
+                  "badgeExposeEndDate": "2025-06-02 00:00:00"
+                },
+                {
+                  "gnbSeq": 111,
+                  "sortNum": 999,
+                  "menuName": "라부부",
+                  "exposeStartDate": "2025-07-07 15:00:00",
+                  "exposeEndDate": "2025-07-20 23:59:00",
+                  "badgeType": 1,
+                  "badgeExposeStartDate": "2025-07-07 15:00:00",
+                  "badgeExposeEndDate": "2025-07-20 23:59:00"
+                },
+                {
+                  "gnbSeq": 114,
+                  "sortNum": 999,
+                  "menuName": "A/S 보증 노트북",
+                  "exposeStartDate": "2025-11-14 00:00:00",
+                  "exposeEndDate": "2025-12-07 23:59:00",
+                  "badgeType": 1,
+                  "badgeExposeStartDate": "2025-11-14 00:00:00",
+                  "badgeExposeEndDate": "2025-12-07 00:00:00"
+                }
+              ]
+            },
+            "dataUpdateCount": 1,
+            "dataUpdatedAt": 1770120391472,
+            "error": null,
+            "errorUpdateCount": 0,
+            "errorUpdatedAt": 0,
+            "fetchFailureCount": 0,
+            "fetchFailureReason": null,
+            "fetchMeta": null,
+            "isInvalidated": false,
+            "status": "success",
+            "fetchStatus": "idle"
+          },
+          "queryKey": [
+            "get-gnb-list"
+          ],
+          "queryHash": "[\"get-gnb-list\"]"
+        },
+        {
+          "state": {
+            "data": {
+              "meta": {
+                "code": 0,
+                "message": "SUCCESS"
+              },
+              "data": {
+                "autoCompleteItemList": [
+                  {
+                    "keyword": "아기띠"
+                  },
+                  {
+                    "keyword": "포그내 아기띠"
+                  },
+                  {
+                    "keyword": "아이엔젤 아기띠"
+                  },
+                  {
+                    "keyword": "님블 아기띠"
+                  },
+                  {
+                    "keyword": "아기띠워머"
+                  },
+                  {
+                    "keyword": "베이비뵨 아기띠"
+                  },
+                  {
+                    "keyword": "에르고 아기띠"
+                  },
+                  {
+                    "keyword": "코니 아기띠"
+                  },
+                  {
+                    "keyword": "아티포페 아기띠"
+                  },
+                  {
+                    "keyword": "포브 아기띠"
+                  }
+                ],
+                "keywordCnt": 10
+              }
+            },
+            "dataUpdateCount": 1,
+            "dataUpdatedAt": 1770120391387,
+            "error": null,
+            "errorUpdateCount": 0,
+            "errorUpdatedAt": 0,
+            "fetchFailureCount": 0,
+            "fetchFailureReason": null,
+            "fetchMeta": null,
+            "isInvalidated": false,
+            "status": "success",
+            "fetchStatus": "idle"
+          },
+          "queryKey": [
+            "post-search-product-auto-complete",
+            "아기띠"
+          ],
+          "queryHash": "[\"post-search-product-auto-complete\",\"아기띠\"]"
+        },
+        {
+          "state": {
+            "data": {
+              "meta": {
+                "code": 0,
+                "message": "SUCCESS"
+              },
+              "data": {
+                "transactionId": "1770120391437_3984322040239352426",
+                "emptyResult": {
+                  "joongnaWebUrl": null,
+                  "noticeCode": null,
+                  "type": 0,
+                  "buttonText": "알림 등록",
+                  "buttonUrl": "",
+                  "notice": "검색 결과가 없습니다.",
+                  "subNotice": [
+                    "검색어의 단어 수를 줄이거나",
+                    "보다 일반적인 검색어로 검색해 보세요!"
+                  ],
+                  "image": {
+                    "width": 48,
+                    "height": 48,
+                    "url": "https://img2.joongna.com/search/graySpeechBubble.png"
+                  },
+                  "loginCheck": true
+                },
+                "abTests": null,
+                "size": 19,
+                "sortOptions": [
+                  {
+                    "sortType": "RECOMMEND_SORT",
+                    "sortName": "추천순",
+                    "sortOrder": 0
+                  },
+                  {
+                    "sortType": "RECOMMEND_SORT",
+                    "sortName": "추천순",
+                    "sortOrder": 0
+                  },
+                  {
+                    "sortType": "RECENT_SORT",
+                    "sortName": "최신순",
+                    "sortOrder": 1
+                  },
+                  {
+                    "sortType": "PRICE_ASC_SORT",
+                    "sortName": "낮은가격순",
+                    "sortOrder": 2
+                  },
+                  {
+                    "sortType": "PRICE_DESC_SORT",
+                    "sortName": "높은가격순",
+                    "sortOrder": 3
+                  }
+                ],
+                "searchFilterComponent": null,
+                "filter": null,
+                "totalSize": 469,
+                "searchStartDT": "2026-02-03 21:06:31",
+                "items": [
+                  {
+                    "seq": 202365811,
+                    "productPositionNo": 451,
+                    "platformType": 1,
+                    "price": 25000,
+                    "parcelFee": 0,
+                    "url": "https://img2.joongna.com/cafe-article-data/live/2025/02/24/1096969038/1740396710112_000_RNktW_main.jpg?impolicy=thumb&size=150",
+                    "title": "예마클릭 싸이벡스 아기띠",
+                    "state": 0,
+                    "sortDate": "2025-02-24 20:31:39",
+                    "mainLocationName": "",
+                    "articleSeq": 1096969038,
+                    "articleUrl": "",
+                    "videoProductYn": "N",
+                    "wishCount": 0,
+                    "jnPayBadgeFlag": false,
+                    "pickupBadgeFlag": false,
+                    "highlightedTitle": "",
+                    "storeSeq": 7064321,
+                    "chatCount": 1,
+                    "selfAuditFlag": false,
+                    "userType": 0,
+                    "certifySellerFlag": false,
+                    "detailImgUrl": "",
+                    "locationNames": [],
+                    "objectType": "product",
+                    "wishYn": 0
+                  },
+                  {
+                    "seq": 202332080,
+                    "productPositionNo": 452,
+                    "platformType": 1,
+                    "price": 2222,
+                    "parcelFee": 0,
+                    "url": "https://img2.joongna.com/cafe-article-data/live/2025/02/24/1096928829/1740375211280_000_WuMpT_main.jpg?impolicy=thumb&size=150",
+                    "title": "아티포페 아기띠 할인코드 공유합니다~",
+                    "state": 0,
+                    "sortDate": "2025-02-24 14:33:14",
+                    "mainLocationName": "",
+                    "articleSeq": 1096928829,
+                    "articleUrl": "",
+                    "videoProductYn": "N",
+                    "wishCount": 0,
+                    "jnPayBadgeFlag": false,
+                    "pickupBadgeFlag": false,
+                    "highlightedTitle": "",
+                    "storeSeq": 10691585,
+                    "chatCount": 0,
+                    "selfAuditFlag": false,
+                    "userType": 0,
+                    "certifySellerFlag": false,
+                    "detailImgUrl": "",
+                    "locationNames": [],
+                    "objectType": "product",
+                    "wishYn": 0
+                  },
+                  {
+                    "seq": 202318027,
+                    "productPositionNo": 453,
+                    "platformType": 1,
+                    "price": 40000,
+                    "parcelFee": 0,
+                    "url": "https://img2.joongna.com/cafe-article-data/live/2025/02/24/1096912960/1740367502720_000_623JI_main.jpeg?impolicy=thumb&size=150",
+                    "title": "다이치 루이 틱톡 올인원 아기띠",
+                    "state": 0,
+                    "sortDate": "2025-02-24 12:24:46",
+                    "mainLocationName": "",
+                    "articleSeq": 1096912960,
+                    "articleUrl": "",
+                    "videoProductYn": "N",
+                    "wishCount": 1,
+                    "jnPayBadgeFlag": false,
+                    "pickupBadgeFlag": false,
+                    "highlightedTitle": "",
+                    "storeSeq": 9295847,
+                    "chatCount": 2,
+                    "selfAuditFlag": false,
+                    "userType": 0,
+                    "certifySellerFlag": false,
+                    "detailImgUrl": "",
+                    "locationNames": [],
+                    "objectType": "product",
+                    "wishYn": 0
+                  },
+                  {
+                    "seq": 202097125,
+                    "productPositionNo": 454,
+                    "platformType": 1,
+                    "price": 15000,
+                    "parcelFee": 0,
+                    "url": "https://img2.joongna.com/cafe-article-data/live/2025/02/22/1096658340/1740150609626_000_ZBFov_main.jpeg?impolicy=thumb&size=150",
+                    "title": "자라 아이스크림 니트 / 코스 마시모두띠 메이비베이비 가내스라 에이블리",
+                    "state": 0,
+                    "sortDate": "2025-02-22 00:09:47",
+                    "mainLocationName": "",
+                    "articleSeq": 1096658340,
+                    "articleUrl": "",
+                    "videoProductYn": "N",
+                    "wishCount": 0,
+                    "jnPayBadgeFlag": false,
+                    "pickupBadgeFlag": false,
+                    "highlightedTitle": "",
+                    "storeSeq": 3662181,
+                    "chatCount": 0,
+                    "selfAuditFlag": false,
+                    "userType": 0,
+                    "certifySellerFlag": false,
+                    "detailImgUrl": "",
+                    "locationNames": [],
+                    "objectType": "product",
+                    "wishYn": 0
+                  },
+                  {
+                    "seq": 190384090,
+                    "productPositionNo": 455,
+                    "platformType": 1,
+                    "price": 57000,
+                    "parcelFee": 0,
+                    "url": "https://img2.joongna.com/cafe-article-data/live/2024/10/26/1083026757/1729922856598_000_GG0yI_main.jpg?impolicy=thumb&size=150",
+                    "title": "용띠아기 선물세트",
+                    "state": 0,
+                    "sortDate": "2025-02-21 00:28:20",
+                    "mainLocationName": "",
+                    "articleSeq": 1083026757,
+                    "articleUrl": "",
+                    "videoProductYn": "N",
+                    "wishCount": 0,
+                    "jnPayBadgeFlag": false,
+                    "pickupBadgeFlag": false,
+                    "highlightedTitle": "",
+                    "storeSeq": 9820329,
+                    "chatCount": 0,
+                    "selfAuditFlag": false,
+                    "userType": 0,
+                    "certifySellerFlag": false,
+                    "detailImgUrl": "",
+                    "locationNames": [],
+                    "objectType": "product",
+                    "wishYn": 0
+                  },
+                  {
+                    "seq": 201703839,
+                    "productPositionNo": 456,
+                    "platformType": 1,
+                    "price": 160000,
+                    "parcelFee": 1,
+                    "url": "https://img2.joongna.com/media/original/2025/02/18/1739806563385SsP_yKHQf.jpg?impolicy=thumb&size=150",
+                    "title": "에르고옴니아기띠",
+                    "state": 0,
+                    "sortDate": "2025-02-18 00:38:22",
+                    "mainLocationName": "신방동",
+                    "articleSeq": 0,
+                    "articleUrl": "",
+                    "videoProductYn": "N",
+                    "wishCount": 1,
+                    "jnPayBadgeFlag": true,
+                    "pickupBadgeFlag": false,
+                    "highlightedTitle": "",
+                    "storeSeq": 10898677,
+                    "chatCount": 0,
+                    "selfAuditFlag": false,
+                    "userType": 0,
+                    "certifySellerFlag": false,
+                    "detailImgUrl": "",
+                    "locationNames": [
+                      "충청남도 천안시 동남구 신방동"
+                    ],
+                    "objectType": "product",
+                    "wishYn": 0
+                  },
+                  {
+                    "seq": 201458808,
+                    "productPositionNo": 457,
+                    "platformType": 1,
+                    "price": 250000,
+                    "parcelFee": 0,
+                    "url": "https://img2.joongna.com/media/original/2025/02/15/1739593214886bVz_gewZd.jpg?impolicy=thumb&size=150",
+                    "title": "포그내 아기띠 올인원 새상품",
+                    "state": 0,
+                    "sortDate": "2025-02-15 13:22:03",
+                    "mainLocationName": "제기동",
+                    "articleSeq": 0,
+                    "articleUrl": "",
+                    "videoProductYn": "N",
+                    "wishCount": 2,
+                    "jnPayBadgeFlag": true,
+                    "pickupBadgeFlag": false,
+                    "highlightedTitle": "",
+                    "storeSeq": 10881482,
+                    "chatCount": 1,
+                    "selfAuditFlag": false,
+                    "userType": 0,
+                    "certifySellerFlag": false,
+                    "detailImgUrl": "",
+                    "locationNames": [
+                      "서울특별시 동대문구 제기동"
+                    ],
+                    "objectType": "product",
+                    "wishYn": 0
+                  },
+                  {
+                    "seq": 200166602,
+                    "productPositionNo": 458,
+                    "platformType": 1,
+                    "price": 5000,
+                    "parcelFee": 0,
+                    "url": "https://img2.joongna.com/media/original/2025/02/01/1738411438951vtm_Rc50j.jpg?impolicy=thumb&size=150",
+                    "title": "기저귀백팩 아기띠워머",
+                    "state": 0,
+                    "sortDate": "2025-02-15 08:46:57",
+                    "mainLocationName": "",
+                    "articleSeq": 0,
+                    "articleUrl": "",
+                    "videoProductYn": "N",
+                    "wishCount": 0,
+                    "jnPayBadgeFlag": true,
+                    "pickupBadgeFlag": false,
+                    "highlightedTitle": "",
+                    "storeSeq": 3367828,
+                    "chatCount": 0,
+                    "selfAuditFlag": false,
+                    "userType": 0,
+                    "certifySellerFlag": false,
+                    "detailImgUrl": "",
+                    "locationNames": [],
+                    "objectType": "product",
+                    "wishYn": 0
+                  },
+                  {
+                    "seq": 201413630,
+                    "productPositionNo": 459,
+                    "platformType": 1,
+                    "price": 20000,
+                    "parcelFee": 0,
+                    "url": "https://img2.joongna.com/media/original/2025/02/14/1739538842260USW_UNQbq.jpg?impolicy=thumb&size=150",
+                    "title": "아기띠 판매합니다",
+                    "state": 0,
+                    "sortDate": "2025-02-14 22:16:35",
+                    "mainLocationName": "파동",
+                    "articleSeq": 0,
+                    "articleUrl": "",
+                    "videoProductYn": "N",
+                    "wishCount": 0,
+                    "jnPayBadgeFlag": false,
+                    "pickupBadgeFlag": false,
+                    "highlightedTitle": "",
+                    "storeSeq": 5277140,
+                    "chatCount": 0,
+                    "selfAuditFlag": false,
+                    "userType": 0,
+                    "certifySellerFlag": false,
+                    "detailImgUrl": "",
+                    "locationNames": [
+                      "대구광역시 수성구 파동"
+                    ],
+                    "objectType": "product",
+                    "wishYn": 0
+                  },
+                  {
+                    "seq": 201115742,
+                    "productPositionNo": 460,
+                    "platformType": 1,
+                    "price": 40000,
+                    "parcelFee": 0,
+                    "url": "https://img2.joongna.com/cafe-article-data/live/2025/02/11/1095523901/1739274811244_005_bhaST_main.PNG?impolicy=thumb&size=150",
+                    "title": "와이즈콜린 슈에뜨 아기띠 그레이",
+                    "state": 0,
+                    "sortDate": "2025-02-11 20:52:57",
+                    "mainLocationName": "",
+                    "articleSeq": 1095523901,
+                    "articleUrl": "",
+                    "videoProductYn": "N",
+                    "wishCount": 0,
+                    "jnPayBadgeFlag": false,
+                    "pickupBadgeFlag": false,
+                    "highlightedTitle": "",
+                    "storeSeq": 3047227,
+                    "chatCount": 1,
+                    "selfAuditFlag": false,
+                    "userType": 0,
+                    "certifySellerFlag": false,
+                    "detailImgUrl": "",
+                    "locationNames": [],
+                    "objectType": "product",
+                    "wishYn": 0
+                  },
+                  {
+                    "seq": 201047607,
+                    "productPositionNo": 461,
+                    "platformType": 1,
+                    "price": 16000,
+                    "parcelFee": 0,
+                    "url": "https://img2.joongna.com/cafe-article-data/live/2025/02/11/1095441274/1739229277327_000_hsqt5_main.jpg?impolicy=thumb&size=150",
+                    "title": "끌라미엘 밀착 아기띠L",
+                    "state": 0,
+                    "sortDate": "2025-02-11 08:14:05",
+                    "mainLocationName": "",
+                    "articleSeq": 1095441274,
+                    "articleUrl": "",
+                    "videoProductYn": "N",
+                    "wishCount": 0,
+                    "jnPayBadgeFlag": false,
+                    "pickupBadgeFlag": false,
+                    "highlightedTitle": "",
+                    "storeSeq": 6648259,
+                    "chatCount": 0,
+                    "selfAuditFlag": false,
+                    "userType": 0,
+                    "certifySellerFlag": false,
+                    "detailImgUrl": "",
+                    "locationNames": [],
+                    "objectType": "product",
+                    "wishYn": 0
+                  },
+                  {
+                    "seq": 201047542,
+                    "productPositionNo": 462,
+                    "platformType": 1,
+                    "price": 16000,
+                    "parcelFee": 0,
+                    "url": "https://img2.joongna.com/cafe-article-data/live/2025/02/11/1095441217/1739229195782_000_sEkHi_main.jpg?impolicy=thumb&size=150",
+                    "title": "코니 아기띠 xs 반값택포",
+                    "state": 0,
+                    "sortDate": "2025-02-11 08:13:01",
+                    "mainLocationName": "",
+                    "articleSeq": 1095441217,
+                    "articleUrl": "",
+                    "videoProductYn": "N",
+                    "wishCount": 0,
+                    "jnPayBadgeFlag": false,
+                    "pickupBadgeFlag": false,
+                    "highlightedTitle": "",
+                    "storeSeq": 6648259,
+                    "chatCount": 0,
+                    "selfAuditFlag": false,
+                    "userType": 0,
+                    "certifySellerFlag": false,
+                    "detailImgUrl": "",
+                    "locationNames": [],
+                    "objectType": "product",
+                    "wishYn": 0
+                  },
+                  {
+                    "seq": 200927030,
+                    "productPositionNo": 463,
+                    "platformType": 1,
+                    "price": 15000,
+                    "parcelFee": 0,
+                    "url": "https://img2.joongna.com/cafe-article-data/live/2025/02/09/1095302229/1739104726185_000_R23hS_main.jpg?impolicy=thumb&size=150",
+                    "title": "아기머리띠,핀 세트",
+                    "state": 0,
+                    "sortDate": "2025-02-09 21:38:34",
+                    "mainLocationName": "",
+                    "articleSeq": 1095302229,
+                    "articleUrl": "",
+                    "videoProductYn": "N",
+                    "wishCount": 2,
+                    "jnPayBadgeFlag": false,
+                    "pickupBadgeFlag": false,
+                    "highlightedTitle": "",
+                    "storeSeq": 1184553,
+                    "chatCount": 0,
+                    "selfAuditFlag": false,
+                    "userType": 0,
+                    "certifySellerFlag": false,
+                    "detailImgUrl": "",
+                    "locationNames": [],
+                    "objectType": "product",
+                    "wishYn": 0
+                  },
+                  {
+                    "seq": 200922695,
+                    "productPositionNo": 464,
+                    "platformType": 1,
+                    "price": 50000,
+                    "parcelFee": 0,
+                    "url": "https://img2.joongna.com/cafe-article-data/live/2025/02/09/1095297212/1739101563045_000_RSKP5_main.jpeg?impolicy=thumb&size=150",
+                    "title": "에르고 아기띠 + 침받이 + 신생아 패드",
+                    "state": 0,
+                    "sortDate": "2025-02-09 20:45:44",
+                    "mainLocationName": "",
+                    "articleSeq": 1095297212,
+                    "articleUrl": "",
+                    "videoProductYn": "N",
+                    "wishCount": 0,
+                    "jnPayBadgeFlag": false,
+                    "pickupBadgeFlag": false,
+                    "highlightedTitle": "",
+                    "storeSeq": 9746509,
+                    "chatCount": 0,
+                    "selfAuditFlag": false,
+                    "userType": 0,
+                    "certifySellerFlag": false,
+                    "detailImgUrl": "",
+                    "locationNames": [],
+                    "objectType": "product",
+                    "wishYn": 0
+                  },
+                  {
+                    "seq": 200752319,
+                    "productPositionNo": 465,
+                    "platformType": 1,
+                    "price": 30000,
+                    "parcelFee": 1,
+                    "url": "https://img2.joongna.com/media/original/2025/02/07/1738935867744nxl_Q2GIW.jpg?impolicy=thumb&size=150",
+                    "title": "이키 뱀띠 유기농 오가닉 아기선물세트 7종",
+                    "state": 0,
+                    "sortDate": "2025-02-07 22:48:04",
+                    "mainLocationName": "",
+                    "articleSeq": 0,
+                    "articleUrl": "",
+                    "videoProductYn": "N",
+                    "wishCount": 0,
+                    "jnPayBadgeFlag": false,
+                    "pickupBadgeFlag": false,
+                    "highlightedTitle": "",
+                    "storeSeq": 6532192,
+                    "chatCount": 0,
+                    "selfAuditFlag": false,
+                    "userType": 0,
+                    "certifySellerFlag": false,
+                    "detailImgUrl": "",
+                    "locationNames": [],
+                    "objectType": "product",
+                    "wishYn": 0
+                  },
+                  {
+                    "seq": 200677913,
+                    "productPositionNo": 466,
+                    "platformType": 1,
+                    "price": 60000,
+                    "parcelFee": 0,
+                    "url": "https://img2.joongna.com/cafe-article-data/live/2025/02/07/1095013223/1738885167969_000_dUYtA_main.jpg?impolicy=thumb&size=150",
+                    "title": "한스펌킨 숨쉬는 아기띠가드+유모차 가드(택포7만->6만) 가격내림",
+                    "state": 0,
+                    "sortDate": "2025-02-07 08:39:07",
+                    "mainLocationName": "",
+                    "articleSeq": 1095013223,
+                    "articleUrl": "",
+                    "videoProductYn": "N",
+                    "wishCount": 0,
+                    "jnPayBadgeFlag": false,
+                    "pickupBadgeFlag": false,
+                    "highlightedTitle": "",
+                    "storeSeq": 8963914,
+                    "chatCount": 0,
+                    "selfAuditFlag": false,
+                    "userType": 0,
+                    "certifySellerFlag": false,
+                    "detailImgUrl": "",
+                    "locationNames": [],
+                    "objectType": "product",
+                    "wishYn": 0
+                  },
+                  {
+                    "seq": 200664496,
+                    "productPositionNo": 467,
+                    "platformType": 1,
+                    "price": 40000,
+                    "parcelFee": 0,
+                    "url": "https://img2.joongna.com/cafe-article-data/live/2025/02/06/1094998064/1738853752315_001_vemk7_main.jpg?impolicy=thumb&size=150",
+                    "title": "폴레드 에어러브 아기띠 미세먼지 마스크",
+                    "state": 0,
+                    "sortDate": "2025-02-06 23:55:25",
+                    "mainLocationName": "평촌동",
+                    "articleSeq": 1094998064,
+                    "articleUrl": "",
+                    "videoProductYn": "N",
+                    "wishCount": 0,
+                    "jnPayBadgeFlag": true,
+                    "pickupBadgeFlag": false,
+                    "highlightedTitle": "",
+                    "storeSeq": 6238079,
+                    "chatCount": 0,
+                    "selfAuditFlag": false,
+                    "userType": 0,
+                    "certifySellerFlag": false,
+                    "detailImgUrl": "",
+                    "locationNames": [
+                      "경기도 안양시 동안구 평촌동"
+                    ],
+                    "objectType": "product",
+                    "wishYn": 0
+                  },
+                  {
+                    "seq": 200651287,
+                    "productPositionNo": 468,
+                    "platformType": 1,
+                    "price": 5000,
+                    "parcelFee": 0,
+                    "url": "https://img2.joongna.com/media/original/2025/02/06/1738843035754maJ_rYsfG.jpg?impolicy=thumb&size=150",
+                    "title": "아기띠와낮잠이불",
+                    "state": 0,
+                    "sortDate": "2025-02-06 20:57:42",
+                    "mainLocationName": "",
+                    "articleSeq": 0,
+                    "articleUrl": "",
+                    "videoProductYn": "N",
+                    "wishCount": 0,
+                    "jnPayBadgeFlag": true,
+                    "pickupBadgeFlag": false,
+                    "highlightedTitle": "",
+                    "storeSeq": 3921422,
+                    "chatCount": 0,
+                    "selfAuditFlag": false,
+                    "userType": 0,
+                    "certifySellerFlag": false,
+                    "detailImgUrl": "",
+                    "locationNames": [],
+                    "objectType": "product",
+                    "wishYn": 0
+                  },
+                  {
+                    "seq": 200303152,
+                    "productPositionNo": 469,
+                    "platformType": 1,
+                    "price": 15000,
+                    "parcelFee": 0,
+                    "url": "https://img2.joongna.com/cafe-article-data/live/2025/02/03/1094577641/1738550029543_000_OCVbD_main.jpg?impolicy=thumb&size=150",
+                    "title": "밤부베베 풀꽃 침받이(아기띠침받이)",
+                    "state": 0,
+                    "sortDate": "2025-02-03 11:33:31",
+                    "mainLocationName": "",
+                    "articleSeq": 1094577641,
+                    "articleUrl": "",
+                    "videoProductYn": "N",
+                    "wishCount": 0,
+                    "jnPayBadgeFlag": true,
+                    "pickupBadgeFlag": false,
+                    "highlightedTitle": "",
+                    "storeSeq": 789637,
+                    "chatCount": 0,
+                    "selfAuditFlag": false,
+                    "userType": 0,
+                    "certifySellerFlag": false,
+                    "detailImgUrl": "",
+                    "locationNames": [],
+                    "objectType": "product",
+                    "wishYn": 0
+                  }
+                ],
+                "changedProductFilterType": false,
+                "changedKeyword": {
+                  "isChangedKeyword": false,
+                  "originKeyword": "아기띠",
+                  "changedKeyword": "아기띠"
+                },
+                "selfAuditRecommendItems": [],
+                "standardPriceShow": 0,
+                "resultType": 0
+              }
+            },
+            "dataUpdateCount": 1,
+            "dataUpdatedAt": 1770120391444,
+            "error": null,
+            "errorUpdateCount": 0,
+            "errorUpdatedAt": 0,
+            "fetchFailureCount": 0,
+            "fetchFailureReason": null,
+            "fetchMeta": null,
+            "isInvalidated": false,
+            "status": "success",
+            "fetchStatus": "idle"
+          },
+          "queryKey": [
+            "get-search-products",
+            {
+              "categoryFilter": [
+                {
+                  "categoryDepth": 0,
+                  "categorySeq": 0
+                }
+              ],
+              "firstQuantity": 50,
+              "jnPayYn": "ALL",
+              "keywordSource": "INPUT_KEYWORD",
+              "osType": 2,
+              "page": 9,
+              "parcelFeeYn": "ALL",
+              "priceFilter": {
+                "maxPrice": 100000000,
+                "minPrice": 0
+              },
+              "quantity": 50,
+              "registPeriod": "ALL",
+              "saleYn": "SALE_N",
+              "sort": "RECOMMEND_SORT",
+              "filterTypeCheckoutByUser": false,
+              "adjustSearchKeyword": true,
+              "searchWord": "아기띠"
+            }
+          ],
+          "queryHash": "[\"get-search-products\",{\"adjustSearchKeyword\":true,\"categoryFilter\":[{\"categoryDepth\":0,\"categorySeq\":0}],\"filterTypeCheckoutByUser\":false,\"firstQuantity\":50,\"jnPayYn\":\"ALL\",\"keywordSource\":\"INPUT_KEYWORD\",\"osType\":2,\"page\":9,\"parcelFeeYn\":\"ALL\",\"priceFilter\":{\"maxPrice\":100000000,\"minPrice\":0},\"quantity\":50,\"registPeriod\":\"ALL\",\"saleYn\":\"SALE_N\",\"searchWord\":\"아기띠\",\"sort\":\"RECOMMEND_SORT\"}]"
+        },
+        {
+          "state": {
+            "data": {
+              "meta": {
+                "code": 0,
+                "message": "SUCCESS"
+              },
+              "data": {
+                "searchKeyword": [
+                  "아기띠"
+                ],
+                "relatedKeywordList": [
+                  {
+                    "relatedKeyword": "코니",
+                    "toSearch": "코니 아기띠",
+                    "type": "left"
+                  },
+                  {
+                    "relatedKeyword": "워머",
+                    "toSearch": "아기띠 워머",
+                    "type": "right"
+                  }
+                ]
+              }
+            },
+            "dataUpdateCount": 1,
+            "dataUpdatedAt": 1770120391330,
+            "error": null,
+            "errorUpdateCount": 0,
+            "errorUpdatedAt": 0,
+            "fetchFailureCount": 0,
+            "fetchFailureReason": null,
+            "fetchMeta": null,
+            "isInvalidated": false,
+            "status": "success",
+            "fetchStatus": "idle"
+          },
+          "queryKey": [
+            "get-search-related-keyword",
+            "아기띠"
+          ],
+          "queryHash": "[\"get-search-related-keyword\",\"아기띠\"]"
+        },
+        {
+          "state": {
+            "data": {
+              "storeSeq": null
+            },
+            "dataUpdateCount": 1,
+            "dataUpdatedAt": 1770120391182,
+            "error": null,
+            "errorUpdateCount": 0,
+            "errorUpdatedAt": 0,
+            "fetchFailureCount": 0,
+            "fetchFailureReason": null,
+            "fetchMeta": null,
+            "isInvalidated": false,
+            "status": "success",
+            "fetchStatus": "idle"
+          },
+          "queryKey": [
+            "my-store-seq"
+          ],
+          "queryHash": "[\"my-store-seq\"]"
+        }
+      ]
+    },
+    "session": {
+      "status": "unauthenticated"
+    },
+    "_sentryTraceData": "ae34932d82ff483b99fa46be54708f59-31b66b1807ad83f6",
+    "_sentryBaggage": "sentry-environment=live,sentry-release=h0ZBTp8QguUS6pcWFFXzx,sentry-public_key=a8d4ca8a3deee185a932c6711cbfc02c,sentry-trace_id=ae34932d82ff483b99fa46be54708f59"
+  },
+  "__N_SSP": true
+}

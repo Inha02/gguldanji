@@ -12,3 +12,11 @@ venv/
 # mac
 .DS_Store
 
+# venv 제외
+ai-engine/venv/
+ai-engine/__pycache__/
+ai-engine/.env
+
+# 생성물/캐시 제외
+ai-engine/crawler/data/chroma_db/
+*.sqlite3
