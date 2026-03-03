@@ -1,4 +1,0 @@
-page=0 items=50 url=https://web.joongna.com/_next/data/h0ZBTp8QguUS6pcWFFXzx/search/%EC%B2%AD%EC%86%8C%EC%9A%A9%ED%92%88.json?keyword=%EC%B2%AD%EC%86%8C%EC%9A%A9%ED%92%88&keywordSource=INPUT_KEYWORD&page=0
-page=1 items=50 url=https://web.joongna.com/_next/data/h0ZBTp8QguUS6pcWFFXzx/search/%EC%B2%AD%EC%86%8C%EC%9A%A9%ED%92%88.json?keyword=%EC%B2%AD%EC%86%8C%EC%9A%A9%ED%92%88&keywordSource=INPUT_KEYWORD&page=1
-page=2 items=1 url=https://web.joongna.com/_next/data/h0ZBTp8QguUS6pcWFFXzx/search/%EC%B2%AD%EC%86%8C%EC%9A%A9%ED%92%88.json?keyword=%EC%B2%AD%EC%86%8C%EC%9A%A9%ED%92%88&keywordSource=INPUT_KEYWORD&page=2
-page=3 items=0 url=https://web.joongna.com/_next/data/h0ZBTp8QguUS6pcWFFXzx/search/%EC%B2%AD%EC%86%8C%EC%9A%A9%ED%92%88.json?keyword=%EC%B2%AD%EC%86%8C%EC%9A%A9%ED%92%88&keywordSource=INPUT_KEYWORD&page=3
