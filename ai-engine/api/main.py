@@ -22,6 +22,7 @@ from api.schemas import (
     CATEGORY_SCHEMA, VALID_CONDITIONS,
 )
 from api.dependencies import get_engine
+from profiling.router import router as profiling_router
 
 
 # ──────────────────────────────────────────────
@@ -145,6 +146,12 @@ async def health_check():
         models_loaded=len(engine.tree.models),
         rag_collections=len(engine.rag.collections),
     )
+
+
+
+
+app.include_router(profiling_router, prefix="/api/v1")
+
 
 
 # ──────────────────────────────────────────────
