@@ -4,6 +4,7 @@ import connectDB from "./config/db.js";
 import cors from "cors";
 import router from "./routes/user.routes.js";
 import authRouter from "./routes/auth.js";
+import postRoutes from "./routes/post.routes.js";
 
 dotenv.config();
 
@@ -27,6 +28,11 @@ app.get("/", (req, res) => {
 });
 
 // 라우터 연결
+
 app.use("/api/user", router);
 app.use("/users", router);
 app.use("/auth", authRouter);
+
+// post 라우터 연결 
+app.use(express.json());
+app.use("/posts", postRoutes);
