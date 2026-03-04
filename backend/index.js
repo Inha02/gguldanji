@@ -5,6 +5,8 @@ import cors from "cors";
 import router from "./routes/user.routes.js";
 import authRouter from "./routes/auth.js";
 import postRoutes from "./routes/post.routes.js";
+import swaggerUi from "swagger-ui-express";
+import swaggerSpec from "./config/swagger.js";
 
 dotenv.config();
 
@@ -26,6 +28,8 @@ app.listen(process.env.PORT, () => {
 app.get("/", (req, res) => {
   res.send("Backend server running!");
 });
+
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 // 라우터 연결
 
