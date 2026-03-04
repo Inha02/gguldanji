@@ -23,4 +23,5 @@ ai-engine/crawler/data/models/
 ai-engine/crawler/data/synthetic/
 ai-engine/crawler/data/processed/
 ai-engine/crawler/data/final_backup/
+ai-engine/ai-engine-data.tar.gz
 *.sqlite3

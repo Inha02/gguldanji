@@ -1,0 +1,222 @@
+{
+  "step1_initial": {
+    "profile_version": 1,
+    "created_at": "2026-03-04",
+    "last_updated": "2026-03-04",
+    "total_messages_analyzed": 6,
+    "analysis_summary": "판매자는 거래를 신속하게 진행하며, 가격 협상에 있어서는 다소 유연성을 보입니다. 제품에 대한 정보를 명확히 제공하고, 거래 조건을 투명하게 제시합니다.",
+    "dimensions": {
+      "transaction_motivation": {
+        "price_sensitivity": {
+          "score": 4,
+          "confidence": 0.8,
+          "evidence": [
+            "75만원까지 가능합니다. 그 이하는 어렵습니다."
+          ]
+        },
+        "efficiency_orientation": {
+          "score": 5,
+          "confidence": 0.8,
+          "evidence": [
+            "네 판매중입니다.",
+            "내일 2시 사당역 4번출구에서 뵙겠습니다."
+          ]
+        },
+        "enjoyment_orientation": {
+          "score": 1,
+          "confidence": 0.5,
+          "evidence": []
+        },
+        "negotiation_flexibility": {
+          "score": 3,
+          "confidence": 0.8,
+          "evidence": [
+            "75만원까지 가능합니다. 그 이하는 어렵습니다."
+          ]
+        }
+      },
+      "communication_style": {
+        "response_pattern": {
+          "score": 5,
+          "confidence": 0.8,
+          "evidence": [
+            "네 판매중입니다.",
+            "사용기간 6개월이고 외관 기스 없습니다. 배터리 사이클 50회 미만입니다."
+          ]
+        },
+        "information_proactivity": {
+          "score": 4,
+          "confidence": 0.8,
+          "evidence": [
+            "사용기간 6개월이고 외관 기스 없습니다. 배터리 사이클 50회 미만입니다."
+          ]
+        },
+        "tone_friendliness": {
+          "score": 3,
+          "confidence": 0.5,
+          "evidence": [
+            "네 판매중입니다.",
+            "내일 2시 사당역 4번출구에서 뵙겠습니다."
+          ]
+        },
+        "clarity_structure": {
+          "score": 5,
+          "confidence": 0.8,
+          "evidence": [
+            "내일 2시 사당역 4번출구에서 뵙겠습니다."
+          ]
+        }
+      },
+      "trust_building": {
+        "product_description_detail": {
+          "score": 4,
+          "confidence": 0.8,
+          "evidence": [
+            "사용기간 6개월이고 외관 기스 없습니다. 배터리 사이클 50회 미만입니다."
+          ]
+        },
+        "transaction_transparency": {
+          "score": 5,
+          "confidence": 0.8,
+          "evidence": [
+            "사당역 가능합니다. 내일 오후 2시 어떠세요?",
+            "내일 2시 사당역 4번출구에서 뵙겠습니다."
+          ]
+        },
+        "issue_handling_attitude": {
+          "score": 3,
+          "confidence": 0.5,
+          "evidence": []
+        }
+      }
+    },
+    "change_history": []
+  },
+  "step2_updated": {
+    "profile_version": 2,
+    "created_at": "2026-03-04",
+    "last_updated": "2026-03-04",
+    "total_messages_analyzed": 15,
+    "analysis_summary": "판매자는 거래를 신속하게 진행하며, 가격 협상에 있어서는 다소 유연성을 보입니다. 제품에 대한 정보를 명확히 제공하고, 거래 조건을 투명하게 제시합니다. 최근 대화에서는 가격 협상에 대한 유연성이 줄어들었으며, 거래 조건을 명확히 설명하는 모습을 보였습니다.",
+    "dimensions": {
+      "transaction_motivation": {
+        "price_sensitivity": {
+          "score": 4,
+          "confidence": 0.9,
+          "evidence": [
+            "75만원까지 가능합니다. 그 이하는 어렵습니다.",
+            "9만원입니다. 네고 불가입니다."
+          ]
+        },
+        "efficiency_orientation": {
+          "score": 5,
+          "confidence": 0.9,
+          "evidence": [
+            "네 판매중입니다.",
+            "내일 2시 사당역 4번출구에서 뵙겠습니다.",
+            "입금 확인 후 당일 발송합니다."
+          ]
+        },
+        "enjoyment_orientation": {
+          "score": 1,
+          "confidence": 0.45,
+          "evidence": []
+        },
+        "negotiation_flexibility": {
+          "score": 2,
+          "confidence": 0.65,
+          "evidence": [
+            "75만원까지 가능합니다. 그 이하는 어렵습니다.",
+            "9만원입니다. 네고 불가입니다."
+          ]
+        }
+      },
+      "communication_style": {
+        "response_pattern": {
+          "score": 5,
+          "confidence": 0.9,
+          "evidence": [
+            "네 판매중입니다.",
+            "사용기간 6개월이고 외관 기스 없습니다. 배터리 사이클 50회 미만입니다.",
+            "네 문의 감사합니다.",
+            "키캡 마모 없고 구매 후 2개월 사용했습니다. 정품 케이블 포함입니다."
+          ]
+        },
+        "information_proactivity": {
+          "score": 5,
+          "confidence": 0.9,
+          "evidence": [
+            "사용기간 6개월이고 외관 기스 없습니다. 배터리 사이클 50회 미만입니다.",
+            "키캡 마모 없고 구매 후 2개월 사용했습니다. 정품 케이블 포함입니다."
+          ]
+        },
+        "tone_friendliness": {
+          "score": 3,
+          "confidence": 0.55,
+          "evidence": [
+            "네 판매중입니다.",
+            "내일 2시 사당역 4번출구에서 뵙겠습니다.",
+            "네 문의 감사합니다."
+          ]
+        },
+        "clarity_structure": {
+          "score": 5,
+          "confidence": 0.9,
+          "evidence": [
+            "내일 2시 사당역 4번출구에서 뵙겠습니다.",
+            "입금 확인 후 당일 발송합니다.",
+            "택배비 3000원 별도입니다."
+          ]
+        }
+      },
+      "trust_building": {
+        "product_description_detail": {
+          "score": 5,
+          "confidence": 0.9,
+          "evidence": [
+            "사용기간 6개월이고 외관 기스 없습니다. 배터리 사이클 50회 미만입니다.",
+            "키캡 마모 없고 구매 후 2개월 사용했습니다. 정품 케이블 포함입니다."
+          ]
+        },
+        "transaction_transparency": {
+          "score": 5,
+          "confidence": 0.9,
+          "evidence": [
+            "사당역 가능합니다. 내일 오후 2시 어떠세요?",
+            "내일 2시 사당역 4번출구에서 뵙겠습니다.",
+            "택배비 3000원 별도입니다.",
+            "입금 확인 후 당일 발송합니다."
+          ]
+        },
+        "issue_handling_attitude": {
+          "score": 3,
+          "confidence": 0.45,
+          "evidence": []
+        }
+      }
+    },
+    "change_history": [
+      {
+        "version": 2,
+        "dimension": "transaction_motivation",
+        "previous_score": 3,
+        "new_score": 2,
+        "reason": "최근 대화에서 가격 협상에 대한 유연성이 줄어듦."
+      },
+      {
+        "version": 2,
+        "dimension": "communication_style",
+        "previous_score": 4,
+        "new_score": 5,
+        "reason": "제품 정보 제공의 적극성이 증가함."
+      },
+      {
+        "version": 2,
+        "dimension": "trust_building",
+        "previous_score": 4,
+        "new_score": 5,
+        "reason": "제품 설명의 상세함이 증가함."
+      }
+    ]
+  }
+}
