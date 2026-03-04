@@ -1,0 +1,113 @@
+{
+    "01_digital_devices": [
+        "spec_key_hash_v2",
+        "device_type",
+        "brand",
+        "model_name",
+        "series_name",
+        "storage_capacity",
+        "battery_health",
+        "condition_grade"
+    ],
+    "02_furniture_interior": [
+        "spec_key_hash_v2",
+        "device_type",
+        "brand",
+        "model_name", 
+        "series_name"
+    ],
+    "03_baby_kids": [
+        "spec_key_hash_v2",
+        "brand",
+        "device_type",
+        "model_name",
+        "series_name"
+    ],
+    "04_womens_clothing": [
+        "spec_key_hash_v2",
+        "device_type",
+        "brand",
+        "model_name"
+    ],
+    "05_fashion_accessories": [
+        "spec_key_hash_v2",
+        "brand",
+        "device_type",
+        "model_name",
+        "series_name"
+    ],
+    "06_mens_clothing": [
+        "spec_key_hash_v2",
+        "device_type",
+        "brand",
+        "model_name"
+    ],
+    "07_home_appliances": [
+        "spec_key_hash_v2",
+        "device_type",
+        "brand",
+        "series_name",
+        "model_name"
+    ],
+    "08_daily_goods": [
+        "spec_key_hash_v2",
+        "device_type",
+        "brand",
+        "model_name",
+        "series_name"
+    ],
+    "09_sports_leisure": [
+        "spec_key_hash_v2",
+        "device_type",
+        "brand",
+        "model_name",
+        "series_name"
+    ],
+    "10_hobby_games": [
+        "spec_key_hash_v2",
+        "device_type",
+        "model_name",
+        "series_name",
+        "brand"
+    ],
+    "11_beauty": [
+        "spec_key_hash_v2",
+        "device_type",
+        "brand",
+        "model_name",
+        "series_name"
+    ],
+    "12_pet_supplies": [
+        "spec_key_hash_v2",
+        "device_type",
+        "brand",
+        "model_name",
+        "series_name"
+    ],
+    "13_food": [
+        "spec_key_hash_v2",
+        "device_type",
+        "brand",
+        "model_name",
+        "series_name"
+    ],
+    "14_books": [
+        "spec_key_hash_v2",
+        "series_name",
+        "device_type",
+        "model_name"
+    ],
+    "15_tickets_vouchers": [
+        "spec_key_hash_v2",
+        "device_type",
+        "brand",
+        "model_name",
+        "series_name"
+    ],
+    "16_etc": [
+        "spec_key_hash_v2",
+        "device_type",
+        "brand",
+        "model_name"
+    ]
+}

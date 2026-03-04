@@ -1,0 +1,734 @@
+{
+  "pageProps": {
+    "dehydratedState": {
+      "mutations": [],
+      "queries": [
+        {
+          "state": {
+            "data": {
+              "meta": {
+                "code": 0,
+                "message": "SUCCESS"
+              },
+              "data": [
+                {
+                  "gnbSeq": 95,
+                  "sortNum": 1,
+                  "menuName": "레고",
+                  "exposeStartDate": "2024-08-02 00:00:00",
+                  "exposeEndDate": "2024-09-01 23:59:00",
+                  "badgeType": 0,
+                  "badgeExposeStartDate": "2025-04-15 10:32:09",
+                  "badgeExposeEndDate": "9999-12-31 23:59:59"
+                },
+                {
+                  "gnbSeq": 97,
+                  "sortNum": 999,
+                  "menuName": "미개봉상품",
+                  "exposeStartDate": "2024-10-14 00:00:00",
+                  "exposeEndDate": "2024-10-31 23:59:00",
+                  "badgeType": 0,
+                  "badgeExposeStartDate": "2025-04-15 10:32:09",
+                  "badgeExposeEndDate": "9999-12-31 23:59:59"
+                },
+                {
+                  "gnbSeq": 99,
+                  "sortNum": 999,
+                  "menuName": "미개봉상품",
+                  "exposeStartDate": "2024-11-01 09:00:00",
+                  "exposeEndDate": "2024-11-22 23:59:00",
+                  "badgeType": 0,
+                  "badgeExposeStartDate": "2025-04-15 10:32:09",
+                  "badgeExposeEndDate": "9999-12-31 23:59:59"
+                },
+                {
+                  "gnbSeq": 100,
+                  "sortNum": 999,
+                  "menuName": "미개봉 키덜트",
+                  "exposeStartDate": "2024-12-16 00:00:00",
+                  "exposeEndDate": "2025-01-12 23:59:00",
+                  "badgeType": 0,
+                  "badgeExposeStartDate": "2025-04-15 10:32:09",
+                  "badgeExposeEndDate": "9999-12-31 23:59:59"
+                },
+                {
+                  "gnbSeq": 101,
+                  "sortNum": 999,
+                  "menuName": "콘서트/공연티켓",
+                  "exposeStartDate": "2024-12-24 00:00:00",
+                  "exposeEndDate": "2025-01-14 23:59:00",
+                  "badgeType": 0,
+                  "badgeExposeStartDate": "2025-04-15 10:32:09",
+                  "badgeExposeEndDate": "9999-12-31 23:59:59"
+                },
+                {
+                  "gnbSeq": 102,
+                  "sortNum": 999,
+                  "menuName": "닌텐도 ",
+                  "exposeStartDate": "2025-01-20 00:00:00",
+                  "exposeEndDate": "2025-02-17 23:59:00",
+                  "badgeType": 0,
+                  "badgeExposeStartDate": "2025-04-15 10:32:00",
+                  "badgeExposeEndDate": "9999-12-31 23:59:00"
+                },
+                {
+                  "gnbSeq": 103,
+                  "sortNum": 999,
+                  "menuName": "신학기 노트북",
+                  "exposeStartDate": "2025-02-25 00:00:00",
+                  "exposeEndDate": "2025-03-11 23:59:00",
+                  "badgeType": 0,
+                  "badgeExposeStartDate": "2025-04-15 10:32:09",
+                  "badgeExposeEndDate": "9999-12-31 23:59:59"
+                },
+                {
+                  "gnbSeq": 105,
+                  "sortNum": 999,
+                  "menuName": "그래픽카드",
+                  "exposeStartDate": "2025-03-12 00:00:00",
+                  "exposeEndDate": "2025-04-02 23:59:00",
+                  "badgeType": 0,
+                  "badgeExposeStartDate": "2025-04-15 10:32:09",
+                  "badgeExposeEndDate": "9999-12-31 23:59:59"
+                },
+                {
+                  "gnbSeq": 107,
+                  "sortNum": 999,
+                  "menuName": "자전거",
+                  "exposeStartDate": "2025-05-07 00:00:00",
+                  "exposeEndDate": "2025-05-28 23:59:00",
+                  "badgeType": 1,
+                  "badgeExposeStartDate": "2025-05-07 00:00:00",
+                  "badgeExposeEndDate": "2025-05-28 00:00:00"
+                },
+                {
+                  "gnbSeq": 108,
+                  "sortNum": 999,
+                  "menuName": "닌텐도",
+                  "exposeStartDate": "2025-05-12 00:00:00",
+                  "exposeEndDate": "2025-06-02 23:59:00",
+                  "badgeType": 1,
+                  "badgeExposeStartDate": "2025-05-12 00:00:00",
+                  "badgeExposeEndDate": "2025-06-02 00:00:00"
+                },
+                {
+                  "gnbSeq": 111,
+                  "sortNum": 999,
+                  "menuName": "라부부",
+                  "exposeStartDate": "2025-07-07 15:00:00",
+                  "exposeEndDate": "2025-07-20 23:59:00",
+                  "badgeType": 1,
+                  "badgeExposeStartDate": "2025-07-07 15:00:00",
+                  "badgeExposeEndDate": "2025-07-20 23:59:00"
+                },
+                {
+                  "gnbSeq": 114,
+                  "sortNum": 999,
+                  "menuName": "A/S 보증 노트북",
+                  "exposeStartDate": "2025-11-14 00:00:00",
+                  "exposeEndDate": "2025-12-07 23:59:00",
+                  "badgeType": 1,
+                  "badgeExposeStartDate": "2025-11-14 00:00:00",
+                  "badgeExposeEndDate": "2025-12-07 00:00:00"
+                }
+              ]
+            },
+            "dataUpdateCount": 1,
+            "dataUpdatedAt": 1770127378422,
+            "error": null,
+            "errorUpdateCount": 0,
+            "errorUpdatedAt": 0,
+            "fetchFailureCount": 0,
+            "fetchFailureReason": null,
+            "fetchMeta": null,
+            "isInvalidated": false,
+            "status": "success",
+            "fetchStatus": "idle"
+          },
+          "queryKey": [
+            "get-gnb-list"
+          ],
+          "queryHash": "[\"get-gnb-list\"]"
+        },
+        {
+          "state": {
+            "data": {
+              "meta": {
+                "code": 0,
+                "message": "SUCCESS"
+              },
+              "data": {
+                "autoCompleteItemList": [
+                  {
+                    "keyword": "홍삼"
+                  },
+                  {
+                    "keyword": "정관장 홍삼정"
+                  },
+                  {
+                    "keyword": "홍삼정"
+                  },
+                  {
+                    "keyword": "정관장 홍삼"
+                  },
+                  {
+                    "keyword": "홍삼제조기"
+                  },
+                  {
+                    "keyword": "홍삼정로얄"
+                  },
+                  {
+                    "keyword": "홍삼스틱"
+                  },
+                  {
+                    "keyword": "홍삼플러스닥터"
+                  },
+                  {
+                    "keyword": "홍삼절편"
+                  },
+                  {
+                    "keyword": "정관장 홍삼원"
+                  }
+                ],
+                "keywordCnt": 10
+              }
+            },
+            "dataUpdateCount": 1,
+            "dataUpdatedAt": 1770127378366,
+            "error": null,
+            "errorUpdateCount": 0,
+            "errorUpdatedAt": 0,
+            "fetchFailureCount": 0,
+            "fetchFailureReason": null,
+            "fetchMeta": null,
+            "isInvalidated": false,
+            "status": "success",
+            "fetchStatus": "idle"
+          },
+          "queryKey": [
+            "post-search-product-auto-complete",
+            "홍삼"
+          ],
+          "queryHash": "[\"post-search-product-auto-complete\",\"홍삼\"]"
+        },
+        {
+          "state": {
+            "data": {
+              "meta": {
+                "code": 0,
+                "message": "SUCCESS"
+              },
+              "data": {
+                "transactionId": "1770127378389_-96856899751477703",
+                "emptyResult": {
+                  "joongnaWebUrl": null,
+                  "noticeCode": null,
+                  "type": 0,
+                  "buttonText": "알림 등록",
+                  "buttonUrl": "",
+                  "notice": "검색 결과가 없습니다.",
+                  "subNotice": [
+                    "검색어의 단어 수를 줄이거나",
+                    "보다 일반적인 검색어로 검색해 보세요!"
+                  ],
+                  "image": {
+                    "width": 48,
+                    "height": 48,
+                    "url": "https://img2.joongna.com/search/graySpeechBubble.png"
+                  },
+                  "loginCheck": true
+                },
+                "abTests": null,
+                "size": 12,
+                "sortOptions": [
+                  {
+                    "sortType": "RECOMMEND_SORT",
+                    "sortName": "추천순",
+                    "sortOrder": 0
+                  },
+                  {
+                    "sortType": "RECOMMEND_SORT",
+                    "sortName": "추천순",
+                    "sortOrder": 0
+                  },
+                  {
+                    "sortType": "RECENT_SORT",
+                    "sortName": "최신순",
+                    "sortOrder": 1
+                  },
+                  {
+                    "sortType": "PRICE_ASC_SORT",
+                    "sortName": "낮은가격순",
+                    "sortOrder": 2
+                  },
+                  {
+                    "sortType": "PRICE_DESC_SORT",
+                    "sortName": "높은가격순",
+                    "sortOrder": 3
+                  }
+                ],
+                "searchFilterComponent": null,
+                "filter": null,
+                "totalSize": 312,
+                "searchStartDT": "2026-02-03 23:02:58",
+                "items": [
+                  {
+                    "seq": 202200535,
+                    "productPositionNo": 301,
+                    "platformType": 1,
+                    "price": 19999,
+                    "parcelFee": 0,
+                    "url": "https://img2.joongna.com/media/original/2025/01/16/1737012897975ltP_iQwAZ.jpg?impolicy=thumb&size=150",
+                    "title": "녹용천국 3박스 90포 대용량 6년근 홍삼 영지버섯",
+                    "state": 0,
+                    "sortDate": "2025-02-26 11:56:03",
+                    "mainLocationName": "",
+                    "articleSeq": 0,
+                    "articleUrl": "",
+                    "videoProductYn": "N",
+                    "wishCount": 0,
+                    "jnPayBadgeFlag": true,
+                    "pickupBadgeFlag": false,
+                    "highlightedTitle": "",
+                    "storeSeq": 7335328,
+                    "chatCount": 0,
+                    "selfAuditFlag": false,
+                    "userType": 0,
+                    "certifySellerFlag": false,
+                    "detailImgUrl": "",
+                    "locationNames": [],
+                    "objectType": "product",
+                    "wishYn": 0
+                  },
+                  {
+                    "seq": 199428621,
+                    "productPositionNo": 302,
+                    "platformType": 1,
+                    "price": 600000,
+                    "parcelFee": 0,
+                    "url": "https://img2.joongna.com/media/original/2025/01/23/1737608320502hi6_fGSo9.jpg?impolicy=thumb&size=150",
+                    "title": "홍삼명작 (전용 단지 포함)",
+                    "state": 0,
+                    "sortDate": "2025-02-24 14:35:41",
+                    "mainLocationName": "청천2동",
+                    "articleSeq": 0,
+                    "articleUrl": "",
+                    "videoProductYn": "N",
+                    "wishCount": 0,
+                    "jnPayBadgeFlag": true,
+                    "pickupBadgeFlag": false,
+                    "highlightedTitle": "",
+                    "storeSeq": 1899690,
+                    "chatCount": 2,
+                    "selfAuditFlag": false,
+                    "userType": 0,
+                    "certifySellerFlag": false,
+                    "detailImgUrl": "",
+                    "locationNames": [
+                      "인천광역시 부평구 청천2동"
+                    ],
+                    "objectType": "product",
+                    "wishYn": 0
+                  },
+                  {
+                    "seq": 202087477,
+                    "productPositionNo": 303,
+                    "platformType": 1,
+                    "price": 31000,
+                    "parcelFee": 0,
+                    "url": "https://img2.joongna.com/cafe-article-data/live/2025/02/21/1096646940/1740141817039_000_X6D8g_main.jpg?impolicy=thumb&size=150",
+                    "title": "흑삼대보 홍삼활력",
+                    "state": 0,
+                    "sortDate": "2025-02-21 21:43:14",
+                    "mainLocationName": "",
+                    "articleSeq": 1096646940,
+                    "articleUrl": "",
+                    "videoProductYn": "N",
+                    "wishCount": 0,
+                    "jnPayBadgeFlag": false,
+                    "pickupBadgeFlag": false,
+                    "highlightedTitle": "",
+                    "storeSeq": 2318745,
+                    "chatCount": 0,
+                    "selfAuditFlag": false,
+                    "userType": 0,
+                    "certifySellerFlag": false,
+                    "detailImgUrl": "",
+                    "locationNames": [],
+                    "objectType": "product",
+                    "wishYn": 0
+                  },
+                  {
+                    "seq": 199381829,
+                    "productPositionNo": 304,
+                    "platformType": 1,
+                    "price": 29900,
+                    "parcelFee": 0,
+                    "url": "https://img2.joongna.com/media/original/2025/01/10/1736436952035Qa2_XVTmB.jpg?impolicy=thumb&size=150",
+                    "title": "금산홍삼 국내산 흑염소즙 기력보충 면역튼튼 노화방지",
+                    "state": 0,
+                    "sortDate": "2025-02-20 08:34:16",
+                    "mainLocationName": "",
+                    "articleSeq": 0,
+                    "articleUrl": "",
+                    "videoProductYn": "N",
+                    "wishCount": 0,
+                    "jnPayBadgeFlag": true,
+                    "pickupBadgeFlag": false,
+                    "highlightedTitle": "",
+                    "storeSeq": 7335328,
+                    "chatCount": 0,
+                    "selfAuditFlag": false,
+                    "userType": 0,
+                    "certifySellerFlag": false,
+                    "detailImgUrl": "",
+                    "locationNames": [],
+                    "objectType": "product",
+                    "wishYn": 0
+                  },
+                  {
+                    "seq": 197000053,
+                    "productPositionNo": 305,
+                    "platformType": 1,
+                    "price": 23000,
+                    "parcelFee": 0,
+                    "url": "https://img2.joongna.com/media/original/2024/12/28/1735382470637Wwh_t1ShF.jpg?impolicy=thumb&size=150",
+                    "title": "110포 대용량 홍삼스틱",
+                    "state": 0,
+                    "sortDate": "2025-02-19 23:55:46",
+                    "mainLocationName": "",
+                    "articleSeq": 0,
+                    "articleUrl": "",
+                    "videoProductYn": "N",
+                    "wishCount": 0,
+                    "jnPayBadgeFlag": true,
+                    "pickupBadgeFlag": false,
+                    "highlightedTitle": "",
+                    "storeSeq": 184114,
+                    "chatCount": 0,
+                    "selfAuditFlag": false,
+                    "userType": 0,
+                    "certifySellerFlag": false,
+                    "detailImgUrl": "",
+                    "locationNames": [],
+                    "objectType": "product",
+                    "wishYn": 0
+                  },
+                  {
+                    "seq": 200533977,
+                    "productPositionNo": 306,
+                    "platformType": 1,
+                    "price": 20000,
+                    "parcelFee": 0,
+                    "url": "https://img2.joongna.com/media/original/2025/02/05/1738743017362wba_YG8yF.jpg?impolicy=thumb&size=150",
+                    "title": "홍삼엑기스",
+                    "state": 0,
+                    "sortDate": "2025-02-19 17:18:12",
+                    "mainLocationName": "양촌읍",
+                    "articleSeq": 0,
+                    "articleUrl": "",
+                    "videoProductYn": "N",
+                    "wishCount": 0,
+                    "jnPayBadgeFlag": false,
+                    "pickupBadgeFlag": false,
+                    "highlightedTitle": "",
+                    "storeSeq": 10813175,
+                    "chatCount": 2,
+                    "selfAuditFlag": false,
+                    "userType": 0,
+                    "certifySellerFlag": false,
+                    "detailImgUrl": "",
+                    "locationNames": [
+                      "경기도 김포시 양촌읍"
+                    ],
+                    "objectType": "product",
+                    "wishYn": 0
+                  },
+                  {
+                    "seq": 184888817,
+                    "productPositionNo": 307,
+                    "platformType": 1,
+                    "price": 20000,
+                    "parcelFee": 0,
+                    "url": "https://img2.joongna.com/media/original/2024/09/13/1726219882997mzQ_HO4PM.jpg?impolicy=thumb&size=150",
+                    "title": "홍삼 추석 선물",
+                    "state": 0,
+                    "sortDate": "2025-02-18 22:36:26",
+                    "mainLocationName": "대방동",
+                    "articleSeq": 0,
+                    "articleUrl": "",
+                    "videoProductYn": "N",
+                    "wishCount": 0,
+                    "jnPayBadgeFlag": true,
+                    "pickupBadgeFlag": true,
+                    "highlightedTitle": "",
+                    "storeSeq": 6842530,
+                    "chatCount": 0,
+                    "selfAuditFlag": false,
+                    "userType": 0,
+                    "certifySellerFlag": false,
+                    "detailImgUrl": "",
+                    "locationNames": [
+                      "서울특별시 동작구 대방동"
+                    ],
+                    "objectType": "product",
+                    "wishYn": 0
+                  },
+                  {
+                    "seq": 200164692,
+                    "productPositionNo": 308,
+                    "platformType": 1,
+                    "price": 24000,
+                    "parcelFee": 0,
+                    "url": "https://img2.joongna.com/media/original/2025/02/01/1738409573840cMx_uA1Bp.jpg?impolicy=thumb&size=150",
+                    "title": "정원장 튼튼키즈 어린이 홍삼 600ml, 1상자",
+                    "state": 0,
+                    "sortDate": "2025-02-15 17:04:52",
+                    "mainLocationName": "",
+                    "articleSeq": 0,
+                    "articleUrl": "",
+                    "videoProductYn": "N",
+                    "wishCount": 0,
+                    "jnPayBadgeFlag": true,
+                    "pickupBadgeFlag": false,
+                    "highlightedTitle": "",
+                    "storeSeq": 4097262,
+                    "chatCount": 1,
+                    "selfAuditFlag": false,
+                    "userType": 0,
+                    "certifySellerFlag": false,
+                    "detailImgUrl": "",
+                    "locationNames": [],
+                    "objectType": "product",
+                    "wishYn": 0
+                  },
+                  {
+                    "seq": 201165192,
+                    "productPositionNo": 309,
+                    "platformType": 1,
+                    "price": 30000,
+                    "parcelFee": 0,
+                    "url": "https://img2.joongna.com/cafe-article-data/live/2025/02/12/1095580143/1739329466631_000_yyNyV_main.jpg?impolicy=thumb&size=150",
+                    "title": "한삼인 본홍삼골드 팝니다 택포",
+                    "state": 0,
+                    "sortDate": "2025-02-12 12:04:08",
+                    "mainLocationName": "",
+                    "articleSeq": 1095580143,
+                    "articleUrl": "",
+                    "videoProductYn": "N",
+                    "wishCount": 0,
+                    "jnPayBadgeFlag": false,
+                    "pickupBadgeFlag": false,
+                    "highlightedTitle": "",
+                    "storeSeq": 3110967,
+                    "chatCount": 0,
+                    "selfAuditFlag": false,
+                    "userType": 0,
+                    "certifySellerFlag": false,
+                    "detailImgUrl": "",
+                    "locationNames": [],
+                    "objectType": "product",
+                    "wishYn": 0
+                  },
+                  {
+                    "seq": 201061065,
+                    "productPositionNo": 310,
+                    "platformType": 1,
+                    "price": 1200000,
+                    "parcelFee": 0,
+                    "url": "https://img2.joongna.com/cafe-article-data/live/2025/02/11/1095456334/1739238480305_001_CVZI2_main.png?impolicy=thumb&size=150",
+                    "title": "특허받은 난대류성 정관장 홍삼 한약추출기",
+                    "state": 0,
+                    "sortDate": "2025-02-11 10:47:45",
+                    "mainLocationName": "",
+                    "articleSeq": 1095456334,
+                    "articleUrl": "",
+                    "videoProductYn": "N",
+                    "wishCount": 2,
+                    "jnPayBadgeFlag": false,
+                    "pickupBadgeFlag": false,
+                    "highlightedTitle": "",
+                    "storeSeq": 5282731,
+                    "chatCount": 0,
+                    "selfAuditFlag": false,
+                    "userType": 0,
+                    "certifySellerFlag": false,
+                    "detailImgUrl": "",
+                    "locationNames": [],
+                    "objectType": "product",
+                    "wishYn": 0
+                  },
+                  {
+                    "seq": 199587131,
+                    "productPositionNo": 311,
+                    "platformType": 1,
+                    "price": 65000,
+                    "parcelFee": 0,
+                    "url": "https://img2.joongna.com/media/original/2025/01/25/1737774955512NTO_AWvzD.jpg?impolicy=thumb&size=150",
+                    "title": "홍삼진 판매합니다",
+                    "state": 0,
+                    "sortDate": "2025-02-08 23:49:23",
+                    "mainLocationName": "두암1동",
+                    "articleSeq": 0,
+                    "articleUrl": "",
+                    "videoProductYn": "N",
+                    "wishCount": 0,
+                    "jnPayBadgeFlag": true,
+                    "pickupBadgeFlag": false,
+                    "highlightedTitle": "",
+                    "storeSeq": 5142831,
+                    "chatCount": 0,
+                    "selfAuditFlag": false,
+                    "userType": 0,
+                    "certifySellerFlag": false,
+                    "detailImgUrl": "",
+                    "locationNames": [
+                      "광주광역시 북구 두암1동"
+                    ],
+                    "objectType": "product",
+                    "wishYn": 0
+                  },
+                  {
+                    "seq": 199809337,
+                    "productPositionNo": 312,
+                    "platformType": 1,
+                    "price": 29900,
+                    "parcelFee": 0,
+                    "url": "https://img2.joongna.com/media/original/2025/01/12/1736668093533A2b_8pszb.jpg?impolicy=thumb&size=150",
+                    "title": "금산홍삼 국내산 흑염소즙 2박스 기력보충 면역튼튼 진액",
+                    "state": 0,
+                    "sortDate": "2025-02-05 10:03:14",
+                    "mainLocationName": "",
+                    "articleSeq": 0,
+                    "articleUrl": "",
+                    "videoProductYn": "N",
+                    "wishCount": 0,
+                    "jnPayBadgeFlag": true,
+                    "pickupBadgeFlag": false,
+                    "highlightedTitle": "",
+                    "storeSeq": 7335328,
+                    "chatCount": 0,
+                    "selfAuditFlag": false,
+                    "userType": 0,
+                    "certifySellerFlag": false,
+                    "detailImgUrl": "",
+                    "locationNames": [],
+                    "objectType": "product",
+                    "wishYn": 0
+                  }
+                ],
+                "changedProductFilterType": false,
+                "changedKeyword": {
+                  "isChangedKeyword": false,
+                  "originKeyword": "홍삼",
+                  "changedKeyword": "홍삼"
+                },
+                "selfAuditRecommendItems": [],
+                "standardPriceShow": 0,
+                "resultType": 0
+              }
+            },
+            "dataUpdateCount": 1,
+            "dataUpdatedAt": 1770127378392,
+            "error": null,
+            "errorUpdateCount": 0,
+            "errorUpdatedAt": 0,
+            "fetchFailureCount": 0,
+            "fetchFailureReason": null,
+            "fetchMeta": null,
+            "isInvalidated": false,
+            "status": "success",
+            "fetchStatus": "idle"
+          },
+          "queryKey": [
+            "get-search-products",
+            {
+              "categoryFilter": [
+                {
+                  "categoryDepth": 0,
+                  "categorySeq": 0
+                }
+              ],
+              "firstQuantity": 50,
+              "jnPayYn": "ALL",
+              "keywordSource": "INPUT_KEYWORD",
+              "osType": 2,
+              "page": 6,
+              "parcelFeeYn": "ALL",
+              "priceFilter": {
+                "maxPrice": 100000000,
+                "minPrice": 0
+              },
+              "quantity": 50,
+              "registPeriod": "ALL",
+              "saleYn": "SALE_N",
+              "sort": "RECOMMEND_SORT",
+              "filterTypeCheckoutByUser": false,
+              "adjustSearchKeyword": true,
+              "searchWord": "홍삼"
+            }
+          ],
+          "queryHash": "[\"get-search-products\",{\"adjustSearchKeyword\":true,\"categoryFilter\":[{\"categoryDepth\":0,\"categorySeq\":0}],\"filterTypeCheckoutByUser\":false,\"firstQuantity\":50,\"jnPayYn\":\"ALL\",\"keywordSource\":\"INPUT_KEYWORD\",\"osType\":2,\"page\":6,\"parcelFeeYn\":\"ALL\",\"priceFilter\":{\"maxPrice\":100000000,\"minPrice\":0},\"quantity\":50,\"registPeriod\":\"ALL\",\"saleYn\":\"SALE_N\",\"searchWord\":\"홍삼\",\"sort\":\"RECOMMEND_SORT\"}]"
+        },
+        {
+          "state": {
+            "data": {
+              "meta": {
+                "code": 0,
+                "message": "SUCCESS"
+              },
+              "data": {
+                "searchKeyword": [],
+                "relatedKeywordList": []
+              }
+            },
+            "dataUpdateCount": 1,
+            "dataUpdatedAt": 1770127378298,
+            "error": null,
+            "errorUpdateCount": 0,
+            "errorUpdatedAt": 0,
+            "fetchFailureCount": 0,
+            "fetchFailureReason": null,
+            "fetchMeta": null,
+            "isInvalidated": false,
+            "status": "success",
+            "fetchStatus": "idle"
+          },
+          "queryKey": [
+            "get-search-related-keyword",
+            "홍삼"
+          ],
+          "queryHash": "[\"get-search-related-keyword\",\"홍삼\"]"
+        },
+        {
+          "state": {
+            "data": {
+              "storeSeq": null
+            },
+            "dataUpdateCount": 1,
+            "dataUpdatedAt": 1770127378274,
+            "error": null,
+            "errorUpdateCount": 0,
+            "errorUpdatedAt": 0,
+            "fetchFailureCount": 0,
+            "fetchFailureReason": null,
+            "fetchMeta": null,
+            "isInvalidated": false,
+            "status": "success",
+            "fetchStatus": "idle"
+          },
+          "queryKey": [
+            "my-store-seq"
+          ],
+          "queryHash": "[\"my-store-seq\"]"
+        }
+      ]
+    },
+    "session": {
+      "status": "unauthenticated"
+    },
+    "_sentryTraceData": "b27d3518737f4715bbb14456225e4e9c-3e15e719b0be5570",
+    "_sentryBaggage": "sentry-environment=live,sentry-release=h0ZBTp8QguUS6pcWFFXzx,sentry-public_key=a8d4ca8a3deee185a932c6711cbfc02c,sentry-trace_id=b27d3518737f4715bbb14456225e4e9c"
+  },
+  "__N_SSP": true
+}

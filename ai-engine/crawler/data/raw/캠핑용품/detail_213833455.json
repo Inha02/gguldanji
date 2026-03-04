@@ -1,0 +1,851 @@
+{
+  "pageProps": {
+    "dehydratedState": {
+      "mutations": [],
+      "queries": [
+        {
+          "state": {
+            "data": {
+              "meta": {
+                "code": 0,
+                "message": "SUCCESS"
+              },
+              "data": [
+                {
+                  "gnbSeq": 95,
+                  "sortNum": 1,
+                  "menuName": "레고",
+                  "exposeStartDate": "2024-08-02 00:00:00",
+                  "exposeEndDate": "2024-09-01 23:59:00",
+                  "badgeType": 0,
+                  "badgeExposeStartDate": "2025-04-15 10:32:09",
+                  "badgeExposeEndDate": "9999-12-31 23:59:59"
+                },
+                {
+                  "gnbSeq": 97,
+                  "sortNum": 999,
+                  "menuName": "미개봉상품",
+                  "exposeStartDate": "2024-10-14 00:00:00",
+                  "exposeEndDate": "2024-10-31 23:59:00",
+                  "badgeType": 0,
+                  "badgeExposeStartDate": "2025-04-15 10:32:09",
+                  "badgeExposeEndDate": "9999-12-31 23:59:59"
+                },
+                {
+                  "gnbSeq": 99,
+                  "sortNum": 999,
+                  "menuName": "미개봉상품",
+                  "exposeStartDate": "2024-11-01 09:00:00",
+                  "exposeEndDate": "2024-11-22 23:59:00",
+                  "badgeType": 0,
+                  "badgeExposeStartDate": "2025-04-15 10:32:09",
+                  "badgeExposeEndDate": "9999-12-31 23:59:59"
+                },
+                {
+                  "gnbSeq": 100,
+                  "sortNum": 999,
+                  "menuName": "미개봉 키덜트",
+                  "exposeStartDate": "2024-12-16 00:00:00",
+                  "exposeEndDate": "2025-01-12 23:59:00",
+                  "badgeType": 0,
+                  "badgeExposeStartDate": "2025-04-15 10:32:09",
+                  "badgeExposeEndDate": "9999-12-31 23:59:59"
+                },
+                {
+                  "gnbSeq": 101,
+                  "sortNum": 999,
+                  "menuName": "콘서트/공연티켓",
+                  "exposeStartDate": "2024-12-24 00:00:00",
+                  "exposeEndDate": "2025-01-14 23:59:00",
+                  "badgeType": 0,
+                  "badgeExposeStartDate": "2025-04-15 10:32:09",
+                  "badgeExposeEndDate": "9999-12-31 23:59:59"
+                },
+                {
+                  "gnbSeq": 102,
+                  "sortNum": 999,
+                  "menuName": "닌텐도 ",
+                  "exposeStartDate": "2025-01-20 00:00:00",
+                  "exposeEndDate": "2025-02-17 23:59:00",
+                  "badgeType": 0,
+                  "badgeExposeStartDate": "2025-04-15 10:32:00",
+                  "badgeExposeEndDate": "9999-12-31 23:59:00"
+                },
+                {
+                  "gnbSeq": 103,
+                  "sortNum": 999,
+                  "menuName": "신학기 노트북",
+                  "exposeStartDate": "2025-02-25 00:00:00",
+                  "exposeEndDate": "2025-03-11 23:59:00",
+                  "badgeType": 0,
+                  "badgeExposeStartDate": "2025-04-15 10:32:09",
+                  "badgeExposeEndDate": "9999-12-31 23:59:59"
+                },
+                {
+                  "gnbSeq": 105,
+                  "sortNum": 999,
+                  "menuName": "그래픽카드",
+                  "exposeStartDate": "2025-03-12 00:00:00",
+                  "exposeEndDate": "2025-04-02 23:59:00",
+                  "badgeType": 0,
+                  "badgeExposeStartDate": "2025-04-15 10:32:09",
+                  "badgeExposeEndDate": "9999-12-31 23:59:59"
+                },
+                {
+                  "gnbSeq": 107,
+                  "sortNum": 999,
+                  "menuName": "자전거",
+                  "exposeStartDate": "2025-05-07 00:00:00",
+                  "exposeEndDate": "2025-05-28 23:59:00",
+                  "badgeType": 1,
+                  "badgeExposeStartDate": "2025-05-07 00:00:00",
+                  "badgeExposeEndDate": "2025-05-28 00:00:00"
+                },
+                {
+                  "gnbSeq": 108,
+                  "sortNum": 999,
+                  "menuName": "닌텐도",
+                  "exposeStartDate": "2025-05-12 00:00:00",
+                  "exposeEndDate": "2025-06-02 23:59:00",
+                  "badgeType": 1,
+                  "badgeExposeStartDate": "2025-05-12 00:00:00",
+                  "badgeExposeEndDate": "2025-06-02 00:00:00"
+                },
+                {
+                  "gnbSeq": 111,
+                  "sortNum": 999,
+                  "menuName": "라부부",
+                  "exposeStartDate": "2025-07-07 15:00:00",
+                  "exposeEndDate": "2025-07-20 23:59:00",
+                  "badgeType": 1,
+                  "badgeExposeStartDate": "2025-07-07 15:00:00",
+                  "badgeExposeEndDate": "2025-07-20 23:59:00"
+                },
+                {
+                  "gnbSeq": 114,
+                  "sortNum": 999,
+                  "menuName": "A/S 보증 노트북",
+                  "exposeStartDate": "2025-11-14 00:00:00",
+                  "exposeEndDate": "2025-12-07 23:59:00",
+                  "badgeType": 1,
+                  "badgeExposeStartDate": "2025-11-14 00:00:00",
+                  "badgeExposeEndDate": "2025-12-07 00:00:00"
+                }
+              ]
+            },
+            "dataUpdateCount": 1,
+            "dataUpdatedAt": 1770187716035,
+            "error": null,
+            "errorUpdateCount": 0,
+            "errorUpdatedAt": 0,
+            "fetchFailureCount": 0,
+            "fetchFailureReason": null,
+            "fetchMeta": null,
+            "isInvalidated": false,
+            "status": "success",
+            "fetchStatus": "idle"
+          },
+          "queryKey": [
+            "get-gnb-list"
+          ],
+          "queryHash": "[\"get-gnb-list\"]"
+        },
+        {
+          "state": {
+            "data": {
+              "meta": {
+                "code": 0,
+                "message": "SUCCESS"
+              },
+              "data": {
+                "productSeq": 213833455,
+                "storeSeq": 5349129,
+                "userType": 0,
+                "nickName": "poo0o0o0o",
+                "productTitle": "캠핑용품 캠핑장바닥 마감 야자매트 코코넛매트",
+                "productDescription": "\"독도철강목재\"\n2.500평 초대형\n전문 매장에서 믿고 구매하세요 !!\n100% 가격 오픈 정찰제 새상품\n전제품 물건 직접보유 (나까마 X) \n목재,건재상에 납품하는 전문점!!\n\n구매문의\n경기지점: 010-8831-6671\n청주지점: 010-6300-7785(신규오픈)\n빠르게 전국출고 가능!!!\n(부재시 품목 , 수량 , 지역 문자주세요)\n* 주문/방문전 재고 가격확인 바랍니다 실시간 변동될수 있음&gt; 입금순 우선 확보!!\n26. 쌍곰 705 목공본드 \n쌍곰 목공본드 1박스  (20개\n\n27. 오공 실리콘, 오공 우레탄 폼 \n오공 실리콘(회색,흑색,백색) \n오공 실리콘(투명, 반투명) \n오공 바이오 실리콘 \n오공 내열용 실리콘(회색)\n탑씰 외장용 실리콘(투명,흑색)\n\n구매전 꼭 재고 / 실시간 가격변동 확인 바랍니다 임금자순으로 재고확보됩니다\n 오일 스테인\n\n27. 오공 실리콘, 오공 우레탄 폼 \n오공 실리콘(회색,흑색,백색) \n오공 실리콘(투명, 반투명) \n오공 바이오 실리콘 \n오공 내열용 실리콘(회색)\n탑씰 외장용 실리콘(투명,흑색)\n\n오공 우레탄폼 : 2,700원\n오공 우레탄폼 건 : 13,500원\n오공 우레탄폼 크리너 : 2,200원\n우레탄 폼본드 : 5.300원\n\n28. 용접봉\n용접봉 2.6 : \n용접봉 3.2 :\n\n29. 타카기계 & 타카핀 & 피스 \n제일 타카기계 F30 \n\n30. 매거진피스 & 건네일 & 못 & 부자재\n31. 각파이프 평철\n\n서울시 서초구 용달출고 \n아이소핑크 단열재 30T 60장\n연천군 용달출고\n현무암 50T 두파렛트 \n경기 광주 용달출고\n합성데크 고밀도 8자 115장 \n경기 양평 용달출고\n합성데크 200장 \n아연 각파이프 1.4T 50*50 \n의정부 용달출고\n구조목 2X6 40장 \n동두천 용달출고\n방부목 데크 360장 \n60cm 야자매트 \n포천 철원 용달출고!!\n일반합판 100장 \n양주 용달출고 \n구조목 2x4 100장\n마감재 1x4 50장 \n남양주 용달출고\n방부목. 데크  200장 \n경 용인 처인구 용달출고\n합성데크 고밀도150장\n강원 춘천 용달배송 \n삼목루바 8자 50단 \n한치각 30단 소송다루기 사제다루끼\n매장 방문수령 \n방부목 데크 21*120*3600 \n24. 계단 자재\n미송 계단 소봉 \n미송 계단 대봉 \n미송 계단재 33x300x3.600 \n\n미송 핸드레일 60*70*3.600\n멀바우 계단 소봉 PVC 배관\n후로링 메탈사이딩 그라스울 \n브라켓 메가타이 비엘텍 솔리드\n멀바우 핸드레일 40*70\n멀바우 핸드레일 60*70*3.600\n히노끼 루바 박스포장 10 X 100 8장 \n나무(일본산) ,랩포장 X \n히노끼 유절 8자 \n히노끼 유절12자 \n히노끼 유절 600: 1단 \n히노끼 유절 900: \n히노끼 반무절 8자 (A급집성) \n히노끼 무절 8자 (A급) \n히노끼 무절 12자 (A급 ) \n히노끼 몰딩 (10 x 40)\n히노끼 몰딩 (10 x 60)\n히노끼 마감재(13 x 75)\n삼목 루바 11X115 8장 \n삼나무\n템바M블럭 , 템바루바 [ 무절 ]\n히노끼 유절 템바 3~4블럭 : 1장 \n사이즈 ( 15x115x2.400mm)\n히노끼 무절 템바 3~4블럭 \n사이즈 ( 15x115x2.400mm)\n레드파인 무절 템바 5블럭 \n사이즈 ( 16x116x2.400mm)\n히노끼 각재 / 판재 A급 \n두께 30 x 폭 50 x 길이 2400 (유절)\n두께 30 x 폭 89 x 길이 \n두께 50 x 폭 50 x 길이  \n두께 18 x 폭 120 x 3.000 유절 (민자)\n두께 18 x 폭 120 x 3.000 무절 \n 건축.인테리어 합판 (대량 할인)\n일반11.5T베트남(MLH) \n일반11.5T베트남(MLH ) \n일반 2.7T (인니) \n일반 8.5T 연부 삼부 고부\n일반17.5T\n내 수 KS 12T \n준내수KS 8.5T 국내산 \n내수 KS 12T 베트남 \n내수일반 11.5T 베트남\n내수 KS 12T \n니브 니부합판 4.6T 볼트\n시멘트사이딩 세라믹사이딩 수직\n태고코팅합판11.5T\nOSB 합판 8T \nOSB 합판 11T \nOSB 합판 18T \nOSB TNG18.3T\nMDF합판 6T \nMDF합판 9T \nMDF합판 12T \nMDF합판 15T 4x8 \nMDF합판 18T \n미송합판무절 4T \n미송합판무절 15T \n자작합판A급 4x8\n자작합판A급 12T  \n자작합판A급 15T \n자작합판A급 18T \n낙엽송 엠보 4.5T \n납엽송 엠보 7.5T\n요꼬(오징어) 4T \n코아연질18T 4x8 \n코아강질18T 4x8 \n콤비합판(인니) 8.5T \n콤비합판 11.5T 4x8\n라왕합판 8.5T \n라왕합판 11.5T 4x8\n라왕합판(인니) 17.5T \n천연 석고보드\nKD일반석고 9.5T \n일반석고 9.5T \n방수석고 9.5T \n멀티 주춧돌(브라켓, 넛트 포함)\n멀티 주춧돌\n아이소핑크 (특)\n10T : 2,600원 (양면 코팅)\n20T\n30T \n50T \n100T\n이보드 (도배용.도장용)\n도배용 13T : 13,000원\n도배용 23T 세라믹 시청 관공사\n도배용 33T 차음석고보드\n도장용 13T 크나우프 오웬스코닝\n도장용 23T 본덱스 벽산 KCC\n도장용 33T 베이스판 휀스 난간\n인슐레이션 전동지게차 쿠팡\n야자매트 고급형 (두께 35~40T) \n60cm  (10m\n80cm \n1.0m \n1.2m 1롤 \n1.5m 1롤 \n2.0m 1롤 \n앙카 고정핀 1롤당 8개씩 무료지급\n25. 함라(가나) 슁글. 방수시트 \n가나 방수 시트 1롤 20.500원\n가나 육각 슁글 3헤베 1단 \n가나 사각이중 슁글 2.38헤베 1단 \n\n코아네트 \n현무암 \n일반 부정형 50T ,52장 \n일반 부정형 30T ,84장 \n일반 굴림형 50T ,52장 \n\n470*430굴림형 50T \n470*430굴림형 50T ,반파렛트\n원형 500*500*50T :낱장:\n원형 400*400*50T\n\n담장석 1파렛트 5단 \n담장석 반파렛트 2.5단\n사구석 \n\n구들장 500*500*50T ,40장 \n경계석 100*100*\n송이석 적색 해미석 \n\n*대량 구입시 추가할인 \n정품 국산 각파이프 ( 6 M 신품 )\n중국산섞기,덤핑,불량생산품 취급 \n\n칼라 1.4T\n칼라 2.0\n아연 1.4T\n25* 25* \n30* 30* \n40* 40* \n50* 30* \n50* 50* \n75* 45*\n75* 75* \n100* 50* \n아연 2.0T\n40* 40* \n50* 30* \n50* 50* \n75* 45\n75* 75* \n100* 50* \n100*100\n아연 2.9T\n100* 50* 2.9t : \n100*100* 2.9t : 타이벡\n**************************************ㅁ\n인슐레이션 포장마차 랩 테이프 미송루바 스텐피스 백색 흑색 회색 그레이 방부각재 목재 인테리어 방부목 굴삭기 포크레인 중장비 전기지게차 2톤지게차\n히노끼 편백루바 몰딩 마감재 삼목루바 고무나무집성  삼나무 일본 중국 템바보드 템바루바 랩 구조물 당근 이동식 전동 식탁 시트지 4.5톤지게차 돌 파쇄석\n원주목 !!아카시아 관공서 두치각 히노끼 편백나무 삼목 멀바우 메탈사이딩 솔리드 경관 후레싱 강판 사이드핑커 핸드레일 계단재 소봉 대봉 대형중형소형\n기둥재 방킬라이 이페 캡 앙카 락카 책상 펜 콘센트 오동나무 실외기 난로 시멘트사이딩아시바 c형광 전국  c형강 기억자 사포 가공 게이밍 컴퓨터\n방화석고 방수석고 야자수매트 샤시 샷시 창문 중고  태고합판 야외테이블 파라솔테이블 야외테이블세트 카페테이블 의자 테라스 이쁜 카페 마당테이블 리빙보드\n합성목재 합성데크 인조데크 인조목재 방킬라이 방부데크 방부목 방부각재 한치각 두치각 폼다루끼 화곡동 투바이 오비끼 산승각 홈인테리어 천갈이 돌\n포천 양주 동두천 남양주 파주 일산 김포 강화도 인천 영종도 부천 안산 안성 시흥 군포 안양 판교 분당 성남 네이버 본사 소송 미송 낙송 세면기 항만 블랙\n야외그네 원목그네 일괄 흔들의자 아연강관  b급 s급  타보기 정원그네 아시바 보쉬 써모사이딩 타이어 금호 카니발 그랜저 스타렉스 5톤 3.5톤 마이티\n아이스 정원가구 야외가구 매장구경갔어요 소파 조경 데코타일 소변기 선원 오토바이 블라인드 백자갈 흑자갈 해미석 경계석 몰탈 시멘트 본덱스 우레탄 \n화성 용인 애버랜드 놀러갔어요 시흥목재  시멘트 강북 수리 보수 강서 강동 라탄 페인트 옥션 강남 인조잔디 아파트 이사가고싶다 도봉 노원 서초 의정부\n계단재 마감재 MDF 집성목 구조목 레드파인 주름관 스프러스 SPF 야자매트 휀스 매트리스 코코넛매트 등산로매트 코아네트 안산목재 하남목재 거울 화이트\n정자 야외정자 원목정자 원두막 쇼파 오두막 소파 이층원두막 파고라 전동 그늘막 에서 더위피하기 가제보 천막 휀스 보드 이보드 온도리 구리목재 붙박이장\n가평 빠지 예약했다 양평 청평 호수 놀러가자 춘천 매트리스 화천 홍천 터미널 인제 고성 용접 양양 원통 강릉 삼척 속초 동해 정선 영월 횡성 셀프 거실\n주춧돌 멀티주줏돌 각파이프 c형광 주문진 임팩 안녕하세요 라텍스 아연각파이프 칼라각파이프 철판 현무암 PVC 디월트 철제파이프 파이프가구 몰탈 도어\n침대 돌침대 흙침대 원목침대 체어 지마켓 편백침대 조경석 포천석 피톤치드 포크레인 11번가 원형 수납형 저상형 서랍형 서랍장 수납장 주문제작 벽지\n강릉 원주 천안 아산 당진 철원 김화 문산읍 동송 와수리 H빔 파라솔 철판 붓 로라 이페 공기압 ks 미닫이 여닫이 창호 샷시 재단기 절단기 함마드릴 \n대형파라솔 역삼동 특대형파라솔 소형 중형 용산 대형 빨강 파랑 노랑 녹색 초록 아이보리 화이트 문 대문 사제투바이 소송투바이 소송다루끼\n휀다 솔리드 철제테이블 드릴 피스 화스너 베이스판 지게차 \n쿠팡 전동 타카핀 아이소핑크 이보드 석고보드 스기 자작나무 미송 멀바우 아카시아 천안목재 양주목재 \n인니 코아 니브 콤비 절단기 재단기 미국 집진기 라왕 011 010 삼성폰 엘지 CJ 앙카 앙카세트 전곡 연천 신철원 동송 방화문 시청 에어텐트 타이어 옥상 나눔\n내장제 외장제 벙커침대 철제가구 차광망 스프레이 톱날 차단막 대부도 서구 북면 남구 북구 동구 중구 시화 철원목재 원주목재 강릉목재 타이어수리 공원\n성북구 강북구 강남구 강서구 태국 강동구 중랑구 동대문구 삼목루바 스터드 소송 미송 사이딩 OSB 단열재 강화마루 유리 강화유리 강마루 남양주목재 석고피프\n욕조 도기 수정 목공방 조립식 니부 슁글 건축 합판 흡음재...",
+                "qty": 1,
+                "media": [
+                  {
+                    "productMediaSeq": 1199428112,
+                    "originUrl": "https://img2.joongna.com/cafe-article-data/live/2025/06/28/1110030557/1751092928818_000_hWqxT.png",
+                    "mediaUrl": "https://img2.joongna.com/cafe-article-data/live/2025/06/28/1110030557/1751092928818_000_hWqxT.png?impolicy=resizeWatermark3&ftext=poo0o0o0o",
+                    "thumbnailUrl": "https://img2.joongna.com/cafe-article-data/live/2025/06/28/1110030557/1751092928818_000_hWqxT.png?impolicy=thumb",
+                    "waterMarkUrl": "https://img2.joongna.com/cafe-article-data/live/2025/06/28/1110030557/1751092928818_000_hWqxT.png?impolicy=resizeWatermark3&ftext=poo0o0o0o",
+                    "waterMarkLogoUrl": "https://img2.joongna.com/icon/jn_watermark_20230418.png",
+                    "mediaType": 0,
+                    "watermarkYn": 1,
+                    "mediaSort": 0,
+                    "mediaStatus": 1,
+                    "mainYn": 1
+                  },
+                  {
+                    "productMediaSeq": 1199428113,
+                    "originUrl": "https://img2.joongna.com/cafe-article-data/live/2025/06/28/1110030557/1751092928818_001_fX1JS.png",
+                    "mediaUrl": "https://img2.joongna.com/cafe-article-data/live/2025/06/28/1110030557/1751092928818_001_fX1JS.png?impolicy=resizeWatermark3&ftext=poo0o0o0o",
+                    "thumbnailUrl": "https://img2.joongna.com/cafe-article-data/live/2025/06/28/1110030557/1751092928818_001_fX1JS.png?impolicy=thumb",
+                    "waterMarkUrl": "https://img2.joongna.com/cafe-article-data/live/2025/06/28/1110030557/1751092928818_001_fX1JS.png?impolicy=resizeWatermark3&ftext=poo0o0o0o",
+                    "waterMarkLogoUrl": "https://img2.joongna.com/icon/jn_watermark_20230418.png",
+                    "mediaType": 0,
+                    "watermarkYn": 1,
+                    "mediaSort": 1,
+                    "mediaStatus": 1,
+                    "mainYn": 0
+                  },
+                  {
+                    "productMediaSeq": 1199428114,
+                    "originUrl": "https://img2.joongna.com/cafe-article-data/live/2025/06/28/1110030557/1751092928818_002_5xtHm.png",
+                    "mediaUrl": "https://img2.joongna.com/cafe-article-data/live/2025/06/28/1110030557/1751092928818_002_5xtHm.png?impolicy=resizeWatermark3&ftext=poo0o0o0o",
+                    "thumbnailUrl": "https://img2.joongna.com/cafe-article-data/live/2025/06/28/1110030557/1751092928818_002_5xtHm.png?impolicy=thumb",
+                    "waterMarkUrl": "https://img2.joongna.com/cafe-article-data/live/2025/06/28/1110030557/1751092928818_002_5xtHm.png?impolicy=resizeWatermark3&ftext=poo0o0o0o",
+                    "waterMarkLogoUrl": "https://img2.joongna.com/icon/jn_watermark_20230418.png",
+                    "mediaType": 0,
+                    "watermarkYn": 1,
+                    "mediaSort": 2,
+                    "mediaStatus": 1,
+                    "mainYn": 0
+                  },
+                  {
+                    "productMediaSeq": 1199428115,
+                    "originUrl": "https://img2.joongna.com/cafe-article-data/live/2025/06/28/1110030557/1751092928819_003_1UKTf.png",
+                    "mediaUrl": "https://img2.joongna.com/cafe-article-data/live/2025/06/28/1110030557/1751092928819_003_1UKTf.png?impolicy=resizeWatermark3&ftext=poo0o0o0o",
+                    "thumbnailUrl": "https://img2.joongna.com/cafe-article-data/live/2025/06/28/1110030557/1751092928819_003_1UKTf.png?impolicy=thumb",
+                    "waterMarkUrl": "https://img2.joongna.com/cafe-article-data/live/2025/06/28/1110030557/1751092928819_003_1UKTf.png?impolicy=resizeWatermark3&ftext=poo0o0o0o",
+                    "waterMarkLogoUrl": "https://img2.joongna.com/icon/jn_watermark_20230418.png",
+                    "mediaType": 0,
+                    "watermarkYn": 1,
+                    "mediaSort": 3,
+                    "mediaStatus": 1,
+                    "mainYn": 0
+                  },
+                  {
+                    "productMediaSeq": 1199428116,
+                    "originUrl": "https://img2.joongna.com/cafe-article-data/live/2025/06/28/1110030557/1751092928819_004_fcXs3.png",
+                    "mediaUrl": "https://img2.joongna.com/cafe-article-data/live/2025/06/28/1110030557/1751092928819_004_fcXs3.png?impolicy=resizeWatermark3&ftext=poo0o0o0o",
+                    "thumbnailUrl": "https://img2.joongna.com/cafe-article-data/live/2025/06/28/1110030557/1751092928819_004_fcXs3.png?impolicy=thumb",
+                    "waterMarkUrl": "https://img2.joongna.com/cafe-article-data/live/2025/06/28/1110030557/1751092928819_004_fcXs3.png?impolicy=resizeWatermark3&ftext=poo0o0o0o",
+                    "waterMarkLogoUrl": "https://img2.joongna.com/icon/jn_watermark_20230418.png",
+                    "mediaType": 0,
+                    "watermarkYn": 1,
+                    "mediaSort": 4,
+                    "mediaStatus": 1,
+                    "mainYn": 0
+                  },
+                  {
+                    "productMediaSeq": 1199428117,
+                    "originUrl": "https://img2.joongna.com/cafe-article-data/live/2025/06/28/1110030557/1751092928819_005_BeFpW.png",
+                    "mediaUrl": "https://img2.joongna.com/cafe-article-data/live/2025/06/28/1110030557/1751092928819_005_BeFpW.png?impolicy=resizeWatermark3&ftext=poo0o0o0o",
+                    "thumbnailUrl": "https://img2.joongna.com/cafe-article-data/live/2025/06/28/1110030557/1751092928819_005_BeFpW.png?impolicy=thumb",
+                    "waterMarkUrl": "https://img2.joongna.com/cafe-article-data/live/2025/06/28/1110030557/1751092928819_005_BeFpW.png?impolicy=resizeWatermark3&ftext=poo0o0o0o",
+                    "waterMarkLogoUrl": "https://img2.joongna.com/icon/jn_watermark_20230418.png",
+                    "mediaType": 0,
+                    "watermarkYn": 1,
+                    "mediaSort": 5,
+                    "mediaStatus": 1,
+                    "mainYn": 0
+                  },
+                  {
+                    "productMediaSeq": 1199428118,
+                    "originUrl": "https://img2.joongna.com/cafe-article-data/live/2025/06/28/1110030557/1751092928819_006_Cx1cA.png",
+                    "mediaUrl": "https://img2.joongna.com/cafe-article-data/live/2025/06/28/1110030557/1751092928819_006_Cx1cA.png?impolicy=resizeWatermark3&ftext=poo0o0o0o",
+                    "thumbnailUrl": "https://img2.joongna.com/cafe-article-data/live/2025/06/28/1110030557/1751092928819_006_Cx1cA.png?impolicy=thumb",
+                    "waterMarkUrl": "https://img2.joongna.com/cafe-article-data/live/2025/06/28/1110030557/1751092928819_006_Cx1cA.png?impolicy=resizeWatermark3&ftext=poo0o0o0o",
+                    "waterMarkLogoUrl": "https://img2.joongna.com/icon/jn_watermark_20230418.png",
+                    "mediaType": 0,
+                    "watermarkYn": 1,
+                    "mediaSort": 6,
+                    "mediaStatus": 1,
+                    "mainYn": 0
+                  },
+                  {
+                    "productMediaSeq": 1199428119,
+                    "originUrl": "https://img2.joongna.com/cafe-article-data/live/2025/06/28/1110030557/1751092928819_007_0aN2N.png",
+                    "mediaUrl": "https://img2.joongna.com/cafe-article-data/live/2025/06/28/1110030557/1751092928819_007_0aN2N.png?impolicy=resizeWatermark3&ftext=poo0o0o0o",
+                    "thumbnailUrl": "https://img2.joongna.com/cafe-article-data/live/2025/06/28/1110030557/1751092928819_007_0aN2N.png?impolicy=thumb",
+                    "waterMarkUrl": "https://img2.joongna.com/cafe-article-data/live/2025/06/28/1110030557/1751092928819_007_0aN2N.png?impolicy=resizeWatermark3&ftext=poo0o0o0o",
+                    "waterMarkLogoUrl": "https://img2.joongna.com/icon/jn_watermark_20230418.png",
+                    "mediaType": 0,
+                    "watermarkYn": 1,
+                    "mediaSort": 7,
+                    "mediaStatus": 1,
+                    "mainYn": 0
+                  },
+                  {
+                    "productMediaSeq": 1199428120,
+                    "originUrl": "https://img2.joongna.com/cafe-article-data/live/2025/06/28/1110030557/1751092928819_008_LBY7A.png",
+                    "mediaUrl": "https://img2.joongna.com/cafe-article-data/live/2025/06/28/1110030557/1751092928819_008_LBY7A.png?impolicy=resizeWatermark3&ftext=poo0o0o0o",
+                    "thumbnailUrl": "https://img2.joongna.com/cafe-article-data/live/2025/06/28/1110030557/1751092928819_008_LBY7A.png?impolicy=thumb",
+                    "waterMarkUrl": "https://img2.joongna.com/cafe-article-data/live/2025/06/28/1110030557/1751092928819_008_LBY7A.png?impolicy=resizeWatermark3&ftext=poo0o0o0o",
+                    "waterMarkLogoUrl": "https://img2.joongna.com/icon/jn_watermark_20230418.png",
+                    "mediaType": 0,
+                    "watermarkYn": 1,
+                    "mediaSort": 8,
+                    "mediaStatus": 1,
+                    "mainYn": 0
+                  },
+                  {
+                    "productMediaSeq": 1199428121,
+                    "originUrl": "https://img2.joongna.com/cafe-article-data/live/2025/06/28/1110030557/1751092928819_009_yVOyM.png",
+                    "mediaUrl": "https://img2.joongna.com/cafe-article-data/live/2025/06/28/1110030557/1751092928819_009_yVOyM.png?impolicy=resizeWatermark3&ftext=poo0o0o0o",
+                    "thumbnailUrl": "https://img2.joongna.com/cafe-article-data/live/2025/06/28/1110030557/1751092928819_009_yVOyM.png?impolicy=thumb",
+                    "waterMarkUrl": "https://img2.joongna.com/cafe-article-data/live/2025/06/28/1110030557/1751092928819_009_yVOyM.png?impolicy=resizeWatermark3&ftext=poo0o0o0o",
+                    "waterMarkLogoUrl": "https://img2.joongna.com/icon/jn_watermark_20230418.png",
+                    "mediaType": 0,
+                    "watermarkYn": 1,
+                    "mediaSort": 9,
+                    "mediaStatus": 1,
+                    "mainYn": 0
+                  }
+                ],
+                "descriptionMedia": [],
+                "productStatus": 0,
+                "productHiddenStatus": 0,
+                "keywords": [],
+                "productCategory": 1309,
+                "categoryName": "레저/여행,캠핑용품,기타 캠핑용품",
+                "categorySeq": "17,241,1309",
+                "condition": {
+                  "productCondition": 0,
+                  "options": {
+                    "fullPackageYn": 0,
+                    "limitedEditionYn": 0,
+                    "flawedYn": 0
+                  }
+                },
+                "productPrice": 39900,
+                "parcelFeeYn": 0,
+                "deliveryInfos": [],
+                "productColor": "ZZZZZZ",
+                "platformType": 1,
+                "productTradeType": 1,
+                "tradeType": {
+                  "isPost": false,
+                  "isMeet": true,
+                  "isPickup": false
+                },
+                "consignmentType": 0,
+                "productSectionType": 0,
+                "consignmentYn": 0,
+                "locations": [],
+                "pickupShops": [],
+                "toggle": {
+                  "pickupBadgeFlag": false
+                },
+                "payment": {
+                  "cardYn": 1,
+                  "bankTransferYn": 1,
+                  "depositLessYn": 1,
+                  "accountYn": 0,
+                  "userAccountSeq": 0
+                },
+                "partnerCenterPaymentUrl": "",
+                "sortDate": "2025-06-28 15:41:56",
+                "updateDate": "2025-07-13 08:03:36",
+                "additional": {
+                  "perPersonPurchaseCnt": null,
+                  "arMediaFlag": false,
+                  "arMediaUrl": null
+                },
+                "ecoMileage": {
+                  "carbonReductionValue": 0,
+                  "carbonReductionValueUnit": ""
+                },
+                "productType": "",
+                "viewCount": 19,
+                "labels": [
+                  "직거래",
+                  "새상품"
+                ],
+                "isSafePayment": true,
+                "deliveryNoticePopup": {
+                  "enabled": false,
+                  "showCloseButton": true,
+                  "topSection": {
+                    "title": "대형 상품 거래 TIP",
+                    "description": "가구, 오토바이 등 무겁고 큰 물건,<br>택배 제한 때문에 고민 중이신가요?",
+                    "imageUrl": "{image}/icon/truck.png"
+                  },
+                  "middleSection": [
+                    {
+                      "title": "1. 화물 택배 서비스를 이용해 보세요.",
+                      "description": "경동화물, 대신화물, 합동택배 등<br>화물 차량을 보유한 택배사들이 있습니다.<br>파렛트 단위(1,100*1,100mm) 대형 상품도<br>안전하게 배송할 수 있어요.",
+                      "linkText": null,
+                      "linkUrl": null,
+                      "imageUrl": null
+                    },
+                    {
+                      "title": "2. 용달, 퀵 기반 서비스 플랫폼으로 보내요.",
+                      "description": "1~5톤 트럭 기사님들과 연결해주는<br>매칭 플랫폼을 이용할 수도 있습니다. 특히 중고나라<br>공식 제휴 용달 서비스 <b>센디</b>를 이용하면<br>5천원 할인 혜택도 받으실 수 있어요!",
+                      "linkText": "센디 서비스 보러가기",
+                      "linkUrl": "https://sendy.ai/joongonara",
+                      "imageUrl": null
+                    }
+                  ],
+                  "bottomSection": {
+                    "text": "※ 중고나라는 통신판매중개자로서<br>센디 화물용달 서비스 이용에 관여하지 않습니다.<br>센디 페이지에서 제공되는 모든 서비스는<br>(주)센디의 책임 하에 운영되고 있습니다.",
+                    "leftButton": null,
+                    "rightButton": null
+                  }
+                },
+                "button": {
+                  "chat": {
+                    "text": "채팅하기",
+                    "tooltip": null,
+                    "backgroundColor": null,
+                    "textColor": null
+                  },
+                  "payment": {
+                    "text": "구매하기",
+                    "tooltip": null,
+                    "backgroundColor": null,
+                    "textColor": null
+                  }
+                },
+                "avgPriceUrl": "https://webview.joongna.com/search-price/%EC%BA%A0%ED%95%91%EC%9A%A9%ED%92%88+%EC%BA%A0%ED%95%91%EC%9E%A5%EB%B0%94%EB%8B%A5+%EB%A7%88%EA%B0%90+%EC%95%BC%EC%9E%90%EB%A7%A4%ED%8A%B8+%EC%BD%94%EC%BD%94%EB%84%9B%EB%A7%A4%ED%8A%B8?actionDetailType=MARKET_PRICE_PRODUCT_DETAIL&seq=213833455",
+                "avgPriceEnabled": false,
+                "cafeArticleId": "1110030557",
+                "bottomBanner": {
+                  "text": "<strong>결제 혜택 수수료</strong> 모아보기",
+                  "textColor": "#141313",
+                  "iconUrl": "https://img2.joongna.com/icon/product-detail/bottom_banner_default_icon.svg",
+                  "hasIconAction": true,
+                  "linkUrl": "jnapps3://?eventseq=989",
+                  "bottomSheetType": "PAYMENT_BENEFIT_GUIDE"
+                },
+                "deliveryDetailView": {
+                  "hasExpanded": true,
+                  "header": {
+                    "iconUrl": "",
+                    "title": [
+                      "직거래"
+                    ]
+                  },
+                  "tradeDetail": [
+                    {
+                      "title": "직거래",
+                      "inlineLabel": null,
+                      "contents": [
+                        {
+                          "subtitle": "만나서 직거래",
+                          "inlineLabel": "거래희망지역(판매자 문의)",
+                          "iconUrl": null,
+                          "subContents": null
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "fraudPreventionGuide": {
+                  "iconUrl": "https://img2.joongna.com/icon/information_filled_color.png",
+                  "text": "<font color='#009F1F' style='font-weight: 600;'>개인정보(거래정보)를 주고받는 행위는 사기에 노출</font>될 수 있으므로 즉시 <a href='jnapps3://?applink=report&targetType=&reportedStore=5349129&reportedProductSeq=213833455' style='color:#141313; font-weight: 600;'><u>중고나라로 신고</u></a>해 주세요"
+                },
+                "existLoginUserDeliveryLocationInfo": false,
+                "isConsignment": 0,
+                "partnerCenterConsignment": 0,
+                "askDefaultAddress": false,
+                "empty": false
+              }
+            },
+            "dataUpdateCount": 1,
+            "dataUpdatedAt": 1770187715945,
+            "error": null,
+            "errorUpdateCount": 0,
+            "errorUpdatedAt": 0,
+            "fetchFailureCount": 0,
+            "fetchFailureReason": null,
+            "fetchMeta": null,
+            "isInvalidated": false,
+            "status": "success",
+            "fetchStatus": "idle"
+          },
+          "queryKey": [
+            "product",
+            "detail",
+            "213833455"
+          ],
+          "queryHash": "[\"product\",\"detail\",\"213833455\"]"
+        },
+        {
+          "state": {
+            "data": {
+              "meta": {
+                "code": 0,
+                "message": "SUCCESS"
+              },
+              "data": {
+                "paymentBenefits": [
+                  {
+                    "content": "토스페이 최대 4천원 즉시할인"
+                  },
+                  {
+                    "content": "페이코 최대 2만원 즉시할인"
+                  },
+                  {
+                    "content": "KB국민카드 12개월 5% 특별 할부 수수료"
+                  }
+                ],
+                "interestFreeBenefits": []
+              }
+            },
+            "dataUpdateCount": 1,
+            "dataUpdatedAt": 1770187715824,
+            "error": null,
+            "errorUpdateCount": 0,
+            "errorUpdatedAt": 0,
+            "fetchFailureCount": 0,
+            "fetchFailureReason": null,
+            "fetchMeta": null,
+            "isInvalidated": false,
+            "status": "success",
+            "fetchStatus": "idle"
+          },
+          "queryKey": [
+            "benefits"
+          ],
+          "queryHash": "[\"benefits\"]"
+        },
+        {
+          "state": {
+            "data": {
+              "meta": {
+                "code": 0,
+                "message": "SUCCESS"
+              },
+              "data": {
+                "paymentBenefits": [
+                  {
+                    "title": "편의점 픽업",
+                    "content": "편의점 픽업 이용 시 수수료 전액 지원"
+                  },
+                  {
+                    "title": "토스페이",
+                    "content": "계좌/머니로 10만원 이상 결제 시 2% 즉시할인"
+                  },
+                  {
+                    "title": "페이코",
+                    "content": "포인트로 100원 이상 결제 시 1% 즉시할인"
+                  },
+                  {
+                    "title": "KB국민카드",
+                    "content": "12개월 할부 결제 시 5% 특별 할부 수수료"
+                  }
+                ]
+              }
+            },
+            "dataUpdateCount": 1,
+            "dataUpdatedAt": 1770187715823,
+            "error": null,
+            "errorUpdateCount": 0,
+            "errorUpdatedAt": 0,
+            "fetchFailureCount": 0,
+            "fetchFailureReason": null,
+            "fetchMeta": null,
+            "isInvalidated": false,
+            "status": "success",
+            "fetchStatus": "idle"
+          },
+          "queryKey": [
+            "payment-benefit-detail"
+          ],
+          "queryHash": "[\"payment-benefit-detail\"]"
+        },
+        {
+          "state": {
+            "data": {
+              "meta": {
+                "code": 0,
+                "message": "SUCCESS"
+              },
+              "data": {
+                "storeSeq": 5349129,
+                "nickName": "poo0o0o0o",
+                "userType": 0,
+                "profileImageUrl": "https://img2.joongna.com/common/Profile/Default/profile_f.png",
+                "activityScore": 80,
+                "reliabilityScore": 217,
+                "reviewCount": 0,
+                "followerCount": 0,
+                "followingYn": false,
+                "storeAbout": "",
+                "badgeImageUrl": null,
+                "businessInfo": null
+              }
+            },
+            "dataUpdateCount": 1,
+            "dataUpdatedAt": 1770187715985,
+            "error": null,
+            "errorUpdateCount": 0,
+            "errorUpdatedAt": 0,
+            "fetchFailureCount": 0,
+            "fetchFailureReason": null,
+            "fetchMeta": null,
+            "isInvalidated": false,
+            "status": "success",
+            "fetchStatus": "idle"
+          },
+          "queryKey": [
+            "store-info",
+            5349129
+          ],
+          "queryHash": "[\"store-info\",5349129]"
+        },
+        {
+          "state": {
+            "data": {
+              "data": {
+                "salesCount": 0,
+                "purchasesCount": 0,
+                "safeOrderSalesCntText": "0"
+              },
+              "meta": {
+                "status": "OK",
+                "message": "요청이 성공하였습니다.",
+                "code": 0
+              }
+            },
+            "dataUpdateCount": 1,
+            "dataUpdatedAt": 1770187715996,
+            "error": null,
+            "errorUpdateCount": 0,
+            "errorUpdatedAt": 0,
+            "fetchFailureCount": 0,
+            "fetchFailureReason": null,
+            "fetchMeta": null,
+            "isInvalidated": false,
+            "status": "success",
+            "fetchStatus": "idle"
+          },
+          "queryKey": [
+            "order-count",
+            5349129
+          ],
+          "queryHash": "[\"order-count\",5349129]"
+        },
+        {
+          "state": {
+            "data": {
+              "meta": {
+                "code": 0,
+                "message": "SUCCESS"
+              },
+              "data": {
+                "badge": [
+                  {
+                    "activitySeq": 1,
+                    "selected": false,
+                    "selectable": true,
+                    "activated": false,
+                    "title": "첫 시작의 단추",
+                    "condition": "상품 1개 등록",
+                    "descriptionBefore": "쓸모의 연결을 위해 첫 상품을 등록해주세요.",
+                    "descriptionAfter": "첫 중고 상품 등록은 어떠셨나요?\n쓸모의 연결을 위해 노력해줘서 고마워요.",
+                    "beforeImgUrl": "https://img2.joongna.com/common/menu/activity/badge_start_preview@3x.png",
+                    "afterImgUrl": "https://img2.joongna.com/common/menu/activity/badge_start@3x.png",
+                    "abbrImgUrl": "https://img2.joongna.com/common/menu/activity/badge_start_small@3x.png"
+                  },
+                  {
+                    "activitySeq": 2,
+                    "selected": false,
+                    "selectable": true,
+                    "activated": false,
+                    "title": "첫 거래의 기쁨",
+                    "condition": "안전 거래 1회\n(판/구매 무관)",
+                    "descriptionBefore": "안심결제를 통해 첫 거래를 해주세요.",
+                    "descriptionAfter": "안전한 첫 거래는 어떠셨나요?\n거래하는 기쁨이 잘 전달되길 바래요.",
+                    "beforeImgUrl": "https://img2.joongna.com/common/menu/activity/badge_joy_preview@3x.png",
+                    "afterImgUrl": "https://img2.joongna.com/common/menu/activity/badge_joy@3x.png",
+                    "abbrImgUrl": "https://img2.joongna.com/common/menu/activity/badge_joy_small@3x.png"
+                  },
+                  {
+                    "activitySeq": 3,
+                    "selected": false,
+                    "selectable": true,
+                    "activated": false,
+                    "title": "첫 후기의 설렘",
+                    "condition": "이용 후기 작성 1회",
+                    "descriptionBefore": "후기 작성을 통해 깨끗한 거래문화를 만들어주세요.",
+                    "descriptionAfter": "첫 후기 작성을 하셨네요.\n당신의 경험이 다른 사람에게 조언이 되길 바랄게요.",
+                    "beforeImgUrl": "https://img2.joongna.com/common/menu/activity/badge_write_preview@3x.png",
+                    "afterImgUrl": "https://img2.joongna.com/common/menu/activity/badge_write@3x.png",
+                    "abbrImgUrl": "https://img2.joongna.com/common/menu/activity/badge_write_small@3x.png"
+                  },
+                  {
+                    "activitySeq": 4,
+                    "selected": false,
+                    "selectable": true,
+                    "activated": false,
+                    "title": "꾸준함 아이콘",
+                    "condition": "30일 동안 매일 접속",
+                    "descriptionBefore": "한 달간 중고나라에 방문해주세요.",
+                    "descriptionAfter": "꾸준히 방문해줘서 고마워요.\n앞으로도 잘 부탁해요.",
+                    "beforeImgUrl": "https://img2.joongna.com/common/menu/activity/badge_dailycheck_preview@3x.png",
+                    "afterImgUrl": "https://img2.joongna.com/common/menu/activity/badge_dailycheck@3x.png",
+                    "abbrImgUrl": "https://img2.joongna.com/common/menu/activity/badge_dailycheck_small@3x.png"
+                  },
+                  {
+                    "activitySeq": 5,
+                    "selected": false,
+                    "selectable": true,
+                    "activated": false,
+                    "title": "당신은 최고",
+                    "condition": "'최고예요' 10개를 받음",
+                    "descriptionBefore": "10번의 '최고예요' 후기를 받아 당신의 친절함을 보여주세요.",
+                    "descriptionAfter": "'최고예요' 후기를 많이 받으셨네요.\n작은 인연도 중요시하는 당신을 위해 칭찬합니다.",
+                    "beforeImgUrl": "https://img2.joongna.com/common/menu/activity/badge_best_preview@3x.png",
+                    "afterImgUrl": "https://img2.joongna.com/common/menu/activity/badge_best@3x.png",
+                    "abbrImgUrl": "https://img2.joongna.com/common/menu/activity/badge_best_small@3x.png"
+                  }
+                ],
+                "badgeMain": {
+                  "activitySeq": 0,
+                  "selected": null,
+                  "selectable": null,
+                  "activated": null,
+                  "title": null,
+                  "condition": null,
+                  "descriptionBefore": null,
+                  "descriptionAfter": null,
+                  "beforeImgUrl": null,
+                  "afterImgUrl": null,
+                  "abbrImgUrl": null
+                },
+                "profile": {
+                  "nickName": "poo0o0o0o",
+                  "activityScore": 80,
+                  "reliabilityScore": 217,
+                  "notifiedScore": 200,
+                  "safeTradeCount": 0,
+                  "reviewCount": 0,
+                  "reliabilityTitle": "신뢰지수란?",
+                  "reliabilityDescription": "신뢰지수는 중고나라 사용자가 특정 활동을 통해 얻은 점수를 종합해서 만든 신뢰 지수입니다.",
+                  "chatResponseRatio": 20,
+                  "chatResponseTime": 1,
+                  "chatResponseTimeText": "보통 10분 이내 응답"
+                }
+              }
+            },
+            "dataUpdateCount": 1,
+            "dataUpdatedAt": 1770187716016,
+            "error": null,
+            "errorUpdateCount": 0,
+            "errorUpdatedAt": 0,
+            "fetchFailureCount": 0,
+            "fetchFailureReason": null,
+            "fetchMeta": null,
+            "isInvalidated": false,
+            "status": "success",
+            "fetchStatus": "idle"
+          },
+          "queryKey": [
+            "membership-profile",
+            5349129
+          ],
+          "queryHash": "[\"membership-profile\",5349129]"
+        },
+        {
+          "state": {
+            "data": {
+              "meta": {
+                "code": 0,
+                "message": "SUCCESS"
+              },
+              "data": {
+                "rate": 0,
+                "reviewSize": 0,
+                "reviewerSize": 0,
+                "productReviewCount": {
+                  "goodReviewFeedbackCount": [
+                    {
+                      "tag": "친절/매너가 좋아요.",
+                      "order": 0,
+                      "feedbackCount": 0
+                    },
+                    {
+                      "tag": "응답이 빨라요.",
+                      "order": 1,
+                      "feedbackCount": 0
+                    },
+                    {
+                      "tag": "상품 상태가 좋아요.",
+                      "order": 2,
+                      "feedbackCount": 0
+                    },
+                    {
+                      "tag": "무료나눔을 해주었어요.",
+                      "order": 3,
+                      "feedbackCount": 0
+                    },
+                    {
+                      "tag": "택배 거래가 수월했어요.(포장, 협조적)",
+                      "order": 4,
+                      "feedbackCount": 0
+                    },
+                    {
+                      "tag": "거래 시간을 잘 지켜요.",
+                      "order": 5,
+                      "feedbackCount": 0
+                    }
+                  ],
+                  "badReviewFeedbackCount": [
+                    {
+                      "tag": "친절/매너가 아쉬워요.",
+                      "order": 0,
+                      "feedbackCount": 0
+                    },
+                    {
+                      "tag": "응답이 느려요.",
+                      "order": 1,
+                      "feedbackCount": 0
+                    },
+                    {
+                      "tag": "상품 상태가 아쉬워요.",
+                      "order": 2,
+                      "feedbackCount": 0
+                    },
+                    {
+                      "tag": "택배 거래가 아쉬워요.(포장, 비협조적)",
+                      "order": 3,
+                      "feedbackCount": 0
+                    },
+                    {
+                      "tag": "거래 시간을 안 지켜요.",
+                      "order": 4,
+                      "feedbackCount": 0
+                    }
+                  ]
+                },
+                "productReviewContents": [],
+                "nickName": "poo0o0o0o"
+              }
+            },
+            "dataUpdateCount": 1,
+            "dataUpdatedAt": 1770187716005,
+            "error": null,
+            "errorUpdateCount": 0,
+            "errorUpdatedAt": 0,
+            "fetchFailureCount": 0,
+            "fetchFailureReason": null,
+            "fetchMeta": null,
+            "isInvalidated": false,
+            "status": "success",
+            "fetchStatus": "idle"
+          },
+          "queryKey": [
+            "get-store-reviews",
+            5349129
+          ],
+          "queryHash": "[\"get-store-reviews\",5349129]"
+        }
+      ]
+    },
+    "error": null,
+    "isMyStore": false,
+    "isMobile": false,
+    "session": {
+      "status": "unauthenticated"
+    },
+    "_sentryTraceData": "0cea6c0adda542e588ea567b81af0634-af195045ec5b4530",
+    "_sentryBaggage": "sentry-environment=live,sentry-release=h0ZBTp8QguUS6pcWFFXzx,sentry-public_key=a8d4ca8a3deee185a932c6711cbfc02c,sentry-trace_id=0cea6c0adda542e588ea567b81af0634"
+  },
+  "__N_SSP": true
+}

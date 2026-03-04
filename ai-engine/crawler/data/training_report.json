@@ -1,0 +1,850 @@
+[
+  {
+    "category": "가구/인테리어",
+    "winner": "xgboost",
+    "xgboost": {
+      "MAPE": 155.92,
+      "MAE": 89860.0,
+      "R2": 0.131,
+      "median_error": 46122.0,
+      "median_pct_error": 57.6
+    },
+    "lightgbm": {
+      "MAPE": 149.98,
+      "MAE": 91728.0,
+      "R2": 0.1075,
+      "median_error": 48041.0,
+      "median_pct_error": 62.1
+    },
+    "n_features": 16,
+    "train_size": 1271,
+    "test_size": 322,
+    "top_features": [
+      [
+        "sf_브랜드_te",
+        0.19659410417079926
+      ],
+      [
+        "meta_chat_count",
+        0.12330831587314606
+      ],
+      [
+        "sf_소재_te",
+        0.09439189732074738
+      ],
+      [
+        "sf_용도_te",
+        0.0937170684337616
+      ],
+      [
+        "sf_색상_te",
+        0.07879309356212616
+      ]
+    ],
+    "best_params": {
+      "max_depth": 7,
+      "learning_rate": 0.02979813965679067,
+      "n_estimators": 516,
+      "min_child_weight": 4,
+      "subsample": 0.9984901537620983,
+      "colsample_bytree": 0.6826832700588433,
+      "reg_alpha": 0.001148377953925831,
+      "reg_lambda": 1.3335161108601936
+    }
+  },
+  {
+    "category": "가전제품",
+    "winner": "xgboost",
+    "xgboost": {
+      "MAPE": 478.82,
+      "MAE": 252136.0,
+      "R2": -0.0116,
+      "median_error": 137417.0,
+      "median_pct_error": 46.6
+    },
+    "lightgbm": {
+      "MAPE": 463.62,
+      "MAE": 257392.0,
+      "R2": -0.0706,
+      "median_error": 136699.0,
+      "median_pct_error": 46.6
+    },
+    "n_features": 17,
+    "train_size": 1240,
+    "test_size": 298,
+    "top_features": [
+      [
+        "sf_모델명_te",
+        0.19759073853492737
+      ],
+      [
+        "sf_브랜드_te",
+        0.1318662017583847
+      ],
+      [
+        "sf_용량_kg_te",
+        0.11375808715820312
+      ],
+      [
+        "cf_image_count",
+        0.09305756539106369
+      ],
+      [
+        "sf_용량_리터_te",
+        0.07519381493330002
+      ]
+    ],
+    "best_params": {
+      "max_depth": 3,
+      "learning_rate": 0.025007128480636298,
+      "n_estimators": 111,
+      "min_child_weight": 6,
+      "subsample": 0.7143417233780397,
+      "colsample_bytree": 0.8427309275227364,
+      "reg_alpha": 0.052681101546668406,
+      "reg_lambda": 0.3007016232607128
+    }
+  },
+  {
+    "category": "기타 중고물품",
+    "winner": "xgboost",
+    "xgboost": {
+      "MAPE": 13281.57,
+      "MAE": 70971.0,
+      "R2": 0.0095,
+      "median_error": 18971.0,
+      "median_pct_error": 83.0
+    },
+    "lightgbm": {
+      "MAPE": 10948.23,
+      "MAE": 78023.0,
+      "R2": -0.1634,
+      "median_error": 20847.0,
+      "median_pct_error": 84.7
+    },
+    "n_features": 13,
+    "train_size": 1191,
+    "test_size": 285,
+    "top_features": [
+      [
+        "sf_종류_te",
+        0.3581520915031433
+      ],
+      [
+        "sf_브랜드_te",
+        0.1806303709745407
+      ],
+      [
+        "cf_is_negotiable",
+        0.1187473013997078
+      ],
+      [
+        "sf_사용횟수_te",
+        0.0710645318031311
+      ],
+      [
+        "cf_image_count",
+        0.05144212022423744
+      ]
+    ],
+    "best_params": {
+      "max_depth": 7,
+      "learning_rate": 0.03266436842180306,
+      "n_estimators": 549,
+      "min_child_weight": 3,
+      "subsample": 0.87013488210066,
+      "colsample_bytree": 0.8058546047751719,
+      "reg_alpha": 0.1358542783633872,
+      "reg_lambda": 0.012449772219787832
+    }
+  },
+  {
+    "category": "남성의류",
+    "winner": "xgboost",
+    "xgboost": {
+      "MAPE": 52.97,
+      "MAE": 28843.0,
+      "R2": 0.346,
+      "median_error": 12704.0,
+      "median_pct_error": 40.8
+    },
+    "lightgbm": {
+      "MAPE": 53.3,
+      "MAE": 29301.0,
+      "R2": 0.3365,
+      "median_error": 12831.0,
+      "median_pct_error": 40.9
+    },
+    "n_features": 16,
+    "train_size": 1509,
+    "test_size": 405,
+    "top_features": [
+      [
+        "sf_브랜드_te",
+        0.3010684847831726
+      ],
+      [
+        "sf_소재_te",
+        0.10797359049320221
+      ],
+      [
+        "sf_사이즈_te",
+        0.08826567977666855
+      ],
+      [
+        "cf_condition_ord",
+        0.06500357389450073
+      ],
+      [
+        "sf_색상_te",
+        0.055672988295555115
+      ]
+    ],
+    "best_params": {
+      "max_depth": 5,
+      "learning_rate": 0.033513003886608744,
+      "n_estimators": 432,
+      "min_child_weight": 2,
+      "subsample": 0.9996710918222689,
+      "colsample_bytree": 0.6136568762910408,
+      "reg_alpha": 0.0032496313436217892,
+      "reg_lambda": 0.30435796632279577
+    }
+  },
+  {
+    "category": "도서",
+    "winner": "xgboost",
+    "xgboost": {
+      "MAPE": 2850.16,
+      "MAE": 15276.0,
+      "R2": 0.1381,
+      "median_error": 6969.0,
+      "median_pct_error": 47.9
+    },
+    "lightgbm": {
+      "MAPE": 2807.69,
+      "MAE": 15543.0,
+      "R2": 0.1683,
+      "median_error": 7406.0,
+      "median_pct_error": 52.5
+    },
+    "n_features": 16,
+    "train_size": 1334,
+    "test_size": 317,
+    "top_features": [
+      [
+        "sf_세트구성_te",
+        0.33614790439605713
+      ],
+      [
+        "sf_종류_te",
+        0.22285175323486328
+      ],
+      [
+        "sf_과목구성_te",
+        0.11529073119163513
+      ],
+      [
+        "cf_has_box",
+        0.04423476383090019
+      ],
+      [
+        "sf_필기여부_te",
+        0.03594553470611572
+      ]
+    ],
+    "best_params": {
+      "max_depth": 8,
+      "learning_rate": 0.01023724776147997,
+      "n_estimators": 381,
+      "min_child_weight": 1,
+      "subsample": 0.781093720791925,
+      "colsample_bytree": 0.782923691087397,
+      "reg_alpha": 9.52582229610402,
+      "reg_lambda": 0.5812830959902751
+    }
+  },
+  {
+    "category": "디지털기기",
+    "winner": "lightgbm",
+    "xgboost": {
+      "MAPE": 137.68,
+      "MAE": 429114.0,
+      "R2": 0.108,
+      "median_error": 217925.0,
+      "median_pct_error": 57.4
+    },
+    "lightgbm": {
+      "MAPE": 113.34,
+      "MAE": 386807.0,
+      "R2": 0.2339,
+      "median_error": 198732.0,
+      "median_pct_error": 49.0
+    },
+    "n_features": 18,
+    "train_size": 1485,
+    "test_size": 393,
+    "top_features": [
+      [
+        "sf_모델명_te",
+        1387
+      ],
+      [
+        "meta_view_count",
+        866
+      ],
+      [
+        "sf_출시년도_te",
+        661
+      ],
+      [
+        "sf_저장용량_te",
+        659
+      ],
+      [
+        "sf_브랜드_te",
+        610
+      ]
+    ],
+    "best_params": {
+      "max_depth": 6,
+      "learning_rate": 0.02015579696865676,
+      "n_estimators": 244,
+      "min_child_samples": 1,
+      "subsample": 0.6838732162770162,
+      "colsample_bytree": 0.5971802318680451,
+      "reg_alpha": 0.002517941075867124,
+      "reg_lambda": 0.057431756285936185
+    }
+  },
+  {
+    "category": "반려동물용품",
+    "winner": "lightgbm",
+    "xgboost": {
+      "MAPE": 87.02,
+      "MAE": 55376.0,
+      "R2": 0.4439,
+      "median_error": 20569.0,
+      "median_pct_error": 53.1
+    },
+    "lightgbm": {
+      "MAPE": 88.29,
+      "MAE": 63067.0,
+      "R2": 0.3221,
+      "median_error": 19727.0,
+      "median_pct_error": 49.9
+    },
+    "n_features": 15,
+    "train_size": 623,
+    "test_size": 175,
+    "top_features": [
+      [
+        "meta_view_count",
+        3988
+      ],
+      [
+        "sf_브랜드_te",
+        2099
+      ],
+      [
+        "cf_image_count",
+        1667
+      ],
+      [
+        "cf_usage_period_months",
+        1634
+      ],
+      [
+        "sf_소재_te",
+        1213
+      ]
+    ],
+    "best_params": {
+      "max_depth": 8,
+      "learning_rate": 0.10543813719244266,
+      "n_estimators": 721,
+      "min_child_samples": 15,
+      "subsample": 0.6056018124429926,
+      "colsample_bytree": 0.8830508376250706,
+      "reg_alpha": 0.0032496313436217892,
+      "reg_lambda": 0.28964239960416893
+    }
+  },
+  {
+    "category": "뷰티/미용",
+    "winner": "lightgbm",
+    "xgboost": {
+      "MAPE": 86.94,
+      "MAE": 51885.0,
+      "R2": -0.13,
+      "median_error": 21651.0,
+      "median_pct_error": 52.7
+    },
+    "lightgbm": {
+      "MAPE": 97.62,
+      "MAE": 52584.0,
+      "R2": -0.1687,
+      "median_error": 21887.0,
+      "median_pct_error": 50.0
+    },
+    "n_features": 18,
+    "train_size": 1210,
+    "test_size": 289,
+    "top_features": [
+      [
+        "sf_브랜드_te",
+        3585
+      ],
+      [
+        "meta_view_count",
+        3488
+      ],
+      [
+        "sf_모델명_te",
+        2123
+      ],
+      [
+        "sf_제품명_te",
+        2023
+      ],
+      [
+        "cf_image_count",
+        1843
+      ]
+    ],
+    "best_params": {
+      "max_depth": 7,
+      "learning_rate": 0.032447553705863615,
+      "n_estimators": 688,
+      "min_child_samples": 4,
+      "subsample": 0.9612761147238278,
+      "colsample_bytree": 0.7985223375197201,
+      "reg_alpha": 0.011522689971908433,
+      "reg_lambda": 8.282255256754388
+    }
+  },
+  {
+    "category": "생활용품",
+    "winner": "xgboost",
+    "xgboost": {
+      "MAPE": 147.51,
+      "MAE": 71262.0,
+      "R2": 0.0884,
+      "median_error": 41614.0,
+      "median_pct_error": 57.7
+    },
+    "lightgbm": {
+      "MAPE": 144.13,
+      "MAE": 74770.0,
+      "R2": 0.0058,
+      "median_error": 36306.0,
+      "median_pct_error": 64.0
+    },
+    "n_features": 16,
+    "train_size": 787,
+    "test_size": 194,
+    "top_features": [
+      [
+        "sf_크기_te",
+        0.2150775045156479
+      ],
+      [
+        "sf_브랜드_te",
+        0.14930960536003113
+      ],
+      [
+        "meta_chat_count",
+        0.09434260427951813
+      ],
+      [
+        "sf_소재_te",
+        0.06661372631788254
+      ],
+      [
+        "sf_색상_te",
+        0.06575988978147507
+      ]
+    ],
+    "best_params": {
+      "max_depth": 8,
+      "learning_rate": 0.19805195680759055,
+      "n_estimators": 657,
+      "min_child_weight": 8,
+      "subsample": 0.7666654697195108,
+      "colsample_bytree": 0.8644020319842761,
+      "reg_alpha": 0.0045635710191635585,
+      "reg_lambda": 0.9203078438641064
+    }
+  },
+  {
+    "category": "스포츠/레저",
+    "winner": "lightgbm",
+    "xgboost": {
+      "MAPE": 158.02,
+      "MAE": 252447.0,
+      "R2": 0.2136,
+      "median_error": 104630.0,
+      "median_pct_error": 56.9
+    },
+    "lightgbm": {
+      "MAPE": 173.28,
+      "MAE": 253140.0,
+      "R2": 0.2112,
+      "median_error": 106256.0,
+      "median_pct_error": 56.2
+    },
+    "n_features": 15,
+    "train_size": 1414,
+    "test_size": 365,
+    "top_features": [
+      [
+        "sf_모델명_te",
+        658
+      ],
+      [
+        "sf_종류_te",
+        480
+      ],
+      [
+        "meta_view_count",
+        350
+      ],
+      [
+        "sf_브랜드_te",
+        332
+      ],
+      [
+        "cf_image_count",
+        185
+      ]
+    ],
+    "best_params": {
+      "max_depth": 5,
+      "learning_rate": 0.0352228520334411,
+      "n_estimators": 170,
+      "min_child_samples": 23,
+      "subsample": 0.9250279540020611,
+      "colsample_bytree": 0.6073256507203184,
+      "reg_alpha": 0.18326921207318173,
+      "reg_lambda": 9.946126450457445
+    }
+  },
+  {
+    "category": "식품",
+    "winner": "xgboost",
+    "xgboost": {
+      "MAPE": 68.52,
+      "MAE": 19712.0,
+      "R2": -0.055,
+      "median_error": 10889.0,
+      "median_pct_error": 42.9
+    },
+    "lightgbm": {
+      "MAPE": 72.09,
+      "MAE": 20125.0,
+      "R2": -0.1337,
+      "median_error": 11091.0,
+      "median_pct_error": 43.5
+    },
+    "n_features": 16,
+    "train_size": 425,
+    "test_size": 114,
+    "top_features": [
+      [
+        "sf_제품명_te",
+        0.48038581013679504
+      ],
+      [
+        "sf_브랜드_te",
+        0.15328264236450195
+      ],
+      [
+        "sf_용량_te",
+        0.05176717787981033
+      ],
+      [
+        "cf_has_accessories",
+        0.047332338988780975
+      ],
+      [
+        "sf_유통기한_te",
+        0.035859283059835434
+      ]
+    ],
+    "best_params": {
+      "max_depth": 8,
+      "learning_rate": 0.014094530213729636,
+      "n_estimators": 174,
+      "min_child_weight": 1,
+      "subsample": 0.8244359975243425,
+      "colsample_bytree": 0.6966849160334875,
+      "reg_alpha": 9.927600090647895,
+      "reg_lambda": 0.2958779464378582
+    }
+  },
+  {
+    "category": "여성의류",
+    "winner": "xgboost",
+    "xgboost": {
+      "MAPE": 153.04,
+      "MAE": 69974.0,
+      "R2": 0.0547,
+      "median_error": 26650.0,
+      "median_pct_error": 53.3
+    },
+    "lightgbm": {
+      "MAPE": 147.59,
+      "MAE": 70591.0,
+      "R2": 0.0449,
+      "median_error": 28271.0,
+      "median_pct_error": 56.5
+    },
+    "n_features": 17,
+    "train_size": 1354,
+    "test_size": 356,
+    "top_features": [
+      [
+        "sf_브랜드_te",
+        0.22794637084007263
+      ],
+      [
+        "meta_chat_count",
+        0.13014253973960876
+      ],
+      [
+        "sf_소재_te",
+        0.10773773491382599
+      ],
+      [
+        "sf_사이즈_te",
+        0.06839418411254883
+      ],
+      [
+        "meta_wish_count",
+        0.06223468482494354
+      ]
+    ],
+    "best_params": {
+      "max_depth": 5,
+      "learning_rate": 0.1347688044073897,
+      "n_estimators": 692,
+      "min_child_weight": 10,
+      "subsample": 0.6589045438667185,
+      "colsample_bytree": 0.6773627769265294,
+      "reg_alpha": 0.0021368027711826895,
+      "reg_lambda": 2.2612483700668817
+    }
+  },
+  {
+    "category": "출산/유아동",
+    "winner": "lightgbm",
+    "xgboost": {
+      "MAPE": 228.04,
+      "MAE": 105880.0,
+      "R2": 0.1257,
+      "median_error": 28730.0,
+      "median_pct_error": 61.7
+    },
+    "lightgbm": {
+      "MAPE": 225.59,
+      "MAE": 104774.0,
+      "R2": 0.1437,
+      "median_error": 30112.0,
+      "median_pct_error": 60.8
+    },
+    "n_features": 14,
+    "train_size": 1390,
+    "test_size": 387,
+    "top_features": [
+      [
+        "sf_모델명_te",
+        369
+      ],
+      [
+        "sf_브랜드_te",
+        148
+      ],
+      [
+        "meta_view_count",
+        135
+      ],
+      [
+        "sf_사용개월수_te",
+        74
+      ],
+      [
+        "meta_chat_count",
+        61
+      ]
+    ],
+    "best_params": {
+      "max_depth": 3,
+      "learning_rate": 0.013469303979404221,
+      "n_estimators": 151,
+      "min_child_samples": 11,
+      "subsample": 0.7345839987511968,
+      "colsample_bytree": 0.8170064962868606,
+      "reg_alpha": 2.862491504365953,
+      "reg_lambda": 9.946126450457445
+    }
+  },
+  {
+    "category": "취미/게임",
+    "winner": "xgboost",
+    "xgboost": {
+      "MAPE": 3383.15,
+      "MAE": 57804.0,
+      "R2": 0.2924,
+      "median_error": 26147.0,
+      "median_pct_error": 59.9
+    },
+    "lightgbm": {
+      "MAPE": 3589.72,
+      "MAE": 59601.0,
+      "R2": 0.2594,
+      "median_error": 26989.0,
+      "median_pct_error": 60.9
+    },
+    "n_features": 12,
+    "train_size": 1364,
+    "test_size": 370,
+    "top_features": [
+      [
+        "sf_모델명_te",
+        0.2304464429616928
+      ],
+      [
+        "cf_has_accessories",
+        0.15647479891777039
+      ],
+      [
+        "sf_동봉게임수_num",
+        0.10583806782960892
+      ],
+      [
+        "meta_view_count",
+        0.08180613815784454
+      ],
+      [
+        "meta_chat_count",
+        0.07463966310024261
+      ]
+    ],
+    "best_params": {
+      "max_depth": 8,
+      "learning_rate": 0.07090836858724521,
+      "n_estimators": 682,
+      "min_child_weight": 4,
+      "subsample": 0.9044243675990947,
+      "colsample_bytree": 0.6440987024309639,
+      "reg_alpha": 0.0010446251525877421,
+      "reg_lambda": 0.275858771133124
+    }
+  },
+  {
+    "category": "티켓/교환권",
+    "winner": "xgboost",
+    "xgboost": {
+      "MAPE": 198.45,
+      "MAE": 27687.0,
+      "R2": 0.5894,
+      "median_error": 13905.0,
+      "median_pct_error": 58.3
+    },
+    "lightgbm": {
+      "MAPE": 182.44,
+      "MAE": 28978.0,
+      "R2": 0.5427,
+      "median_error": 11858.0,
+      "median_pct_error": 61.2
+    },
+    "n_features": 18,
+    "train_size": 1030,
+    "test_size": 254,
+    "top_features": [
+      [
+        "sf_이벤트명_te",
+        0.43407493829727173
+      ],
+      [
+        "sf_좌석등급_te",
+        0.1523618996143341
+      ],
+      [
+        "sf_유효기한_te",
+        0.09421009570360184
+      ],
+      [
+        "sf_권종금액_te",
+        0.059151601046323776
+      ],
+      [
+        "sf_사용처_te",
+        0.038206279277801514
+      ]
+    ],
+    "best_params": {
+      "max_depth": 7,
+      "learning_rate": 0.12416460551497638,
+      "n_estimators": 450,
+      "min_child_weight": 13,
+      "subsample": 0.8264702978627628,
+      "colsample_bytree": 0.8637686313392079,
+      "reg_alpha": 0.001796413852612885,
+      "reg_lambda": 1.324013791802316
+    }
+  },
+  {
+    "category": "패션잡화",
+    "winner": "lightgbm",
+    "xgboost": {
+      "MAPE": 90.44,
+      "MAE": 107428.0,
+      "R2": 0.1394,
+      "median_error": 34022.0,
+      "median_pct_error": 56.0
+    },
+    "lightgbm": {
+      "MAPE": 92.28,
+      "MAE": 105456.0,
+      "R2": 0.1656,
+      "median_error": 34395.0,
+      "median_pct_error": 50.2
+    },
+    "n_features": 16,
+    "train_size": 1467,
+    "test_size": 335,
+    "top_features": [
+      [
+        "meta_view_count",
+        1967
+      ],
+      [
+        "sf_브랜드_te",
+        1911
+      ],
+      [
+        "sf_종류_te",
+        1578
+      ],
+      [
+        "sf_모델명_te",
+        1528
+      ],
+      [
+        "cf_image_count",
+        1145
+      ]
+    ],
+    "best_params": {
+      "max_depth": 8,
+      "learning_rate": 0.032951153350074584,
+      "n_estimators": 462,
+      "min_child_samples": 8,
+      "subsample": 0.9167228820900025,
+      "colsample_bytree": 0.5015420612852481,
+      "reg_alpha": 0.0427991681230604,
+      "reg_lambda": 0.019958837039469518
+    }
+  }
+]

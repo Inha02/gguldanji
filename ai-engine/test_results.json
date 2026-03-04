@@ -1,0 +1,333 @@
+{
+  "step1_initial": {
+    "profile_version": 1,
+    "created_at": "2026-03-04",
+    "last_updated": "2026-03-04",
+    "total_messages_analyzed": 7,
+    "analysis_summary": "판매자는 가격에 민감하며, 거래를 효율적으로 진행하려는 경향이 있습니다. 또한, 제품에 대한 정보를 명확히 제공하며, 거래 조건을 투명하게 제시합니다.",
+    "dimensions": {
+      "transaction_motivation": {
+        "price_sensitivity": {
+          "score": 4,
+          "confidence": 0.8,
+          "evidence": [
+            "18만원까지는 가능합니다. 그 이하는 어렵습니다.",
+            "거의 새거라 그 이하로는 힘듭니다."
+          ]
+        },
+        "efficiency_orientation": {
+          "score": 4,
+          "confidence": 0.8,
+          "evidence": [
+            "네 판매중입니다",
+            "네 그럼 오늘 7시 강남역 11번출구에서 뵙겠습니다."
+          ]
+        },
+        "enjoyment_orientation": {
+          "score": 1,
+          "confidence": 0.5,
+          "evidence": [
+            "사용감 거의 없고요, 기스 없습니다. 구매한지 3개월 됐어요. 박스랑 충전기 다 있습니다."
+          ]
+        },
+        "negotiation_flexibility": {
+          "score": 3,
+          "confidence": 0.8,
+          "evidence": [
+            "18만원까지는 가능합니다. 그 이하는 어렵습니다.",
+            "17만원 어떠세요?"
+          ]
+        }
+      },
+      "communication_style": {
+        "response_pattern": {
+          "score": 5,
+          "confidence": 0.9,
+          "evidence": [
+            "네 판매중입니다",
+            "네 그럼 오늘 7시 강남역 11번출구에서 뵙겠습니다."
+          ]
+        },
+        "information_proactivity": {
+          "score": 4,
+          "confidence": 0.8,
+          "evidence": [
+            "사용감 거의 없고요, 기스 없습니다. 구매한지 3개월 됐어요. 박스랑 충전기 다 있습니다."
+          ]
+        },
+        "tone_friendliness": {
+          "score": 3,
+          "confidence": 0.7,
+          "evidence": [
+            "네 판매중입니다",
+            "네 그럼 오늘 7시 강남역 11번출구에서 뵙겠습니다."
+          ]
+        },
+        "clarity_structure": {
+          "score": 5,
+          "confidence": 0.9,
+          "evidence": [
+            "네 그럼 오늘 7시 강남역 11번출구에서 뵙겠습니다."
+          ]
+        }
+      },
+      "trust_building": {
+        "product_description_detail": {
+          "score": 4,
+          "confidence": 0.8,
+          "evidence": [
+            "사용감 거의 없고요, 기스 없습니다. 구매한지 3개월 됐어요. 박스랑 충전기 다 있습니다."
+          ]
+        },
+        "transaction_transparency": {
+          "score": 5,
+          "confidence": 0.9,
+          "evidence": [
+            "네 그럼 오늘 7시 강남역 11번출구에서 뵙겠습니다."
+          ]
+        },
+        "issue_handling_attitude": {
+          "score": 3,
+          "confidence": 0.5,
+          "evidence": [
+            "17만원 어떠세요? 거의 새거라 그 이하로는 힘듭니다."
+          ]
+        }
+      }
+    },
+    "change_history": []
+  },
+  "step2_updated": {
+    "profile_version": 3,
+    "created_at": "2026-03-04",
+    "last_updated": "2026-03-04",
+    "total_messages_analyzed": 6,
+    "rebase_performed": true,
+    "rebase_trigger": "충돌 항목 5개 (임계값: 3)",
+    "analysis_summary": "판매자는 가격에 민감하지만 협상에 유연성을 보이며, 거래를 효율적으로 진행하려 합니다. 친근한 톤으로 명확하고 투명한 정보를 제공하여 신뢰를 구축합니다.",
+    "dimensions": {
+      "transaction_motivation": {
+        "price_sensitivity": {
+          "score": 4,
+          "confidence": 0.8,
+          "evidence": [
+            "기스 감안해서 원래 12만원인데 11만원에 드릴게요.",
+            "사실 이 가격이면 거의 나눔 수준이에요 ㅋㅋ"
+          ]
+        },
+        "efficiency_orientation": {
+          "score": 5,
+          "confidence": 0.8,
+          "evidence": [
+            "택배비 3000원 별도인데 괜찮으시면 오늘 바로 발송해드릴게요!"
+          ]
+        },
+        "enjoyment_orientation": {
+          "score": 3,
+          "confidence": 0.6,
+          "evidence": [
+            "안녕하세요! 네 있습니다 ㅎㅎ 관심 가져주셔서 감사해요",
+            "빨리 좋은 분한테 보내드리고 싶네요 ㅎㅎ"
+          ]
+        },
+        "negotiation_flexibility": {
+          "score": 5,
+          "confidence": 0.8,
+          "evidence": [
+            "기스 감안해서 원래 12만원인데 11만원에 드릴게요.",
+            "음... 10.5만원이면 괜찮을 것 같아요!"
+          ]
+        }
+      },
+      "communication_style": {
+        "response_pattern": {
+          "score": 5,
+          "confidence": 1.0,
+          "evidence": [
+            "안녕하세요! 네 있습니다 ㅎㅎ 관심 가져주셔서 감사해요",
+            "사진 보내드렸어요!"
+          ]
+        },
+        "information_proactivity": {
+          "score": 5,
+          "confidence": 0.9,
+          "evidence": [
+            "배터리 최대 용량 95%이고요, 솔직히 말씀드리면 왼쪽 이어폰에 아주 미세한 기스가 하나 있어요.",
+            "사진 보내드렸어요!"
+          ]
+        },
+        "tone_friendliness": {
+          "score": 5,
+          "confidence": 0.8,
+          "evidence": [
+            "안녕하세요! 네 있습니다 ㅎㅎ 관심 가져주셔서 감사해요",
+            "빨리 좋은 분한테 보내드리고 싶네요 ㅎㅎ"
+          ]
+        },
+        "clarity_structure": {
+          "score": 5,
+          "confidence": 0.9,
+          "evidence": [
+            "택배비 3000원 별도인데 괜찮으시면 오늘 바로 발송해드릴게요!"
+          ]
+        }
+      },
+      "trust_building": {
+        "product_description_detail": {
+          "score": 5,
+          "confidence": 0.9,
+          "evidence": [
+            "배터리 최대 용량 95%이고요, 솔직히 말씀드리면 왼쪽 이어폰에 아주 미세한 기스가 하나 있어요."
+          ]
+        },
+        "transaction_transparency": {
+          "score": 5,
+          "confidence": 0.9,
+          "evidence": [
+            "택배비 3000원 별도인데 괜찮으시면 오늘 바로 발송해드릴게요!"
+          ]
+        },
+        "issue_handling_attitude": {
+          "score": 4,
+          "confidence": 0.6,
+          "evidence": [
+            "기스 감안해서 원래 12만원인데 11만원에 드릴게요.",
+            "음... 10.5만원이면 괜찮을 것 같아요!"
+          ]
+        }
+      }
+    },
+    "change_history": [
+      {
+        "version": 3,
+        "action": "REBASE",
+        "trigger": "충돌 항목 5개 (임계값: 3)",
+        "note": "Profile rebuilt from recent messages. Previous change history cleared."
+      }
+    ],
+    "pre_rebase_comparison": {
+      "major_shifts": [],
+      "interpretation": "최근 대화에서 판매자는 여전히 가격에 민감하지만 협상에 유연성을 보이며, 친근한 톤과 명확한 정보 제공을 통해 신뢰를 구축하고 있습니다."
+    }
+  },
+  "step3_rebased": {
+    "profile_version": 5,
+    "created_at": "2026-03-04",
+    "last_updated": "2026-03-04",
+    "total_messages_analyzed": 12,
+    "rebase_performed": true,
+    "rebase_trigger": "change_history 누적 16건 (임계값: 15) | confidence 평균 0.50 (임계값: 0.55)",
+    "analysis_summary": "판매자는 가격 협상에 유연성을 보이며, 거래를 효율적으로 진행하려는 경향이 있습니다. 친근한 톤으로 명확하고 투명한 정보를 제공하여 신뢰를 구축합니다.",
+    "dimensions": {
+      "transaction_motivation": {
+        "price_sensitivity": {
+          "score": 4,
+          "confidence": 0.8,
+          "evidence": [
+            "기스 감안해서 원래 12만원인데 11만원에 드릴게요.",
+            "음... 10.5만원이면 괜찮을 것 같아요!",
+            "18만원까지는 가능합니다. 그 이하는 어렵습니다."
+          ]
+        },
+        "efficiency_orientation": {
+          "score": 5,
+          "confidence": 0.8,
+          "evidence": [
+            "택배비 3000원 별도인데 괜찮으시면 오늘 바로 발송해드릴게요!",
+            "운송장 번호 바로 보내드립니다",
+            "오늘 7시 강남역 11번출구에서 뵙겠습니다."
+          ]
+        },
+        "enjoyment_orientation": {
+          "score": 3,
+          "confidence": 0.5,
+          "evidence": [
+            "안녕하세요! 네 있습니다 ㅎㅎ 관심 가져주셔서 감사해요",
+            "빨리 좋은 분한테 보내드리고 싶네요 ㅎㅎ"
+          ]
+        },
+        "negotiation_flexibility": {
+          "score": 5,
+          "confidence": 0.8,
+          "evidence": [
+            "기스 감안해서 원래 12만원인데 11만원에 드릴게요.",
+            "음... 10.5만원이면 괜찮을 것 같아요!",
+            "17만원 어떠세요? 거의 새거라 그 이하로는 힘듭니다."
+          ]
+        }
+      },
+      "communication_style": {
+        "response_pattern": {
+          "score": 5,
+          "confidence": 0.8,
+          "evidence": [
+            "안녕하세요! 네 있습니다 ㅎㅎ 관심 가져주셔서 감사해요",
+            "사진 보내드렸어요!",
+            "운송장 번호 바로 보내드립니다"
+          ]
+        },
+        "information_proactivity": {
+          "score": 5,
+          "confidence": 0.8,
+          "evidence": [
+            "배터리 최대 용량 95%이고요, 솔직히 말씀드리면 왼쪽 이어폰에 아주 미세한 기스가 하나 있어요.",
+            "사진 보내드렸어요!"
+          ]
+        },
+        "tone_friendliness": {
+          "score": 5,
+          "confidence": 0.8,
+          "evidence": [
+            "안녕하세요! 네 있습니다 ㅎㅎ 관심 가져주셔서 감사해요",
+            "빨리 좋은 분한테 보내드리고 싶네요 ㅎㅎ"
+          ]
+        },
+        "clarity_structure": {
+          "score": 5,
+          "confidence": 0.8,
+          "evidence": [
+            "택배비 3000원 별도인데 괜찮으시면 오늘 바로 발송해드릴게요!",
+            "운송장 번호 바로 보내드립니다"
+          ]
+        }
+      },
+      "trust_building": {
+        "product_description_detail": {
+          "score": 5,
+          "confidence": 0.8,
+          "evidence": [
+            "배터리 최대 용량 95%이고요, 솔직히 말씀드리면 왼쪽 이어폰에 아주 미세한 기스가 하나 있어요."
+          ]
+        },
+        "transaction_transparency": {
+          "score": 5,
+          "confidence": 0.8,
+          "evidence": [
+            "택배비 3000원 별도인데 괜찮으시면 오늘 바로 발송해드릴게요!",
+            "운송장 번호 바로 보내드립니다"
+          ]
+        },
+        "issue_handling_attitude": {
+          "score": 4,
+          "confidence": 0.8,
+          "evidence": [
+            "기스 감안해서 원래 12만원인데 11만원에 드릴게요.",
+            "음... 10.5만원이면 괜찮을 것 같아요!"
+          ]
+        }
+      }
+    },
+    "change_history": [
+      {
+        "version": 5,
+        "action": "REBASE",
+        "trigger": "change_history 누적 16건 (임계값: 15) | confidence 평균 0.50 (임계값: 0.55)",
+        "note": "Profile rebuilt from recent messages. Previous change history cleared."
+      }
+    ],
+    "pre_rebase_comparison": {
+      "major_shifts": [],
+      "interpretation": "최근 대화에서 판매자는 여전히 가격에 민감하지만 협상에 유연성을 보이며, 친근한 톤과 명확한 정보 제공을 통해 신뢰를 구축하고 있습니다."
+    }
+  }
+}
