@@ -33,10 +33,7 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 // 라우터 연결
 
-app.use("/api/user", router);
+//app.use("/api/user", router);
 app.use("/users", router);
 app.use("/auth", authRouter);
-
-// post 라우터 연결 
-app.use(express.json());
 app.use("/posts", postRoutes);
