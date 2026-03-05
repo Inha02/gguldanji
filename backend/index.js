@@ -11,9 +11,6 @@ import "./models/User.js";
 
 dotenv.config();
 
-// MongoDB 연결
-// console.log("MONGO_URI =", process.env.MONGO_URI);
-
 // Middleware 설정
 const app = express();
 app.use(express.json());
