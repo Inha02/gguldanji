@@ -1,14 +1,17 @@
 import mongoose from "mongoose";
 import Post from "../models/Post.js";
 
-const createPost = async (req, res) => {
+/**
+ * 게시글 생성
+ */
+export const createPost = async (req, res) => {
   try {
     const sellerId = req.user.id;
 
     const {
       title,
       description,
-      images,        // JSON 등록 시 ["url1","url2"] 형태로 받는 걸 가정
+      images,
       categoryId,
       price,
       isFree,
@@ -18,61 +21,148 @@ const createPost = async (req, res) => {
       location
     } = req.body;
 
-    // 1) 필수값 체크
     if (!title || title.trim().length === 0) {
       return res.status(400).json({ message: "title is required" });
     }
 
-    // 2) ObjectId 형태 체크(선택값이어도 들어오면 검증)
-    if (categoryId && !mongoose.isValidObjectId(categoryId)) {
-      return res.status(400).json({ message: "invalid categoryId" });
-    }
-
-    // 3) 가격 규칙
-    let finalIsFree = Boolean(isFree);
-    let finalPrice = price;
-
-    if (finalIsFree) {
-      finalPrice = 0;
-    } else {
-      if (finalPrice === undefined || finalPrice === null) finalPrice = 0;
-      if (Number(finalPrice) < 0) {
-        return res.status(400).json({ message: "price must be >= 0" });
-      }
-    }
-
-    // 4) location 형태(선택)
-    // location: { address, lat, lng }
-    // lat/lng 숫자 여부 정도만 체크 (강하게 하려면 범위검사도 가능)
-    if (location?.lat !== undefined && typeof location.lat !== "number") {
-      return res.status(400).json({ message: "location.lat must be number" });
-    }
-    if (location?.lng !== undefined && typeof location.lng !== "number") {
-      return res.status(400).json({ message: "location.lng must be number" });
-    }
-
-    // 5) DB 저장
     const post = await Post.create({
       sellerId,
-      title: title.trim(),
+      title,
       description,
-      images: Array.isArray(images) ? images : [],
-      categoryId: categoryId || undefined,
-
-      price: finalPrice,
-      isFree: finalIsFree,
-
+      images,
+      categoryId,
+      price,
+      isFree,
       aiPriceMin,
       aiPriceMax,
       aiPriceReason,
-
       location
     });
 
-    return res.status(201).json(post);
-  } catch (e) {
-    console.error(e);
-    return res.status(500).json({ message: "server error" });
+    res.status(201).json(post);
+
+  } catch (error) {
+    res.status(500).json({ message: "server error" });
   }
 };
-export default createPost;
+
+
+
+
+/**
+ * 게시글 목록 조회
+ */
+export const getPosts = async (req, res) => {
+  try {
+
+    const posts = await Post.find()
+      .sort({ createdAt: -1 });
+
+    res.json(posts);
+
+  } catch (error) {
+    res.status(500).json({ message: "게시글 조회 실패" });
+  }
+};
+
+
+
+
+/**
+ * 게시글 상세 조회
+ */
+export const getPostById = async (req, res) => {
+  try {
+
+    const post = await Post.findById(req.params.id);
+
+    if (!post) {
+      return res.status(404).json({
+        message: "게시글이 없습니다"
+      });
+    }
+
+    res.json(post);
+
+  } catch (error) {
+    res.status(500).json({
+      message: "게시글 조회 실패"
+    });
+  }
+};
+
+
+
+
+/**
+ * 게시글 수정
+ */
+export const updatePost = async (req, res) => {
+  try {
+
+    const post = await Post.findById(req.params.id);
+
+    if (!post) {
+      return res.status(404).json({
+        message: "게시글이 없습니다"
+      });
+    }
+
+    // 작성자 검증
+    if (post.sellerId.toString() !== req.user.id) {
+      return res.status(403).json({
+        message: "수정 권한이 없습니다"
+      });
+    }
+
+    const updatedPost = await Post.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      { new: true }
+    );
+
+    res.json(updatedPost);
+
+  } catch (error) {
+    res.status(500).json({
+      message: "게시글 수정 실패"
+    });
+  }
+};
+
+
+
+
+/**
+ * 게시글 삭제
+ */
+export const deletePost = async (req, res) => {
+  try {
+
+    const post = await Post.findById(req.params.id);
+
+    if (!post) {
+      return res.status(404).json({
+        message: "게시글이 없습니다"
+      });
+    }
+
+    // 작성자 검증
+    if (post.sellerId.toString() !== req.user.id) {
+      return res.status(403).json({
+        message: "삭제 권한이 없습니다"
+      });
+    }
+
+    await Post.findByIdAndDelete(req.params.id);
+
+    res.json({
+      message: "게시글 삭제 완료"
+    });
+
+  } catch (error) {
+    res.status(500).json({
+      message: "게시글 삭제 실패"
+    });
+  }
+};

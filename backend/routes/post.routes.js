@@ -1,7 +1,12 @@
 import express from "express";
 import auth from "../middlewares/auth.js";
-import createPost from "../controllers/post.controller.js";
-
+import {
+  createPost,
+  getPosts,
+  getPostById,
+  updatePost,
+  deletePost
+} from "../controllers/post.controller.js";
 const router = express.Router();
 
 /**
@@ -66,11 +71,7 @@ router.post("/", auth, createPost);
  *       200:
  *         description: 게시글 목록 조회 성공
  */
-router.get("/", (req, res) => {
-  res.json({
-    message: "게시글 목록 조회",
-  });
-});
+router.get("/", getPosts);
 
 
 /**
@@ -93,13 +94,7 @@ router.get("/", (req, res) => {
  *       404:
  *         description: 게시글 없음
  */
-router.get("/:id", (req, res) => {
-  res.json({
-    message: "게시글 상세 조회",
-    postId: req.params.id,
-  });
-});
-
+router.get("/:id", getPostById);
 
 /**
  * @swagger
@@ -136,12 +131,7 @@ router.get("/:id", (req, res) => {
  *       401:
  *         description: 인증 실패
  */
-router.patch("/:id", auth, (req, res) => {
-  res.json({
-    message: "게시글 수정",
-    id: req.params.id,
-  });
-});
+router.patch("/:id", auth, updatePost);
 
 
 /**
@@ -166,11 +156,6 @@ router.patch("/:id", auth, (req, res) => {
  *       401:
  *         description: 인증 실패
  */
-router.delete("/:id", auth, (req, res) => {
-  res.json({
-    message: "게시글 삭제",
-    id: req.params.id,
-  });
-});
+router.delete("/:id", auth, deletePost);
 
 export default router;
