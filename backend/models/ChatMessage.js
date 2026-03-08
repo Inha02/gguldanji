@@ -42,6 +42,11 @@ import mongoose from "mongoose";
  *           type: boolean
  *           description: 비매너 발언 여부
  *           example: false
+ *         readBy:
+ *           type: array
+ *           description: 메시지를 읽은 사용자 ID 목록
+ *           items:
+ *             type: string
  *         createdAt:
  *           type: string
  *           format: date-time
@@ -62,7 +67,13 @@ const chatMessageSchema = new mongoose.Schema({
   image: String,
 
   aiSuggestion: [String],
-  isBadManner: { type: Boolean, default: false }
+  isBadManner: { type: Boolean, default: false },
+  readBy: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User"
+    }
+  ]
 
 }, { timestamps: true });
 
