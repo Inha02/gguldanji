@@ -7,6 +7,7 @@ import authRouter from "./routes/auth.js";
 import postRoutes from "./routes/post.routes.js";
 import swaggerUi from "swagger-ui-express";
 import swaggerSpec from "./config/swagger.js";
+import chatRoutes from "./routes/chat.routes.js";
 import "./models/User.js";
 
 dotenv.config();
@@ -28,6 +29,7 @@ app.get("/", (req, res) => {
 app.use("/users", router);
 app.use("/auth", authRouter);
 app.use("/posts", postRoutes);
+app.use("/chat", chatRoutes);
 
 // DB 연결 후 서버 시작
 const startServer = async () => {
