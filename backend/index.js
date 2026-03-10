@@ -58,7 +58,7 @@ const startServer = async () => {
   try {
     await connectDB(); 
 
-    app.listen(process.env.PORT, () => {
+    server.listen(process.env.PORT, () => {
       console.log(`✅ Backend listening on port ${process.env.PORT}`);
     });
 
