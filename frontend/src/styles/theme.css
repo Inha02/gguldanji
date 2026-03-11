@@ -1,0 +1,35 @@
+:root {
+    /* =========================
+     Honeypot Base Colors
+     ========================= */
+
+    --honeypot-white: #FDFDFD;
+    --honeypot-black: #262627;
+
+    /* Primary */
+    --honeypot-primary: #FBE200;
+
+    /* =========================
+     Honeypot Gray Scale
+     ========================= */
+
+    --gray-50: #F7F8F9;
+    --gray-100: #E8EBED;
+    --gray-200: #C9CDD2;
+    --gray-400: #9EA4AA;
+    --gray-500: #72787F;
+    --gray-600: #454C53;
+    --gray-800: #26282B;
+    --gray-900: #1B1D1F;
+
+    /* =========================
+     Semantic (추천)
+     → 실제 컴포넌트에서 쓰는 색
+     ========================= */
+
+    --color-bg: var(--honeypot-white);
+    --color-text-primary: var(--gray-900);
+    --color-text-secondary: var(--gray-600);
+    --color-border: var(--gray-100);
+    --color-muted: var(--gray-400);
+}

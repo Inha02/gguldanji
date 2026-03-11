@@ -1,0 +1,72 @@
+/* =========================
+   Base
+   ========================= */
+
+body {
+    font-family: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui;
+    color: var(--color-text-primary);
+    background: var(--color-bg);
+}
+
+/* =========================
+   Headings
+   ========================= */
+
+.text-heading-1 {
+    font-size: 28px;
+    line-height: 36px;
+    font-weight: 700;
+}
+
+.text-heading-2 {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+}
+
+.text-heading-3 {
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 600;
+}
+
+/* =========================
+   Body
+   ========================= */
+
+.text-body-1 {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+.text-body-2 {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+}
+
+/* =========================
+   Caption / Small
+   ========================= */
+
+.text-caption {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+}
+
+.text-small {
+    font-size: 11px;
+    line-height: 14px;
+    font-weight: 400;
+    color: var(--color-text-secondary);
+}
+
+/* Small Text (Bold) – 가격용 */
+.text-small-bold {
+    font-size: 11px;
+    line-height: 14px;
+    font-weight: 700;
+}

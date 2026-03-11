@@ -1,0 +1,1184 @@
+/* Pretendard Font */
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2') format('woff2');
+  font-weight: 100;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+
+body {
+  font-family: "Pretendard", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+/* 🌑 웹 전체 배경 */
+.viewport {
+  width: 100vw;
+  height: 100vh;
+  background: #0b0b0b;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 📱 아이폰 크기 고정 프레임 */
+.device {
+  width: 390px;
+  height: 844px;
+
+  background: #FDFDFD;
+  color: #262627;
+
+  border-radius: 16px;
+  overflow: hidden;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 📄 실제 화면 영역 */
+.screen {
+  flex: 1;
+  overflow-y: auto;
+  color: #262627;
+  /* 하단바 높이 */
+  padding-bottom: 96px;
+    /* 72(바 높이)+6(바닥 여백)+여유 */
+  }
+
+/* 🔻 하단 네비 전체 (5개 버튼) */
+/* 🔻 하단 네비 전체 (플로팅 바) */
+.bottom-nav {
+  position: absolute;
+  bottom: 6px;
+  /* 바닥에서 6px 띄움 */
+  left: 16px;
+  /* 좌우 16px */
+  right: 16px;
+
+  height: 72px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: center;
+
+  background: #FDFDFD;
+  /* honeypot/white */
+  border: 1px solid #E8EBED;
+  /* gray/100 */
+  border-radius: 28px;
+  /* 둥글게 */
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+  /* 떠있는 느낌 */
+
+  z-index: 50;
+}
+
+/* 기본 버튼 */
+.nav-item {
+  text-align: center;
+  font-size: 12px;
+  color: #777;
+  text-decoration: none;
+}
+
+/* 활성화 */
+.nav-item.active {
+  color: #111;
+  font-weight: 600;
+}
+
+/* 가운데 + 버튼 */
+.nav-item.center {
+  width: 56px;
+  height: 56px;
+
+  border-radius: 50%;
+  background: #FBE200;
+  /* honeypot primary */
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  /* 세로 중앙 */
+  justify-content: center;
+  /* 가로 중앙 */
+
+  font-size: 28px;
+  font-weight: 700;
+  color: #FFFFFF;
+  /* 흰색 + */
+
+  line-height: 1;
+  /* ⭐ 핵심: 텍스트 치우침 방지 */
+  padding: 0;
+  /* ⭐ 혹시 남아있을 여백 제거 */
+
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.18);
+}
+
+/* 🟨 홈 배너 */
+.home-banner {
+  width: 100%;
+  height: 104px;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  text-align: left;
+}
+
+.home-banner__bg {
+  position: absolute;
+  inset: 0;
+
+  /* 임시 배경: 나중에 이미지로 교체 */
+  background: linear-gradient(135deg, #bdbdbd, #8f8f8f);
+  background-size: cover;
+  background-position: center;
+}
+
+.home-banner__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.38);
+  /* 텍스트 가독성 */
+}
+
+.home-banner__content {
+  position: relative;
+  height: 100%;
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.home-banner__title {
+  color: gray/50;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.home-banner__sub {
+  margin-top: 4px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 13px;
+  line-height: 1.2;
+}
+
+.home-banner__arrow {
+  color: rgba(255, 255, 255, 0.9);
+  display: grid;
+  place-items: center;
+}
+
+
+/* 홈 상단 헤더 */
+.home-header {
+  width: 100%;
+  height: 50px;
+  padding: 13px 16px 10px 16px;
+  background: gray/50;
+
+  display: grid;
+  grid-template-columns: 24px 1fr auto;
+  align-items: center;
+
+  position: relative;
+  top: 0;
+  z-index: 20;
+}
+
+/* 햄버거-로고 간격 119 */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 119px;
+  /* 햄버거 버튼 오른쪽으로 119 */
+}
+
+/* 로고-알림 간격 77, 알림-검색 간격 8 */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  /* 알림 ↔ 검색 간격 */
+  min-width: 60px;
+  /* bell 없어도 공간 유지 */
+  justify-content: flex-end;
+}
+
+.icon-btn {
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: transparent;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  color: #111;
+  cursor: pointer;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.brand-logo {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.brand-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* =========================
+   Chat Page
+========================= */
+
+.chat-page {
+  width: 100%;
+  height: 100%;
+  background: #F7F8F9;
+  position: relative;
+}
+
+/* 헤더: 390*50 느낌 */
+.chat-header {
+  width: 100%;
+  height: 50px;
+  padding: 13px 16px 0 16px;
+  background: #F7F8F9;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: relative;
+  z-index: 20;
+}
+
+.chat-header__left {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.chat-header__back,
+.chat-header__kebab {
+  width: 24px;
+  height: 24px;
+  border: 0;
+  background: transparent;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  padding: 0;
+}
+
+.chat-back-icon {
+  width: 10px;
+  height: 10px;
+  display: block;
+  border-left: 2px solid #262627;
+  border-bottom: 2px solid #262627;
+  transform: rotate(45deg);
+}
+
+.chat-header__name {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 600;
+  color: #262627;
+}
+
+/* 케밥 버튼 보이게 */
+.chat-kebab-dots {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #262627;
+  box-shadow: 0 -6px 0 #262627, 0 6px 0 #262627;
+}
+
+.chat-sheet {
+  position: absolute;
+  top: 122px;
+  /* 상품 정보 아래로 12 정도 떨어져 시작 */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* 프레임 맨 아래까지 닿음 */
+  width: 100%;
+  background: #FDFDFD;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-topcard {
+  padding: 16px;
+  background: #F7F8F9;
+}
+
+.chat-topcard__row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.chat-topcard__thumb {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: #E8EBED;
+  flex-shrink: 0;
+}
+
+.chat-topcard__info {
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-topcard__product {
+  font-size: 11px;
+  /* Small Text */
+  line-height: 14px;
+  font-weight: 400;
+  color: #72787F;
+  /* gray/500 */
+}
+
+.chat-topcard__price {
+  margin-top: 2px;
+  font-size: 20px;
+  /* Heading3 */
+  line-height: 28px;
+  font-weight: 700;
+  color: #262627;
+  /* honeypot/black */
+}
+
+/* 태그 공통 */
+.chat-topcard__tag {
+  margin-left: auto;
+  width: 33px;
+  height: 20px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  line-height: 14px;
+  font-weight: 600;
+  color: #FDFDFD;
+}
+
+/* 저가 */
+.chat-topcard__tag--low {
+  background: #93C572;
+}
+
+/* 상가 */
+.chat-topcard__tag--high {
+  background: #FF6666;
+}
+
+/* 적정 */
+.chat-topcard__tag--fair {
+  background: #2699E9;
+}
+
+
+.chat-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 14px 16px 110px 16px;
+  background: #FDFDFD;
+}
+
+.chat-date-pill {
+  width: fit-content;
+  margin: 0 auto 14px auto;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #454C53;
+  color: #FDFDFD;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.chat-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+  align-items: flex-end;
+}
+
+.chat-row.is-right {
+  justify-content: flex-end;
+}
+
+.chat-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #E8EBED;
+}
+
+.chat-bubble-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-width: 78%;
+}
+
+.chat-bubble {
+  padding: 10px 14px;
+  border-radius: 30px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #262627;
+  white-space: pre-line;
+}
+
+.bubble-right {
+  background: #F7F8F9;
+  border: 1px solid #E8EBED;
+}
+
+.bubble-left {
+  background: rgba(251, 226, 0, 0.3);
+  border: 0;
+}
+
+.chat-time {
+  font-size: 11px;
+  line-height: 14px;
+  color: #9EA4AA;
+}
+
+.time-left {
+  align-self: flex-start;
+}
+
+.time-right {
+  align-self: flex-end;
+}
+
+.screen.no-bottom-nav {
+  padding-bottom: 0px;
+}
+
+/* 입력창 전체 */
+.chat-inputbar {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 6px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 30;
+}
+
+/* 왼쪽 버튼 */
+.chat-plus {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 0;
+  background: #E8EBED;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #72787F;
+  font-size: 22px;
+  line-height: 0;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+/* 입력창 */
+.chat-inputfake {
+  flex: 1;
+  height: 50px;
+  border-radius: 40px;
+  background: #FDFDFD;
+  border: 1px solid #E8EBED;
+  padding: 0 14px;
+  color: #262627;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.chat-inputfake::placeholder {
+  color: #72787F;
+}
+
+/* 전송 버튼 */
+.chat-send {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 0;
+  background: #FBE200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  line-height: 0;
+  flex-shrink: 0;
+}
+
+.chat-send svg {
+  display: block;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+/* =========================
+   Chat List Page
+========================= */
+
+.chatlist-page {
+  width: 100%;
+  height: 100%;
+  background: #F7F8F9;
+  position: relative;
+  /* 기준점 */
+  overflow: hidden;
+  /* 프레임 안에 고정 */
+}
+
+.chatlist-header {
+  width: 100%;
+  height: 50px;
+  padding: 13px 16px 0 16px;
+  background: #F7F8F9;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  /* 흰 박스 위에 보이게 */
+}
+
+.chatlist-title {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 600;
+  color: #262627;
+}
+
+.chatlist-kebab {
+  position: absolute;
+  top: 13px;
+  right: 16px;
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: transparent;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  padding: 0;
+}
+
+.chatlist-kebab-dots {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #262627;
+  box-shadow: 0 -6px 0 #262627, 0 6px 0 #262627;
+}
+
+/* 헤더 밑면부터 프레임 맨 아래까지 딱 채우기 */
+.chatlist-sheet {
+  position: absolute;
+  top: 50px;
+  /* 헤더 바로 아래에 붙음 */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* 프레임 맨 밑면에 닿음 */
+
+  background: #FDFDFD;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* 윗면으로부터 20 */
+.chatlist-greeting {
+  padding: 20px 16px 0 16px;
+  color: #262627;
+  flex-shrink: 0;
+}
+
+/* 인사말 아래 8 간격 후 358px 선 */
+.chatlist-divider {
+  width: calc(100% - 32px);
+  height: 0;
+  border-top: 1px solid #E8EBED;
+  margin: 8px 16px 0 16px;
+  flex-shrink: 0;
+}
+
+/* 선 아래 20 간격 후 리스트 시작 + 스크롤 */
+.chatlist-list {
+  margin-top: 20px;
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 96px;
+  /* 하단 네비에 안 가리게 */
+  box-sizing: border-box;
+}
+
+.chatlist-item {
+  display: flex;
+  gap: 12px;
+  padding: 12px 16px;
+  background: #FDFDFD;
+  cursor: pointer;
+}
+
+.chatlist-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #F7F8F9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.chatlist-bear {
+  width: 32px;
+  height: 32px;
+  background: #E8EBED;
+  border-radius: 50%;
+}
+
+.chatlist-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.chatlist-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.chatlist-name {
+  font-weight: 600;
+  color: #262627;
+  flex-shrink: 0;
+}
+
+.chatlist-product {
+  font-size: 12px;
+  line-height: 16px;
+  color: #9EA4AA;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.chatlist-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.chatlist-last {
+  font-size: 14px;
+  line-height: 20px;
+  color: #262627;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.chatlist-time {
+  font-size: 12px;
+  line-height: 16px;
+  color: #9EA4AA;
+  flex-shrink: 0;
+}
+
+/* ===== 마이페이지 ===== */
+.mypage-page {
+  width: 100%;
+  height: 100%;
+  background: #FDFDFD;
+}
+
+.mypage-header {
+  height: 56px;
+  background: #FDFDFD;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.mypage-title {
+  font-size: 20px;
+  /* Heading3 20/28 */
+  line-height: 28px;
+  font-weight: 600;
+  color: #1B1D1F;
+}
+
+.mypage-main {
+  padding: 16px;
+}
+
+/* 프로필 */
+.mypage-profile {
+  background: #FDFDFD;
+  border-radius: 16px;
+  padding: 18px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mypage-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: #FBE20033;
+  /* primary 30% 느낌 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.mypage-bear {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #FBE20033;
+  /* 임시 */
+}
+
+.mypage-name {
+  margin-top: 10px;
+  color: #1B1D1F;
+}
+
+.mypage-sub {
+  margin-top: 4px;
+  color: #72787F;
+  /* gray/500 */
+}
+
+/* Stats */
+.mypage-stats {
+  margin-top: 12px;
+  padding: 14px 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.mypage-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.mypage-stat-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #FDFDFD;
+  border: 1px solid #E8EBED;
+  /* gray/100 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mypage-stat-num {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 700;
+  color: #1B1D1F;
+}
+
+.mypage-stat-label {
+  color: #72787F;
+}
+
+/* Menu */
+.mypage-menu {
+  margin-top: 12px;
+  background: #FDFDFD;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.mypage-menu-item {
+  width: 100%;
+  height: 56px;
+  padding: 0 14px;
+  border: 0;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.mypage-menu-item+.mypage-menu-item {
+  border-top: 1px solid #E8EBED;
+}
+
+.mypage-menu-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #1B1D1F;
+}
+
+.mypage-menu-icon {
+  width: 24px;
+  display: inline-flex;
+  justify-content: center;
+}
+
+.mypage-menu-arrow {
+  width: 7px;
+  height: 7px;
+  border-right: 2px solid #9EA4AA;
+  /* gray/400 */
+  border-bottom: 2px solid #9EA4AA;
+  transform: rotate(-45deg);
+}
+
+.mypage-menu {
+  margin-top: 24px;
+  padding: 16px;
+  background: #F7F8F9;
+  /* honeypot/gray/50 */
+  border-radius: 16px;
+}
+
+/* =========================
+   Category Page
+========================= */
+
+.category-page {
+  width: 100%;
+  height: 100%;
+  background: #FDFDFD; /* 화면 배경은 흰색 */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header (경계선/구분선 없음) */
+.category-header {
+  height: 56px;
+  background: #FDFDFD;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.category-title {
+  font-size: 20px;      /* honeypot/Heading3 = 20/28 */
+  line-height: 28px;
+  font-weight: 600;
+  color: #262627;       /* honeypot/black */
+}
+
+/* 돌아가기 버튼 */
+.category-back {
+  position: absolute;
+  left: 18px;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  background: transparent;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  padding: 0;
+}
+
+.category-back-icon {
+  width: 10px;
+  height: 10px;
+  display: block;
+  border-left: 2px solid #262627;
+  border-bottom: 2px solid #262627;
+  transform: rotate(45deg);
+}
+
+/* 메인 부분 */
+.category-main {
+  padding: 16px;
+}
+
+/* Grid: 원-원 간격 20 */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;            /* 원과 원 사이 간격 20 */
+  justify-items: center;
+}
+
+.category-item {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+/* 원: 74*74, gray/50, 테두리 없음 */
+.category-circle {
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+  background: #F7F8F9;  /* honeypot/gray/50 */
+  display: grid;
+  place-items: center;
+}
+
+/* 아이콘 임시 */
+.category-icon-placeholder {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: #E8EBED;  /* gray/100 */
+}
+
+/* 라벨: Small Text = 11/14, black */
+.category-label {
+  font-size: 11px;      /* honeypot/Small Text */
+  line-height: 14px;
+  font-weight: 400;
+  color: #262627;       /* honeypot/black */
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* =========================
+   Login Page
+========================= */
+
+.login-page {
+  width: 100%;
+  height: 100%;
+  background: #FBE200;
+  /* honeypot/primary */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 상단 텍스트 영역 */
+.login-hero {
+  padding: 64px 20px 0 20px;
+}
+
+.login-hero__title {
+  font-size: 28px;
+  /* Heading1 28/36 */
+  line-height: 36px;
+  font-weight: 700;
+  color: #262627;
+  /* honeypot/black */
+}
+
+.login-hero__sub {
+  margin-top: 12px;
+  /* 제목-서브 간격 12 */
+  font-size: 16px;
+  /* Body1 */
+  line-height: 24px;
+  font-weight: 400;
+  color: #262627;
+}
+
+/* 하단 흰 박스 */
+.login-sheet {
+  width: 100%;
+  height: 614px;
+  background: #FDFDFD;
+  margin-top: auto;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  padding: 28px 20px;
+  box-sizing: border-box;
+}
+
+/* 폼 */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* 입력창 */
+.login-input {
+  height: 48px;
+  border-radius: 30px;
+  /* 30 */
+  border: 1px solid #C9CDD2;
+  /* gray/200 */
+  background: #FDFDFD;
+  padding: 0 16px;
+  outline: none;
+  font-size: 14px;
+  line-height: 20px;
+  color: #262627;
+}
+
+.login-input::placeholder {
+  color: #9EA4AA;
+}
+
+/* 로그인 버튼 */
+.login-submit {
+  margin-top: 50px;
+  /* 비밀번호칸 아래 50 */
+  height: 48px;
+  border-radius: 30px;
+  /* 입력창과 통일감 */
+  border: none;
+  background: #FBE200;
+  /* primary */
+  color: #FDFDFD;
+  /* white 글씨 */
+  font-size: 16px;
+  /* Body1 */
+  line-height: 24px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* 또는 */
+.login-or {
+  margin-top: 58px;
+  /* 버튼 아래 58 */
+  text-align: center;
+  font-size: 16px;
+  /* Body1 */
+  line-height: 24px;
+  font-weight: 400;
+  color: #262627;
+}
+
+/* 소셜 버튼 영역 */
+.login-social {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  /* 원끼리 간격 28 */
+}
+
+/* 공통 원 버튼 */
+.login-social__btn {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  border: none;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+/* 임시 로고 */
+.login-social__btn.naver {
+  background: #3DBF5A;
+  color: #FDFDFD;
+  font-weight: 800;
+  font-size: 24px;
+}
+
+.login-social__btn.kakao {
+  background: #FBE200;
+  color: #262627;
+  font-weight: 800;
+  font-size: 12px;
+}
+
+.login-social__naver {
+  transform: translateY(-1px);
+}
+
+.login-social__kakao {
+  font-size: 10px;
+  letter-spacing: 0.5px;
+}
