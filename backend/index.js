@@ -10,6 +10,7 @@ import postRoutes from "./routes/post.routes.js";
 import swaggerUi from "swagger-ui-express";
 import swaggerSpec from "./config/swagger.js";
 import chatRoutes from "./routes/chat.routes.js";
+import aiRoutes from "./routes/ai.routes.js";
 
 
 import  { Server } from "socket.io";
@@ -52,6 +53,7 @@ app.use("/users", router);
 app.use("/auth", authRouter);
 app.use("/posts", postRoutes);
 app.use("/chat", chatRoutes);
+app.use("/ai", aiRoutes);
 
 // DB 연결 후 서버 시작
 const startServer = async () => {
