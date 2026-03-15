@@ -1,19 +1,41 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import { getKakaoLoginUrl } from "../api/config";
 
 export default function Login() {
     const navigate = useNavigate();
+    const [searchParams, setSearchParams] = useSearchParams();
     const [id, setId] = useState("");
     const [pw, setPw] = useState("");
+    // const [loginError, setLoginError] = useState("");
+
+    const token = searchParams.get("token");
+    const error = searchParams.get("error");
+    const loginError =
+        error === "login_failed"
+        ? "카카오 로그인에 실패했습니다."
+        : "";
+
+    // 카카오 콜백: URL에 ?token= 이 있으면 저장 후 홈으로
+    useEffect(() => {
+    if (!token) return;
+
+    localStorage.setItem("token", token);
+    setSearchParams({});
+    navigate("/", { replace: true });
+
+    }, [token, navigate, setSearchParams]);
 
     const handleLogin = (e) => {
         e.preventDefault();
-
-        // 임시 로그인(백엔드 붙이면 교체)
+        // TODO: 백엔드 POST /auth/login 연동 시 교체
         localStorage.setItem("token", "demo-token");
-
-        // 로그인 후 홈으로 이동
         navigate("/");
+    };
+
+    /** 카카오 로그인: 백엔드 /auth/kakao 로 이동 → 카카오 인증 → 백엔드 콜백 → 여기로 리다이렉트(?token=) */
+    const handleKakaoLogin = () => {
+        window.location.href = getKakaoLoginUrl();
     };
 
     return (
@@ -46,6 +68,9 @@ export default function Login() {
                         비밀번호 찾기
                     </button>
 
+                    {loginError ? (
+                        <div style={styles.errorText}>{loginError}</div>
+                    ) : null}
                     {/* 비밀번호 칸 아래 50 */}
                     <button type="submit" style={styles.loginBtn}>
                         로그인
@@ -60,7 +85,11 @@ export default function Login() {
                             <span style={styles.naverText}>N</span>
                         </button>
 
-                        <button type="button" style={{ ...styles.socialBtn, ...styles.kakao }}>
+                        <button
+                            type="button"
+                            style={{ ...styles.socialBtn, ...styles.kakao }}
+                            onClick={handleKakaoLogin}
+                        >
                             <span style={styles.kakaoText}>TALK</span>
                         </button>
                     </div>
@@ -137,6 +166,13 @@ const styles = {
         lineHeight: "20px",
         color: "#262627",
         marginBottom: 12,
+    },
+
+    errorText: {
+        marginTop: 8,
+        fontSize: 12,
+        color: "#c00",
+        textAlign: "center",
     },
 
     findPw: {
