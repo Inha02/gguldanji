@@ -79,18 +79,13 @@ router.get("/kakao/callback", async (req, res) => {
       { expiresIn: "7d" }
     );
 
-    // 5️⃣ 프론트 없이 화면 출력
-    res.send(`
-      <h2>카카오 로그인 성공 🎉</h2>
-      <p>닉네임: ${nickname}</p>
-      <p>이메일: ${email}</p>
-      <p>JWT:</p>
-      <textarea rows="10" cols="80">${token}</textarea>
-    `);
-
+    // 5️⃣ 프론트엔드로 리다이렉트 (쿼리로 JWT 전달)
+    const frontendUrl = process.env.FRONTEND_URL || "http://localhost:5173";
+    res.redirect(`${frontendUrl}/login?token=${encodeURIComponent(token)}`);
   } catch (error) {
     console.error(error);
-    res.status(500).send("로그인 실패");
+    const frontendUrl = process.env.FRONTEND_URL || "http://localhost:5173";
+    res.redirect(`${frontendUrl}/login?error=login_failed`);
   }
 });
 
