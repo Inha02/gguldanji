@@ -126,10 +126,36 @@ class Explanation(BaseModel):
     top_factors: list[TopFactor] = []
 
 
+class PriceRange(BaseModel):
+    """가격 범위 (판매자용 또는 구매자용)"""
+    min: int = Field(..., description="최저 추천가")
+    max: int = Field(..., description="최고 추천가")
+
+
+class Quartiles(BaseModel):
+    """가격 분위수"""
+    q1: int = Field(..., description="25th percentile")
+    q2: int = Field(..., description="50th percentile (중앙값)")
+    q3: int = Field(..., description="75th percentile")
+    q4: int = Field(..., description="상한 추정가")
+
+
 class EstimateResponse(BaseModel):
     predicted_price: int
     price_range_min: int
     price_range_max: int
+
+    # 판매자/구매자 맞춤 가격 범위
+    seller_range: Optional[PriceRange] = Field(
+        None, description="판매자 추천 가격 범위 (Q2~Q4)"
+    )
+    buyer_range: Optional[PriceRange] = Field(
+        None, description="구매자 추천 가격 범위 (Q1~Q3)"
+    )
+    quartiles: Optional[Quartiles] = Field(
+        None, description="가격 분위수 (Q1~Q4)"
+    )
+
     confidence: str
     model_type: str
     model_raw_price: Optional[int] = None

@@ -17,10 +17,11 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
 from api.schemas import (
-    EstimateRequest, EstimateResponse, Explanation, SimilarTrade, TopFactor,
-    CategoriesResponse, CategoryInfo, HealthResponse,
-    CATEGORY_SCHEMA, VALID_CONDITIONS,
-)
+      EstimateRequest, EstimateResponse, Explanation, SimilarTrade, TopFactor,
+      PriceRange, Quartiles,   # ← 추가
+      CategoriesResponse, CategoryInfo, HealthResponse,
+      CATEGORY_SCHEMA, VALID_CONDITIONS,
+  )
 from api.dependencies import get_engine
 from profiling.router import router as profiling_router
 
@@ -212,10 +213,29 @@ def _build_response(result: dict) -> EstimateResponse:
             top_factors=top_factors,
         )
 
+    # 판매자/구매자 가격 범위
+    seller_range = None
+    if "seller_range" in result:
+        sr = result["seller_range"]
+        seller_range = PriceRange(min=sr["min"], max=sr["max"])
+
+    buyer_range = None
+    if "buyer_range" in result:
+        br = result["buyer_range"]
+        buyer_range = PriceRange(min=br["min"], max=br["max"])
+
+    quartiles = None
+    if "quartiles" in result:
+        q = result["quartiles"]
+        quartiles = Quartiles(q1=q["q1"], q2=q["q2"], q3=q["q3"], q4=q["q4"])
+
     return EstimateResponse(
         predicted_price=result.get("predicted_price", 0),
         price_range_min=result.get("price_range_min", 0),
         price_range_max=result.get("price_range_max", 0),
+        seller_range=seller_range,
+        buyer_range=buyer_range,
+        quartiles=quartiles,
         confidence=result.get("confidence", "low"),
         model_type=result.get("model_type", "unknown"),
         model_raw_price=result.get("model_raw_price"),
@@ -223,3 +243,15 @@ def _build_response(result: dict) -> EstimateResponse:
         rag_sample_count=result.get("rag_sample_count"),
         explanation=explanation,
     )
+
+
+
+
+
+
+
+
+
+
+
+
