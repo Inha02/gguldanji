@@ -663,22 +663,41 @@ class PriceEstimator:
 
         return step2
 
+    """
+    수정 사항: step3c_inference.py — _rag_adjust 메서드 교체
+    ============================================================
+
+    PriceEstimator 클래스의 _rag_adjust 메서드를 아래 코드로 교체하세요.
+
+    변경 내용:
+    - 유사거래 가격에서 Q1/Q2/Q3/Q4 분위수 산출
+    - seller_range (Q2~Q4): 판매자 추천 가격 범위
+    - buyer_range (Q1~Q3): 구매자 추천 가격 범위
+    - 유사거래 3건 미만 시 모델 예측값 기반 비율 폴백
+    """
+
+    # ── 아래 메서드로 기존 _rag_adjust를 교체 ──
+
     def _rag_adjust(self, result: dict, similar: list[dict]) -> dict:
         """
-        모델 예측과 RAG 유사거래 가격을 가중 평균.
-        유사거래가 3건 이상이면 RAG에 더 높은 가중치.
+        모델 예측과 RAG 유사거래 가격을 가중 평균하고,
+        분위수 기반으로 판매자/구매자 가격 범위를 산출한다.
+
+        판매자용: Q2 ~ Q4 (높게 팔 수 있는 범위)
+        구매자용: Q1 ~ Q3 (합리적으로 살 수 있는 범위)
         """
         model_price = result.get("predicted_price", 0)
         if not similar or model_price <= 0:
-            return {}
+            # 유사거래 없으면 모델 예측 기반 비율 폴백
+            return self._fallback_ranges(model_price, result.get("confidence", "medium"))
 
         rag_prices = [s["price"] for s in similar if s["price"] > 0]
         if not rag_prices:
-            return {}
+            return self._fallback_ranges(model_price, result.get("confidence", "medium"))
 
         rag_median = float(np.median(rag_prices))
 
-        # 가중치: 유사거래가 많고 유사도가 높을수록 RAG 비중 증가
+        # ── 가중 평균: 유사거래 수에 따라 RAG 비중 조절 ──
         n = len(rag_prices)
         if n >= 5:
             model_weight, rag_weight = 0.3, 0.7
@@ -690,22 +709,74 @@ class PriceEstimator:
         adjusted_price = model_price * model_weight + rag_median * rag_weight
         adjusted_price = max(0, round(adjusted_price))
 
-        # 가격 범위도 재조정
-        median_pct = result.get("confidence", "medium")
-        pct = 0.3 if median_pct == "high" else 0.4
-        price_min = max(0, round(adjusted_price * (1 - pct) / 1000) * 1000)
-        price_max = round(adjusted_price * (1 + pct) / 1000) * 1000
+        # ── 분위수 기반 판매자/구매자 범위 산출 ──
+        if n >= 3:
+            # 유사거래 3건 이상: 실제 분위수 사용
+            q1 = int(np.percentile(rag_prices, 25))
+            q2 = int(np.percentile(rag_prices, 50))
+            q3 = int(np.percentile(rag_prices, 75))
+
+            # Q4: Q3 + (Q3-Q2) 또는 모델 예측 상한 중 큰 값
+            q3_q2_gap = q3 - q2
+            q4_candidate = q3 + q3_q2_gap
+            model_upper = round(adjusted_price * 1.3)
+            q4 = max(q4_candidate, model_upper)
+
+            # 1000원 단위 반올림
+            q1 = max(0, round(q1 / 1000) * 1000)
+            q2 = max(0, round(q2 / 1000) * 1000)
+            q3 = max(0, round(q3 / 1000) * 1000)
+            q4 = max(0, round(q4 / 1000) * 1000)
+        else:
+            # 유사거래 부족: 모델 예측 기반 비율 폴백
+            q1 = max(0, round(adjusted_price * 0.75 / 1000) * 1000)
+            q2 = max(0, round(adjusted_price * 0.90 / 1000) * 1000)
+            q3 = max(0, round(adjusted_price * 1.10 / 1000) * 1000)
+            q4 = max(0, round(adjusted_price * 1.30 / 1000) * 1000)
+
+        # 기존 호환용 price_range는 전체 범위(Q1~Q4)로
+        price_min = q1
+        price_max = q4
 
         return {
             "predicted_price": adjusted_price,
             "price_range_min": price_min,
             "price_range_max": price_max,
+            "seller_range": {"min": q2, "max": q4},
+            "buyer_range": {"min": q1, "max": q3},
+            "quartiles": {"q1": q1, "q2": q2, "q3": q3, "q4": q4},
             "model_raw_price": model_price,
             "rag_median_price": round(rag_median),
             "blend_weights": {"model": model_weight, "rag": rag_weight},
             "rag_sample_count": n,
         }
 
+    def _fallback_ranges(self, price: int, confidence: str) -> dict:
+        """유사거래 없을 때 모델 예측 기반 비율로 범위 산출"""
+        if price <= 0:
+            return {}
+
+        # confidence에 따라 범위 폭 조절
+        if confidence == "high":
+            pct_narrow, pct_wide = 0.10, 0.25
+        elif confidence == "medium":
+            pct_narrow, pct_wide = 0.15, 0.35
+        else:
+            pct_narrow, pct_wide = 0.20, 0.45
+
+        q1 = max(0, round(price * (1 - pct_wide) / 1000) * 1000)
+        q2 = max(0, round(price * (1 - pct_narrow) / 1000) * 1000)
+        q3 = max(0, round(price * (1 + pct_narrow) / 1000) * 1000)
+        q4 = max(0, round(price * (1 + pct_wide) / 1000) * 1000)
+
+        return {
+            "predicted_price": price,
+            "price_range_min": q1,
+            "price_range_max": q4,
+            "seller_range": {"min": q2, "max": q4},
+            "buyer_range": {"min": q1, "max": q3},
+            "quartiles": {"q1": q1, "q2": q2, "q3": q3, "q4": q4},
+        }
 
 # ──────────────────────────────────────────────
 # 메인 (CLI)
