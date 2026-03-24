@@ -2,7 +2,8 @@ import express from "express";
 
 import {
   aiHealth,
-  estimatePrice
+  estimatePrice,
+  analyzeSellerProfile 
 } from "../controllers/ai.controller.js";
 
 const router = express.Router();
@@ -73,6 +74,48 @@ router.get("/health", aiHealth);
  *         description: ai-engine 연결 실패
  */
 router.post("/price-estimate", estimatePrice);
+
+/**
+ * @swagger
+ * /ai/seller-profile:
+ *   post:
+ *     summary: 판매자 성향 분석
+ *     description: 채팅 로그를 기반으로 판매자 성향을 분석합니다.
+ *     tags: [AI]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               seller_id:
+ *                 type: string
+ *                 example: user123
+ *               chat_logs:
+ *                 type: array
+ *                 items:
+ *                   type: object
+ *                   properties:
+ *                     role:
+ *                       type: string
+ *                       example: seller
+ *                     message:
+ *                       type: string
+ *                       example: 가격은 이 정도가 적당합니다
+ *                     timestamp:
+ *                       type: string
+ *                       example: 2026-03-04T14:30:00
+ *               existing_profile:
+ *                 type: object
+ *                 nullable: true
+ *     responses:
+ *       200:
+ *         description: 분석 성공
+ *       502:
+ *         description: ai-engine 연결 실패
+ */
+router.post("/seller-profile", analyzeSellerProfile);
 
 export default router;
 
