@@ -1,5 +1,4 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
 import AppShell from "./components/AppShell";
 import ChatShell from "./components/ChatShell";
 
@@ -13,14 +12,18 @@ import Recommend from "./pages/Recommend";
 import Category from "./pages/Category";
 import Login from "./pages/Login";
 import { ChatProvider } from "./context/ChatContext";
-
+import ProfileView from "./pages/ProfileView";
+import NeighborhoodManage from "./pages/NeighborhoodManage";
+import NeighborhoodAdd from "./pages/NeighborhoodAdd";
+import SignUp from "./pages/SignUp";
+import Notifications from "./pages/Notifications";
+import ProductDetail from "./pages/ProductDetail";
 
 export default function App() {
   return (
     <ChatProvider>
       <BrowserRouter>
         <Routes>
-          {/* 전부 AppShell 안: device 프레임 유지 */}
           <Route element={<AppShell />}>
             <Route path="/" element={<Home />} />
             <Route path="/likes" element={<Likes />} />
@@ -28,13 +31,16 @@ export default function App() {
             <Route path="/chat" element={<ChatList />} />
             <Route path="/mypage" element={<MyPage />} />
             <Route path="/recommend" element={<Recommend />} />
-
-            {/* 프레임 유지 + AppShell에서 네비 숨김 처리 */}
             <Route path="/category" element={<Category />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/profile-view" element={<ProfileView />} />
+            <Route path="/NeighborhoodManage" element={<NeighborhoodManage />} />
+            <Route path="/NeighborhoodAdd" element={<NeighborhoodAdd />} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/notifications" element={<Notifications />} />
+            <Route path="/product/:id" element={<ProductDetail />} />
           </Route>
 
-        {/* 채팅 상세는 네비 없어야 하니까 ChatShell 그대로 유지 */}
           <Route element={<ChatShell />}>
             <Route path="/chat/:chatId" element={<Chat />} />
           </Route>

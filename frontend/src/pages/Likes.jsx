@@ -124,7 +124,7 @@ export default function Likes() {
                             />
                         </span>
 
-                        <span style={styles.caption}>거래완료 제외</span>
+                        <span style={styles.body1}>거래완료 제외</span>
                     </label>
 
                     <div style={styles.sortWrap}>
@@ -134,8 +134,8 @@ export default function Likes() {
                             aria-label="정렬 선택"
                             type="button"
                         >
-                            <span style={styles.caption}>{sortKey}</span>
-                            <span style={styles.sortChevron} />
+                            <span style={styles.sortBtnText}>{sortKey}</span>
+                            <span style={styles.sortIcon}>⭥</span>
                         </button>
 
                         {sortOpen && (
@@ -287,23 +287,26 @@ const styles = {
         position: "relative",
     },
     sortBtn: {
-        height: 28,
-        padding: "0 10px",
-        borderRadius: 8,
-        border: "1px solid #E8EBED",
-        backgroundColor: "#FDFDFD",
+        border: "none",
+        background: "transparent",
+        padding: 0,
         display: "flex",
         alignItems: "center",
-        gap: 8,
+        gap: 4,
         cursor: "pointer",
     },
-    sortChevron: {
-        width: 6,
-        height: 6,
-        borderRight: "2px solid #262627",
-        borderBottom: "2px solid #262627",
-        transform: "rotate(45deg)",
-        marginTop: -2,
+
+    sortBtnText: {
+        fontSize: 16,
+        lineHeight: "24px",
+        fontWeight: 400,
+        color: "#262627",
+    },
+
+    sortIcon: {
+        fontSize: 14,
+        lineHeight: "14px",
+        color: "#262627",
     },
     sortMenu: {
         position: "absolute",
@@ -313,7 +316,7 @@ const styles = {
         height: 124,
         backgroundColor: "#FDFDFD",
         border: "1px solid #E8EBED",
-        borderRadius: 10,
+        borderRadius: 12,
         boxShadow: "0 6px 18px rgba(0,0,0,0.08)",
         zIndex: 10,
         paddingTop: 8,
@@ -321,18 +324,22 @@ const styles = {
         display: "flex",
         flexDirection: "column",
         gap: 4,
+        boxSizing: "border-box",
     },
+
     sortItem: {
         border: "none",
         background: "transparent",
         cursor: "pointer",
         padding: 0,
-        height: 18,
-        fontSize: 12,
-        lineHeight: "18px",
+        height: 24,
+        fontSize: 16,      // Body1
+        lineHeight: "24px",
+        fontWeight: 400,
         color: "#262627",
         textAlign: "center",
     },
+
     grid: {
         display: "grid",
         gridTemplateColumns: "repeat(2, 173px)",

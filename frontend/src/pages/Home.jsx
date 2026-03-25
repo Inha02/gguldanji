@@ -27,22 +27,16 @@ export default function Home() {
     const navigate = useNavigate();
     const [searchParams] = useSearchParams();
 
-    // URL에서 선택된 카테고리 읽기
     const selectedCat = searchParams.get("cat");
-
-    // 임시 로그인 판별
     const isLoggedIn = !!localStorage.getItem("token");
 
-    // 카테고리 필터 + 로그인 전 랜덤
     const list = useMemo(() => {
         let data = [...mock];
 
-        // 카테고리 선택되었으면 필터
         if (selectedCat) {
             data = data.filter((x) => x.category === selectedCat);
         }
 
-        // 로그인 전에는 랜덤
         if (!isLoggedIn) {
             data = shuffle(data);
         }
@@ -52,24 +46,25 @@ export default function Home() {
 
     const [loginModalOpen, setLoginModalOpen] = useState(false);
 
-    const handleCardClick = () => {
+    const handleCardClick = (item) => {
         if (!isLoggedIn) {
             setLoginModalOpen(true);
             return;
         }
-        // 로그인 후 카드 클릭 동작은 연결 예정
+
+        navigate(`/product/${item.id}`, { state: { item } });
     };
 
     return (
         <>
-            {/* 로그인 전: 알림 버튼 숨김 + 햄버거 버튼은 카테고리로 이동 */}
             <HomeHeader showBell={isLoggedIn} onMenuClick={() => navigate("/category")} />
 
             <div style={styles.page}>
-                {/* 로그인 후에만 배너 노출 */}
                 {isLoggedIn && (
                     <>
-                        <HomeBanner name="송이" />
+                        <div onClick={() => navigate("/recommend")} style={{ cursor: "pointer" }}>
+                            <HomeBanner name="송이" />
+                        </div>
                         <div style={{ height: 20 }} />
                     </>
                 )}
@@ -78,14 +73,17 @@ export default function Home() {
 
                 <div style={styles.grid}>
                     {list.map((item) => (
-                        <div key={item.id} onClick={handleCardClick} style={{ cursor: "pointer" }}>
+                        <div
+                            key={item.id}
+                            onClick={() => handleCardClick(item)}
+                            style={{ cursor: "pointer" }}
+                        >
                             <ProductCard item={item} />
                         </div>
                     ))}
                 </div>
             </div>
 
-            {/* 로그인 유도 모달창 */}
             {loginModalOpen && (
                 <div style={modalStyles.backdrop} onClick={() => setLoginModalOpen(false)}>
                     <div style={modalStyles.modal} onClick={(e) => e.stopPropagation()}>
@@ -155,15 +153,13 @@ const modalStyles = {
         justifyContent: "center",
         padding: 16,
     },
-    iconWrap: {
-        marginBottom: 8,
-    },
+    iconWrap: { marginBottom: 8 },
     infoIcon: {
         width: 22,
         height: 22,
         borderRadius: "50%",
         border: "1px solid #C9CDD2",
-        color: "#1B1D1F",
+        color: "#262627",
         display: "grid",
         placeItems: "center",
         fontWeight: 700,
@@ -174,7 +170,7 @@ const modalStyles = {
         fontSize: 20,
         lineHeight: "28px",
         fontWeight: 600,
-        color: "#1B1D1F",
+        color: "#262627",
         textAlign: "center",
         marginBottom: 15,
     },
