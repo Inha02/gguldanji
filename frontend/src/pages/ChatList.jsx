@@ -13,7 +13,7 @@ export default function ChatList() {
                 <button className="chatlist-kebab" type="button" aria-label="메뉴">
                     <span className="chatlist-kebab-dots" />
                 </button>
-            </div>
+            </div> 
 
             <div className="chatlist-sheet">
                 <div className="chatlist-greeting text-body-2">

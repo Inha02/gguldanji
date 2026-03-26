@@ -35,7 +35,7 @@ export default function Category() {
                     <span className="category-back-icon" />
                 </button>
 
-                <div className="category-title">카테고리</div>
+                <div className="category-title text-heading-3">카테고리</div>
             </div>
 
             {/* 메인부분 */}

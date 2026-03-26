@@ -1,21 +1,14 @@
-/* Pretendard Font */
-@font-face {
-  font-family: 'Pretendard';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2') format('woff2');
-  font-weight: 100;
-  font-display: swap;
-}
+/*/* =========================
+   Pretendard Font
+========================= */
 
-@font-face {
-  font-family: 'Pretendard';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-display: swap;
-}
+@import url("https://cdn.jsdelivr.net/npm/pretendard/dist/web/static/pretendard.css");
 
 body {
   font-family: "Pretendard", sans-serif;
 }
+
+/* 기본 리셋 */
 
 * {
   margin: 0;
@@ -27,34 +20,33 @@ html,
 body {
   height: 100%;
 }
-/* 🌑 웹 전체 배경 */
+
+/* 웹 전체 배경 */
 .viewport {
   width: 100vw;
   height: 100vh;
   background: #0b0b0b;
-
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* 📱 아이폰 크기 고정 프레임 */
+/* 아이폰 크기 고정 프레임 */
 .device {
-  width: 390px;
-  height: 844px;
-
+  width: 100%;
+  max-width: 390px;
+  height: 100vh;
   background: #FDFDFD;
   color: #262627;
-
   border-radius: 16px;
   overflow: hidden;
-
   position: relative;
   display: flex;
   flex-direction: column;
 }
 
-/* 📄 실제 화면 영역 */
+
+/* 실제 화면 영역 */
 .screen {
   flex: 1;
   overflow-y: auto;
@@ -341,7 +333,6 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  /* 프레임 맨 아래까지 닿음 */
   width: 100%;
   background: #FDFDFD;
   border-top-left-radius: 40px;
@@ -351,6 +342,7 @@ body {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .chat-topcard {
@@ -654,6 +646,7 @@ body {
   flex-direction: column;
   overflow: hidden;
   z-index: 1;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* 윗면으로부터 20 */
@@ -824,11 +817,16 @@ body {
 }
 
 .mypage-name {
+  font-size: 20px;
+  line-height: 28px;
   margin-top: 10px;
+  font-weight: 700;
   color: #1B1D1F;
 }
 
 .mypage-sub {
+  font-size: 12px;
+  line-height: 16px;
   margin-top: 4px;
   color: #72787F;
   /* gray/500 */
@@ -836,7 +834,6 @@ body {
 
 /* Stats */
 .mypage-stats {
-  margin-top: 12px;
   padding: 14px 10px;
   display: flex;
   justify-content: space-around;
@@ -869,38 +866,49 @@ body {
 }
 
 .mypage-stat-label {
+  font-size: 12px;
+  list-style: 16px;
   color: #72787F;
+  text-align: center;
 }
 
 /* Menu */
 .mypage-menu {
-  margin-top: 12px;
-  background: #FDFDFD;
+  margin-top: 21px;
+  /* ✅ 판매중/거래완료/구매 아래 21 */
+  width: 358px;
+  height: 280px;
+  background: #F7F8F9;
   border-radius: 16px;
   overflow: hidden;
+  padding: 0;
+  box-sizing: border-box;
+  gap: 28px;
 }
 
 .mypage-menu-item {
-  width: 100%;
-  height: 56px;
-  padding: 0 14px;
-  border: 0;
+  position: relative;
+  height: auto;
+  /* 고정 높이 제거 */
+  padding: 0 16px;
+  border: none;
   background: transparent;
+
   display: flex;
   align-items: center;
-  justify-content: space-between;
+
   cursor: pointer;
 }
 
 .mypage-menu-item+.mypage-menu-item {
-  border-top: 1px solid #E8EBED;
+  border-top: none;
 }
 
-.mypage-menu-left {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: #1B1D1F;
+.mypage-menu-left span:last-child {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400px;
+  color: #262627;
 }
 
 .mypage-menu-icon {
@@ -910,20 +918,48 @@ body {
 }
 
 .mypage-menu-arrow {
-  width: 7px;
-  height: 7px;
-  border-right: 2px solid #9EA4AA;
-  /* gray/400 */
-  border-bottom: 2px solid #9EA4AA;
-  transform: rotate(-45deg);
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #262627;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .mypage-menu {
-  margin-top: 24px;
-  padding: 16px;
-  background: #F7F8F9;
-  /* honeypot/gray/50 */
-  border-radius: 16px;
+    margin-top: 21px;
+      width: 358px;
+      height: 280px;
+      background: #F7F8F9;
+      border-radius: 16px;
+    
+      padding: 24px 0;
+      /* ✅ 위/아래 24 */
+      box-sizing: border-box;
+    
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+.mypage-logout {
+  width: calc(100% - 32px);
+  /* 좌우 16 */
+  height: 36px;
+  margin: 24px 16px 60px 16px;
+  background: #454C53;
+  border: none;
+  border-radius: 12px;
+  color: #FDFDFD;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
 /* =========================
@@ -953,7 +989,7 @@ body {
 .category-title {
   font-size: 20px;      /* honeypot/Heading3 = 20/28 */
   line-height: 28px;
-  font-weight: 600;
+  font-weight: 700;
   color: #262627;       /* honeypot/black */
 }
 
@@ -1072,14 +1108,21 @@ body {
 
 /* 하단 흰 박스 */
 .login-sheet {
-  width: 100%;
-  height: 614px;
+  position: absolute;
+  top: 230px;
+  /* 네가 말한 윗면 간격 */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* 화면 맨 아래까지 딱 채움 */
   background: #FDFDFD;
-  margin-top: auto;
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
-  padding: 28px 20px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  padding: 32px 24px 24px;
   box-sizing: border-box;
+  overflow-y: auto;
 }
 
 /* 폼 */
@@ -1181,4 +1224,11 @@ body {
 .login-social__kakao {
   font-size: 10px;
   letter-spacing: 0.5px;
+}
+
+.post-placeholder::placeholder {
+  color: #9EA4AA;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
 }

@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom";
+
 export default function HomeHeader({ showBell = true, onMenuClick }) {
+    const navigate = useNavigate();
     return (
         <header className="home-header">
             <button className="icon-btn" aria-label="메뉴" onClick={onMenuClick}>
@@ -11,7 +14,7 @@ export default function HomeHeader({ showBell = true, onMenuClick }) {
 
             <div className="header-right" style={{ width: 80, justifyContent: "flex-end" }}>
                 {showBell && (
-                    <button className="icon-btn" aria-label="알림">
+                    <button className="icon-btn" aria-label="알림" onClick={() => {console.log("Bell clicked"); navigate("/notifications")}}>
                         <BellIcon />
                     </button>
                 )}

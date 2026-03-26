@@ -1,41 +1,19 @@
-import { useState, useEffect } from "react";
-import { useNavigate, useSearchParams } from "react-router-dom";
-import { getKakaoLoginUrl } from "../api/config";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
     const navigate = useNavigate();
-    const [searchParams, setSearchParams] = useSearchParams();
     const [id, setId] = useState("");
     const [pw, setPw] = useState("");
-    // const [loginError, setLoginError] = useState("");
-
-    const token = searchParams.get("token");
-    const error = searchParams.get("error");
-    const loginError =
-        error === "login_failed"
-        ? "카카오 로그인에 실패했습니다."
-        : "";
-
-    // 카카오 콜백: URL에 ?token= 이 있으면 저장 후 홈으로
-    useEffect(() => {
-    if (!token) return;
-
-    localStorage.setItem("token", token);
-    setSearchParams({});
-    navigate("/", { replace: true });
-
-    }, [token, navigate, setSearchParams]);
 
     const handleLogin = (e) => {
         e.preventDefault();
-        // TODO: 백엔드 POST /auth/login 연동 시 교체
-        localStorage.setItem("token", "demo-token");
-        navigate("/");
-    };
 
-    /** 카카오 로그인: 백엔드 /auth/kakao 로 이동 → 카카오 인증 → 백엔드 콜백 → 여기로 리다이렉트(?token=) */
-    const handleKakaoLogin = () => {
-        window.location.href = getKakaoLoginUrl();
+        // 임시 로그인(백엔드 붙이면 교체)
+        localStorage.setItem("token", "demo-token");
+
+        // 로그인 후 홈으로 이동
+        navigate("/");
     };
 
     return (
@@ -68,9 +46,6 @@ export default function Login() {
                         비밀번호 찾기
                     </button>
 
-                    {loginError ? (
-                        <div style={styles.errorText}>{loginError}</div>
-                    ) : null}
                     {/* 비밀번호 칸 아래 50 */}
                     <button type="submit" style={styles.loginBtn}>
                         로그인
@@ -85,16 +60,12 @@ export default function Login() {
                             <span style={styles.naverText}>N</span>
                         </button>
 
-                        <button
-                            type="button"
-                            style={{ ...styles.socialBtn, ...styles.kakao }}
-                            onClick={handleKakaoLogin}
-                        >
+                        <button type="button" style={{ ...styles.socialBtn, ...styles.kakao }}>
                             <span style={styles.kakaoText}>TALK</span>
                         </button>
                     </div>
 
-                    <button type="button" style={styles.signup}>
+                    <button type="button" style={styles.signup} onClick={() => navigate("/signup")}>
                         회원가입
                     </button>
                 </form>
@@ -143,7 +114,7 @@ const styles = {
         top: 230,
         left: 0,
         right: 0,
-        height: 614, // ✅ 390*614 (폭은 device가 390이라 100%로 OK)
+        bottom: 0, 
         backgroundColor: "#FDFDFD",
         borderTopLeftRadius: 40,
         borderTopRightRadius: 40,
@@ -168,22 +139,18 @@ const styles = {
         marginBottom: 12,
     },
 
-    errorText: {
-        marginTop: 8,
-        fontSize: 12,
-        color: "#c00",
-        textAlign: "center",
-    },
-
     findPw: {
         marginTop: -2,
         alignSelf: "flex-end",
         border: "none",
         background: "transparent",
         color: "#262627",
-        fontSize: 11,
-        lineHeight: "14px",
+        fontSize: 14,          
+        lineHeight: "20px",
+        fontWeight: 400,
         cursor: "pointer",
+        textDecoration: "underline",
+        textUnderlineOffset: 2,
     },
 
     loginBtn: {
@@ -200,9 +167,9 @@ const styles = {
     },
 
     orText: {
-        marginTop: 58, // ✅ 요청
+        marginTop: 58,
         textAlign: "center",
-        fontSize: 16,
+        fontSize: 16,          // Body1
         lineHeight: "24px",
         fontWeight: 400,
         color: "#262627",
@@ -243,13 +210,18 @@ const styles = {
     },
 
     signup: {
-        marginTop: 56,
+        position: "absolute",
+        left: "50%",
+        bottom: 38,           
+        transform: "translateX(-50%)",
         border: "none",
         background: "transparent",
         color: "#262627",
-        fontSize: 12,
-        lineHeight: "16px",
+        fontSize: 16,          
+        lineHeight: "24px",
+        fontWeight: 400,
         cursor: "pointer",
-        textAlign: "center",
+        textDecoration: "underline",
+        textUnderlineOffset: 2,
     },
 };

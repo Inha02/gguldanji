@@ -7,4 +7,5 @@ export const COLORS = {
     gray400: "#9EA4AA",
     gray500: "#72787F",
     gray600: "#454C53",
+    gray800: "#26282B"  
 };
