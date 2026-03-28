@@ -17,8 +17,6 @@ export default function ProfileAvatar({ size = 64 }) {
         >
             <BearIcon
                 style={{
-                    width: size * 0.55,
-                    height: size * 0.55,
                     display: "block",
                 }}
             />
