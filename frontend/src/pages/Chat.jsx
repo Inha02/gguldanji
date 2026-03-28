@@ -1,11 +1,20 @@
 import { useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { useChat } from "../context/ChatContext";
 
 export default function Chat() {
     const navigate = useNavigate();
+    const location = useLocation();
     const { chatId } = useParams();
     const { getRoomById, addMessageToRoom } = useChat();
+
+    const seller= location.state?.seller || {
+        nickname: room?.name || "최00",
+        town: "청파동"
+    };
+
+    const productTitle = location.state?.product || "상품명";
+    const productPrice = location.state?.price || "가격";
 
     const roomId = Number(chatId);
     const room = getRoomById(roomId);
@@ -66,7 +75,7 @@ export default function Chat() {
                         <span className="chat-back-icon" />
                     </button>
 
-                    <div className="chat-header__name">{room.name}</div>
+                    <div className="chat-header__name">{seller.nickname}</div>
                 </div>
 
                 <button
@@ -85,10 +94,10 @@ export default function Chat() {
 
                     <div className="chat-topcard__info">
                         <div className="chat-topcard__product">
-                            {room.product}
+                            {productTitle}
                         </div>
                         <div className="chat-topcard__price">
-                            {room.price}
+                            {productPrice}
                         </div>
                     </div>
 
