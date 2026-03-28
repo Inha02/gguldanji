@@ -13,7 +13,9 @@ export default function AppShell() {
         pathname === "/signup" ||
         pathname === "/notifications" ||
         pathname === "/post"||
-        pathname.startsWith("/product/");
+        pathname.startsWith("/product/")||
+        pathname === "/onboarding"||
+        pathname === "/search";
 
     return (
         <div className="viewport">

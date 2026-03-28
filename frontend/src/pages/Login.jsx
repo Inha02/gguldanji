@@ -105,7 +105,7 @@ export default function Login() {
                         </button>
                     </div>
 
-                    <button type="button" style={styles.signup} onClick={() => navigate("/signup")}>
+                    <button type="button" style={styles.signup} onClick={() => navigate("/onboarding")}>
                         회원가입
                     </button>
                 </form>

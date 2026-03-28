@@ -1232,3 +1232,10 @@ body {
   line-height: 24px;
   font-weight: 400;
 }
+
+.serach-input::placeholder {
+  color: #72787F;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+}

@@ -14,11 +14,11 @@ export default function HomeHeader({ showBell = true, onMenuClick }) {
 
             <div className="header-right" style={{ width: 80, justifyContent: "flex-end" }}>
                 {showBell && (
-                    <button className="icon-btn" aria-label="알림" onClick={() => {console.log("Bell clicked"); navigate("/notifications")}}>
+                    <button className="icon-btn" aria-label="알림" onClick={() => {navigate("/notifications")}}>
                         <BellIcon />
                     </button>
                 )}
-                <button className="icon-btn" aria-label="검색">
+                <button className="icon-btn" aria-label="검색" onClick={() => {onSearchClick()}}>
                     <SearchIcon />
                 </button>
             </div>

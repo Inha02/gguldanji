@@ -1,9 +1,8 @@
 import { useMemo, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
-
 import HomeHeader from "../components/HomeHeader";
-import HomeBanner from "../components/HomeBanner";
 import ProductCard from "../components/ProductCard";
+import { COLORS } from "../constants/colors";
 
 const mock = [
     { id: 1, title: "아이폰 14 Pro 256GB", price: "950,000", location: "서울 강남구", time: "2시간 전", tag: "저가", category: "디지털기기" },
@@ -14,66 +13,47 @@ const mock = [
     { id: 6, title: "검은 색 나이키 신발", price: "90,000", location: "서울 서초구", time: "11시간 전", tag: "상가", category: "패션잡화" },
 ];
 
-function shuffle(arr) {
-    const copy = [...arr];
-    for (let i = copy.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [copy[i], copy[j]] = [copy[j], copy[i]];
-    }
-    return copy;
-}
-
-export default function Home() {
+export default function SearchResult() {
     const navigate = useNavigate();
     const [searchParams] = useSearchParams();
+    const keyword = searchParams.get("q") || "";
+    console.log("keyword", keyword);
 
-    const selectedCat = searchParams.get("cat");
     const isLoggedIn = !!localStorage.getItem("token");
+    const [loginModalOpen, setLoginModalOpen] = useState(false);
 
     const list = useMemo(() => {
-        let data = [...mock];
+        const lower = keyword.trim().toLowerCase();
+        if (!lower) return [];
+        return mock.filter((item) =>
+            item.title.toLowerCase().includes(lower) ||
+            item.category.toLowerCase().includes(lower) ||
+            item.location.toLowerCase().includes(lower)
+        );
+    }, [keyword]);
 
-        if (selectedCat) {
-            data = data.filter((x) => x.category === selectedCat);
-        }
-
-        if (!isLoggedIn) {
-            data = shuffle(data);
-        }
-
-        return data;
-    }, [isLoggedIn, selectedCat]);
-
-    const [loginModalOpen, setLoginModalOpen] = useState(false);
+    console.log("list", list);
 
     const handleCardClick = (item) => {
         if (!isLoggedIn) {
             setLoginModalOpen(true);
             return;
         }
-
         navigate(`/product/${item.id}`, { state: { item } });
     };
 
     return (
         <>
-            <HomeHeader 
-            showBell={isLoggedIn} 
-            onMenuClick={() => navigate("/category")}
-            onSearchClick={() => navigate("/search")}
-             />
+            <HomeHeader
+                showBell={isLoggedIn}
+                onMenuClick={() => navigate("/category")}
+                onSearchClick={() => navigate("/search")}
+            />
 
             <div style={styles.page}>
-                {isLoggedIn && (
-                    <>
-                        <div onClick={() => navigate("/recommend")} style={{ cursor: "pointer" }}>
-                            <HomeBanner name="송이" />
-                        </div>
-                        <div style={{ height: 20 }} />
-                    </>
-                )}
-
-                {!isLoggedIn && <div style={{ height: 10 }} />}
+                <div style={styles.resultText}>
+                    '{keyword}'에 대한 검색 결과
+                </div>
 
                 <div style={styles.grid}>
                     {list.map((item) => (
@@ -123,11 +103,19 @@ export default function Home() {
 
 const styles = {
     page: {
-        padding: 16,
+        padding: "8px 16px 16px 16px",
         backgroundColor: "#F7F8F9",
         minHeight: "100%",
+        boxSizing: "border-box",
+    },
+    resultText: {
+        fontSize: 16,
+        lineHeight: "24px",
+        fontWeight: 400,
+        color: COLORS.black,
     },
     grid: {
+        marginTop: 8,
         display: "grid",
         gridTemplateColumns: "repeat(2, 1fr)",
         columnGap: 12,

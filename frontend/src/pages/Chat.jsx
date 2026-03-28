@@ -1,16 +1,29 @@
 import { useState, useRef } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
+
 import { useChat } from "../context/ChatContext";
 import { useEffect } from "react";
 import { getSocket } from "../socket/socket";
 
 export default function Chat() {
     const navigate = useNavigate();
+    const location = useLocation();
     const { chatId } = useParams();
     const { getRoomById, addMessageToRoom } = useChat();
     const socket = getSocket();
 
+
     const roomId = chatId;
+
+    const seller= location.state?.seller || {
+        nickname: room?.name || "최00",
+        town: "청파동"
+    };
+
+    const productTitle = location.state?.product || "상품명";
+    const productPrice = location.state?.price || "가격";
+
+
     const room = getRoomById(roomId);
 
     const [inputValue, setInputValue] = useState("");
@@ -189,7 +202,7 @@ useEffect(() => {
                         <span className="chat-back-icon" />
                     </button>
 
-                    <div className="chat-header__name">{room.name}</div>
+                    <div className="chat-header__name">{seller.nickname}</div>
                 </div>
 
                 <button
@@ -208,10 +221,10 @@ useEffect(() => {
 
                     <div className="chat-topcard__info">
                         <div className="chat-topcard__product">
-                            {room.product}
+                            {productTitle}
                         </div>
                         <div className="chat-topcard__price">
-                            {room.price}
+                            {productPrice}
                         </div>
                     </div>
 

@@ -19,16 +19,22 @@ export default function ProductDetail() {
             "생활기스 거의 없고 전체적으로 상태 좋습니다. 배터리 효율 양호하고 구성품은 사진 참고 부탁드려요.",
         seller: {
             nickname: rawItem?.seller?.nickname ?? "서초구 불주먹",
-            town: rawItem?.seller?.town ?? rawItem?.location ?? "서울 서초구 방배1동  · 서울 용산구 청파동 ",
+            town:
+                rawItem?.seller?.town ??
+                rawItem?.location ??
+                "서울 서초구 방배1동 · 서울 용산구 청파동",
         },
         images: rawItem?.images ?? [1, 2, 3],
         liked: rawItem?.liked ?? true,
         guideMin: rawItem?.guideMin ?? 600000,
         guideMax: rawItem?.guideMax ?? 850000,
+
+        sellerAnalysis: rawItem?.sellerAnalysis ?? null,
     };
 
     const [liked, setLiked] = useState(!!item.liked);
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [isSellerSheetOpen, setIsSellerSheetOpen] = useState(false);
 
     const images = useMemo(() => item.images || [1], [item.images]);
 
@@ -55,14 +61,13 @@ export default function ProductDetail() {
 
     const guideInfo = guideTextMap[guideType];
 
-    // 회색 바 기준 경계 위치
-    const lowWidth = 28;
+    // 저가/적정/고가 바 위치
     const midLeft = 36;
     const midWidth = 28;
 
-    // 경계값 텍스트 위치 (%)
-    const minBoundaryLeft = midLeft;                 // 저가 ↔ 적정 경계
-    const maxBoundaryLeft = midLeft + midWidth;      // 적정 ↔ 고가 경계
+    // 경계값 텍스트 위치
+    const minBoundaryLeft = midLeft; // 저가 ↔ 적정
+    const maxBoundaryLeft = midLeft + midWidth; // 적정 ↔ 고가
 
     return (
         <div style={styles.page}>
@@ -103,10 +108,12 @@ export default function ProductDetail() {
                             aria-label="이전 사진"
                             style={styles.imageNavLeft}
                             onClick={() =>
-                                setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1))
+                                setCurrentIndex((prev) =>
+                                    prev === 0 ? images.length - 1 : prev - 1
+                                )
                             }
                         >
-                            ‹
+                            <ArrowLeft />
                         </button>
 
                         <div style={styles.imagePlaceholder}>
@@ -118,10 +125,12 @@ export default function ProductDetail() {
                             aria-label="다음 사진"
                             style={styles.imageNavRight}
                             onClick={() =>
-                                setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1))
+                                setCurrentIndex((prev) =>
+                                    prev === images.length - 1 ? 0 : prev + 1
+                                )
                             }
                         >
-                            ›
+                            <ArrowRight />
                         </button>
 
                         <div style={styles.dotRow}>
@@ -130,7 +139,9 @@ export default function ProductDetail() {
                                     key={idx}
                                     style={{
                                         ...styles.dot,
-                                        ...(currentIndex === idx ? styles.dotActive : styles.dotInactive),
+                                        ...(currentIndex === idx
+                                            ? styles.dotActive
+                                            : styles.dotInactive),
                                     }}
                                 />
                             ))}
@@ -182,15 +193,17 @@ export default function ProductDetail() {
                             <div
                                 style={{
                                     ...styles.guideBarActive,
-                                    ...(guideType === "low" ? styles.guideBarLow : {}),
-                                    ...(guideType === "mid" ? styles.guideBarMid : {}),
-                                    ...(guideType === "high" ? styles.guideBarHigh : {}),
+                                    ...(guideType === "low"
+                                        ? styles.guideBarLow
+                                        : guideType === "mid"
+                                            ? styles.guideBarMid
+                                            : styles.guideBarHigh),
                                     backgroundColor: guideInfo.color,
                                 }}
                             />
                         </div>
 
-                        {/* 경계 가격 */}
+                        {/* 저가/적정 경계 */}
                         <span
                             style={{
                                 ...styles.boundaryPriceText,
@@ -201,6 +214,7 @@ export default function ProductDetail() {
                             {item.guideMin.toLocaleString()}원
                         </span>
 
+                        {/* 적정/고가 경계 */}
                         <span
                             style={{
                                 ...styles.boundaryPriceText,
@@ -212,8 +226,8 @@ export default function ProductDetail() {
                         </span>
                     </div>
                 </div>
-                
-                <div style={{height: 18}} />
+
+                <div style={{ height: 18 }} />
                 <div style={styles.divider} />
 
                 {/* 상품 설명 */}
@@ -240,14 +254,131 @@ export default function ProductDetail() {
 
             {/* Bottom Action */}
             <div style={styles.bottomFrame}>
-                <button type="button" style={styles.sellerBtn}>
+                <button
+                    type="button"
+                    style={styles.sellerBtn}
+                    onClick={() => setIsSellerSheetOpen(true)}
+                >
                     판매자 성향
                 </button>
 
-                <button type="button" style={styles.chatBtn}>
+                <button
+                    type="button"
+                    style={styles.chatBtn}
+                    onClick={() =>
+                        navigate(`/chat/${item.id}`, {
+                            state: {
+                                seller: item.seller,
+                                productTitle: item.title,
+                                productPrice: item.price,
+                            },
+                        })
+                    }
+                >
                     채팅하기
                 </button>
             </div>
+
+            {/* Seller Bottom Sheet */}
+            {isSellerSheetOpen && (
+                <div
+                    style={styles.sheetBackdrop}
+                    onClick={() => setIsSellerSheetOpen(false)}
+                >
+                    <div
+                        style={{
+                            ...styles.sellerSheet,
+                            height: item.sellerAnalysis ? 496 : 138,
+                        }}
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <div style={styles.sheetHandle} />
+
+                        <div style={styles.sheetTitle}>판매자 성향 분석</div>
+
+                        {item.sellerAnalysis ? (
+                            <>
+                                <div style={styles.sheetSummaryBox}>
+                                    {item.sellerAnalysis.summary}
+                                </div>
+
+                                <div style={styles.sheetSection}>
+                                    <div style={styles.sheetSectionTitleOrange}>거래 동기</div>
+                                    <TraitBar
+                                        label="가격 민감도"
+                                        value={item.sellerAnalysis.tradeMotivation.priceSensitivity}
+                                        color="#FF8D28"
+                                    />
+                                    <TraitBar
+                                        label="효율 지향"
+                                        value={item.sellerAnalysis.tradeMotivation.efficiency}
+                                        color="#FF8D28"
+                                    />
+                                    <TraitBar
+                                        label="거래 즐김"
+                                        value={item.sellerAnalysis.tradeMotivation.enjoyment}
+                                        color="#FF8D28"
+                                    />
+                                    <TraitBar
+                                        label="협상 유연성"
+                                        value={item.sellerAnalysis.tradeMotivation.flexibility}
+                                        color="#FF8D28"
+                                    />
+                                </div>
+
+                                <div style={styles.sheetSection}>
+                                    <div style={styles.sheetSectionTitleBlue}>커뮤니케이션 스타일</div>
+                                    <TraitBar
+                                        label="응답 패턴"
+                                        value={item.sellerAnalysis.communication.responsePattern}
+                                        color="#2699E9"
+                                    />
+                                    <TraitBar
+                                        label="정보 제공"
+                                        value={item.sellerAnalysis.communication.information}
+                                        color="#2699E9"
+                                    />
+                                    <TraitBar
+                                        label="친근함"
+                                        value={item.sellerAnalysis.communication.friendliness}
+                                        color="#2699E9"
+                                    />
+                                    <TraitBar
+                                        label="설명 명확도"
+                                        value={item.sellerAnalysis.communication.clarity}
+                                        color="#2699E9"
+                                    />
+                                </div>
+
+                                <div style={styles.sheetSection}>
+                                    <div style={styles.sheetSectionTitleGreen}>신뢰 구축</div>
+                                    <TraitBar
+                                        label="제품 설명"
+                                        value={item.sellerAnalysis.trust.productDescription}
+                                        color="#93C572"
+                                    />
+                                    <TraitBar
+                                        label="거래 투명성"
+                                        value={item.sellerAnalysis.trust.transparency}
+                                        color="#93C572"
+                                    />
+                                    <TraitBar
+                                        label="문제 대응"
+                                        value={item.sellerAnalysis.trust.problemSolving}
+                                        color="#93C572"
+                                    />
+                                </div>
+                            </>
+                        ) : (
+                            <div style={styles.sheetSummaryBox}>
+                                아직 분석 데이터가 부족합니다.
+                                <br />
+                                판매자의 채팅이 쌓이면 자동으로 분석됩니다.
+                            </div>
+                        )}
+                    </div>
+                </div>
+            )}
         </div>
     );
 }
@@ -264,6 +395,101 @@ function HeartIcon({ liked }) {
         </svg>
     );
 }
+
+function ArrowLeft() {
+    return (
+        <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+                d="M15 18l-6-6 6-6"
+                stroke="#FDFDFD"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                fill="none"
+            />
+        </svg>
+    );
+}
+
+function ArrowRight() {
+    return (
+        <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+                d="M9 6l6 6-6 6"
+                stroke="#FDFDFD"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                fill="none"
+            />
+        </svg>
+    );
+}
+
+function TraitBar({ label, value, color }) {
+    return (
+        <div style={traitStyles.row}>
+            <div style={traitStyles.label}>{label}</div>
+            <div style={traitStyles.barWrap}>
+                <div style={traitStyles.barBg}>
+                    <div
+                        style={{
+                            ...traitStyles.barFill,
+                            width: `${value}%`,
+                            backgroundColor: color,
+                            opacity: 0.6,
+                        }}
+                    />
+                </div>
+            </div>
+            <div style={traitStyles.value}>{value}</div>
+        </div>
+    );
+}
+
+const traitStyles = {
+    row: {
+        display: "grid",
+        gridTemplateColumns: "52px 1fr 24px",
+        alignItems: "center",
+        columnGap: 8,
+        marginTop: 6,
+    },
+
+    label: {
+        fontSize: 12,
+        lineHeight: "16px",
+        fontWeight: 400,
+        color: COLORS.black,
+        whiteSpace: "nowrap",
+    },
+
+    barWrap: {
+        display: "flex",
+        alignItems: "center",
+    },
+
+    barBg: {
+        width: "100%",
+        height: 10,
+        borderRadius: 12,
+        backgroundColor: COLORS.gray100,
+        overflow: "hidden",
+    },
+
+    barFill: {
+        height: "100%",
+        borderRadius: 12,
+    },
+
+    value: {
+        fontSize: 11,
+        lineHeight: "14px",
+        fontWeight: 400,
+        color: COLORS.gray500,
+        textAlign: "right",
+    },
+};
 
 const styles = {
     page: {
@@ -592,6 +818,7 @@ const styles = {
         color: COLORS.gray500,
         whiteSpace: "nowrap",
     },
+
     sectionBlock: {
         marginTop: 18,
     },
@@ -685,5 +912,80 @@ const styles = {
         alignItems: "center",
         justifyContent: "center",
         cursor: "pointer",
+    },
+
+    sheetBackdrop: {
+        position: "fixed",
+        inset: 0,
+        backgroundColor: "rgba(0,0,0,0.2)",
+        zIndex: 999,
+        display: "flex",
+        alignItems: "flex-end",
+        justifyContent: "center",
+    },
+
+    sellerSheet: {
+        width: "100%",
+        maxWidth:390,
+        backgroundColor: COLORS.white,
+        borderTopLeftRadius: 24,
+        borderTopRightRadius: 24,
+        padding: "12px 16px 20px 16px",
+        boxSizing: "border-box",
+        overflowY: "auto",
+    },
+
+    sheetHandle: {
+        width: 100,
+        height: 4,
+        borderRadius: 4,
+        backgroundColor: COLORS.gray200,
+        margin: "0 auto 16px auto",
+    },
+
+    sheetTitle: {
+        fontSize: 20,
+        lineHeight: "28px",
+        fontWeight: 700,
+        color: COLORS.black,
+    },
+
+    sheetSummaryBox: {
+        marginTop: 16,
+        width: "100%",
+        minHeight: 52,
+        borderRadius: 12,
+        backgroundColor: COLORS.gray100,
+        padding: "12px 14px",
+        boxSizing: "border-box",
+        fontSize: 12,
+        lineHeight: "16px",
+        fontWeight: 400,
+        color: COLORS.black,
+    },
+
+    sheetSection: {
+        marginTop: 16,
+    },
+
+    sheetSectionTitleOrange: {
+        fontSize: 14,
+        lineHeight: "20px",
+        fontWeight: 700,
+        color: "#FF8D28",
+    },
+
+    sheetSectionTitleBlue: {
+        fontSize: 14,
+        lineHeight: "20px",
+        fontWeight: 700,
+        color: "#2699E9",
+    },
+
+    sheetSectionTitleGreen: {
+        fontSize: 14,
+        lineHeight: "20px",
+        fontWeight: 700,
+        color: "#93C572",
     },
 };

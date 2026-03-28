@@ -18,6 +18,9 @@ import NeighborhoodAdd from "./pages/NeighborhoodAdd";
 import SignUp from "./pages/SignUp";
 import Notifications from "./pages/Notifications";
 import ProductDetail from "./pages/ProductDetail";
+import Onboarding from "./pages/Onboarding";
+import Search from "./pages/Search";
+import SearchResult from "./pages/SearchResult";
 
 export default function App() {
   return (
@@ -39,6 +42,9 @@ export default function App() {
             <Route path="/signup" element={<SignUp />} />
             <Route path="/notifications" element={<Notifications />} />
             <Route path="/product/:id" element={<ProductDetail />} />
+            <Route path="/onboarding" element={<Onboarding />} />
+            <Route path="/search" element={<Search />} /> 
+            <Route path="/search-result" element={<SearchResult />} />
           </Route>
 
           <Route element={<ChatShell />}>

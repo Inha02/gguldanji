@@ -51,6 +51,31 @@ export default function Post() {
         }));
     };
 
+
+    const handleSubmitPost = () => {
+        const newItem = {
+            id: Date.now(),
+            title: title || "제목 없음",
+            price: price || "0",
+            category: category || "기타 중고물품",
+            time: "방금 전",
+            location: selectedTown?.name || "위치 미설정",
+            description: description || "상품 설명이 없습니다.",
+            tag: "적정",
+            liked: false,
+            images: [1, 2, 3],
+            seller: {
+                nickname: "서초구 불주먹",
+                town: selectedTown?.name || "서울 서초구 방배1동",
+            },
+            guideMin: 600000,
+            guideMax: 850000,
+            sellerAnalysis: null,
+        };
+
+        navigate(`/product/${newItem.id}`, { state: { item: newItem } });
+    };
+
     return (
         <div style={styles.page}>
             {/* Header */}
@@ -376,7 +401,7 @@ export default function Post() {
                         marginTop: selectedTown ? 19 : 28,
                     }}
                 >
-                    <button type="button" style={styles.submitBtn}>
+                    <button type="button" style={styles.submitBtn} onClick={handleSubmitPost}>
                         등록하기
                     </button>
                 </div>
