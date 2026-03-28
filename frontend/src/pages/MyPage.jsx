@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import ProfileAvatar from "../components/ProfileAvartar";
+import ProfileAvatar from "../components/ProfileAvatar";
 
 export default function MyPage() {
     const navigate = useNavigate();

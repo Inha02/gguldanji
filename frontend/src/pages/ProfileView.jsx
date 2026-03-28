@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import ProfileAvatar from "../components/ProfileAvartar";
+import ProfileAvatar from "../components/ProfileAvatar";
 
 const soldItems = [
     { id: 1 },
@@ -95,7 +95,7 @@ export default function ProfileView() {
             <div style={styles.main}>
                 {/* Profile Top */}
                 <div style={styles.profileTop}>
-                        <ProfileAvatar size={50} />
+                        <ProfileAvatar size={90} />
 
                     <div style={styles.profileInfo}>
                         <div style={styles.name}>최00</div>
