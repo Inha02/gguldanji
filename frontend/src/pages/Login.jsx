@@ -1,20 +1,57 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useNavigate, useSearchParams } from "react-router-dom";
+
 
 export default function Login() {
     const navigate = useNavigate();
     const [id, setId] = useState("");
     const [pw, setPw] = useState("");
+    const [searchParams] = useSearchParams();
 
-    const handleLogin = (e) => {
-        e.preventDefault();
+    useEffect(() => {
+        const token = searchParams.get("token");
 
-        // 임시 로그인(백엔드 붙이면 교체)
-        localStorage.setItem("token", "demo-token");
+        if (token) {
+            console.log("카카오 토큰:", token);
 
-        // 로그인 후 홈으로 이동
+            localStorage.setItem("token", token);
+
+            navigate("/", { replace: true });
+        }
+    }, [searchParams, navigate]);
+
+    const handleLogin = async (e) => {
+    e.preventDefault();
+    
+    try {
+        const res = await fetch("http://localhost:4000/auth/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                email: id,   // ⭐ id → email로 맞추세요 (백엔드 기준)
+                password: pw,
+            }),
+        });
+
+        const data = await res.json();
+
+        if (!res.ok) {
+            alert(data.message || "로그인 실패");
+            return;
+        }
+
+        // ⭐ 핵심
+        const token = data.token;
+        localStorage.setItem("token", token);
+
         navigate("/");
-    };
+    } catch (err) {
+        console.error(err);
+        alert("서버 오류");
+    }
+};
 
     return (
         <div style={styles.page}>
@@ -60,7 +97,10 @@ export default function Login() {
                             <span style={styles.naverText}>N</span>
                         </button>
 
-                        <button type="button" style={{ ...styles.socialBtn, ...styles.kakao }}>
+                        <button 
+                        type="button" style={{ ...styles.socialBtn, ...styles.kakao }} onClick={() => {
+        window.location.href = "http://localhost:4000/auth/kakao";
+    }}>
                             <span style={styles.kakaoText}>TALK</span>
                         </button>
                     </div>

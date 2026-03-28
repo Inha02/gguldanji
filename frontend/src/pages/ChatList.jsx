@@ -1,9 +1,47 @@
 import { useNavigate } from "react-router-dom";
 import { useChat } from "../context/ChatContext";
+import { useEffect } from "react";
 
 export default function ChatList() {
     const navigate = useNavigate();
-    const { chatRooms } = useChat();
+    const { chatRooms, setChatRooms } = useChat();
+    const token = localStorage.getItem("token");
+
+useEffect(() => {
+    const fetchRooms = async () => {
+        try {
+            const res = await fetch("http://localhost:4000/chat/rooms", {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            });
+
+            const data = await res.json();
+
+            // 🔥 서버 데이터 → 기존 UI 구조로 변환
+            const formatted = data.rooms.map((room) => ({
+                id: room._id,
+                name: room.sellerId?.nickname || "상대방",
+                product: room.postId?.title || "상품",
+                messages: room.lastMessage
+                    ? [
+                          {
+                              text: room.lastMessage,
+                              time: "",
+                          },
+                      ]
+                    : [],
+            }));
+
+            setChatRooms(formatted);
+
+        } catch (err) {
+            console.error("채팅방 불러오기 실패:", err);
+        }
+    };
+
+    fetchRooms();
+}, []);
 
     return (
         <div className="chatlist-page">

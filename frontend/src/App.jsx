@@ -11,7 +11,7 @@ import MyPage from "./pages/MyPage";
 import Recommend from "./pages/Recommend";
 import Category from "./pages/Category";
 import Login from "./pages/Login";
-import { ChatProvider } from "./context/ChatContext";
+import { ChatProvider } from "./context/ChatProvider";
 import ProfileView from "./pages/ProfileView";
 import NeighborhoodManage from "./pages/NeighborhoodManage";
 import NeighborhoodAdd from "./pages/NeighborhoodAdd";

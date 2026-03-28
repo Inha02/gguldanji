@@ -15,8 +15,8 @@ const auth = (req, res, next) => {
 
     // req에 유저 정보 저장
     req.user = {
-      id: decoded.userId
-    };
+  userId: decoded.userId
+};
 
     next();
 

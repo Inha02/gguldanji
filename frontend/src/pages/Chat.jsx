@@ -1,42 +1,165 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useChat } from "../context/ChatContext";
+import { useEffect } from "react";
+import { getSocket } from "../socket/socket";
 
 export default function Chat() {
     const navigate = useNavigate();
     const { chatId } = useParams();
     const { getRoomById, addMessageToRoom } = useChat();
+    const socket = getSocket();
 
-    const roomId = Number(chatId);
+    const roomId = chatId;
     const room = getRoomById(roomId);
 
     const [inputValue, setInputValue] = useState("");
+    const token = localStorage.getItem("token");
+    function getUserIdFromToken(token) {
+  if (!token) return null;
+
+  const payload = JSON.parse(atob(token.split(".")[1]));
+  return payload.userId;
+}
+    const MY_ID = getUserIdFromToken(token);
+
+
+    useEffect(() => {
+  const fetchMessages = async () => {
+    const res = await fetch(
+      `http://localhost:4000/chat/rooms/${roomId}/messages`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+    
+
+    const data = await res.json();
+
+    data.messages.forEach((msg) => {
+        const exists = room?.messages?.some(m => m.id === msg._id);
+        if (exists) return;
+      const newMessage = {
+        id: msg._id,
+        side: msg.senderId._id === MY_ID ? "right" : "left",
+        text: msg.content,
+        time: new Date(msg.createdAt).toLocaleTimeString().slice(0, 5),
+      };
+
+      addMessageToRoom(roomId, newMessage);
+    });
+  };
+
+  fetchMessages();
+
+  fetch(`http://localhost:4000/chat/rooms/${roomId}/read`, {
+    method: "PATCH",
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+
+}, [roomId]);
+
+const joinedRef = useRef(false);
+
+useEffect(() => {
+  if (!roomId || joinedRef.current) return;
+
+  // 채팅방 입장
+  socket.emit("join_room", roomId);
+  joinedRef.current = true;
+
+  // 실시간 메시지
+  socket.on("receive_message", (msg) => {
+    
+        const exists = room.messages.find(m => m.id === msg._id);
+        if (exists) return;
+
+        const newMessage = {
+            id: msg._id,
+            side: msg.senderId?._id === MY_ID ? "right" : "left",
+            text: msg.content,
+            time: new Date(msg.createdAt).toLocaleTimeString().slice(0, 5),
+        };
+    setTimeout(() => {
+        addMessageToRoom(roomId, newMessage);
+    }, 0);
+});
+
+  return () => {
+    socket.off("receive_message");
+  };
+}, [roomId]);
+
+    /**
+    useEffect(() => {
+    if (!roomId) return;
+
+    // 채팅방 입장
+    socket.emit("join_room", roomId);
+
+    // 메시지 수신
+    socket.on("receive_message", (data) => {
+        console.log("받은 메시지:", data);
+
+        const MY_ID = "02cb71a44f02fc5a560b1f1e"; // ⭐ 임시
+
+        const newMessage = {
+            id: data._id,
+            side: data.senderId?._id === MY_ID ? "right" : "left",
+            text: data.content,
+            time: new Date(data.createdAt).toLocaleTimeString().slice(0, 5),
+        };
+
+        addMessageToRoom(roomId, newMessage);
+    });
+
+    return () => {
+        socket.off("receive_message");
+    };
+}, [roomId]);
+ */
 
     if (!room) {
         return <div className="chat-page">채팅방을 찾을 수 없습니다.</div>;
     }
 
+    /* 시간 
     const getCurrentTime = () => {
         const now = new Date();
         const hours = String(now.getHours()).padStart(2, "0");
         const minutes = String(now.getMinutes()).padStart(2, "0");
         return `${hours}:${minutes}`;
     };
-
+    */
     const handleSendMessage = () => {
-        const trimmed = inputValue.trim();
-        if (!trimmed) return;
+    const trimmed = inputValue.trim();
+    if (!trimmed) return;
 
-        const newMessage = {
-            id: Date.now(),
-            side: "right",
-            text: trimmed,
-            time: getCurrentTime(),
-        };
-
-        addMessageToRoom(roomId, newMessage);
-        setInputValue("");
+    // ⭐ 1. UI 먼저 반영 (핵심)
+    const tempMessage = {
+        id: Date.now(), // 임시 id
+        side: "right",
+        text: trimmed,
+        time: new Date().toLocaleTimeString().slice(0, 5),
     };
+
+    addMessageToRoom(roomId, tempMessage);
+
+    // ⭐ 2. 서버 전송
+    socket.emit("send_message", {
+        roomId,
+        content: trimmed,
+        image: "",
+        token: token
+    });
+
+    // ⭐ 3. 입력창 초기화
+    setInputValue("");
+};
 
     const handleKeyDown = (e) => {
         if (e.key === "Enter") {
