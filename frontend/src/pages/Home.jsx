@@ -35,23 +35,29 @@ export default function Home() {
         const data = await getPosts();
         console.log("GET /posts 응답:", data);
 
-        const normalizedPosts = (
-          Array.isArray(data) ? data : data.posts || []
-        ).map((item) => ({
-          id: item.id || item._id,
-          title: item.title || "제목 없음",
-          price: String(item.price ?? ""),
-          location:
-            typeof item.location === "object"
-              ? item.location.address || "위치 미정"
-              : item.location || item.region || "위치 미정",
-          time: item.time || "방금 전",
-          tag: item.tag || "적정",
-          category: item.category || "기타 중고물품",
-          categoryId: item.categoryId || item.category?._id || "",
-          description: item.description || "",
-          seller: item.seller || null,
-        }));
+          const normalizedPosts = (
+              Array.isArray(data) ? data : data.posts || []
+          ).map((item) => ({
+              id: item.id || item._id,
+              _id: item._id || item.id,
+              title: item.title || "제목 없음",
+              price: String(item.price ?? ""),
+              location:
+                  typeof item.location === "object"
+                      ? item.location.address || "위치 미정"
+                      : item.location || item.region || "위치 미정",
+              time: item.time || "방금 전",
+              tag: item.tag || "적정",
+
+              category: item.category?.name || item.category || "기타 중고물품",
+              categoryId: item.categoryId || item.category?._id || "",
+
+              description: item.description || "",
+              images: Array.isArray(item.images) ? item.images : [],
+              sellerId: item.sellerId || item.seller?._id || item.seller?.id || "",
+              seller: item.seller || null,
+              liked: item.liked || false,
+          }));
 
         setPosts(normalizedPosts);
       } catch (error) {

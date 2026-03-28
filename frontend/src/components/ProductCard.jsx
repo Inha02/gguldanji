@@ -26,18 +26,39 @@ function formatLocation(location) {
     return "용산구 청파동";
 }
 
+function getImageUrl(path) {
+    if (!path) return "";
+
+    if (path.startsWith("http://")) return path;
+    
+    return `http://localhost:4000/${path}`;
+}
+
 export default function ProductCard({
     item,
     showHeart = false,
     liked = false,
     onToggleLike,
 }) {
+    console.log("item.images[0]:", item.images?.[0]);
+    console.log("image url:", getImageUrl(item.images?.[0]));
     const locationText = formatLocation(item.location);
 
     return (
         <div style={styles.card}>
             <div style={styles.imageWrap}>
-                <div style={styles.image} />
+                {item.images && item.images.length > 0 ? (
+                    <img
+                        src={getImageUrl(item.images[0])}
+                        alt={item.title}
+                        style={styles.image}
+                        onError={(e) => {
+                            console.log("이미지 로드 실패:",e.currentTarget.src);
+                        }}
+                    />
+                ) : (
+                    <div style={styles.image} />
+                )}
 
                 {showHeart && (
                     <button
@@ -109,6 +130,8 @@ const styles = {
         width: 173,
         height: 152,
         background: "#FDFDFD",
+        objectFit: "cover",
+        display: "block",
     },
 
     heartBtn: {
