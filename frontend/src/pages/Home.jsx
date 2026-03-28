@@ -1,18 +1,10 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 
 import HomeHeader from "../components/HomeHeader";
 import HomeBanner from "../components/HomeBanner";
 import ProductCard from "../components/ProductCard";
-
-const mock = [
-    { id: 1, title: "아이폰 14 Pro 256GB", price: "950,000", location: "서울 강남구", time: "2시간 전", tag: "저가", category: "디지털기기" },
-    { id: 2, title: "에어팟 프로 2세대(정품)", price: "210,000", location: "서울 서초구", time: "3시간 전", tag: "저가", category: "디지털기기" },
-    { id: 3, title: "이케아 스탠드 조명", price: "15,000", location: "서울 강남구", time: "4시간 전", tag: "상가", category: "가구/인테리어" },
-    { id: 4, title: "원목 책상", price: "40,000", location: "서울 강남구", time: "7시간 전", tag: "적정", category: "가구/인테리어" },
-    { id: 5, title: "검은 색 니트 조끼", price: "30,000", location: "서울 강남구", time: "8시간 전", tag: "적정", category: "여성의류" },
-    { id: 6, title: "검은 색 나이키 신발", price: "90,000", location: "서울 서초구", time: "11시간 전", tag: "상가", category: "패션잡화" },
-];
+import { getPosts } from "../api/posts";
 
 function shuffle(arr) {
     const copy = [...arr];
@@ -30,8 +22,47 @@ export default function Home() {
     const selectedCat = searchParams.get("cat");
     const isLoggedIn = !!localStorage.getItem("token");
 
+    const [posts, setPosts] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [page, setPage] = useState(1);
+    const [loginModalOpen, setLoginModalOpen] = useState(false);
+
+    const pageSize = 20;
+
+    useEffect(() => {
+        const fetchPosts = async () => {
+            try {
+                const data = await getPosts();
+                console.log("GET /posts 응답:", data);
+
+                const normalizedPosts = (Array.isArray(data) ? data : data.posts || []).map((item) => ({
+                    id: item.id || item._id,
+                    title: item.title || "제목 없음",
+                    price: String(item.price ?? ""),
+                    location:
+                        typeof item.location === "object"
+                            ? item.location.address || "위치 미정"
+                            : item.location || item.region || "위치 미정",
+                    time: item.time || "방금 전",
+                    tag: item.tag || "적정",
+                    category: item.category || "기타 중고물품",
+                    description: item.description || "",
+                    seller: item.seller || null,
+                }));
+
+                setPosts(normalizedPosts);
+            } catch (error) {
+                console.error("게시글 목록 불러오기 실패:", error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchPosts();
+    }, []);
+
     const list = useMemo(() => {
-        let data = [...mock];
+        let data = [...posts];
 
         if (selectedCat) {
             data = data.filter((x) => x.category === selectedCat);
@@ -42,9 +73,19 @@ export default function Home() {
         }
 
         return data;
-    }, [isLoggedIn, selectedCat]);
+    }, [posts, isLoggedIn, selectedCat]);
 
-    const [loginModalOpen, setLoginModalOpen] = useState(false);
+    const totalPages = Math.ceil(list.length / pageSize);
+
+    const paginatedList = useMemo(() => {
+        const start = (page - 1) * pageSize;
+        const end = start + pageSize;
+        return list.slice(start, end);
+    }, [list, page]);
+
+    useEffect(() => {
+        setPage(1);
+    }, [selectedCat]);
 
     const handleCardClick = (item) => {
         if (!isLoggedIn) {
@@ -55,18 +96,25 @@ export default function Home() {
         navigate(`/product/${item.id}`, { state: { item } });
     };
 
+    if (loading) {
+        return <div style={{ padding: 16 }}>로딩 중...</div>;
+    }
+
     return (
         <>
-            <HomeHeader 
-            showBell={isLoggedIn} 
-            onMenuClick={() => navigate("/category")}
-            onSearchClick={() => navigate("/search")}
-             />
+            <HomeHeader
+                showBell={isLoggedIn}
+                onMenuClick={() => navigate("/category")}
+                onSearchClick={() => navigate("/search")}
+            />
 
             <div style={styles.page}>
                 {isLoggedIn && (
                     <>
-                        <div onClick={() => navigate("/recommend")} style={{ cursor: "pointer" }}>
+                        <div
+                            onClick={() => navigate("/recommend")}
+                            style={{ cursor: "pointer" }}
+                        >
                             <HomeBanner name="송이" />
                         </div>
                         <div style={{ height: 20 }} />
@@ -76,21 +124,65 @@ export default function Home() {
                 {!isLoggedIn && <div style={{ height: 10 }} />}
 
                 <div style={styles.grid}>
-                    {list.map((item) => (
-                        <div
-                            key={item.id}
-                            onClick={() => handleCardClick(item)}
-                            style={{ cursor: "pointer" }}
-                        >
-                            <ProductCard item={item} />
-                        </div>
-                    ))}
+                    {paginatedList.length > 0 ? (
+                        paginatedList.map((item) => (
+                            <div
+                                key={item.id}
+                                onClick={() => handleCardClick(item)}
+                                style={{ cursor: "pointer" }}
+                            >
+                                <ProductCard item={item} />
+                            </div>
+                        ))
+                    ) : (
+                        <div style={styles.emptyText}>등록된 게시글이 없습니다.</div>
+                    )}
                 </div>
+
+                {totalPages > 1 && (
+                    <div style={styles.pagination}>
+                        <button
+                            type="button"
+                            style={{
+                                ...styles.pageBtn,
+                                opacity: page === 1 ? 0.4 : 1,
+                                cursor: page === 1 ? "default" : "pointer",
+                            }}
+                            onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
+                            disabled={page === 1}
+                        >
+                            이전
+                        </button>
+
+                        <span style={styles.pageText}>
+                            {page} / {totalPages}
+                        </span>
+
+                        <button
+                            type="button"
+                            style={{
+                                ...styles.pageBtn,
+                                opacity: page === totalPages ? 0.4 : 1,
+                                cursor: page === totalPages ? "default" : "pointer",
+                            }}
+                            onClick={() => setPage((prev) => Math.min(prev + 1, totalPages))}
+                            disabled={page === totalPages}
+                        >
+                            다음
+                        </button>
+                    </div>
+                )}
             </div>
 
             {loginModalOpen && (
-                <div style={modalStyles.backdrop} onClick={() => setLoginModalOpen(false)}>
-                    <div style={modalStyles.modal} onClick={(e) => e.stopPropagation()}>
+                <div
+                    style={modalStyles.backdrop}
+                    onClick={() => setLoginModalOpen(false)}
+                >
+                    <div
+                        style={modalStyles.modal}
+                        onClick={(e) => e.stopPropagation()}
+                    >
                         <div style={modalStyles.iconWrap}>
                             <div style={modalStyles.infoIcon}>i</div>
                         </div>
@@ -133,6 +225,41 @@ const styles = {
         columnGap: 12,
         rowGap: 10,
     },
+    emptyText: {
+        gridColumn: "1 / -1",
+        fontSize: 16,
+        lineHeight: "24px",
+        fontWeight: 400,
+        color: "#72787F",
+        textAlign: "center",
+        marginTop: 24,
+    },
+    pagination: {
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        gap: 12,
+        marginTop: 20,
+        marginBottom: 12,
+    },
+    pageBtn: {
+        minWidth: 56,
+        height: 32,
+        border: "none",
+        borderRadius: 12,
+        backgroundColor: "#E8EBED",
+        color: "#262627",
+        fontSize: 14,
+        lineHeight: "20px",
+        fontWeight: 400,
+        padding: "0 12px",
+    },
+    pageText: {
+        fontSize: 14,
+        lineHeight: "20px",
+        fontWeight: 400,
+        color: "#262627",
+    },
 };
 
 const modalStyles = {
@@ -157,7 +284,9 @@ const modalStyles = {
         justifyContent: "center",
         padding: 16,
     },
-    iconWrap: { marginBottom: 8 },
+    iconWrap: {
+        marginBottom: 8,
+    },
     infoIcon: {
         width: 22,
         height: 22,
@@ -177,6 +306,9 @@ const modalStyles = {
         color: "#262627",
         textAlign: "center",
         marginBottom: 15,
+        overflow: "hidden",
+        textOverflow: "ellipsis",
+        whiteSpace: "nowrap",
     },
     btnRow: {
         width: "100%",
