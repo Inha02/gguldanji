@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import ProfileAvatar from "../components/ProfileAvartar";
 
 export default function MyPage() {
     const navigate = useNavigate();
@@ -31,8 +32,7 @@ export default function MyPage() {
                 {/* Profile */}
                 <div className="mypage-profile">
                     <div className="mypage-avatar">
-                        {/* 기본 프로필: 곰돌이 (임시) */}
-                        <div className="mypage-bear" />
+                        <ProfileAvatar size={70} />
                     </div>
 
                     <div className="mypage-name text-heading-3">{user.nickname}</div>

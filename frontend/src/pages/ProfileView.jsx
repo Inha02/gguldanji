@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import ProfileAvatar from "../components/ProfileAvartar";
 
 const soldItems = [
     { id: 1 },
@@ -94,9 +95,7 @@ export default function ProfileView() {
             <div style={styles.main}>
                 {/* Profile Top */}
                 <div style={styles.profileTop}>
-                    <div style={styles.avatarWrap}>
-                        <div style={styles.avatarBear} />
-                    </div>
+                        <ProfileAvatar size={50} />
 
                     <div style={styles.profileInfo}>
                         <div style={styles.name}>최00</div>
@@ -282,24 +281,6 @@ const styles = {
         display: "flex",
         alignItems: "center",
         gap: 16,
-    },
-
-    avatarWrap: {
-        width: 76,
-        height: 76,
-        borderRadius: "50%",
-        backgroundColor: "rgba(251, 226, 0, 0.3)",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        flexShrink: 0,
-    },
-
-    avatarBear: {
-        width: 44,
-        height: 44,
-        borderRadius: "50%",
-        backgroundColor: "#E8EBED",
     },
 
     profileInfo: {

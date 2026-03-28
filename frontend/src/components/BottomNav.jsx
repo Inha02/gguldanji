@@ -1,29 +1,38 @@
 import { NavLink } from "react-router-dom";
+import HomeIcon from "../icons/home.svg?react";
+import LikeIcon from "../icons/like.svg?react";
+import PostIcon from "../icons/post.svg?react";
+import ChatIcon from "../icons/chat.svg?react";
+import MyPageIcon from "../icons/mypage.svg?react";
 
 export default function BottomNav() {
     return (
         <nav className="bottom-nav">
-            <NavItem to="/" label="홈" />
-            <NavItem to="/likes" label="찜" />
-
-            {/* 가운데 판매 버튼 */}
-            <NavItem to="/post" label="+" center />
-
-            <NavItem to="/chat" label="채팅" />
-            <NavItem to="/mypage" label="계정" />
+            <NavItem to="/" Icon={HomeIcon} />
+            <NavItem to="/likes" Icon={LikeIcon} />
+            <NavItem to="/post" Icon={PostIcon} center />
+            <NavItem to="/chat" Icon={ChatIcon} />
+            <NavItem to="/mypage" Icon={MyPageIcon} />
         </nav>
     );
 }
 
-function NavItem({ to, label, center }) {
+function NavItem({ to, Icon, center }) {
     return (
         <NavLink
             to={to}
             className={({ isActive }) =>
-                `nav-item ${isActive ? "active" : ""} ${center ? "center" : ""}`
+                `nav-item ${center ? "center" : ""}`
             }
         >
-            {label}
+            {({ isActive }) => (
+                <Icon
+                    className="nav-icon"
+                    style={{
+                        color: center ? "#FFFFFF" : isActive ? "#000000" : "#9CA3AF",
+                    }}
+                />
+            )}
         </NavLink>
     );
 }

@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { icons } from "../icons";
 
 const categories = [
     "디지털기기",
@@ -49,8 +50,11 @@ export default function Category() {
                             onClick={() => navigate(`/?cat=${encodeURIComponent(name)}`)}
                         >
                             <div className="category-circle" aria-hidden="true">
-                                {/* 아이콘은 나중에 피그마 아이콘으로 교체할 예정임 */}
-                                <div className="category-icon-placeholder" />
+                                <img
+                                    src={icons[name] || icons["디지털기기"]}
+                                    alt=""
+                                    className="category-icon"
+                                />
                             </div>
 
                             <div className="category-label">{name}</div>

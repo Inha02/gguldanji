@@ -89,15 +89,26 @@ body {
 
 /* 기본 버튼 */
 .nav-item {
-  text-align: center;
-  font-size: 12px;
-  color: #777;
-  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.nav-label {
+  font-size: 10px;
+  margin-top: 2px;
 }
 
 /* 활성화 */
 .nav-item.active {
-  color: #111;
+  color: #262627;
   font-weight: 600;
 }
 
@@ -813,11 +824,8 @@ body {
 }
 
 .mypage-bear {
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  background: #FBE20033;
-  /* 임시 */
+  width: 70px;
+  height: 70px;
 }
 
 .mypage-name {
@@ -1055,11 +1063,10 @@ body {
 }
 
 /* 아이콘 임시 */
-.category-icon-placeholder {
-  width: 28px;
-  height: 28px;
-  border-radius: 8px;
-  background: #E8EBED;  /* gray/100 */
+.category-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
 }
 
 /* 라벨: Small Text = 11/14, black */
