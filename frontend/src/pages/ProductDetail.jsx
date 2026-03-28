@@ -8,6 +8,7 @@ export default function ProductDetail() {
   const location = useLocation();
 
   const rawItem = location.state?.item;
+  console.log("rawItem:", rawItem);
 
   const item = {
     id: rawItem?.id ?? 1,
@@ -20,7 +21,7 @@ export default function ProductDetail() {
       rawItem?.description ??
       "생활기스 거의 없고 전체적으로 상태 좋습니다. 배터리 효율 양호하고 구성품은 사진 참고 부탁드려요.",
     seller: {
-      _id: rawItem?.seller?._id,
+      sellerId: rawItem?.sellerId,
       nickname: rawItem?.seller?.nickname ?? "서초구 불주먹",
       town:
         rawItem?.seller?.town ??
@@ -309,6 +310,12 @@ export default function ProductDetail() {
             try {
               const token = localStorage.getItem("token");
 
+              if (!item.sellerId) {
+                alert("sellerId 없음");
+                console.log("❌ sellerId:", item.sellerId);
+                return;
+              }
+
               const res = await fetch("http://localhost:4000/chat/rooms", {
                 method: "POST",
                 headers: {
@@ -316,23 +323,14 @@ export default function ProductDetail() {
                   Authorization: `Bearer ${token}`,
                 },
                 body: JSON.stringify({
-                  postId: item.id, // ⭐ 상품 id
-                  sellerId: rawItem?.seller?._id, // ⭐ 판매자 id 필요
+                  postId: item._id, // ⭐ Post _id 사용
+                  sellerId: item.sellerId, // ⭐ 핵심
                 }),
               });
 
               const data = await res.json();
 
-              const roomId = data.room._id;
-
-              // ⭐ 생성된 채팅방으로 이동
-              navigate(`/chat/${roomId}`, {
-                state: {
-                  seller: item.seller,
-                  productTitle: item.title,
-                  productPrice: item.price,
-                },
-              });
+              navigate(`/chat/${data.room._id}`);
             } catch (err) {
               console.error("채팅방 생성 실패:", err);
             }
