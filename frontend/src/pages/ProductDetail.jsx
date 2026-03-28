@@ -1,6 +1,7 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { COLORS } from "../constants/colors";
+import { getPriceEstimate } from "../api/ai";
 
 export default function ProductDetail() {
     const navigate = useNavigate();
@@ -13,6 +14,7 @@ export default function ProductDetail() {
         title: rawItem?.title ?? "iPhone 14 Pro 256GB",
         price: rawItem?.price ?? "850,000",
         category: rawItem?.category ?? "디지털기기",
+        categoryId: rawItem?.categoryId ?? "",
         time: rawItem?.time ?? "2시간 전",
         description:
             rawItem?.description ??
@@ -24,7 +26,7 @@ export default function ProductDetail() {
                 rawItem?.location ??
                 "서울 서초구 방배1동 · 서울 용산구 청파동",
         },
-        images: rawItem?.images ?? [1, 2, 3],
+        images: rawItem?.images ?? [],
         liked: rawItem?.liked ?? true,
         guideMin: rawItem?.guideMin ?? 600000,
         guideMax: rawItem?.guideMax ?? 850000,
@@ -35,14 +37,57 @@ export default function ProductDetail() {
     const [liked, setLiked] = useState(!!item.liked);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isSellerSheetOpen, setIsSellerSheetOpen] = useState(false);
+    const [priceGuide, setPriceGuide] = useState(null);
+
+    useEffect(() => {
+        const fetchPriceGuide = async () => {
+            if (!item.categoryId) {
+                console.warn("categoryId가 없어서 AI 가격 가이드를 호출하지 않습니다.");
+                return;
+            }
+
+            try {
+                const payload = {
+                    title: item.title,
+                    description: item.description,
+                    categoryId: item.categoryId,
+                    price: Number(String(item.price).replace(/,/g, "")),
+                    images: item.images || [],
+                };
+
+                console.log("AI price payload:", payload);
+
+                const result = await getPriceEstimate(payload);
+                console.log("AI 가격 가이드 응답:", result);
+
+                setPriceGuide(result);
+            } catch (error) {
+                console.error("AI 가격 가이드 호출 실패:", error);
+            }
+        };
+
+        fetchPriceGuide();
+    }, [item.categoryId, item.title, item.description, item.price, item.images]);
 
     const images = useMemo(() => item.images || [1], [item.images]);
 
     const numericPrice = Number(String(item.price).replace(/,/g, ""));
 
+    const guideMin = Number(
+        priceGuide?.guideMin ??
+        priceGuide?.minPrice ??
+        item.guideMin
+    );
+
+    const guideMax = Number(
+        priceGuide?.guideMax ??
+        priceGuide?.maxPrice ??
+        item.guideMax
+    );
+
     let guideType = "mid";
-    if (numericPrice < item.guideMin) guideType = "low";
-    if (numericPrice > item.guideMax) guideType = "high";
+    if (numericPrice < guideMin) guideType = "low";
+    if (numericPrice > guideMax) guideType = "high";
 
     const guideTextMap = {
         low: {
@@ -211,7 +256,7 @@ export default function ProductDetail() {
                                 transform: "translateX(-50%)",
                             }}
                         >
-                            {item.guideMin.toLocaleString()}원
+                            {guideMin.toLocaleString()}원
                         </span>
 
                         {/* 적정/고가 경계 */}
@@ -222,7 +267,7 @@ export default function ProductDetail() {
                                 transform: "translateX(-50%)",
                             }}
                         >
-                            {item.guideMax.toLocaleString()}원
+                            {guideMax.toLocaleString()}원
                         </span>
                     </div>
                 </div>

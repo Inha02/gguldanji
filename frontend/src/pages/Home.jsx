@@ -46,6 +46,7 @@ export default function Home() {
                     time: item.time || "방금 전",
                     tag: item.tag || "적정",
                     category: item.category || "기타 중고물품",
+                    categoryId: item.categoryId || item.category?._id || "",
                     description: item.description || "",
                     seller: item.seller || null,
                 }));

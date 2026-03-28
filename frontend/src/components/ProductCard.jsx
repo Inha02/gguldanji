@@ -54,24 +54,7 @@ export default function ProductCard({
             <div style={styles.body}>
                 <div style={styles.title}>{item.title}</div>
 
-                <div style={styles.priceRow}>
-                    <div style={styles.price}>{item.price}원</div>
-                    {item.tag && (
-                        <span
-                            style={{
-                                ...styles.tag,
-                                background:
-                                    item.tag === "저가"
-                                        ? "#93C572"
-                                        : item.tag === "상가"
-                                            ? "#FF6666"
-                                            : "#2699E9",
-                            }}
-                        >
-                            {item.tag}
-                        </span>
-                    )}
-                </div>
+                <div style={styles.price}>{item.price}원</div>
 
                 <div style={styles.meta}>
                     {locationText} · {item.time}
@@ -84,7 +67,6 @@ export default function ProductCard({
 function HeartIcon({ filled }) {
     const fill = filled ? "#FF2D55" : "#C9CDD2";
     const stroke = filled ? "#FF2D55" : "#C9CDD2";
-
 
     return (
         <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
@@ -104,7 +86,6 @@ function HeartIcon({ filled }) {
         </svg>
     );
 }
-
 
 const styles = {
     card: {
@@ -160,14 +141,7 @@ const styles = {
         whiteSpace: "nowrap",
         overflow: "hidden",
         textOverflow: "ellipsis",
-        marginBottom: 2,
-    },
-
-    priceRow: {
-        display: "flex",
-        alignItems: "center",
-        gap: 4,
-        marginBottom: 4,
+        marginBottom: "2px",
     },
 
     price: {
@@ -177,23 +151,11 @@ const styles = {
         color: "#1B1D1F",
     },
 
-    tag: {
-        height: 14,
-        padding: "0 6px",
-        borderRadius: 4,
-        display: "inline-flex",
-        alignItems: "center",
-        justifyContent: "center",
-        fontSize: 10,
-        lineHeight: "14px",
-        fontWeight: 700,
-        color: "#FDFDFD",
-    },
-
     meta: {
         fontSize: 11,
         lineHeight: "14px",
         fontWeight: 400,
         color: "#72787F",
+        marginTop: "4px",
     },
 };

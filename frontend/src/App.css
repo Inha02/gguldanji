@@ -14,7 +14,6 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  -ms-overflow-style: none;
   scrollbar-width: none;
 }
 
@@ -59,7 +58,6 @@ body {
   color: #262627;
   /* 하단바 높이 */
   padding-bottom: 96px;
-    /* 72(바 높이)+6(바닥 여백)+여유 */
   }
 
 /* 🔻 하단 네비 전체 (5개 버튼) */
