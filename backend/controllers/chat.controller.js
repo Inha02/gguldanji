@@ -29,7 +29,8 @@ export const createOrGetRoom = async (req, res) => {
     room = await ChatRoom.create({
       postId,
       buyerId,
-      sellerId
+      sellerId,
+      lastMessage: ""
     });
 
     res.status(201).json({

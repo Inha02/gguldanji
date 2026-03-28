@@ -46,7 +46,8 @@ export const initSocket = (io) => {
 
     await ChatRoom.findByIdAndUpdate(
       roomId,
-      { updatedAt: new Date() }
+      { lastMessage: content,
+        updatedAt: new Date() }
     );
 
     const populatedMessage = await ChatMessage.findById(newMessage._id)
