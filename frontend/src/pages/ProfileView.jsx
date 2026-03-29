@@ -142,7 +142,7 @@ export default function ProfileView() {
                             ))}
                         </div>
 
-                        <div style={styles.keywordTitle}>후기 키워드 태그</div>
+                        <div style={styles.keywordTitle}>키워드 태그</div>
 
                         <div style={styles.tagList}>
                             {reviewTags.map((tag) => (

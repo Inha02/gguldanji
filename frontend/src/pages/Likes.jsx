@@ -3,20 +3,19 @@ import { useMemo, useState } from "react";
 const mockLikes = [
     { id: 1, title: "아이폰 14 Pro 256GB", price: "950,000", location: "서울 강남구", time: "2시간 전", tag: "저가", done: false },
     { id: 2, title: "에어팟 프로 2세대(정품)", price: "210,000", location: "서울 서초구", time: "3시간 전", tag: "저가", done: true },
-    { id: 3, title: "이케아 스탠드 조명", price: "15,000", location: "서울 강남구", time: "4시간 전", tag: "상가", done: false },
+    { id: 3, title: "이케아 스탠드 조명", price: "15,000", location: "서울 강남구", time: "4시간 전", tag: "고가", done: false },
     { id: 4, title: "원목 책상", price: "40,000", location: "서울 강남구", time: "7시간 전", tag: "적정", done: false },
     { id: 5, title: "검은 색 니트 조끼", price: "30,000", location: "서울 강남구", time: "8시간 전", tag: "적정", done: false },
-    { id: 6, title: "검은 색 나이키 신발", price: "90,000", location: "서울 서초구", time: "11시간 전", tag: "상가", done: false },
+    { id: 6, title: "검은 색 나이키 신발", price: "90,000", location: "서울 서초구", time: "11시간 전", tag: "고가", done: false },
 ];
 
 function LikeImageCard({ item, liked, onToggleLike }) {
-    const label = item.done ? "거래완료" : item.tag;
+    const label = item.tag;
 
     const tagStyleMap = {
         저가: "#93C572",
-        상가: "#FF6666",
+        고가: "#FF6666",
         적정: "#2699E9",
-        거래완료: "#262627",
     };
 
     const tagBg = tagStyleMap[label] || "#262627";
@@ -30,7 +29,8 @@ function LikeImageCard({ item, liked, onToggleLike }) {
                     style={{
                         ...cardStyles.tagBadge,
                         backgroundColor: tagBg,
-                        width: label === "거래완료" ? 54 : 33,
+                        padding: "0 6px",
+                        width: 33,
                     }}
                 >
                     {label}
