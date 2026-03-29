@@ -6,7 +6,11 @@ import Post from "../models/Post.js";
  */
 export const createPost = async (req, res) => {
   try {
-    const sellerId = req.user.id;
+    console.log("req.user:", req.user);
+    console.log("req.body:", req.body);
+
+    // ✅ 1. userId 제대로 가져오기
+    const sellerId = req.user.userId;
 
     const {
       title,
@@ -26,23 +30,38 @@ export const createPost = async (req, res) => {
     }
 
     const post = await Post.create({
-      sellerId,
+      // ✅ 2. ObjectId 변환
+      sellerId: new mongoose.Types.ObjectId(sellerId),
+
       title,
       description,
-      images,
-      categoryId,
-      price,
-      isFree,
+
+      images: images || [],
+
+      // ✅ 3. categoryId 임시 처리
+      categoryId: categoryId || null,
+
+      price: Number(price) || 0,
+
+      isFree: isFree || false,
+
       aiPriceMin,
       aiPriceMax,
       aiPriceReason,
-      location
+
+      // ✅ 4. location 구조 맞추기
+      location: {
+        address: location || "서울 용산구",
+        lat: 37.5326,
+        lng: 126.9906
+      }
     });
 
     res.status(201).json(post);
 
   } catch (error) {
-    res.status(500).json({ message: "server error" });
+    console.error("❌ createPost 에러:", error);
+    res.status(500).json({ message: error.message });
   }
 };
 
@@ -109,7 +128,7 @@ export const updatePost = async (req, res) => {
     }
 
     // 작성자 검증
-    if (post.sellerId.toString() !== req.user.id) {
+    if (post.sellerId.toString() !== req.user.userId) {
       return res.status(403).json({
         message: "수정 권한이 없습니다"
       });
@@ -148,7 +167,7 @@ export const deletePost = async (req, res) => {
     }
 
     // 작성자 검증
-    if (post.sellerId.toString() !== req.user.id) {
+    if (post.sellerId.toString() !== req.user.userId) {
       return res.status(403).json({
         message: "삭제 권한이 없습니다"
       });
