@@ -2,6 +2,17 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ProfileAvatar from "../components/ProfileAvatar";
 
+const imagePool = [
+    "https://gguldanji-images.s3.ap-southeast-2.amazonaws.com/posts/images/가구_인테리어/da6bdb361b3a62cf91315094_0.png",
+    "https://gguldanji-images.s3.ap-southeast-2.amazonaws.com/posts/images/가구_인테리어/0bd4104bf6c75682b1ae6f4e_0.png",
+    "https://gguldanji-images.s3.ap-southeast-2.amazonaws.com/posts/images/가구_인테리어/61809e95d0d001fc33d36b0b_0.png",
+    "https://gguldanji-images.s3.ap-southeast-2.amazonaws.com/posts/images/가구_인테리어/8c05485ad618049fb3c7781b_0.png",
+];
+
+function getStableImage(id) {
+    return imagePool[id % imagePool.length];
+}
+
 const soldItems = [
   { id: 1 },
   { id: 2 },
