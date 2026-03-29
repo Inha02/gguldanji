@@ -55,8 +55,8 @@ app.use("/auth", authRouter);
 app.use("/posts", postRoutes);
 app.use("/chat", chatRoutes);
 app.use("/ai", aiRoutes);
-app.use("/chat/ai", chatAiRoutes);
-app.use("/likes", likeRoutes);
+app.use("/chat_ai", chatAiRoutes);
+app.use("/likes", likeRoutes); 
 
 // DB 연결 후 서버 시작
 const startServer = async () => {

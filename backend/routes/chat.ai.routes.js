@@ -43,7 +43,7 @@ const router = express.Router();
  */
 /**
  * @swagger
- * /chat/{roomId}/ai-format:
+ * /chat_ai/{roomId}/ai-format:
  *   get:
  *     summary: 채팅 로그를 AI 입력 형식으로 변환
  *     description: 채팅 메시지를 AI 모델 입력용 JSON 구조로 변환합니다.
