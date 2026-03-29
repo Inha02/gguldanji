@@ -385,7 +385,9 @@ const handleLike = async () => {
 
                 <div style={styles.infoSection}>
                     <div style={styles.itemTitle}>{item.title}</div>
-                    <div style={styles.itemPrice}>{item.price}원</div>
+                    <div style={styles.itemPrice}>
+                        {Number(item.price).toLocaleString()}원
+                    </div>
                     <div style={styles.itemMeta}>
                         {item.category} · {item.time}
                     </div>
@@ -458,9 +460,9 @@ const handleLike = async () => {
                     <div style={styles.sectionBlockTitle}>거래 희망 장소</div>
                     <div style={styles.locationTownText}>{item.seller.town}</div>
 
-                    <div style={styles.mapBox}>
+                    {/* <div style={styles.mapBox}>
                         <div style={styles.mapPlaceholder}>지도</div>
-                    </div>
+                    </div> */}
                 </div>
 
                 <div style={{ height: 140 }} />
