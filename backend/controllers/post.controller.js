@@ -11,6 +11,7 @@ export const createPost = async (req, res) => {
 
     // ✅ 1. userId 제대로 가져오기
     const sellerId = req.user.userId;
+    const imageUrls = req.files.map((file) => file.path);
 
     const {
       title,
@@ -54,7 +55,9 @@ export const createPost = async (req, res) => {
         address: location || "서울 용산구",
         lat: 37.5326,
         lng: 126.9906
-      }
+      },
+      
+      images: imageUrls,
     });
 
     res.status(201).json(post);

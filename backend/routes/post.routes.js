@@ -1,5 +1,6 @@
 import express from "express";
 import auth from "../middlewares/auth.js";
+import multer from "multer";
 import {
   createPost,
   getPosts,
@@ -8,6 +9,9 @@ import {
   deletePost
 } from "../controllers/post.controller.js";
 const router = express.Router();
+const upload = multer({
+  dest: "uploads/",
+});
 
 /**
  * @swagger
@@ -57,7 +61,7 @@ const router = express.Router();
  *       401:
  *         description: 인증 실패
  */
-router.post("/", auth, createPost);
+router.post("/", auth, upload.array("images"), createPost);
 
 
 /**
