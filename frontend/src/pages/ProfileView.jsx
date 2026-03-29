@@ -13,6 +13,7 @@ function getStableImage(id) {
     return imagePool[id % imagePool.length];
 }
 
+
 const soldItems = [
   { id: 1 },
   { id: 2 },
