@@ -29,8 +29,11 @@ function formatLocation(location) {
 function getImageUrl(path) {
     if (!path) return "";
 
-    if (path.startsWith("http://")) return path;
-    
+    // 이미 완전한 URL이면 그대로 사용
+    if (path.includes("amazonaws.com") || path.startsWith("http")) {
+        return path;
+    }
+
     return `http://localhost:4000/${path}`;
 }
 
