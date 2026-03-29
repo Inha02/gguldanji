@@ -35,8 +35,6 @@ export default function ProductDetail() {
     const rawItem = location.state?.item;
     console.log("rawItem:", rawItem);
 
-    const normalizedCategory = normalizeCategory(rawItem);
-
     const categoryId = rawItem?.categoryId ?? rawItem?.category?._id ?? "";
 
     const categoryName =
