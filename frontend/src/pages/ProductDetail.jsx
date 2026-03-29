@@ -89,6 +89,13 @@ export default function ProductDetail() {
     const [sellerAnalysis, setSellerAnalysis] = useState(item.sellerAnalysis ?? null);
     const [isSellerLoading, setIsSellerLoading] = useState(false);
 
+    const [sellerInfo, setSellerInfo] = useState({
+        nickname: item.seller.nickname,
+        town: item.seller.town,
+        profileImage: "",
+        trustScore: null,
+      });
+
     useEffect(() => {
         const fetchPriceGuide = async () => {
             if (!item.categoryId) {
@@ -125,6 +132,43 @@ export default function ProductDetail() {
 
         fetchPriceGuide();
     }, [item.categoryId, item.title, item.description, item.price, item.images]);
+
+    useEffect(() => {
+        const fetchSellerInfo = async () => {
+          if (!item.sellerId) {
+            console.warn("sellerId가 없어서 판매자 정보를 조회하지 않습니다.");
+            return;
+          }
+      
+          try {
+            const token = localStorage.getItem("token");
+      
+            const res = await fetch(`http://localhost:4000/users/${item.sellerId}`, {
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+            });
+      
+            if (!res.ok) {
+              throw new Error(`판매자 정보 조회 실패: ${res.status}`);
+            }
+      
+            const data = await res.json();
+            console.log("판매자 정보 응답:", data);
+      
+            setSellerInfo({
+              nickname: data.nickname ?? item.seller.nickname,
+              town: item.seller.town, // user 응답에 town이 없으면 기존 location 유지
+              profileImage: data.profileImage ?? "",
+              trustScore: data.trustScore ?? null,
+            });
+          } catch (err) {
+            console.error("판매자 정보 조회 실패:", err);
+          }
+        };
+      
+        fetchSellerInfo();
+      }, [item.sellerId]);
 
     const images = useMemo(() => item.images || [], [item.images]);
 
@@ -372,12 +416,20 @@ const handleLike = async () => {
 
                 <div style={styles.sellerCard}>
                     <div style={styles.sellerAvatar}>
-                        <div style={styles.sellerBear} />
+                        {sellerInfo.profileImage ? (
+                            <img
+                            src={sellerInfo.profileImage}
+                            alt={sellerInfo.nickname}
+                            style={styles.sellerAvatarImage}
+                            />
+                        ) : (
+                            <div style={styles.sellerBear} />
+                        )}
                     </div>
 
                     <div style={styles.sellerInfo}>
-                        <div style={styles.sellerName}>{item.seller.nickname}</div>
-                        <div style={styles.sellerTown}>{item.seller.town}</div>
+                        <div style={styles.sellerName}>{sellerInfo.nickname}</div>
+                        <div style={styles.sellerTown}>{sellerInfo.town}</div>
                     </div>
                 </div>
 
@@ -960,6 +1012,13 @@ const styles = {
         justifyContent: "center",
         flexShrink: 0,
     },
+
+    sellerAvatarImage: {
+        width: "100%",
+        height: "100%",
+        objectFit: "cover",
+        borderRadius: "50%",
+      },
 
     sellerBear: {
         width: 26,
