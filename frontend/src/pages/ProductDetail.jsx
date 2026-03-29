@@ -2,6 +2,8 @@ import { useEffect, useMemo, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { COLORS } from "../constants/colors";
 import { getPriceEstimate } from "../api/ai";
+import { useChat } from "../context/ChatContext";
+
 
 function getImageUrl(path) {
     if (!path) return "";
@@ -29,6 +31,8 @@ const CATEGORY_MAP = {
   };
 
 export default function ProductDetail() {
+    
+    const { addRoom } = useChat();
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -555,6 +559,13 @@ const handleLike = async () => {
                             });
 
                             const data = await res.json();
+
+                            addRoom({
+  id: data.room._id,
+  name: item.seller.nickname,
+  messages: [],
+  tag: "적정",
+});
 
                             navigate(`/chat/${data.room._id}`, {
                                 state: {

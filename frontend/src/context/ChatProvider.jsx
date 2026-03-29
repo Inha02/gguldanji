@@ -38,11 +38,21 @@ export function ChatProvider({ children }) {
     return chatRooms.find((room) => String(room.id) === String(roomId));
   };
 
+  const addRoom = (room) => {
+  setChatRooms((prev) => {
+    const exists = prev.find((r) => r.id === room.id);
+    if (exists) return prev;
+
+    return [...prev, room];
+  });
+};
+
   const value = {
     chatRooms,
     setChatRooms,
     addMessageToRoom,
     getRoomById,
+    addRoom,
   };
 
   return <ChatContext.Provider value={value}>{children}</ChatContext.Provider>;

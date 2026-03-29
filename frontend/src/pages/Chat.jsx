@@ -9,7 +9,7 @@ export default function Chat() {
   const navigate = useNavigate();
   const location = useLocation();
   const { chatId } = useParams();
-  const { getRoomById, addMessageToRoom } = useChat();
+  const { getRoomById, addMessageToRoom, addRoom } = useChat();
   const socket = getSocket();
 
   const roomId = chatId;
@@ -75,6 +75,33 @@ export default function Chat() {
       },
     });
   }, [roomId]);
+
+  useEffect(() => {
+  const fetchRoom = async () => {
+    if (room) return;
+
+    try {
+      const res = await fetch(`http://localhost:4000/chat/rooms/${roomId}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+
+      const data = await res.json();
+      console.log("room fetch:", data);
+
+      addRoom({
+        id: data._id,
+        name: data.sellerId?.nickname || "판매자",
+        messages: [],
+        tag: "적정",
+      });
+
+    } catch (err) {
+      console.error("room 불러오기 실패:", err);
+    }
+  };
+
+  fetchRoom();
+}, [roomId]);
 
   const joinedRef = useRef(false);
 
