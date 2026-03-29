@@ -4,23 +4,14 @@ import { useMemo, useState, useEffect } from "react";
 const mockLikes = [
     { id: 1, title: "아이폰 14 Pro 256GB", price: "950,000", location: "서울 강남구", time: "2시간 전", tag: "저가", done: false },
     { id: 2, title: "에어팟 프로 2세대(정품)", price: "210,000", location: "서울 서초구", time: "3시간 전", tag: "저가", done: true },
-    { id: 3, title: "이케아 스탠드 조명", price: "15,000", location: "서울 강남구", time: "4시간 전", tag: "고가", done: false },
+    { id: 3, title: "이케아 스탠드 조명", price: "15,000", location: "서울 강남구", time: "4시간 전", tag: "상가", done: false },
     { id: 4, title: "원목 책상", price: "40,000", location: "서울 강남구", time: "7시간 전", tag: "적정", done: false },
     { id: 5, title: "검은 색 니트 조끼", price: "30,000", location: "서울 강남구", time: "8시간 전", tag: "적정", done: false },
-    { id: 6, title: "검은 색 나이키 신발", price: "90,000", location: "서울 서초구", time: "11시간 전", tag: "고가", done: false },
+    { id: 6, title: "검은 색 나이키 신발", price: "90,000", location: "서울 서초구", time: "11시간 전", tag: "상가", done: false },
 ];
 */
 
 function LikeImageCard({ item, liked, onToggleLike }) {
-<<<<<<< HEAD
-    const label = item.tag;
-
-    const tagStyleMap = {
-        저가: "#93C572",
-        고가: "#FF6666",
-        적정: "#2699E9",
-    };
-=======
   const label = item.done ? "거래완료" : item.tag;
 
   const tagStyleMap = {
@@ -29,12 +20,10 @@ function LikeImageCard({ item, liked, onToggleLike }) {
     적정: "#2699E9",
     거래완료: "#262627",
   };
->>>>>>> 128e91d3 (feat: like page)
 
   const tagBg = tagStyleMap[label] || "#262627";
 
   return (
-<<<<<<< HEAD
     <div style={cardStyles.card}>
       <div style={cardStyles.imageArea}>
         {item.images && item.images.length > 0 ? (
@@ -50,30 +39,6 @@ function LikeImageCard({ item, liked, onToggleLike }) {
   <div style={cardStyles.imagePlaceholder} />
 )}
 
-<<<<<<< HEAD
-                <div
-                    style={{
-                        ...cardStyles.tagBadge,
-                        backgroundColor: tagBg,
-                        padding: "0 6px",
-                        width: 33,
-                    }}
-                >
-                    {label}
-                </div>
-
-                <button
-                    type="button"
-                    aria-label="찜"
-                    onClick={onToggleLike}
-                    style={cardStyles.heartButton}
-                >
-                    <HeartIcon liked={liked} />
-                </button>
-
-                <div style={cardStyles.price}>{item.price}원</div>
-            </div>
-=======
         <div
           style={{
             ...cardStyles.tagBadge,
@@ -82,7 +47,6 @@ function LikeImageCard({ item, liked, onToggleLike }) {
           }}
         >
           {label}
->>>>>>> 128e91d3 (feat: like page)
         </div>
 
         <button
@@ -98,50 +62,6 @@ function LikeImageCard({ item, liked, onToggleLike }) {
       </div>
     </div>
   );
-=======
-  <div style={cardStyles.card}>
-    <div style={cardStyles.imageArea}>
-      {item.images && item.images.length > 0 ? (
-        <img
-          src={getImageUrl(item.images[0])}
-          alt={item.title}
-          style={cardStyles.image}
-          onError={(e) => {
-            e.currentTarget.style.display = "none";
-          }}
-        />
-      ) : (
-        <div style={cardStyles.imagePlaceholder} />
-      )}
-
-      {/* 태그 */}
-      <div
-        style={{
-          ...cardStyles.tagBadge,
-          backgroundColor: tagBg,
-          padding: "0 6px",
-          width: 33,
-        }}
-      >
-        {label}
-      </div>
-
-      {/* 찜 버튼 */}
-      <button
-        type="button"
-        aria-label="찜"
-        onClick={onToggleLike}
-        style={cardStyles.heartButton}
-      >
-        <HeartIcon liked={liked} />
-      </button>
-
-      {/* 가격 */}
-      <div style={cardStyles.price}>{item.price}원</div>
-    </div>
-  </div>
-);
->>>>>>> aceace9f (fix : like page)
 }
 
 function HeartIcon({ liked }) {
