@@ -7,9 +7,66 @@ const router = express.Router();
 
 /**
  * @swagger
+ * components:
+ *   schemas:
+ *     ChatLog:
+ *       type: object
+ *       properties:
+ *         role:
+ *           type: string
+ *           enum: [buyer, seller]
+ *           example: buyer
+ *         message:
+ *           type: string
+ *           example: 안녕하세요 아직 판매중인가요?
+ *         timestamp:
+ *           type: string
+ *           format: date-time
+ *           example: 2026-03-01T10:00:00Z
+ *
+ *     AIChatFormat:
+ *       type: object
+ *       properties:
+ *         seller_id:
+ *           type: string
+ *           example: 65c1b6c2e3f4a123456789ab
+ *         chat_logs:
+ *           type: array
+ *           items:
+ *             $ref: '#/components/schemas/ChatLog'
+ *         existing_profile:
+ *           nullable: true
+ *           example: null
+ *         all_chat_logs:
+ *           nullable: true
+ *           example: null
+ */
+/**
+ * @swagger
  * /chat/{roomId}/ai-format:
  *   get:
  *     summary: 채팅 로그를 AI 입력 형식으로 변환
+ *     description: 채팅 메시지를 AI 모델 입력용 JSON 구조로 변환합니다.
+ *     tags: [Chat]
+ *     parameters:
+ *       - in: path
+ *         name: roomId
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: 채팅방 ID
+ *         example: 65c1b6c2e3f4a123456789ab
+ *     responses:
+ *       200:
+ *         description: 변환 성공
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/AIChatFormat'
+ *       404:
+ *         description: 채팅방 또는 게시글 없음
+ *       500:
+ *         description: 서버 에러
  */
 router.get("/:roomId/ai-format", async (req, res) => {
   try {
