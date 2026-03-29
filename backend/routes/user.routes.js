@@ -166,7 +166,42 @@ router.patch("/me", auth, async (req, res) => {
 
 });
 
+/**
+ * @swagger
+ * /users/{userId}:
+ *   get:
+ *     summary: 특정 사용자 조회
+ *     description: userId로 특정 사용자의 정보를 조회합니다.
+ *     tags: [Users]
+ *     parameters:
+ *       - in: path
+ *         name: userId
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: 조회할 사용자 ID
+ *         example: 65c1b6c2e3f4a123456789ab
+ *     responses:
+ *       200:
+ *         description: 사용자 조회 성공
+ *       404:
+ *         description: 사용자를 찾을 수 없음
+ */
+router.get("/:userId", async (req, res) => {
+  try {
+    const { userId } = req.params;
 
+    const user = await User.findById(userId).select("-password");
+
+    if (!user) {
+      return res.status(404).json({ message: "사용자를 찾을 수 없습니다." });
+    }
+
+    res.json(user);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
 
 
 export default router;

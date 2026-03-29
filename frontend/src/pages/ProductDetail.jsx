@@ -235,6 +235,56 @@ export default function ProductDetail() {
         }
       };
 
+
+      useEffect(() => {
+  const checkLiked = async () => {
+    try {
+      const token = localStorage.getItem("token");
+
+      const res = await fetch(
+        `http://localhost:4000/likes/me/${item._id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      const data = await res.json();
+
+      setLiked(data.liked);
+    } catch (err) {
+      console.error("좋아요 상태 조회 실패:", err);
+    }
+  };
+
+  if (item._id) checkLiked();
+}, [item._id]);
+
+const handleLike = async () => {
+  try {
+    const token = localStorage.getItem("token");
+
+    const res = await fetch("http://localhost:4000/likes/toggle", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({
+        postId: item._id,
+      }),
+    });
+
+    const data = await res.json();
+
+    // 🔥 서버 기준으로 상태 반영
+    setLiked(data.liked);
+
+  } catch (err) {
+    console.error("좋아요 실패:", err);
+  }
+};
     return (
         <div style={styles.page}>
             <div style={styles.header}>
@@ -252,7 +302,7 @@ export default function ProductDetail() {
                         type="button"
                         aria-label="찜"
                         style={styles.iconBtn}
-                        onClick={() => setLiked((prev) => !prev)}
+                        onClick={handleLike}
                     >
                         <HeartIcon liked={liked} />
                     </button>
@@ -335,7 +385,9 @@ export default function ProductDetail() {
 
                 <div style={styles.infoSection}>
                     <div style={styles.itemTitle}>{item.title}</div>
-                    <div style={styles.itemPrice}>{item.price}원</div>
+                    <div style={styles.itemPrice}>
+                        {Number(item.price).toLocaleString()}원
+                    </div>
                     <div style={styles.itemMeta}>
                         {item.category} · {item.time}
                     </div>
@@ -408,9 +460,9 @@ export default function ProductDetail() {
                     <div style={styles.sectionBlockTitle}>거래 희망 장소</div>
                     <div style={styles.locationTownText}>{item.seller.town}</div>
 
-                    <div style={styles.mapBox}>
+                    {/* <div style={styles.mapBox}>
                         <div style={styles.mapPlaceholder}>지도</div>
-                    </div>
+                    </div> */}
                 </div>
 
                 <div style={{ height: 140 }} />
