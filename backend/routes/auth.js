@@ -81,7 +81,7 @@ router.get("/kakao/callback", async (req, res) => {
 
     // 5️⃣ 프론트엔드로 리다이렉트 (쿼리로 JWT 전달)
     const frontendUrl = process.env.FRONTEND_URL || "http://localhost:5173";
-    res.redirect(`${frontendUrl}/login?token=${encodeURIComponent(token)}`);
+    res.redirect(`${frontendUrl}/login?token=${encodeURIComponent(token)}&userId=${user._id}`);
   } catch (error) {
     console.error(error);
     const frontendUrl = process.env.FRONTEND_URL || "http://localhost:5173";

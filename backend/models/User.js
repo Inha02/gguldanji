@@ -111,6 +111,8 @@ const userSchema = new mongoose.Schema({
   likedCategories: [{ type: mongoose.Schema.Types.ObjectId, ref: "Category" }],
   blockedUsers: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
 
+  location: { type: String },
+
   status: {
     type: String,
     enum: ["active", "suspended", "deleted"],

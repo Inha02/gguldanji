@@ -166,6 +166,23 @@ router.patch("/me", auth, async (req, res) => {
 
 });
 
+router.patch("/me/location", auth, async (req, res) => {
+  try {
+    const userId = req.user.userId; // ⭐ 여기서 가져옴
+    const { location } = req.body;
+
+    const user = await User.findByIdAndUpdate(
+      userId,
+      { location },
+      { new: true }
+    );
+
+    res.json(user);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
 /**
  * @swagger
  * /users/{userId}:
@@ -202,6 +219,62 @@ router.get("/:userId", async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 });
+
+/**
+ * @swagger
+ * /users/{userId}:
+ *   patch:
+ *     summary: 특정 사용자 정보 수정
+ *     description: userId로 특정 사용자의 정보를 수정합니다.
+ *     tags: [Users]
+ *     security:
+ *       - bearerAuth: []
+ *     parameters:
+ *       - in: path
+ *         name: userId
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: 수정할 사용자 ID
+ *         example: 65c1b6c2e3f4a123456789ab
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               nickname:
+ *                 type: string
+ *                 example: 새로운닉네임
+ *     responses:
+ *       200:
+ *         description: 사용자 수정 성공
+ *       404:
+ *         description: 사용자를 찾을 수 없음
+ */
+router.patch("/:userId", auth, async (req, res) => {
+  try {
+    const { userId } = req.params;
+
+    const user = await User.findByIdAndUpdate(
+      userId,
+      req.body,
+      { new: true }
+    ).select("-password");
+
+    if (!user) {
+      return res.status(404).json({ message: "사용자를 찾을 수 없습니다." });
+    }
+
+    res.json(user);
+
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
+
 
 
 export default router;

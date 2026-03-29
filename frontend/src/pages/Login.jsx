@@ -10,11 +10,13 @@ export default function Login() {
 
     useEffect(() => {
         const token = searchParams.get("token");
+        const userId = searchParams.get("userId");
 
         if (token) {
             console.log("카카오 토큰:", token);
 
             localStorage.setItem("token", token);
+            localStorage.setItem("userId", userId); // ⭐ 추가
 
             navigate("/", { replace: true });
         }
@@ -44,7 +46,11 @@ export default function Login() {
 
         // ⭐ 핵심
         const token = data.token;
+        const userId = data.user?._id || data.userId; 
+
         localStorage.setItem("token", token);
+        localStorage.setItem("userId", userId);
+        console.log("저장된 userId:", userId);
 
         navigate("/");
     } catch (err) {

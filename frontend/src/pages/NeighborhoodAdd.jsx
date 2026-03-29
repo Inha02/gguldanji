@@ -12,47 +12,75 @@ export default function NeighborhoodAdd() {
     console.log("window.kakao.maps:", window.kakao?.maps);
     console.log("window.kakao.maps.services:", window.kakao?.maps?.services);
 
-    window.kakao.maps.load(() => { 
+    window.kakao.maps.load(() => {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const lat = position.coords.latitude;
+          const lng = position.coords.longitude;
 
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        const lat = position.coords.latitude;
-        const lng = position.coords.longitude;
+          // ✅ 지도 이미지 (네이버 그대로 유지)
+          const url = `https://maps.apigw.ntruss.com/map-static/v2/raster-cors?w=400&h=270&center=${lng},${lat}&level=16&format=jpg&markers=type:d|size:mid|pos:${lng}%20${lat}&X-NCP-APIGW-API-KEY-ID=${import.meta.env.VITE_NAVER_MAP_KEY}`;
 
-        // ✅ 지도 이미지 (네이버 그대로 유지)
-        const url = `https://maps.apigw.ntruss.com/map-static/v2/raster-cors?w=400&h=270&center=${lng},${lat}&level=16&format=jpg&markers=type:d|size:mid|pos:${lng}%20${lat}&X-NCP-APIGW-API-KEY-ID=${import.meta.env.VITE_NAVER_MAP_KEY}`;
+          setMapUrl(url);
 
-        setMapUrl(url);
+          // 🔥 카카오 Geocoder 생성
+          const geocoder = new window.kakao.maps.services.Geocoder();
 
-        // 🔥 카카오 Geocoder 생성
-        const geocoder = new window.kakao.maps.services.Geocoder();
+          // 🔥 좌표 → 행정동 변환
+          geocoder.coord2RegionCode(lng, lat, (result, status) => {
+            if (status === window.kakao.maps.services.Status.OK) {
+              console.log("카카오 결과:", result);
 
-        // 🔥 좌표 → 행정동 변환
-        geocoder.coord2RegionCode(lng, lat, (result, status) => {
-          if (status === window.kakao.maps.services.Status.OK) {
-            console.log("카카오 결과:", result);
+              // ✅ 행정동(H) 찾기
+              const region = result.find((r) => r.region_type === "H");
 
-            // ✅ 행정동(H) 찾기
-            const region = result.find((r) => r.region_type === "H");
-
-            if (region) {
-              setTownName(region.address_name);
+              if (region) {
+                setTownName(region.address_name);
+              } else {
+                setTownName(result[0].address_name);
+              }
             } else {
-              setTownName(result[0].address_name);
+              console.error("카카오 변환 실패");
+              setTownName("위치 확인 실패");
             }
-          } else {
-            console.error("카카오 변환 실패");
-            setTownName("위치 확인 실패");
-          }
-        });
-      },
-      (error) => {
-        console.error("위치 권한 거부됨", error);
-        setTownName("위치 권한 필요");
-      },
-    );
+          });
+        },
+        (error) => {
+          console.error("위치 권한 거부됨", error);
+          setTownName("위치 권한 필요");
+        },
+      );
     });
   }, []);
+
+  const handleSetLocation = async () => {
+  try {
+    const token = localStorage.getItem("token");
+
+    const res = await fetch("http://localhost:4000/users/me/location", {
+  method: "PATCH",
+  headers: {
+    "Content-Type": "application/json",
+    Authorization: `Bearer ${token}`,
+  },
+  body: JSON.stringify({
+    location: townName,
+  }),
+});
+
+    const data = await res.json();
+
+    if (res.ok) {
+      alert("동네 인증 완료!");
+      navigate("/mypage");
+    } else {
+      alert(data.message || "실패");
+    }
+  } catch (error) {
+    console.error(error);
+    alert("에러 발생");
+  }
+};
 
   return (
     <div style={styles.page}>
@@ -92,7 +120,7 @@ export default function NeighborhoodAdd() {
 
       {/* Bottom Button */}
       <div style={styles.bottomArea}>
-        <button type="button" style={styles.addBtn}>
+        <button type="button" style={styles.addBtn} onClick={handleSetLocation}>
           현재 위치로 동네 인증하기
         </button>
       </div>
