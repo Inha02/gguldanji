@@ -1,5 +1,5 @@
 import express from "express";
-import Like from "../models/like.model.js";
+import Like from "../models/Like.js";
 import auth from "../middlewares/auth.js";
 
 const router = express.Router();
