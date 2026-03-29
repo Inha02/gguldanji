@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { COLORS } from "../constants/colors";
 import { CATEGORY_ITEMS } from "../constants/categories";
+import honeypotIcon from "../icons/honeypot.svg";
 
 const steps = [
     {
@@ -147,6 +148,11 @@ export default function Onboarding() {
 
                 {current.type === "start" && (
                     <div style={styles.startWrap}>
+                        <img
+                            src={honeypotIcon}
+                            alt="꿀단지 아이콘"
+                            style={styles.startIcon}
+                        />
                         <div style={styles.startTitle}>
                             {current.title.split("\n").map((line, idx) => (
                                 <div key={idx}>{line}</div>
@@ -337,6 +343,13 @@ const styles = {
         alignItems: "center",
     },
 
+    startIcon: {
+        width: 100,
+        height: 100,
+        objectFit: "contain",
+        display: "block",
+    },
+
     startTitle: {
         marginTop: 24,
         fontSize: 28,
@@ -413,4 +426,5 @@ const styles = {
         textDecoration: "underline",
         textUnderlineOffset: 2,
     },
+
 };
