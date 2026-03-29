@@ -151,6 +151,18 @@ export default function ProfileView() {
         }
 
         const data = await res.json();
+
+                        <div style={styles.soldList}>
+                            {soldItems.map((item) => (
+                                <img
+                                    key={item.id}
+                                    src={getStableImage(item.id)}
+                                    alt="최근 거래 상품"
+                                    style={styles.soldItem}
+                                />
+                            ))}
+                        </div>
+
         console.log("내 판매 성향 분석 응답:", data);
 
         const mapped = mapSellerProfileToUI(data);
@@ -459,6 +471,8 @@ const styles = {
         borderRadius: 12,
         backgroundColor: "#E8EBED",
         flexShrink: 0,
+        objectFit: "cover",
+        display: "block",
     },
 
     keywordTitle: {
