@@ -438,7 +438,7 @@ const handleLike = async () => {
                 <div style={styles.infoSection}>
                     <div style={styles.itemTitle}>{item.title}</div>
                     <div style={styles.itemPrice}>
-                        {Number(item.price).toLocaleString()}원
+                        {item.price}원
                     </div>
                     <div style={styles.itemMeta}>
                         {item.category} · {item.time}
