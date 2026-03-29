@@ -1,25 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { COLORS } from "../constants/colors";
-
-const categories = [
-    "디지털기기",
-    "가구/인테리어",
-    "출산/유아동",
-    "여성의류",
-    "패션잡화",
-    "남성의류",
-    "가전제품",
-    "생활용품",
-    "스포츠/레저",
-    "취미/게임",
-    "뷰티/미용",
-    "반려동물용품",
-    "식품",
-    "도서",
-    "티켓/교환권",
-    "기타 중고물품",
-];
+import { CATEGORY_ITEMS } from "../constants/categories";
 
 const steps = [
     {
@@ -83,13 +65,13 @@ export default function Onboarding() {
 
         localStorage.setItem("onboardingDone", "true");
         localStorage.setItem("selectedCategories", JSON.stringify(selectedCategories));
-        navigate("/");
+        navigate("/signup");
     };
 
     const handleSkip = () => {
         localStorage.setItem("onboardingDone", "true");
         localStorage.setItem("selectedCategories", JSON.stringify(selectedCategories));
-        navigate("/");
+        navigate("/signup");
     };
 
     return (
@@ -131,32 +113,31 @@ export default function Onboarding() {
                         <div style={styles.categoryTitle}>{current.title}</div>
 
                         <div style={styles.categoryGrid}>
-                            {categories.map((name) => {
-                                const selected = selectedCategories.includes(name);
+                            {CATEGORY_ITEMS.map((item) => {
+                                const selected = selectedCategories.includes(item.name);
 
                                 return (
                                     <button
-                                        key={name}
+                                        key={item.name}
                                         type="button"
-                                        onClick={() => toggleCategory(name)}
+                                        onClick={() => toggleCategory(item.name)}
                                         style={styles.categoryItem}
                                     >
-                                        <div
-                                            style={{
-                                                ...styles.categoryCircle,
-                                                backgroundColor: selected
-                                                    ? "rgba(251, 226, 0, 0.9)"
-                                                    : COLORS.gray100,
-                                            }}
-                                        >
+                                        <div style={styles.categoryCircle}>
+                                            <img
+                                                src={item.icon}
+                                                alt={item.name}
+                                                style={styles.categoryIcon}
+                                            />
+
                                             {selected && (
-                                                <div style={styles.categoryHeart}>
-                                                    ♥
+                                                <div style={styles.categorySelectedOverlay}>
+                                                    <div style={styles.categoryHeart}>♥</div>
                                                 </div>
                                             )}
                                         </div>
 
-                                        <div style={styles.categoryLabel}>{name}</div>
+                                        <div style={styles.categoryLabel}>{item.name}</div>
                                     </button>
                                 );
                             })}
@@ -302,16 +283,42 @@ const styles = {
         width: 74,
         height: 74,
         borderRadius: "50%",
+        backgroundColor: COLORS.gray100,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        position: "relative",
+        overflow: "hidden",
+    },
+
+    categoryIcon: {
+        width: 40,
+        height: 40,
+        objectFit: "contain",
+    },
+
+    categoryHeart: {
+        width: 24,
+        height: 24,
+        fontSize: 24,
+        lineHeight: "24px",
+        fontWeight: 400,
+        color: COLORS.white,
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
     },
 
-    categoryHeart: {
-        fontSize: 24,
-        lineHeight: "24px",
-        fontWeight: 400,
-        color: COLORS.white,
+    categorySelectedOverlay: {
+        position: "absolute",
+        inset: 0,  
+        width: 74,
+        height: 74,
+        borderRadius: "50%",
+        backgroundColor: "rgba(251,226,0,0.9)",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
     },
 
     categoryLabel: {
