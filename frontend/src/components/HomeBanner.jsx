@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import bannerImage from "../icons/homebanner.svg";
 
 export default function HomeBanner({ name = "OO" }) {
     const navigate = useNavigate();
@@ -9,8 +10,11 @@ export default function HomeBanner({ name = "OO" }) {
             type="button"
             onClick={() => navigate("/recommend")}
         >
-            <div className="home-banner__bg" />
-            <div className="home-banner__overlay" />
+            <img
+                src={bannerImage}
+                alt=""
+                className="home-banner__image"
+            />
 
             <div className="home-banner__content">
                 <div className="home-banner__text">
