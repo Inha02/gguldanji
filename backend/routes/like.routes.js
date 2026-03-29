@@ -56,6 +56,19 @@ router.post("/toggle", auth, async (req, res) => {
   }
 });
 
+router.get("/my", auth, async (req, res) => {
+  try {
+    const userId = req.user.userId;
+
+    const likes = await Like.find({ userId })
+      .populate("postId"); // ⭐ 핵심
+
+    res.json({ likes });
+  } catch (err) {
+    res.status(500).json({ message: "조회 실패" });
+  }
+});
+
 //////////////////////////////////////////////////
 // ❤️ 특정 게시글 좋아요 수
 //////////////////////////////////////////////////
