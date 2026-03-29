@@ -9,19 +9,49 @@ function getImageUrl(path) {
     return `http://localhost:4000/${path}`;
 }
 
+const CATEGORY_MAP = {
+    "7ad5dbd9e4cb3f174a48676d": "디지털기기",
+    "e096b92137c6aac44e6b69e0": "가전제품",
+    "b5891a53683272fd7b02d933": "패션잡화",
+    "05a0a6a562b8853820825d89": "남성의류",
+    "c108d56149614671b7d76ae3": "여성의류",
+    "141213957cf11e237038eb2a": "스포츠/레저",
+    "6f1d2889fd3db21ede53841f": "출산/유아동",
+    "e958595973562985419f3935": "취미/게임",
+    "607edd254ec6118cd7be5e12": "뷰티/미용",
+    "3e2b3eaa856e8a3468392bb9": "반려동물용품",
+    "58d89f77218c1f29f69eabb2": "생활용품",
+    "d4bbe6c3fec70b3f2fdf161e": "가구/인테리어",
+    "b5ae6a87375715947844a78d": "도서",
+    "b5cca6912ebc8e8190626d53": "식품",
+    "a7833ac47cd87a01f96d6c89": "티켓/교환권",
+    "25e9d9b6e4f79a649a28584c": "기타 중고물품",
+  };
+
 export default function ProductDetail() {
     const navigate = useNavigate();
     const location = useLocation();
 
     const rawItem = location.state?.item;
+    console.log("rawItem:", rawItem);
+
+    const normalizedCategory = normalizeCategory(rawItem);
+
+    const categoryId = rawItem?.categoryId ?? rawItem?.category?._id ?? "";
+
+    const categoryName =
+    CATEGORY_MAP[categoryId] ||
+    rawItem?.category?.name ||
+    rawItem?.category ||
+    "디지털기기";
 
     const item = {
         id: rawItem?.id ?? 1,
         _id: rawItem?._id ?? rawItem?.id ?? 1,
         title: rawItem?.title ?? "iPhone 14 Pro 256GB",
         price: rawItem?.price ?? "850,000",
-        category: rawItem?.category?.name || rawItem?.category || "디지털기기",
-        categoryId: rawItem?.categoryId ?? rawItem?.category?._id ?? "",
+        category: categoryName,
+        categoryId: categoryId,
         condition: rawItem?.condition ?? "A급",
         sellerId:
             rawItem?.sellerId ??
@@ -51,6 +81,8 @@ export default function ProductDetail() {
         sellerAnalysis: rawItem?.sellerAnalysis ?? null,
     };
 
+    console.log("item:", item);
+
     const [liked, setLiked] = useState(!!item.liked);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isSellerSheetOpen, setIsSellerSheetOpen] = useState(false);
@@ -62,6 +94,9 @@ export default function ProductDetail() {
                 console.warn("categoryId가 없어서 AI 가격 가이드를 호출하지 않습니다.");
                 return;
             }
+
+            console.log("detail item.category:", item.category);
+            console.log("detail item.categoryId:", item.categoryId);
 
             try {
                 const payload = {
@@ -93,20 +128,28 @@ export default function ProductDetail() {
     const images = useMemo(() => item.images || [], [item.images]);
 
     const numericPrice = Number(String(item.price).replace(/,/g, ""));
-
+    
     const guideMin = Number(
-        priceGuide?.guideMin ??
-        priceGuide?.minPrice ??
-        priceGuide?.price_range_min ??
+        priceGuide?.buyer_range?.min ??
         item.guideMin
     );
-
+    
     const guideMax = Number(
-        priceGuide?.guideMax ??
-        priceGuide?.maxPrice ??
-        priceGuide?.price_range_max ??
+        priceGuide?.buyer_range?.max ??
         item.guideMax
     );
+    
+    const barMin = Number(
+        priceGuide?.price_range_min ??
+        guideMin
+    );
+    
+    const barMax = Number(
+        priceGuide?.price_range_max ??
+        guideMax
+    );
+    
+    const ragCount = priceGuide?.rag_sample_count ?? 5;
 
     let guideType = "mid";
     if (numericPrice < guideMin) guideType = "low";
@@ -129,8 +172,9 @@ export default function ProductDetail() {
 
     const guideInfo = guideTextMap[guideType];
 
-    const midLeft = 36;
-    const midWidth = 28;
+    const totalRange = barMax - barMin;
+    const midLeft = totalRange > 0 ? ((guideMin - barMin) / totalRange) * 100 : 20;
+    const midWidth = totalRange > 0 ? ((guideMax - guideMin) / totalRange) * 100 : 60;
 
     const minBoundaryLeft = midLeft;
     const maxBoundaryLeft = midLeft + midWidth;
@@ -253,7 +297,7 @@ export default function ProductDetail() {
                             {" "}안에 있어요
                         </div>
 
-                        <div style={styles.guideSubText}>· 유사 상품 5건 기준</div>
+                        <div style={styles.guideSubText}>· 유사 상품 {ragCount}건 기준</div>
                     </div>
 
                     <div style={styles.guideBarWrap}>
@@ -262,10 +306,10 @@ export default function ProductDetail() {
                                 style={{
                                     ...styles.guideBarActive,
                                     ...(guideType === "low"
-                                        ? styles.guideBarLow
+                                        ? { left: 0, width: `${midLeft}%` }
                                         : guideType === "mid"
-                                            ? styles.guideBarMid
-                                            : styles.guideBarHigh),
+                                            ? { left: `${midLeft}%`, width: `${midWidth}%` }
+                                            : { left: `${midLeft + midWidth}%`, width: `${100 - midLeft - midWidth}%` }),
                                     backgroundColor: guideInfo.color,
                                 }}
                             />
@@ -533,6 +577,22 @@ function TraitBar({ label, value, color }) {
             <div style={traitStyles.value}>{value}</div>
         </div>
     );
+}
+
+function normalizeCategory(rawItem) {
+    const rawCategory = rawItem?.category;
+
+    if (rawCategory && typeof rawCategory === "object") {
+        return {
+            category: rawCategory.name ?? "",
+            categoryId: rawCategory._id ?? rawItem?.categoryId ?? "",
+        };
+    }
+
+    return {
+        category: rawCategory ?? "",
+        categoryId: rawItem?.categoryId ?? "",
+    };
 }
 
 const traitStyles = {

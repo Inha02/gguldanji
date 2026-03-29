@@ -100,15 +100,38 @@ class TreePredictor:
         self.models = {}
         self._load_models()
 
+    # def _load_models(self):
+    #     if not MODEL_DIR.exists():
+    #         print("[WARN] models 디렉토리 없음")
+    #         return
+    #     for fp in MODEL_DIR.glob("*_model.pkl"):
+    #         category = fp.stem.replace("_model", "").replace("_", "/")
+    #         with open(fp, "rb") as f:
+    #             self.models[category] = pickle.load(f)
+    #     print(f"[Layer 1] {len(self.models)}개 카테고리 모델 로드됨")
     def _load_models(self):
         if not MODEL_DIR.exists():
             print("[WARN] models 디렉토리 없음")
             return
+
+        loaded_count = 0
+
         for fp in MODEL_DIR.glob("*_model.pkl"):
             category = fp.stem.replace("_model", "").replace("_", "/")
-            with open(fp, "rb") as f:
-                self.models[category] = pickle.load(f)
-        print(f"[Layer 1] {len(self.models)}개 카테고리 모델 로드됨")
+
+            try:
+                print(f"[LOAD] category={category}, path={fp}, size={fp.stat().st_size} bytes")
+
+                with open(fp, "rb") as f:
+                    self.models[category] = pickle.load(f)
+
+                loaded_count += 1
+
+            except Exception as e:
+                print(f"[ERROR] 모델 로드 실패: category={category}, path={fp}")
+                print(f"[ERROR] {type(e).__name__}: {e}")
+
+        print(f"[Layer 1] {loaded_count}개 카테고리 모델 로드됨")
 
     def predict(self, category: str, features: dict) -> dict | None:
         """
@@ -734,9 +757,11 @@ class PriceEstimator:
             q3 = max(0, round(adjusted_price * 1.10 / 1000) * 1000)
             q4 = max(0, round(adjusted_price * 1.30 / 1000) * 1000)
 
-        # 기존 호환용 price_range는 전체 범위(Q1~Q4)로
-        price_min = q1
-        price_max = q4
+        # 전체 범위를 Q1/Q4 바깥으로 확장 (저가/고가 구간이 바에 보이도록)
+        q1_q2_gap = max(q2 - q1, q1 * 0.1)  # 최소 Q1의 10%
+        q3_q4_gap = max(q4 - q3, q4 * 0.1)
+        price_min = max(0, round((q1 - q1_q2_gap) / 1000) * 1000)
+        price_max = round((q4 + q3_q4_gap) / 1000) * 1000
 
         return {
             "predicted_price": adjusted_price,

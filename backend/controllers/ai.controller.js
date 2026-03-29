@@ -47,7 +47,7 @@ export const estimatePrice = async (req, res) => {
 
 export const analyzeSellerProfile = async (req, res) => {
   try {
-    const r = await aiEngineClient.post("/profiling/analyze", req.body);
+    const r = await aiEngineClient.post("/api/v1/profiling/analyze", req.body);
 
     return res.status(200).json(r.data);
   } catch (err) {
