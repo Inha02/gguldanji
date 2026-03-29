@@ -41,7 +41,9 @@ export default function Home() {
               id: item.id || item._id,
               _id: item._id || item.id,
               title: item.title || "제목 없음",
-              price: String(item.price ?? ""),
+              price: item.price
+                ? Number(String(item.price).replace(/,/g, "")).toLocaleString("ko-KR")
+                : "",
               location:
                   typeof item.location === "object"
                       ? item.location.address || "위치 미정"
