@@ -1,41 +1,141 @@
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import HomeHeader from "../components/HomeHeader";
 import ProductCard from "../components/ProductCard";
+import { getPosts } from "../api/posts";
 
-const mock = [
-    { id: 1, title: "아이폰 14 Pro 256GB", price: "950,000", location: "서울 강남구", time: "2시간 전", tag: "저가", category: "디지털기기" },
-    { id: 2, title: "에어팟 프로 2세대(정품)", price: "210,000", location: "서울 서초구", time: "3시간 전", tag: "저가", category: "디지털기기" },
-    { id: 3, title: "이케아 스탠드 조명", price: "15,000", location: "서울 강남구", time: "4시간 전", tag: "상가", category: "가구/인테리어" },
-    { id: 4, title: "원목 책상", price: "40,000", location: "서울 강남구", time: "7시간 전", tag: "적정", category: "가구/인테리어" },
-    { id: 5, title: "검은 색 니트 조끼", price: "30,000", location: "서울 강남구", time: "8시간 전", tag: "적정", category: "여성의류" },
-    { id: 6, title: "검은 색 나이키 신발", price: "90,000", location: "서울 서초구", time: "11시간 전", tag: "상가", category: "패션잡화" },
-];
+const CATEGORY_MAP = {
+    "7ad5dbd9e4cb3f174a48676d": "디지털기기",
+    "e096b92137c6aac44e6b69e0": "가전제품",
+    "b5891a53683272fd7b02d933": "패션잡화",
+    "05a0a6a562b8853820825d89": "남성의류",
+    "c108d56149614671b7d76ae3": "여성의류",
+    "141213957cf11e237038eb2a": "스포츠/레저",
+    "6f1d2889fd3db21ede53841f": "출산/유아동",
+    "e958595973562985419f3935": "취미/게임",
+    "607edd254ec6118cd7be5e12": "뷰티/미용",
+    "3e2b3eaa856e8a3468392bb9": "반려동물용품",
+    "58d89f77218c1f29f69eabb2": "생활용품",
+    "d4bbe6c3fec70b3f2fdf161e": "가구/인테리어",
+    "b5ae6a87375715947844a78d": "도서",
+    "b5cca6912ebc8e8190626d53": "식품",
+    "a7833ac47cd87a01f96d6c89": "티켓/교환권",
+    "25e9d9b6e4f79a649a28584c": "기타 중고물품",
+};
 
 export default function Recommend() {
     const navigate = useNavigate();
+    const [posts, setPosts] = useState([]);
+    const [loading, setLoading] = useState(true);
 
-    const selectedCategories = JSON.parse(
-        localStorage.getItem("interestCategories") || "[]"
-    );
+    const selectedCategories = useMemo(() => {
+        try {
+            return JSON.parse(localStorage.getItem("selectedCategories") || "[]");
+        } catch (error) {
+            console.error("선택 카테고리 파싱 실패:", error);
+            return [];
+        }
+    }, []);
+
+    useEffect(() => {
+        const fetchPosts = async () => {
+            try {
+                const data = await getPosts();
+                console.log("GET /posts 응답:", data);
+
+                const rawPosts = Array.isArray(data) ? data : data.posts || [];
+
+                const normalizedPosts = rawPosts.map((item) => {
+                    const categoryId = item.categoryId ?? item.category?._id ?? "";
+                    const categoryName =
+                        CATEGORY_MAP[categoryId] ||
+                        item.category?.name ||
+                        item.category ||
+                        "기타 중고물품";
+
+                    return {
+                        id: item.id || item._id,
+                        _id: item._id || item.id,
+                        title: item.title || "제목 없음",
+                        price: String(item.price ?? ""),
+                        location:
+                            typeof item.location === "object"
+                                ? item.location.address || "위치 미정"
+                                : item.location || item.region || "위치 미정",
+                        time: item.time || "방금 전",
+                        tag: item.tag || "적정",
+                        category: categoryName,
+                        categoryId: categoryId,
+                        condition: item.condition || "A급",
+                        description: item.description || "",
+                        images: Array.isArray(item.images) ? item.images : [],
+                        sellerId: item.sellerId || item.seller?._id || item.seller?.id || "",
+                        seller: item.seller || null,
+                        liked: item.liked || false,
+                    };
+                });
+
+                setPosts(normalizedPosts);
+            } catch (error) {
+                console.error("추천 게시글 불러오기 실패:", error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchPosts();
+    }, []);
 
     const filteredList = useMemo(() => {
-        if (selectedCategories.length === 0) return mock;
+        if (selectedCategories.length === 0) return posts;
 
-        return mock.filter((item) =>
+        return posts.filter((item) =>
             selectedCategories.includes(item.category)
         );
-    }, [selectedCategories]);
+    }, [posts, selectedCategories]);
+
+    const handleCardClick = (item) => {
+        navigate(`/product/${item.id}`, {
+            state: {
+                item: {
+                    ...item,
+                    sellerId: item.sellerId,
+                },
+            },
+        });
+    };
+
+    if (loading) {
+        return <div style={{ padding: 16 }}>로딩 중...</div>;
+    }
 
     return (
         <>
-            <HomeHeader showBell={true} onMenuClick={() => navigate("/category")} />
+            <HomeHeader
+                showBell={true}
+                onMenuClick={() => navigate("/category")}
+                onSearchClick={() => navigate("/search")}
+            />
 
             <div style={styles.page}>
+                <div style={styles.title}>관심 카테고리 추천</div>
+
                 <div style={styles.grid}>
-                    {filteredList.map((item) => (
-                        <ProductCard key={item.id} item={item} />
-                    ))}
+                    {filteredList.length > 0 ? (
+                        filteredList.map((item) => (
+                            <div
+                                key={item.id}
+                                onClick={() => handleCardClick(item)}
+                                style={{ cursor: "pointer" }}
+                            >
+                                <ProductCard item={item} />
+                            </div>
+                        ))
+                    ) : (
+                        <div style={styles.emptyText}>
+                            선택한 카테고리의 게시글이 없습니다.
+                        </div>
+                    )}
                 </div>
             </div>
         </>
@@ -48,10 +148,26 @@ const styles = {
         backgroundColor: "#F7F8F9",
         minHeight: "100%",
     },
+    title: {
+        fontSize: 20,
+        lineHeight: "28px",
+        fontWeight: 700,
+        color: "#262627",
+        marginBottom: 16,
+    },
     grid: {
         display: "grid",
         gridTemplateColumns: "repeat(2, 1fr)",
         columnGap: 12,
         rowGap: 10,
+    },
+    emptyText: {
+        gridColumn: "1 / -1",
+        fontSize: 16,
+        lineHeight: "24px",
+        fontWeight: 400,
+        color: "#72787F",
+        textAlign: "center",
+        marginTop: 24,
     },
 };

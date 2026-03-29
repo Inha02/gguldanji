@@ -96,6 +96,11 @@ export default function Home() {
     setPage(1);
   }, [selectedCat]);
 
+    console.log("posts:", posts);
+    console.log("selectedCat:", selectedCat);
+    console.log("list:", list);
+    console.log("paginatedList:", paginatedList);
+
   const handleCardClick = (item) => {
     if (!isLoggedIn) {
       setLoginModalOpen(true);

@@ -18,7 +18,7 @@ export default function HomeHeader({ showBell = true, onMenuClick }) {
                         <BellIcon />
                     </button>
                 )}
-                <button className="icon-btn" aria-label="검색" onClick={() => {onSearchClick()}}>
+                <button className="icon-btn" aria-label="검색" onClick={() => {navigate("/search")}}>
                     <SearchIcon />
                 </button>
             </div>
