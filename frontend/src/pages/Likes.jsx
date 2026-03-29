@@ -34,6 +34,7 @@ function LikeImageCard({ item, liked, onToggleLike }) {
   const tagBg = tagStyleMap[label] || "#262627";
 
   return (
+<<<<<<< HEAD
     <div style={cardStyles.card}>
       <div style={cardStyles.imageArea}>
         {item.images && item.images.length > 0 ? (
@@ -97,6 +98,50 @@ function LikeImageCard({ item, liked, onToggleLike }) {
       </div>
     </div>
   );
+=======
+  <div style={cardStyles.card}>
+    <div style={cardStyles.imageArea}>
+      {item.images && item.images.length > 0 ? (
+        <img
+          src={getImageUrl(item.images[0])}
+          alt={item.title}
+          style={cardStyles.image}
+          onError={(e) => {
+            e.currentTarget.style.display = "none";
+          }}
+        />
+      ) : (
+        <div style={cardStyles.imagePlaceholder} />
+      )}
+
+      {/* 태그 */}
+      <div
+        style={{
+          ...cardStyles.tagBadge,
+          backgroundColor: tagBg,
+          padding: "0 6px",
+          width: 33,
+        }}
+      >
+        {label}
+      </div>
+
+      {/* 찜 버튼 */}
+      <button
+        type="button"
+        aria-label="찜"
+        onClick={onToggleLike}
+        style={cardStyles.heartButton}
+      >
+        <HeartIcon liked={liked} />
+      </button>
+
+      {/* 가격 */}
+      <div style={cardStyles.price}>{item.price}원</div>
+    </div>
+  </div>
+);
+>>>>>>> aceace9f (fix : like page)
 }
 
 function HeartIcon({ liked }) {
