@@ -12,16 +12,7 @@ const mockLikes = [
 */
 
 function LikeImageCard({ item, liked, onToggleLike }) {
-  const label = item.done ? "거래완료" : item.tag;
-
-  const tagStyleMap = {
-    저가: "#93C572",
-    상가: "#FF6666",
-    적정: "#2699E9",
-    거래완료: "#262627",
-  };
-
-  const tagBg = tagStyleMap[label] || "#262627";
+  
 
   return (
     <div style={cardStyles.card}>
@@ -39,15 +30,7 @@ function LikeImageCard({ item, liked, onToggleLike }) {
   <div style={cardStyles.imagePlaceholder} />
 )}
 
-        <div
-          style={{
-            ...cardStyles.tagBadge,
-            backgroundColor: tagBg,
-            width: label === "거래완료" ? 54 : 33,
-          }}
-        >
-          {label}
-        </div>
+        
 
         <button
           type="button"
@@ -91,7 +74,7 @@ function getImageUrl(path) {
 
 export default function Likes() {
   const [items, setItems] = useState([]);
-  const [excludeDone, setExcludeDone] = useState(false);
+  // const [excludeDone, setExcludeDone] = useState(false);
   const [sortKey, setSortKey] = useState("최신순");
   const [sortOpen, setSortOpen] = useState(false);
   const [likesState, setLikesState] = useState({});
@@ -171,7 +154,7 @@ export default function Likes() {
   const list = useMemo(() => {
   let data = [...items];
 
-  if (excludeDone) data = data.filter((x) => !x.done);
+
 
   // ✅ 최신순 (createdAt 기준 추천)
   if (sortKey === "최신순") {
@@ -194,7 +177,7 @@ export default function Likes() {
   }
 
   return data;
-}, [items, excludeDone, sortKey]); // ⭐ items 추가
+}, [items, sortKey]); // ⭐ items 추가
 
   return (
     <div style={styles.page}>
@@ -216,24 +199,7 @@ export default function Likes() {
 
       <div style={styles.main}>
         <div style={styles.filterRow}>
-          <label style={styles.excludeDone}>
-            <span style={styles.checkboxWrap}>
-              <input
-                type="checkbox"
-                checked={excludeDone}
-                onChange={(e) => setExcludeDone(e.target.checked)}
-                style={styles.hiddenCheckbox}
-              />
-              <span
-                style={{
-                  ...styles.customCheckbox,
-                  ...(excludeDone ? styles.checkedBox : {}),
-                }}
-              />
-            </span>
 
-            <span style={styles.body1}>거래완료 제외</span>
-          </label>
 
           <div style={styles.sortWrap}>
             <button
