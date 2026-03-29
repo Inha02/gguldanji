@@ -86,6 +86,9 @@ export default function ProductDetail() {
     const [isSellerSheetOpen, setIsSellerSheetOpen] = useState(false);
     const [priceGuide, setPriceGuide] = useState(null);
 
+    const [sellerAnalysis, setSellerAnalysis] = useState(item.sellerAnalysis ?? null);
+    const [isSellerLoading, setIsSellerLoading] = useState(false);
+
     useEffect(() => {
         const fetchPriceGuide = async () => {
             if (!item.categoryId) {
@@ -176,6 +179,61 @@ export default function ProductDetail() {
 
     const minBoundaryLeft = midLeft;
     const maxBoundaryLeft = midLeft + midWidth;
+
+    const handleOpenSellerProfile = async () => {
+        try {
+          setIsSellerLoading(true);
+      
+          const token = localStorage.getItem("token");
+      
+          const res = await fetch("http://localhost:4000/ai/seller-profile", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${token}`,
+            },
+            body: JSON.stringify({
+              seller_id: item.sellerId,
+              chat_logs: [ // 여기는 실제 채팅 로그 데이터로 교체해야 함
+                {"role": "buyer", "message": "안녕하세요, 아직 판매중인가요?", "timestamp": "2026-03-01T10:00:00"},
+                {"role": "seller", "message": "네 판매중입니다", "timestamp": "2026-03-01T10:01:00"},
+                {"role": "buyer", "message": "상태 어떤가요?", "timestamp": "2026-03-01T10:02:00"},
+                {"role": "seller", "message": "사용감 거의 없고요, 기스 없습니다. 구매한지 3개월 됐어요. 박스랑 충전기 다 있습니다.", "timestamp": "2026-03-01T10:03:00"},
+                {"role": "buyer", "message": "15만원에 가능할까요?", "timestamp": "2026-03-01T10:05:00"},
+                {"role": "seller", "message": "18만원까지는 가능합니다. 그 이하는 어렵습니다.", "timestamp": "2026-03-01T10:06:00"},
+                {"role": "buyer", "message": "알겠습니다. 직거래 가능한가요?", "timestamp": "2026-03-01T10:07:00"},
+                {"role": "seller", "message": "강남역 가능합니다. 오늘 저녁 7시 어떠세요?", "timestamp": "2026-03-01T10:08:00"},
+                {"role": "buyer", "message": "네 좋습니다!", "timestamp": "2026-03-01T10:09:00"},
+                {"role": "seller", "message": "오늘 7시 강남역 11번출구에서 뵙겠습니다.", "timestamp": "2026-03-01T10:10:00"}
+              ],
+              existing_profile: null,
+              all_chat_logs: null,
+            }),
+          });
+      
+          const contentType = res.headers.get("content-type") || "";
+
+          if (!contentType.includes("application/json")) {
+            const text = await res.text();
+            console.error("JSON 아닌 응답:", text);
+            throw new Error("서버가 JSON이 아닌 응답을 반환했습니다.");
+          }
+
+        const data = await res.json();
+          console.log("판매자 성향 분석 응답:", data);
+      
+          const mapped = mapSellerProfileToUI(data);
+          console.log("sellerAnalysis:", mapped);
+
+          setSellerAnalysis(mapped);
+          setIsSellerSheetOpen(true);
+        } catch (err) {
+          console.error("판매자 성향 분석 실패:", err);
+          setIsSellerSheetOpen(true);
+        } finally {
+          setIsSellerLoading(false);
+        }
+      };
 
     return (
         <div style={styles.page}>
@@ -362,7 +420,7 @@ export default function ProductDetail() {
                 <button
                     type="button"
                     style={styles.sellerBtn}
-                    onClick={() => setIsSellerSheetOpen(true)}
+                    onClick={handleOpenSellerProfile}
                 >
                     판매자 성향
                 </button>
@@ -418,7 +476,7 @@ export default function ProductDetail() {
                     <div
                         style={{
                             ...styles.sellerSheet,
-                            height: item.sellerAnalysis ? 496 : 138,
+                            height: sellerAnalysis ? 496 : 138,
                         }}
                         onClick={(e) => e.stopPropagation()}
                     >
@@ -426,32 +484,32 @@ export default function ProductDetail() {
 
                         <div style={styles.sheetTitle}>판매자 성향 분석</div>
 
-                        {item.sellerAnalysis ? (
+                        {sellerAnalysis ? (
                             <>
                                 <div style={styles.sheetSummaryBox}>
-                                    {item.sellerAnalysis.summary}
+                                    {sellerAnalysis .summary}
                                 </div>
 
                                 <div style={styles.sheetSection}>
                                     <div style={styles.sheetSectionTitleOrange}>거래 동기</div>
                                     <TraitBar
                                         label="가격 민감도"
-                                        value={item.sellerAnalysis.tradeMotivation.priceSensitivity}
+                                        value={sellerAnalysis.tradeMotivation.priceSensitivity}
                                         color="#FF8D28"
                                     />
                                     <TraitBar
                                         label="효율 지향"
-                                        value={item.sellerAnalysis.tradeMotivation.efficiency}
+                                        value={sellerAnalysis.tradeMotivation.efficiency}
                                         color="#FF8D28"
                                     />
                                     <TraitBar
                                         label="거래 즐김"
-                                        value={item.sellerAnalysis.tradeMotivation.enjoyment}
+                                        value={sellerAnalysis.tradeMotivation.enjoyment}
                                         color="#FF8D28"
                                     />
                                     <TraitBar
                                         label="협상 유연성"
-                                        value={item.sellerAnalysis.tradeMotivation.flexibility}
+                                        value={sellerAnalysis.tradeMotivation.flexibility}
                                         color="#FF8D28"
                                     />
                                 </div>
@@ -460,22 +518,22 @@ export default function ProductDetail() {
                                     <div style={styles.sheetSectionTitleBlue}>커뮤니케이션 스타일</div>
                                     <TraitBar
                                         label="응답 패턴"
-                                        value={item.sellerAnalysis.communication.responsePattern}
+                                        value={sellerAnalysis.communication.responsePattern}
                                         color="#2699E9"
                                     />
                                     <TraitBar
                                         label="정보 제공"
-                                        value={item.sellerAnalysis.communication.information}
+                                        value={sellerAnalysis.communication.information}
                                         color="#2699E9"
                                     />
                                     <TraitBar
                                         label="친근함"
-                                        value={item.sellerAnalysis.communication.friendliness}
+                                        value={sellerAnalysis.communication.friendliness}
                                         color="#2699E9"
                                     />
                                     <TraitBar
                                         label="설명 명확도"
-                                        value={item.sellerAnalysis.communication.clarity}
+                                        value={sellerAnalysis.communication.clarity}
                                         color="#2699E9"
                                     />
                                 </div>
@@ -484,17 +542,17 @@ export default function ProductDetail() {
                                     <div style={styles.sheetSectionTitleGreen}>신뢰 구축</div>
                                     <TraitBar
                                         label="제품 설명"
-                                        value={item.sellerAnalysis.trust.productDescription}
+                                        value={sellerAnalysis.trust.productDescription}
                                         color="#93C572"
                                     />
                                     <TraitBar
                                         label="거래 투명성"
-                                        value={item.sellerAnalysis.trust.transparency}
+                                        value={sellerAnalysis.trust.transparency}
                                         color="#93C572"
                                     />
                                     <TraitBar
                                         label="문제 대응"
-                                        value={item.sellerAnalysis.trust.problemSolving}
+                                        value={sellerAnalysis.trust.problemSolving}
                                         color="#93C572"
                                     />
                                 </div>
@@ -557,6 +615,9 @@ function ArrowRight() {
 }
 
 function TraitBar({ label, value, color }) {
+    const safeValue = Math.max(0, Math.min(Number(value) || 0, 5));
+    const percent = (safeValue / 5) * 100;
+
     return (
         <div style={traitStyles.row}>
             <div style={traitStyles.label}>{label}</div>
@@ -565,33 +626,56 @@ function TraitBar({ label, value, color }) {
                     <div
                         style={{
                             ...traitStyles.barFill,
-                            width: `${value}%`,
+                            width: `${percent}%`,
                             backgroundColor: color,
-                            opacity: 0.6,
+                            opacity: 0.7,
                         }}
                     />
+                    {[1, 2, 3, 4].map((step) => (
+                        <span
+                            key={step}
+                            style={{
+                                ...traitStyles.barDivider,
+                                left: `${(step / 5) * 100}%`,
+                            }}
+                        />
+                    ))}
                 </div>
             </div>
-            <div style={traitStyles.value}>{value}</div>
+            <div style={traitStyles.value}>{safeValue}/5</div>
         </div>
     );
 }
 
-function normalizeCategory(rawItem) {
-    const rawCategory = rawItem?.category;
-
-    if (rawCategory && typeof rawCategory === "object") {
-        return {
-            category: rawCategory.name ?? "",
-            categoryId: rawCategory._id ?? rawItem?.categoryId ?? "",
-        };
-    }
-
+function mapSellerProfileToUI(data) {
+    const profile = data?.profile;
+    const d = profile?.dimensions;
+  
+    if (!profile || !d) return null;
+  
     return {
-        category: rawCategory ?? "",
-        categoryId: rawItem?.categoryId ?? "",
+      summary: profile.analysis_summary ?? "",
+      tradeMotivation: {
+        priceSensitivity: d.transaction_motivation?.price_sensitivity?.score ?? 0,
+        efficiency: d.transaction_motivation?.efficiency_orientation?.score ?? 0,
+        enjoyment: d.transaction_motivation?.enjoyment_orientation?.score ?? 0,
+        flexibility: d.transaction_motivation?.negotiation_flexibility?.score ?? 0,
+      },
+      communication: {
+        responsePattern: d.communication_style?.response_pattern?.score ?? 0,
+        information: d.communication_style?.information_proactivity?.score ?? 0,
+        friendliness: d.communication_style?.tone_friendliness?.score ?? 0,
+        clarity: d.communication_style?.clarity_structure?.score ?? 0,
+      },
+      trust: {
+        productDescription: d.trust_building?.product_description_detail?.score ?? 0,
+        transparency: d.trust_building?.transaction_transparency?.score ?? 0,
+        problemSolving: d.trust_building?.issue_handling_attitude?.score ?? 0,
+      },
+      rawProfile: profile,
     };
-}
+  }
+
 
 const traitStyles = {
     row: {
@@ -616,7 +700,7 @@ const traitStyles = {
     },
 
     barBg: {
-        width: "100%",
+        width: "260px",
         height: 10,
         borderRadius: 12,
         backgroundColor: COLORS.gray100,
