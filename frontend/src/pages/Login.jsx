@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
-
+import kakaoIcon from "../icons/kakao_talk.svg";
 
 export default function Login() {
     const navigate = useNavigate();
@@ -93,15 +93,12 @@ export default function Login() {
 
                     {/* 또는 아래 12, 원 58x58, 간격 28 */}
                     <div style={styles.socialRow}>
-                        <button type="button" style={{ ...styles.socialBtn, ...styles.naver }}>
-                            <span style={styles.naverText}>N</span>
-                        </button>
-
                         <button 
                         type="button" style={{ ...styles.socialBtn, ...styles.kakao }} onClick={() => {
         window.location.href = "http://localhost:4000/auth/kakao";
     }}>
-                            <span style={styles.kakaoText}>TALK</span>
+    <img 
+        src={kakaoIcon} alt="카카오 로그인" style={styles.kakaoIcon} />
                         </button>
                     </div>
 
@@ -227,26 +224,18 @@ const styles = {
         height: 58,
         borderRadius: "50%",
         border: "none",
-        display: "grid",
+        display: "flex",
         placeItems: "center",
+        justifyContent: "center",
         cursor: "pointer",
-    },
-
-    // 로고는 나중에 이미지로 교체하면 됨 (지금은 임시)
-    naver: { backgroundColor: "#2DB400" },
-    naverText: {
-        color: "#FDFDFD",
-        fontSize: 22,
-        lineHeight: "22px",
-        fontWeight: 800,
+        padding: 0,
     },
 
     kakao: { backgroundColor: "#FBE200" },
-    kakaoText: {
-        color: "#262627",
-        fontSize: 12,
-        lineHeight: "12px",
-        fontWeight: 800,
+    kakaoIcon: {
+        width: 29,
+        height: 29,
+        objectFit:"contain",
     },
 
     signup: {
