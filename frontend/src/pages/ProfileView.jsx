@@ -5,6 +5,7 @@ import img1 from "../icons/ProfileViewImage1.svg";
 import img2 from "../icons/ProfileViewImage2.svg";
 import img3 from "../icons/ProfileViewImage3.svg";
 import img4 from "../icons/ProfileViewImage4.svg";
+import shareIcon from "../icons/mynaui_wrench.svg";
 
 const imagePool = [img1, img2, img3, img4];
 
@@ -180,7 +181,7 @@ export default function ProfileView() {
 
         <div style={styles.headerRight}>
           <button type="button" aria-label="공유" style={styles.iconBtn}>
-            <span style={styles.shareIcon}>↥</span>
+            <img src={shareIcon} alt="공유" style={styles.shareIcon} />
           </button>
 
           <button type="button" aria-label="메뉴" style={styles.iconBtn}>
