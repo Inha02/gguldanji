@@ -9,15 +9,13 @@ export default function MyPage() {
     const handleLogout = () => {
         // 로그아웃 로직
         localStorage.removeItem("token")
-        localStorage.removeItem("userId")
         navigate("/login");
     };
 
     useEffect(() => {
-        const userId = localStorage.getItem("userId");
         const token = localStorage.getItem("token");
     
-        if (!userId) return;
+        if (!token) return;
     
         const fetchUser = async () => {
             try {
