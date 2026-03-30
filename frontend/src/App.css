@@ -178,20 +178,24 @@ body {
 .home-banner__text {
   display: flex;
   flex-direction: column;
+  text-shadow: #262627 0px 5px 10px;
 }
 
 .home-banner__title {
+  margin-left: 20px;
   color: #F7F8F9;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 1.2;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+  text-shadow: #262627 0px 5px 10px;
 }
 
 .home-banner__sub {
-  margin-top: 4px;
+  margin-left: 20px;
   color: rgba(247, 248, 249, 0.9);
-  font-size: 13px;
-  line-height: 1.2;
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 600;
 }
 
 .home-banner__arrow {
@@ -199,6 +203,7 @@ body {
   display: grid;
   place-items: center;
   flex-shrink: 0;
+  text-shadow: #262627 0px 5px 10px;
 }
 
 
