@@ -15,6 +15,26 @@ function shuffle(arr) {
   return copy;
 }
 
+function getTimeAge(createdAt){
+  if (!createdAt) return "방금 전";
+  const now=new Date();
+  const created=new Date(createdAt);
+  const diffMs =now-created;
+  const diffSec=Math.floor(diffMs/1000);
+  if(diffSec<60) return "방금 전";
+  const diffMin=Math.floor(diffSec/60);
+  if(diffMin<60) return `${diffMin}분 전`;
+  const diffHour=Math.floor(diffMin/60);
+  if(diffHour<24) return `${diffHour}시간 전`;
+  const diffDay=Math.floor(diffHour/24);
+  if(diffDay<7) return `${diffDay}일 전`;
+  const diffMonth=Math.floor(diffDay/30);
+  if(diffMonth<12) return `${diffMonth}달 전`;
+  const diffYear=Math.floor(diffMonth/12);
+  return `${diffYear}년 전`;
+}
+
+
 export default function Home() {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
@@ -48,7 +68,7 @@ export default function Home() {
                   typeof item.location === "object"
                       ? item.location.address || "위치 미정"
                       : item.location || item.region || "위치 미정",
-              time: item.time || "방금 전",
+              time: getTimeAge(item.createdAt),
               tag: item.tag || "적정",
 
               category: item.category?.name || item.category || "기타 중고물품",
