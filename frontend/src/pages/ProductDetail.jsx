@@ -94,6 +94,8 @@ export default function ProductDetail() {
     const [isSellerLoading, setIsSellerLoading] = useState(false);
     const [chatLogs, setChatLogs] = useState(null);
 
+    const [menuOpen, setMenuOpen] = useState(false);
+
     const [sellerInfo, setSellerInfo] = useState({
         nickname: item.seller.nickname,
         town: item.seller.town,
@@ -356,9 +358,43 @@ const handleLike = async () => {
                         <HeartIcon liked={liked} />
                     </button>
 
-                    <button type="button" aria-label="메뉴" style={styles.iconBtn}>
-                        <span style={styles.kebabDots} />
-                    </button>
+                    
+                    <div style={styles.kebabWrap}>
+                        <button
+                            type="button"
+                            aria-label="메뉴"
+                            style={styles.iconBtn}
+                            onClick={() => setMenuOpen((prev) => !prev)}
+                        >
+                            <span style={styles.kebabDots} />
+                        </button>
+
+                        {menuOpen && (
+                            <div style={styles.kebabMenu}>
+                                <button
+                                    type="button"
+                                    style={styles.kebabMenuItem}
+                                    onClick={() => {
+                                        setMenuOpen(false);
+                                        console.log("신고하기 클릭");
+                                    }}
+                                >
+                                    신고하기
+                                </button>
+
+                                <button
+                                    type="button"
+                                    style={styles.kebabMenuItem}
+                                    onClick={() => {
+                                        setMenuOpen(false);
+                                        console.log("차단하기 클릭");
+                                    }}
+                                >
+                                    차단하기
+                                </button>
+                            </div>
+                        )}
+                    </div>
                 </div>
             </div>
 
@@ -1351,5 +1387,40 @@ const styles = {
         lineHeight: "20px",
         fontWeight: 700,
         color: "#93C572",
+    },
+
+    kebabWrap: {
+        position: "relative",
+    },
+
+    kebabMenu: {
+        position: "absolute",
+        right: 0,
+        top: 30,
+        width: 88,
+        backgroundColor: "#FDFDFD",
+        border: `1px solid ${COLORS.gray100}`,
+        borderRadius: 12,
+        boxShadow: "0 6px 18px rgba(0,0,0,0.08)",
+        zIndex: 20,
+        padding: "8px 0",
+        display: "flex",
+        flexDirection: "column",
+        gap: 4,
+        boxSizing: "border-box",
+    },
+
+    kebabMenuItem: {
+        width: "100%",
+        height: 24,
+        border: "none",
+        background: "transparent",
+        cursor: "pointer",
+        padding: 0,
+        fontSize: 16,
+        lineHeight: "24px",
+        fontWeight: 400,
+        color: COLORS.black,
+        textAlign: "center",
     },
 };
