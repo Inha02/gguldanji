@@ -29,6 +29,7 @@ export default function ChatList() {
             id: room._id,
             name: opponent?.nickname || "상대방",
             product: room.postId?.title || "상품",
+            profileImage: opponent?.profileImage || "", // ⭐ 추가
             messages: room.lastMessage
               ? [
                   {
@@ -49,6 +50,12 @@ export default function ChatList() {
     fetchRooms();
   }, []);
 
+  function getImageUrl(path) {
+    if (!path) return "";
+    if (path.startsWith("http")) return path;
+    return `http://localhost:4000/${path}`;
+  }
+
   return (
     <div className="chatlist-page">
       <div className="chatlist-header">
@@ -60,8 +67,6 @@ export default function ChatList() {
       </div>
 
       <div className="chatlist-sheet">
-        
-
         <div className="chatlist-list">
           {chatRooms.map((chat) => {
             const lastMessage = chat.messages[chat.messages.length - 1];
@@ -72,7 +77,24 @@ export default function ChatList() {
                 className="chatlist-item"
                 onClick={() => navigate(`/chat/${chat.id}`)}
               >
-                
+                <div className="chatlist-avatar">
+                  {chat.profileImage ? (
+                    <img
+                      src={getImageUrl(chat.profileImage)}
+                      alt="프로필"
+                      className="chat-avatar"
+                      onError={(e) => {
+                        e.currentTarget.src = "https://gguldanji-images.s3.ap-southeast-2.amazonaws.com/image+6.png"; // 기본 이미지
+                      }}
+                    />
+                  ) : (
+                    <img
+                    src="https://gguldanji-images.s3.ap-southeast-2.amazonaws.com/image+6.png"
+                    alt="기본 프로필"
+                    className="chat-avatar"
+                  />
+                  )}
+                </div>
 
                 <div className="chatlist-content">
                   <div className="chatlist-top">
