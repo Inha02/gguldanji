@@ -272,7 +272,7 @@ const styles = {
     columnGap: 12,
     rowGap: 10,
   },
-  
+
   loadingContainer: {
     width: "100%",
     height: "100vh",
@@ -290,9 +290,9 @@ const styles = {
   },
 
   loadingText: {
-    fontSize: 14, // Body2 기준
-    lineHeight: "20px",
-    fontWeight: 400,
+    fontSize: 20,
+    lineHeight: "28px",
+    fontWeight: 600,
     color: "#262627",
   },
 

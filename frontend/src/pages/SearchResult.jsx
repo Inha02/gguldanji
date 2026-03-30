@@ -284,9 +284,9 @@ const modalStyles = {
     },
 
     loadingText: {
-        fontSize: 14, // Body2 기준
-        lineHeight: "20px",
-        fontWeight: 400,
+        fontSize: 20,
+        lineHeight: "28px",
+        fontWeight: 600,
         color: "#262627",
     },
 };
