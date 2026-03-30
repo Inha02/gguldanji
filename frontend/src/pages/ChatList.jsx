@@ -60,9 +60,7 @@ export default function ChatList() {
       </div>
 
       <div className="chatlist-sheet">
-        <div className="chatlist-greeting text-body-2">안녕하세요, 최00님!</div>
-
-        <div className="chatlist-divider" />
+        
 
         <div className="chatlist-list">
           {chatRooms.map((chat) => {
