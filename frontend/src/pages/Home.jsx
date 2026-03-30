@@ -5,6 +5,7 @@ import HomeHeader from "../components/HomeHeader";
 import HomeBanner from "../components/HomeBanner";
 import ProductCard from "../components/ProductCard";
 import { getPosts } from "../api/posts";
+import logo from "../icons/honeypot.svg";
 
 function shuffle(arr) {
   const copy = [...arr];
@@ -141,7 +142,12 @@ export default function Home() {
   };
 
   if (loading) {
-    return <div style={{ padding: 16 }}>로딩 중...</div>;
+    return (
+      <div style={styles.loadingContainer}>
+        <img src={logo} alt="꿀단지 로고" style={styles.loadingLogo} />
+        <div style={styles.loadingText}>잠시만 기다려주세요</div>
+      </div>
+    )
   }
 
   return (
@@ -266,6 +272,30 @@ const styles = {
     columnGap: 12,
     rowGap: 10,
   },
+  
+  loadingContainer: {
+    width: "100%",
+    height: "100vh",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 12,
+    backgroundColor: "#F7F8F9",
+  },
+
+  loadingLogo: {
+    width: 80,
+    height: "auto",
+  },
+
+  loadingText: {
+    fontSize: 14, // Body2 기준
+    lineHeight: "20px",
+    fontWeight: 400,
+    color: "#262627",
+  },
+
   emptyText: {
     gridColumn: "1 / -1",
     fontSize: 16,

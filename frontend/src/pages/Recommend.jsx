@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import HomeHeader from "../components/HomeHeader";
 import ProductCard from "../components/ProductCard";
 import { getPosts } from "../api/posts";
+import logo from "../icons/gguldanjiLogo.svg";
 
 const CATEGORY_MAP = {
     "7ad5dbd9e4cb3f174a48676d": "디지털기기",
@@ -105,9 +106,14 @@ export default function Recommend() {
         });
     };
 
-    if (loading) {
-        return <div style={{ padding: 16 }}>로딩 중...</div>;
-    }
+      if (loading) {
+        return (
+          <div style={styles.loadingContainer}>
+            <img src={logo} alt="꿀단지 로고" style={styles.loadingLogo} />
+            <div style={styles.loadingText}>잠시만 기다려주세요</div>
+          </div>
+        )
+      }
 
     return (
         <>
@@ -169,5 +175,28 @@ const styles = {
         color: "#72787F",
         textAlign: "center",
         marginTop: 24,
+    },
+
+    loadingContainer: {
+        width: "100%",
+        height: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: 12,
+        backgroundColor: "#F7F8F9",
+    },
+
+    loadingLogo: {
+        width: 80,
+        height: "auto",
+    },
+
+    loadingText: {
+        fontSize: 14, // Body2 기준
+        lineHeight: "20px",
+        fontWeight: 400,
+        color: "#262627",
     },
 };
