@@ -43,9 +43,6 @@ export default function Onboarding() {
     const navigate = useNavigate();
     const [step, setStep] = useState(0);
     const [selectedCategories, setSelectedCategories] = useState([
-        "여성의류",
-        "패션잡화",
-        "뷰티/미용",
     ]);
 
     const current = steps[step];
