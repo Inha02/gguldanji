@@ -29,6 +29,9 @@ export const initSocket = (io) => {
     socket.on("send_message", async (data) => {
   try {
     const { roomId, content, image, token } = data;
+    console.log("🔥 send_message from:", socket.id);
+    const rooms = Array.from(socket.rooms);
+    console.log("🔥 이 소켓이 속한 방:", rooms);
 
     // ⭐ 토큰에서 유저 추출
     const decoded = jwt.verify(token, process.env.JWT_SECRET);

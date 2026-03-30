@@ -72,9 +72,7 @@ export default function ChatList() {
                 className="chatlist-item"
                 onClick={() => navigate(`/chat/${chat.id}`)}
               >
-                <div className="chatlist-avatar">
-                  <div className="chatlist-bear" />
-                </div>
+                
 
                 <div className="chatlist-content">
                   <div className="chatlist-top">

@@ -178,20 +178,25 @@ export default function Chat() {
   }, [roomId]);
   */
 
-  const joinedRef = useRef(false);
+  // const joinedRef = useRef(false);
+
 
   useEffect(() => {
-    if (!roomId || joinedRef.current) return;
+    if (!roomId) return;
 
+    socket.off("receive_message");
     // 채팅방 입장
     socket.emit("join_room", roomId);
-    joinedRef.current = true;
+    // joinedRef.current = true;
 
     // 실시간 메시지
     socket.on("receive_message", (msg) => {
-      const exists = room?.messages?.find((m) => m.id === msg._id);
-      if (exists) return;
+        console.log("받은 메시지:", msg);
+        if (msg.senderId?._id === MY_ID) return;
+      // const exists = room?.messages?.find((m) => m.id === msg._id);
+      // if (exists) return;
 
+      /** 
       setTimeout(() => {
         addMessageToRoom(roomId, {
           id: msg._id,
@@ -203,13 +208,24 @@ export default function Chat() {
             hour12: true,
           }),
         });
-      }, 0);
+      }, 0);*/
+      addMessageToRoom(roomId, {
+        id: msg._id,
+        side: msg.senderId?._id === MY_ID ? "right" : "left",
+        text: msg.content,
+        time: new Date(msg.createdAt).toLocaleTimeString("ko-KR", {
+          hour: "2-digit",
+          minute: "2-digit",
+          hour12: true,
+        }),
+        profileImage: msg.senderId?.profileImage,
+      });
     });
 
     return () => {
       socket.off("receive_message");
     };
-  }, [roomId]);
+  }, [roomId, MY_ID]);
 
   if (!room) {
     // return <div className="chat-page">채팅방을 찾을 수 없습니다.</div>;
