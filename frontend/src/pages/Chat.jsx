@@ -42,68 +42,68 @@ export default function Chat() {
   }
   const MY_ID = getUserIdFromToken(token);
   useEffect(() => {
-  const init = async () => {
-    try {
-      // 1️⃣ 방 먼저 가져오기
-      const resRoom = await fetch(
-        `http://localhost:4000/chat/rooms/${roomId}`,
-        {
-          headers: { Authorization: `Bearer ${token}` },
-        }
-      );
+    const init = async () => {
+      try {
+        // 1️⃣ 방 먼저 가져오기
+        const resRoom = await fetch(
+          `http://localhost:4000/chat/rooms/${roomId}`,
+          {
+            headers: { Authorization: `Bearer ${token}` },
+          },
+        );
 
-      const roomData = await resRoom.json();
+        const roomData = await resRoom.json();
 
-      addRoom({
-        id: roomData._id,
-        name: roomData.opponent?.nickname,
-        post: roomData.postId,
-        product: roomData.postId?.title,
-        price: roomData.postId?.price,
+        addRoom({
+          id: roomData._id,
+          name: roomData.opponent?.nickname,
+          post: roomData.postId,
+          product: roomData.postId?.title,
+          price: roomData.postId?.price,
 
-        messages: [],
-        tag: "적정",
-      });
-
-      // 2️⃣ 메시지 가져오기
-      const resMsg = await fetch(
-        `http://localhost:4000/chat/rooms/${roomId}/messages`,
-        {
-          headers: { Authorization: `Bearer ${token}` },
-        }
-      );
-
-      const data = await resMsg.json();
-
-      data.messages.forEach((msg) => {
-        addMessageToRoom(roomId, {
-          id: msg._id,
-          side: msg.senderId._id === MY_ID ? "right" : "left",
-          text: msg.content,
-          time: new Date(msg.createdAt).toLocaleTimeString("ko-KR", {
-            hour: "2-digit",
-            minute: "2-digit",
-            hour12: true,
-          }),
+          messages: [],
+          tag: "적정",
         });
-      });
 
-      // 3️⃣ 읽음 처리
-      await fetch(`http://localhost:4000/chat/rooms/${roomId}/read`, {
-        method: "PATCH",
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+        // 2️⃣ 메시지 가져오기
+        const resMsg = await fetch(
+          `http://localhost:4000/chat/rooms/${roomId}/messages`,
+          {
+            headers: { Authorization: `Bearer ${token}` },
+          },
+        );
 
-    } catch (err) {
-      console.error("❌ init 에러:", err);
-    }
-  };
+        const data = await resMsg.json();
 
-  init();
-}, [roomId]);
-/*
+        data.messages.forEach((msg) => {
+          addMessageToRoom(roomId, {
+            id: msg._id,
+            side: msg.senderId._id === MY_ID ? "right" : "left",
+            text: msg.content,
+            time: new Date(msg.createdAt).toLocaleTimeString("ko-KR", {
+              hour: "2-digit",
+              minute: "2-digit",
+              hour12: true,
+            }),
+            profileImage: msg.senderId?.profileImage,
+          });
+        });
+
+        // 3️⃣ 읽음 처리
+        await fetch(`http://localhost:4000/chat/rooms/${roomId}/read`, {
+          method: "PATCH",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+      } catch (err) {
+        console.error("❌ init 에러:", err);
+      }
+    };
+
+    init();
+  }, [roomId]);
+  /*
   useEffect(() => {
     const fetchMessages = async () => {
       const res = await fetch(
@@ -211,8 +211,6 @@ export default function Chat() {
     };
   }, [roomId]);
 
-
-
   if (!room) {
     // return <div className="chat-page">채팅방을 찾을 수 없습니다.</div>;
     return <div className="chat-page">로딩중...</div>;
@@ -281,12 +279,15 @@ export default function Chat() {
     }
   };
 
-  const tagClassName =
-    room.tag === "저가"
-      ? "chat-topcard__tag--low"
-      : room.tag === "상가"
-        ? "chat-topcard__tag--high"
-        : "chat-topcard__tag--fair";
+  const today = new Date();
+
+  const formattedDate = `${today.getMonth() + 1}월 ${today.getDate()}일`;
+
+  function getImageUrl(path) {
+    if (!path) return "";
+    if (path.startsWith("http")) return path;
+    return `http://localhost:4000/${path}`;
+  }
 
   return (
     <div className="chat-page">
@@ -313,21 +314,30 @@ export default function Chat() {
       {/* 상품 정보 */}
       <div className="chat-topcard">
         <div className="chat-topcard__row">
-          <div className="chat-topcard__thumb" />
+          {room?.post?.images?.[0] ? (
+            <img
+              src={getImageUrl(room.post.images[0])}
+              alt="상품 이미지"
+              className="chat-topcard__thumb"
+              onError={(e) => {
+                e.currentTarget.style.display = "none";
+              }}
+            />
+          ) : (
+            <div className="chat-topcard__thumb" />
+          )}
 
           <div className="chat-topcard__info">
             <div className="chat-topcard__product">{productTitle}</div>
             <div className="chat-topcard__price">{productPrice}</div>
           </div>
-
-          <div className={`chat-topcard__tag ${tagClassName}`}>{room.tag}</div>
         </div>
       </div>
 
       {/* 흰 박스 */}
       <div className="chat-sheet">
         <div className="chat-body">
-          <div className="chat-date-pill">1월 14일</div>
+          <div className="chat-date-pill">{formattedDate}</div>
 
           {room.messages.map((m) => (
             <div
@@ -335,9 +345,24 @@ export default function Chat() {
               key={`${m.id}-${m.time}`}
               className={`chat-row ${m.side === "right" ? "is-right" : "is-left"}`}
             >
-              {m.side === "left" && (
-                <div className="chat-avatar" aria-hidden="true" />
-              )}
+              {m.side === "left" &&
+                (m.profileImage ? (
+                  <img
+                    src={m.profileImage}
+                    alt="프로필"
+                    className="chat-avatar"
+                    onError={(e) => {
+                      e.currentTarget.src =
+                        "https://gguldanji-images.s3.ap-southeast-2.amazonaws.com/image+6.png";
+                    }}
+                  />
+                ) : (
+                  <img
+                    src="https://gguldanji-images.s3.ap-southeast-2.amazonaws.com/image+6.png"
+                    alt="기본 프로필"
+                    className="chat-avatar"
+                  />
+                ))}
 
               <div className="chat-bubble-wrap">
                 <div
