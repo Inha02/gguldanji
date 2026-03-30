@@ -57,6 +57,7 @@ app.use("/chat", chatRoutes);
 app.use("/ai", aiRoutes);
 app.use("/chat_ai", chatAiRoutes);
 app.use("/likes", likeRoutes); 
+app.use("/uploads", express.static("uploads"));
 
 // DB 연결 후 서버 시작
 const startServer = async () => {

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -43,9 +43,7 @@ export default function Post() {
 
   const [locationOpen, setLocationOpen] = useState(false);
   const [selectedTown, setSelectedTown] = useState(null);
-  const verifiedTowns = JSON.parse(
-    localStorage.getItem("verifiedTowns") || "[]",
-  );
+  const [verifiedTowns, setVerifiedTowns] = useState([]);
   const [images, setImages] = useState([]);
 
   const toggleOption = (key) => {
@@ -101,6 +99,42 @@ export default function Post() {
       console.error("게시글 생성 실패:", err);
     }
   };
+
+  useEffect(() => {
+  const fetchLocation = async () => {
+    try {
+      const token = localStorage.getItem("token");
+
+      const res = await fetch("http://localhost:4000/users/me", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      const data = await res.json();
+
+      console.log("유저 location:", data.location);
+
+      // ⭐ string → 배열로 변환
+      if (data.location) {
+        setVerifiedTowns([
+          {
+            id: 1,
+            name: data.location,
+          },
+        ]);
+      } else {
+        setVerifiedTowns([]);
+      }
+
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  fetchLocation();
+}, []);
+
   return (
     <div style={styles.page}>
       {/* Header */}
@@ -423,9 +457,7 @@ export default function Post() {
                   </button>
                 </div>
 
-                <div style={styles.selectedTownMap}>
-                  <div style={styles.selectedTownMapPlaceholder} />
-                </div>
+            
               </div>
             </div>
           )}

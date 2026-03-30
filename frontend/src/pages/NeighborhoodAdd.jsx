@@ -72,7 +72,7 @@ export default function NeighborhoodAdd() {
 
     if (res.ok) {
       alert("동네 인증 완료!");
-      navigate("/mypage");
+      navigate("/NeighborhoodManage");
     } else {
       alert(data.message || "실패");
     }

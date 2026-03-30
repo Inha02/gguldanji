@@ -1,6 +1,8 @@
 import express from "express";
 import auth from "../middlewares/auth.js";
 import multer from "multer";
+import path from "path";
+
 import {
   createPost,
   getPosts,
@@ -9,9 +11,17 @@ import {
   deletePost
 } from "../controllers/post.controller.js";
 const router = express.Router();
-const upload = multer({
-  dest: "uploads/",
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "uploads/");
+  },
+  filename: (req, file, cb) => {
+    const ext = path.extname(file.originalname); // ⭐ 확장자 추출 (.jpg)
+    cb(null, Date.now() + ext); // ⭐ 파일명 + 확장자
+  }
 });
+
+const upload = multer({ storage });
 
 /**
  * @swagger

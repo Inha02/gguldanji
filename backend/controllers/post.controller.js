@@ -16,7 +16,7 @@ export const createPost = async (req, res) => {
     const {
       title,
       description,
-      images,
+      // images,
       categoryId,
       price,
       isFree,
@@ -37,7 +37,8 @@ export const createPost = async (req, res) => {
       title,
       description,
 
-      images: images || [],
+      //images: images || [],
+      images: imageUrls,
 
       // ✅ 3. categoryId 임시 처리
       categoryId: categoryId || null,
@@ -56,7 +57,7 @@ export const createPost = async (req, res) => {
         lat: 37.5326,
         lng: 126.9906
       },
-      
+
       images: imageUrls,
     });
 
