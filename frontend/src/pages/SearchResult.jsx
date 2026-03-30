@@ -1,46 +1,98 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
+import { COLORS } from "../constants/colors";
 import HomeHeader from "../components/HomeHeader";
 import ProductCard from "../components/ProductCard";
-import { COLORS } from "../constants/colors";
-
-const mock = [
-    { id: 1, title: "아이폰 14 Pro 256GB", price: "950,000", location: "서울 강남구", time: "2시간 전", tag: "저가", category: "디지털기기" },
-    { id: 2, title: "에어팟 프로 2세대(정품)", price: "210,000", location: "서울 서초구", time: "3시간 전", tag: "저가", category: "디지털기기" },
-    { id: 3, title: "이케아 스탠드 조명", price: "15,000", location: "서울 강남구", time: "4시간 전", tag: "상가", category: "가구/인테리어" },
-    { id: 4, title: "원목 책상", price: "40,000", location: "서울 강남구", time: "7시간 전", tag: "적정", category: "가구/인테리어" },
-    { id: 5, title: "검은 색 니트 조끼", price: "30,000", location: "서울 강남구", time: "8시간 전", tag: "적정", category: "여성의류" },
-    { id: 6, title: "검은 색 나이키 신발", price: "90,000", location: "서울 서초구", time: "11시간 전", tag: "상가", category: "패션잡화" },
-];
+import { getPosts } from "../api/posts";
 
 export default function SearchResult() {
     const navigate = useNavigate();
     const [searchParams] = useSearchParams();
-    const keyword = searchParams.get("q") || "";
-    console.log("keyword", keyword);
-
+    const keyword = (searchParams.get("q") || "").trim();
     const isLoggedIn = !!localStorage.getItem("token");
+
+    const [posts, setPosts] = useState([]);
+    const [loading, setLoading] = useState(true);
     const [loginModalOpen, setLoginModalOpen] = useState(false);
 
-    const list = useMemo(() => {
-        const lower = keyword.trim().toLowerCase();
-        if (!lower) return [];
-        return mock.filter((item) =>
-            item.title.toLowerCase().includes(lower) ||
-            item.category.toLowerCase().includes(lower) ||
-            item.location.toLowerCase().includes(lower)
-        );
-    }, [keyword]);
+    useEffect(() => {
+        const fetchPosts = async () => {
+            try {
+                const data = await getPosts();
+                console.log("GET /posts 응답:", data);
 
-    console.log("list", list);
+                const normalizedPosts = (
+                    Array.isArray(data) ? data : data.posts || []
+                ).map((item) => ({
+                    id: item.id || item._id,
+                    _id: item._id || item.id,
+                    title: item.title || "제목 없음",
+                    price: item.price
+                        ? Number(String(item.price).replace(/,/g, "")).toLocaleString("ko-KR")
+                        : "",
+                    location:
+                        typeof item.location === "object"
+                            ? item.location.address || "위치 미정"
+                            : item.location || item.region || "위치 미정",
+                    time: item.time || "방금 전",
+                    tag: item.tag || "적정",
+                    category: item.category?.name || item.category || "기타 중고물품",
+                    categoryId: item.categoryId || item.category?._id || "",
+                    description: item.description || "",
+                    images: Array.isArray(item.images) ? item.images : [],
+                    sellerId: item.sellerId || item.seller?._id || item.seller?.id || "",
+                    seller: item.seller || null,
+                    liked: item.liked || false,
+                }));
+
+                setPosts(normalizedPosts);
+            } catch (error) {
+                console.error("검색 결과 불러오기 실패:", error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchPosts();
+    }, []);
+
+    const filteredPosts = useMemo(() => {
+        if (!keyword) return [];
+
+        const lowerKeyword = keyword.toLowerCase();
+
+        return posts.filter((item) => {
+            const title = item.title?.toLowerCase() || "";
+            const description = item.description?.toLowerCase() || "";
+            const category = item.category?.toLowerCase() || "";
+
+            return (
+                title.includes(lowerKeyword) ||
+                description.includes(lowerKeyword) ||
+                category.includes(lowerKeyword)
+            );
+        });
+    }, [posts, keyword]);
 
     const handleCardClick = (item) => {
         if (!isLoggedIn) {
             setLoginModalOpen(true);
             return;
         }
-        navigate(`/product/${item.id}`, { state: { item } });
+
+        navigate(`/product/${item.id}`, {
+            state: {
+                item: {
+                    ...item,
+                    sellerId: item.sellerId,
+                },
+            },
+        });
     };
+
+    if (loading) {
+        return <div style={{ padding: 16 }}>로딩 중...</div>;
+    }
 
     return (
         <>
@@ -52,24 +104,31 @@ export default function SearchResult() {
 
             <div style={styles.page}>
                 <div style={styles.resultText}>
-                    '{keyword}'에 대한 검색 결과
+                    ‘{keyword}’에 대한 검색 결과
                 </div>
 
-                <div style={styles.grid}>
-                    {list.map((item) => (
-                        <div
-                            key={item.id}
-                            onClick={() => handleCardClick(item)}
-                            style={{ cursor: "pointer" }}
-                        >
-                            <ProductCard item={item} />
-                        </div>
-                    ))}
-                </div>
+                {filteredPosts.length > 0 ? (
+                    <div style={styles.grid}>
+                        {filteredPosts.map((item) => (
+                            <div
+                                key={item.id}
+                                onClick={() => handleCardClick(item)}
+                                style={{ cursor: "pointer" }}
+                            >
+                                <ProductCard item={item} />
+                            </div>
+                        ))}
+                    </div>
+                ) : (
+                    <div style={styles.emptyText}>검색 결과가 없습니다.</div>
+                )}
             </div>
 
             {loginModalOpen && (
-                <div style={modalStyles.backdrop} onClick={() => setLoginModalOpen(false)}>
+                <div
+                    style={modalStyles.backdrop}
+                    onClick={() => setLoginModalOpen(false)}
+                >
                     <div style={modalStyles.modal} onClick={(e) => e.stopPropagation()}>
                         <div style={modalStyles.iconWrap}>
                             <div style={modalStyles.infoIcon}>i</div>
@@ -113,13 +172,21 @@ const styles = {
         lineHeight: "24px",
         fontWeight: 400,
         color: COLORS.black,
+        marginBottom: 8,
     },
     grid: {
-        marginTop: 8,
         display: "grid",
         gridTemplateColumns: "repeat(2, 1fr)",
         columnGap: 12,
         rowGap: 10,
+    },
+    emptyText: {
+        fontSize: 16,
+        lineHeight: "24px",
+        fontWeight: 400,
+        color: COLORS.gray500,
+        textAlign: "center",
+        marginTop: 24,
     },
 };
 
@@ -145,7 +212,9 @@ const modalStyles = {
         justifyContent: "center",
         padding: 16,
     },
-    iconWrap: { marginBottom: 8 },
+    iconWrap: {
+        marginBottom: 8,
+    },
     infoIcon: {
         width: 22,
         height: 22,
@@ -165,6 +234,9 @@ const modalStyles = {
         color: "#262627",
         textAlign: "center",
         marginBottom: 15,
+        overflow: "hidden",
+        textOverflow: "ellipsis",
+        whiteSpace: "nowrap",
     },
     btnRow: {
         width: "100%",
