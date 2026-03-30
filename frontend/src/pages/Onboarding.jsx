@@ -3,6 +3,9 @@ import { useNavigate } from "react-router-dom";
 import { COLORS } from "../constants/colors";
 import { CATEGORY_ITEMS } from "../constants/categories";
 import honeypotIcon from "../icons/honeypot.svg";
+import onboarding1 from "../icons/onboarding1.svg";
+import onboarding2 from "../icons/onboarding2.svg";
+import onboarding3 from "../icons/onboarding3.svg";
 
 const steps = [
     {
@@ -100,6 +103,30 @@ export default function Onboarding() {
                                 <div key={idx}>{line}</div>
                             ))}
                         </div>
+
+                        {current.type === "intro1" && (
+                            <img
+                                src={onboarding1}
+                                alt="온보딩 1"
+                                style={styles.intro1Image}
+                            />
+                        )}
+
+                        {current.type === "intro2" && (
+                            <img
+                                src={onboarding2}
+                                alt="온보딩 2"
+                                style={styles.intro2Image}
+                            />
+                        )}
+
+                        {current.type === "intro3" && (
+                            <img
+                                src={onboarding3}
+                                alt="온보딩 3"
+                                style={styles.intro3Image}
+                            />
+                        )}
                     </>
                 )}
 
@@ -422,6 +449,36 @@ const styles = {
         fontWeight: 700,
         textDecoration: "underline",
         textUnderlineOffset: 2,
+    },
+
+    intro1Image: {
+        width: 186,
+        height: 186,
+        objectFit: "contain",
+        display: "block",
+        margin: "183px auto 0 auto",
+    },
+
+    intro2Image: {
+        width: 486,
+        height: 388,
+        objectFit: "contain",
+        display: "block",
+        marginTop: 71,
+        position: "relative",
+        left: "50%",
+        transform: "translateX(-50%)",
+    },
+
+    intro3Image: {
+        width: 502,
+        height: 481,
+        objectFit: "contain",
+        display: "block",
+        margin: "54px auto 0 auto",
+        position: "relative",
+        left: "50%",
+        transform: "translateX(-50%)",
     },
 
 };
