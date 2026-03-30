@@ -207,34 +207,19 @@ body {
   width: 100%;
   height: 50px;
   padding: 13px 16px 10px 16px;
-  background: gray/50;
-
+  background: #FDFDFD;
   display: grid;
   grid-template-columns: 24px 1fr auto;
   align-items: center;
-
   position: relative;
   top: 0;
   z-index: 20;
 }
 
-/* 햄버거-로고 간격 119 */
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-left: 119px;
-  /* 햄버거 버튼 오른쪽으로 119 */
-}
-
-/* 로고-알림 간격 77, 알림-검색 간격 8 */
 .header-right {
   display: flex;
   align-items: center;
   gap: 8px;
-  /* 알림 ↔ 검색 간격 */
-  min-width: 60px;
-  /* bell 없어도 공간 유지 */
   justify-content: flex-end;
 }
 
