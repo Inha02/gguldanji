@@ -702,7 +702,7 @@ function HeartIcon({ liked }) {
 
 function ArrowLeft() {
     return (
-        <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
             <path
                 d="M15 18l-6-6 6-6"
                 stroke="#FDFDFD"
@@ -717,7 +717,7 @@ function ArrowLeft() {
 
 function ArrowRight() {
     return (
-        <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
             <path
                 d="M9 6l6 6-6 6"
                 stroke="#FDFDFD"
@@ -962,6 +962,8 @@ const styles = {
         justifyContent: "center",
         cursor: "pointer",
         backdropFilter: "blur(4px)",
+        padding: 0,
+        zIndex: 2,
     },
 
     imageNavRight: {
@@ -979,6 +981,8 @@ const styles = {
         justifyContent: "center",
         cursor: "pointer",
         backdropFilter: "blur(4px)",
+        padding: 0,
+        zIndex: 2,
     },
 
     dotRow: {
