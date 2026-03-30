@@ -17,7 +17,11 @@ export const createOrGetRoom = async (req, res) => {
       postId,
       buyerId,
       sellerId
-    });
+    })
+
+      .populate("buyerId", "nickname profileImage")
+      .populate("sellerId", "nickname profileImage")
+      .populate("postId", "title price images"); // ⭐ 추가
 
     if (room) {
       return res.status(200).json({
@@ -33,9 +37,15 @@ export const createOrGetRoom = async (req, res) => {
       lastMessage: ""
     });
 
+    // ⭐ 생성 후 다시 populate 해서 내려주기
+    const populatedRoom = await ChatRoom.findById(room._id)
+      .populate("buyerId", "nickname profileImage")
+      .populate("sellerId", "nickname profileImage")
+      .populate("postId", "title price images");
+
     res.status(201).json({
       message: "채팅방 생성 완료",
-      room
+      room: populatedRoom
     });
 
   } catch (error) {
@@ -49,7 +59,35 @@ export const createOrGetRoom = async (req, res) => {
   }
 };
 
+export const getRoomById = async (req, res) => {
+  try {
+    const { roomId } = req.params;
+    const userId = req.user.userId; // ⭐ 이거 추가!!!
 
+    const room = await ChatRoom.findById(roomId)
+      .populate("buyerId", "nickname profileImage")
+      .populate("sellerId", "nickname profileImage")
+      .populate("postId", "title price images"); // ⭐ 핵심
+
+    if (!room) {
+      return res.status(404).json({ message: "채팅방 없음" });
+    }
+
+    // ⭐ 상대 계산
+    const isSeller = room.sellerId._id.toString() === userId;
+    const opponent = isSeller ? room.buyerId : room.sellerId;
+
+    res.status(200).json({
+      ...room.toObject(),
+      opponent // ⭐ 핵심
+    });
+
+  } catch (error) {
+    console.error(error);
+
+    res.status(500).json({ message: "채팅방 조회 실패" });
+  }
+};
 
 
 
@@ -70,11 +108,23 @@ export const getMyRooms = async (req, res) => {
     })
       .populate("buyerId", "nickname profileImage")
       .populate("sellerId", "nickname profileImage")
-      .populate("postId", "title")
+      .populate("postId", "title price images")
       .sort({ updatedAt: -1 });
 
+      // ⭐ 여기 추가
+    const result = rooms.map((room) => {
+      const isSeller = room.sellerId._id.toString() === userId;
+
+      const opponent = isSeller ? room.buyerId : room.sellerId;
+
+      return {
+        ...room.toObject(),
+        opponent // ⭐ 핵심
+      };
+    });
+
     res.status(200).json({
-      rooms
+      rooms: result 
     });
 
   } catch (error) {

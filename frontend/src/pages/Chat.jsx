@@ -22,8 +22,15 @@ export default function Chat() {
     town: "청파동",
   };
 
-  const productTitle = location.state?.product || "상품명";
-  const productPrice = location.state?.price || "가격";
+  // 여기
+  // const productTitle = location.state?.product ||  "상품명";
+  // const productPrice = location.state?.price ||  "가격";
+
+  const productTitle = location.state?.product || room?.product || "상품명";
+  const productPrice = location.state?.price || room?.price || "가격";
+
+  // const productTitle = location.state?.product || room?.post?.title || "상품명";
+  // const productPrice = location.state?.price || room?.post?.price || "가격";
 
   const [inputValue, setInputValue] = useState("");
   const token = localStorage.getItem("token");
@@ -34,7 +41,69 @@ export default function Chat() {
     return payload.userId;
   }
   const MY_ID = getUserIdFromToken(token);
+  useEffect(() => {
+  const init = async () => {
+    try {
+      // 1️⃣ 방 먼저 가져오기
+      const resRoom = await fetch(
+        `http://localhost:4000/chat/rooms/${roomId}`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
 
+      const roomData = await resRoom.json();
+
+      addRoom({
+        id: roomData._id,
+        name: roomData.opponent?.nickname,
+        post: roomData.postId,
+        product: roomData.postId?.title,
+        price: roomData.postId?.price,
+
+        messages: [],
+        tag: "적정",
+      });
+
+      // 2️⃣ 메시지 가져오기
+      const resMsg = await fetch(
+        `http://localhost:4000/chat/rooms/${roomId}/messages`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
+
+      const data = await resMsg.json();
+
+      data.messages.forEach((msg) => {
+        addMessageToRoom(roomId, {
+          id: msg._id,
+          side: msg.senderId._id === MY_ID ? "right" : "left",
+          text: msg.content,
+          time: new Date(msg.createdAt).toLocaleTimeString("ko-KR", {
+            hour: "2-digit",
+            minute: "2-digit",
+            hour12: true,
+          }),
+        });
+      });
+
+      // 3️⃣ 읽음 처리
+      await fetch(`http://localhost:4000/chat/rooms/${roomId}/read`, {
+        method: "PATCH",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+    } catch (err) {
+      console.error("❌ init 에러:", err);
+    }
+  };
+
+  init();
+}, [roomId]);
+/*
   useEffect(() => {
     const fetchMessages = async () => {
       const res = await fetch(
@@ -77,31 +146,37 @@ export default function Chat() {
   }, [roomId]);
 
   useEffect(() => {
-  const fetchRoom = async () => {
-    if (room) return;
+    const fetchRoom = async () => {
+      if (room) return;
 
-    try {
-      const res = await fetch(`http://localhost:4000/chat/rooms/${roomId}`, {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      try {
+        const res = await fetch(`http://localhost:4000/chat/rooms/${roomId}`, {
+          headers: { Authorization: `Bearer ${token}` },
+        });
 
-      const data = await res.json();
-      console.log("room fetch:", data);
+        const data = await res.json();
+        console.log("room fetch:", data);
+        console.log("🔥 addRoom 데이터:", data);
+        console.log("🔥 최종 room:", room);
 
-      addRoom({
-        id: data._id,
-        name: data.sellerId?.nickname || "판매자",
-        messages: [],
-        tag: "적정",
-      });
+        addRoom({
+          id: data._id,
+          // name: data.sellerId?.nickname || "판매자",
+          name: data.opponent?.nickname || "사용자", // ⭐ 핵심
+          post: data.postId, // ⭐ 핵심
+          product: data.postId?.title, // ⭐ 추가
+          price: data.postId?.price, // ⭐ 추가
+          messages: [],
+          tag: "적정",
+        });
+      } catch (err) {
+        console.error("room 불러오기 실패:", err);
+      }
+    };
 
-    } catch (err) {
-      console.error("room 불러오기 실패:", err);
-    }
-  };
-
-  fetchRoom();
-}, [roomId]);
+    fetchRoom();
+  }, [roomId]);
+  */
 
   const joinedRef = useRef(false);
 
@@ -136,37 +211,11 @@ export default function Chat() {
     };
   }, [roomId]);
 
-  /**
-    useEffect(() => {
-    if (!roomId) return;
 
-    // 채팅방 입장
-    socket.emit("join_room", roomId);
-
-    // 메시지 수신
-    socket.on("receive_message", (data) => {
-        console.log("받은 메시지:", data);
-
-        const MY_ID = "02cb71a44f02fc5a560b1f1e"; // ⭐ 임시
-
-        const newMessage = {
-            id: data._id,
-            side: data.senderId?._id === MY_ID ? "right" : "left",
-            text: data.content,
-            time: new Date(data.createdAt).toLocaleTimeString().slice(0, 5),
-        };
-
-        addMessageToRoom(roomId, newMessage);
-    });
-
-    return () => {
-        socket.off("receive_message");
-    };
-}, [roomId]);
- */
 
   if (!room) {
-    return <div className="chat-page">채팅방을 찾을 수 없습니다.</div>;
+    // return <div className="chat-page">채팅방을 찾을 수 없습니다.</div>;
+    return <div className="chat-page">로딩중...</div>;
   }
 
   /* 시간 
@@ -282,7 +331,8 @@ export default function Chat() {
 
           {room.messages.map((m) => (
             <div
-              key={m.id}
+              // key={m.id}
+              key={`${m.id}-${m.time}`}
               className={`chat-row ${m.side === "right" ? "is-right" : "is-left"}`}
             >
               {m.side === "left" && (

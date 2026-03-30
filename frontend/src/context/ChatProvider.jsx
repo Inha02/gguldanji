@@ -41,8 +41,17 @@ export function ChatProvider({ children }) {
   const addRoom = (room) => {
   setChatRooms((prev) => {
     const exists = prev.find((r) => r.id === room.id);
-    if (exists) return prev;
 
+    // ✅ 이미 있으면 업데이트
+    if (exists) {
+      return prev.map((r) =>
+        r.id === room.id
+          ? { ...r, ...room } // ⭐ 핵심 (post 덮어쓰기)
+          : r
+      );
+    }
+
+    // ✅ 없으면 추가
     return [...prev, room];
   });
 };

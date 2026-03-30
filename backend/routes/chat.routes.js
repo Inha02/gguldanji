@@ -3,6 +3,7 @@ import auth from "../middlewares/auth.js";
 
 import {
   createOrGetRoom,
+  getRoomById,
   getMyRooms,
   getMessages,
   readMessages
@@ -113,5 +114,7 @@ router.get("/rooms/:roomId/messages", auth, getMessages);
  *         description: 읽음 처리 성공
  */
 router.patch("/rooms/:roomId/read", auth, readMessages);
+
+router.get("/rooms/:roomId", auth, getRoomById);
 
 export default router;
