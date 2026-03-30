@@ -1,18 +1,17 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ProfileAvatar from "../components/ProfileAvatar";
+import img1 from "../icons/ProfileViewImage1.svg";
+import img2 from "../icons/ProfileViewImage2.svg";
+import img3 from "../icons/ProfileViewImage3.svg";
+import img4 from "../icons/ProfileViewImage4.svg";
 
-const imagePool = [
-    "https://gguldanji-images.s3.ap-southeast-2.amazonaws.com/posts/images/가구_인테리어/da6bdb361b3a62cf91315094_0.png",
-    "https://gguldanji-images.s3.ap-southeast-2.amazonaws.com/posts/images/가구_인테리어/0bd4104bf6c75682b1ae6f4e_0.png",
-    "https://gguldanji-images.s3.ap-southeast-2.amazonaws.com/posts/images/가구_인테리어/61809e95d0d001fc33d36b0b_0.png",
-    "https://gguldanji-images.s3.ap-southeast-2.amazonaws.com/posts/images/가구_인테리어/8c05485ad618049fb3c7781b_0.png",
-];
+const imagePool = [img1, img2, img3, img4];
 
 function getStableImage(id) {
-    return imagePool[id % imagePool.length];
+  const num = Number(id) || 0;
+  return imagePool[num % imagePool.length];
 }
-
 
 const soldItems = [
   { id: 1 },
@@ -104,8 +103,8 @@ export default function ProfileView() {
         if (!res.ok) {
           throw new Error(`내 정보 조회 실패: ${res.status}`);
         }
-
         const data = await res.json();
+
         console.log("내 정보:", data);
         setMe(data);
       } catch (err) {
@@ -152,20 +151,7 @@ export default function ProfileView() {
         }
 
         const data = await res.json();
-
-                        <div style={styles.soldList}>
-                            {soldItems.map((item) => (
-                                <img
-                                    key={item.id}
-                                    src={getStableImage(item.id)}
-                                    alt="최근 거래 상품"
-                                    style={styles.soldItem}
-                                />
-                            ))}
-                        </div>
-
-        console.log("내 판매 성향 분석 응답:", data);
-
+        console.log("판매 성향 분석 결과:", data);
         const mapped = mapSellerProfileToUI(data);
         setSellerAnalysis(mapped);
       } catch (err) {
@@ -241,13 +227,26 @@ export default function ProfileView() {
 
         {activeTab === "거래" && (
           <div style={styles.section}>
+
             <div style={styles.sectionTitle}>최근 거래 요약</div>
             <div style={styles.sectionSubTitle}>최근 판매한 상품 리스트</div>
 
             <div style={styles.soldList}>
-              {soldItems.map((item) => (
-                <div key={item.id} style={styles.soldItem} />
-              ))}
+              {soldItems.map((item) => {
+                const imageUrl = getStableImage(item.id);
+                console.log("render image:", imageUrl);
+
+                return (
+                  <img
+                    key={item.id}
+                    src={imageUrl}
+                    alt="최근 거래 상품"
+                    style={styles.soldItem}
+                    onLoad={() => console.log("이미지 로드 성공:", imageUrl)}
+                    onError={() => console.log("이미지 로드 실패:", imageUrl)}
+                  />
+                );
+              })}
             </div>
 
             <div style={styles.keywordTitle}>키워드 태그</div>
@@ -302,280 +301,281 @@ export default function ProfileView() {
 }
 
 const styles = {
-    page: {
-        width: "100%",
-        height: "100%",
-        backgroundColor: "#FDFDFD",
-    },
+  page: {
+    width: "100%",
+    height: "100%",
+    backgroundColor: "#FDFDFD",
+  },
 
-    header: {
-        width: "100%",
-        height: 50,
-        padding: "13px 16px 0 16px",
-        backgroundColor: "#FDFDFD",
-        display: "flex",
-        alignItems: "flex-start",
-        justifyContent: "center",
-        position: "relative",
-    },
+  header: {
+    width: "100%",
+    height: 50,
+    padding: "13px 16px 0 16px",
+    backgroundColor: "#FDFDFD",
+    display: "flex",
+    alignItems: "flex-start",
+    justifyContent: "center",
+    position: "relative",
+  },
 
-    backBtn: {
-        position: "absolute",
-        left: 16,
-        top: 13,
-        width: 24,
-        height: 24,
-        border: "none",
-        background: "transparent",
-        padding: 0,
-        display: "grid",
-        placeItems: "center",
-        cursor: "pointer",
-    },
+  backBtn: {
+    position: "absolute",
+    left: 16,
+    top: 13,
+    width: 24,
+    height: 24,
+    border: "none",
+    background: "transparent",
+    padding: 0,
+    display: "grid",
+    placeItems: "center",
+    cursor: "pointer",
+  },
 
-    backIcon: {
-        width: 10,
-        height: 10,
-        display: "block",
-        borderLeft: "2px solid #262627",
-        borderBottom: "2px solid #262627",
-        transform: "rotate(45deg)",
-    },
+  backIcon: {
+    width: 10,
+    height: 10,
+    display: "block",
+    borderLeft: "2px solid #262627",
+    borderBottom: "2px solid #262627",
+    transform: "rotate(45deg)",
+  },
 
-    headerTitle: {
-        fontSize: 20,
-        lineHeight: "28px",
-        fontWeight: 700,
-        color: "#262627",
-    },
+  headerTitle: {
+    fontSize: 20,
+    lineHeight: "28px",
+    fontWeight: 700,
+    color: "#262627",
+  },
 
-    headerRight: {
-        position: "absolute",
-        right: 16,
-        top: 13,
-        display: "flex",
-        alignItems: "center",
-        gap: 8,
-    },
+  headerRight: {
+    position: "absolute",
+    right: 16,
+    top: 13,
+    display: "flex",
+    alignItems: "center",
+    gap: 8,
+  },
 
-    iconBtn: {
-        width: 24,
-        height: 24,
-        border: "none",
-        background: "transparent",
-        padding: 0,
-        display: "grid",
-        placeItems: "center",
-        cursor: "pointer",
-    },
+  iconBtn: {
+    width: 24,
+    height: 24,
+    border: "none",
+    background: "transparent",
+    padding: 0,
+    display: "grid",
+    placeItems: "center",
+    cursor: "pointer",
+  },
 
-    shareIcon: {
-        fontSize: 16,
-        lineHeight: "16px",
-        color: "#262627",
-        transform: "translateY(-1px)",
-    },
+  shareIcon: {
+    fontSize: 16,
+    lineHeight: "16px",
+    color: "#262627",
+    transform: "translateY(-1px)",
+  },
 
-    kebabDots: {
-        width: 3,
-        height: 3,
-        borderRadius: "50%",
-        backgroundColor: "#262627",
-        boxShadow: "0 -6px 0 #262627, 0 6px 0 #262627",
-    },
+  kebabDots: {
+    width: 3,
+    height: 3,
+    borderRadius: "50%",
+    backgroundColor: "#262627",
+    boxShadow: "0 -6px 0 #262627, 0 6px 0 #262627",
+  },
 
-    main: {
-        padding: "16px 16px 24px 16px",
-    },
+  main: {
+    padding: "16px 16px 24px 16px",
+  },
 
-    profileTop: {
-        display: "flex",
-        alignItems: "center",
-        gap: 16,
-    },
+  profileTop: {
+    display: "flex",
+    alignItems: "center",
+    gap: 16,
+  },
 
-    profileInfo: {
-        display: "flex",
-        flexDirection: "column",
-        gap: 4,
-    },
+  profileInfo: {
+    display: "flex",
+    flexDirection: "column",
+    gap: 4,
+  },
 
-    name: {
-        fontSize: 20,
-        lineHeight: "28px",
-        fontWeight: 600,
-        color: "#262627",
-    },
+  name: {
+    fontSize: 20,
+    lineHeight: "28px",
+    fontWeight: 600,
+    color: "#262627",
+  },
 
-    subText: {
-        fontSize: 14,
-        lineHeight: "20px",
-        fontWeight: 400,
-        color: "#72787F",
-    },
+  subText: {
+    fontSize: 14,
+    lineHeight: "20px",
+    fontWeight: 400,
+    color: "#72787F",
+  },
 
-    tabRow: {
-        marginTop: 20,
-        display: "grid",
-        gridTemplateColumns: "1fr 1fr",
-        borderBottom: "1px solid #E8EBED",
-    },
+  tabRow: {
+    marginTop: 20,
+    display: "grid",
+    gridTemplateColumns: "1fr 1fr",
+    borderBottom: "1px solid #E8EBED",
+  },
 
-    tabBtn: {
-        height: 44,
-        border: "none",
-        background: "transparent",
-        fontSize: 16,
-        lineHeight: "24px",
-        fontWeight: 600,
-        color: "#262627",
-        cursor: "pointer",
-        position: "relative",
-    },
+  tabBtn: {
+    height: 44,
+    border: "none",
+    background: "transparent",
+    fontSize: 16,
+    lineHeight: "24px",
+    fontWeight: 600,
+    color: "#262627",
+    cursor: "pointer",
+    position: "relative",
+  },
 
-    tabBtnActive: {
-        color: "#FBE200",
-        borderBottom: "3px solid #FBE200",
-    },
+  tabBtnActive: {
+    color: "#FBE200",
+    borderBottom: "3px solid #FBE200",
+  },
 
-    section: {
-        marginTop: 20,
-    },
+  section: {
+    marginTop: 20,
+  },
 
-    sectionTitle: {
-        fontSize: 20,
-        lineHeight: "28px",
-        fontWeight: 700,
-        color: "#262627",
-        marginBottom: 8,
-    },
+  sectionTitle: {
+    fontSize: 20,
+    lineHeight: "28px",
+    fontWeight: 700,
+    color: "#262627",
+    marginBottom: 8,
+  },
 
-    sectionSubTitle: {
-        fontSize: 14,
-        lineHeight: "20px",
-        fontWeight: 400,
-        color: "#262627",
-        marginBottom: 12,
-    },
+  sectionSubTitle: {
+    fontSize: 14,
+    lineHeight: "20px",
+    fontWeight: 400,
+    color: "#262627",
+    marginBottom: 12,
+  },
 
-    soldList: {
-        display: "flex",
-        gap: 12,
-        overflowX: "auto",
-        paddingBottom: 4,
-        marginBottom: 24,
-    },
+  soldList: {
+    display: "flex",
+    gap: 12,
+    overflowX: "auto",
+    paddingBottom: 4,
+    marginBottom: 24,
+    boxSizing: "border-box",
+    WebkitOverflowScrolling: "touch", },
 
-    soldItem: {
-        width: 100,
-        height: 100,
-        borderRadius: 12,
-        backgroundColor: "#E8EBED",
-        flexShrink: 0,
-        objectFit: "cover",
-        display: "block",
-    },
+  soldItem: {
+    width: 100,
+    height: 100,
+    borderRadius: 12,
+    backgroundColor: "transparent",
+    flexShrink: 0,
+    objectFit: "cover",
+    display: "block",
+  },
 
-    keywordTitle: {
-        fontSize: 20,
-        lineHeight: "28px",
-        fontWeight: 700,
-        color: "#262627",
-        marginBottom: 12,
-    },
+  keywordTitle: {
+    fontSize: 20,
+    lineHeight: "28px",
+    fontWeight: 700,
+    color: "#262627",
+    marginBottom: 12,
+  },
 
-    tagList: {
-        display: "flex",
-        gap: 8,
-        flexWrap: "wrap",
-    },
-    
-    tagItem: {
-        height: 28,
-        padding: "0 12px",
-        borderRadius: 20,
-        backgroundColor: "rgba(251, 226, 0, 0.3)",
-        border: "1px solid #FBE200",
-        display: "inline-flex",
-        alignItems: "center",
-        justifyContent: "center",
-        fontSize: 12,
-        lineHeight: "16px",
-        fontWeight: 500,
-        color: "#262627",
-        whiteSpace: "nowrap",
-        boxSizing: "border-box",
-    },
+  tagList: {
+    display: "flex",
+    gap: 8,
+    flexWrap: "wrap",
+  },
 
-    summaryBox: {
-        width: "100%",
-        maxWidth: 358,
-        minHeight: 52,
-        borderRadius: 12,
-        backgroundColor: "#F7F8F9",
-        padding: "10px 12px",
-        boxSizing: "border-box",
-        fontSize: 12,
-        lineHeight: "16px",
-        fontWeight: 400,
-        color: "#262627",
-        marginBottom: 20,
-    },
+  tagItem: {
+    height: 28,
+    padding: "0 12px",
+    borderRadius: 20,
+    backgroundColor: "rgba(251, 226, 0, 0.3)",
+    border: "1px solid #FBE200",
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
+    fontSize: 12,
+    lineHeight: "16px",
+    fontWeight: 500,
+    color: "#262627",
+    whiteSpace: "nowrap",
+    boxSizing: "border-box",
+  },
 
-    traitSection: {
-        marginBottom: 20,
-    },
+  summaryBox: {
+    width: "100%",
+    maxWidth: 358,
+    minHeight: 52,
+    borderRadius: 12,
+    backgroundColor: "#F7F8F9",
+    padding: "10px 12px",
+    boxSizing: "border-box",
+    fontSize: 12,
+    lineHeight: "16px",
+    fontWeight: 400,
+    color: "#262627",
+    marginBottom: 20,
+  },
 
-    traitTitle: {
-        fontSize: 14,
-        lineHeight: "20px",
-        fontWeight: 600,
-        marginBottom: 8,
-    },
+  traitSection: {
+    marginBottom: 20,
+  },
 
-    traitList: {
-        display: "flex",
-        flexDirection: "column",
-        gap: 8,
-    },
+  traitTitle: {
+    fontSize: 14,
+    lineHeight: "20px",
+    fontWeight: 600,
+    marginBottom: 8,
+  },
 
-    traitRow: {
-        display: "grid",
-        gridTemplateColumns: "52px 1fr 24px",
-        alignItems: "center",
-        columnGap: 8,
-    },
+  traitList: {
+    display: "flex",
+    flexDirection: "column",
+    gap: 8,
+  },
 
-    traitLabel: {
-        fontSize: 11,
-        lineHeight: "14px",
-        fontWeight: 400,
-        color: "#262627",
-    },
+  traitRow: {
+    display: "grid",
+    gridTemplateColumns: "52px 1fr 24px",
+    alignItems: "center",
+    columnGap: 8,
+  },
 
-    traitBarWrap: {
-        display: "flex",
-        alignItems: "center",
-    },
+  traitLabel: {
+    fontSize: 11,
+    lineHeight: "14px",
+    fontWeight: 400,
+    color: "#262627",
+  },
 
-    traitBarBg: {
-        width: "100%",
-        height: 12,
-        borderRadius: 12,
-        backgroundColor: "#E8EBED",
-        overflow: "hidden",
-    },
+  traitBarWrap: {
+    display: "flex",
+    alignItems: "center",
+  },
 
-    traitBarFill: {
-        height: "100%",
-        borderRadius: 12,
-    },
+  traitBarBg: {
+    width: "100%",
+    height: 12,
+    borderRadius: 12,
+    backgroundColor: "#E8EBED",
+    overflow: "hidden",
+  },
 
-    traitValue: {
-        fontSize: 11,
-        lineHeight: "14px",
-        fontWeight: 400,
-        color: "#72787F",
-        textAlign: "right",
-    },
+  traitBarFill: {
+    height: "100%",
+    borderRadius: 12,
+  },
+
+  traitValue: {
+    fontSize: 11,
+    lineHeight: "14px",
+    fontWeight: 400,
+    color: "#72787F",
+    textAlign: "right",
+  },
 };

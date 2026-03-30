@@ -14,7 +14,7 @@ const __dirname = new URL('.', import.meta.url).pathname;
 // JSON 파일 읽기 함수
 const loadJSON = (fileName) => {
   const filePath = path.join(__dirname, "../seed", fileName);
-  const data = fs.readFileSync(filePath, "utf-8");
+  const data = fs.readFileSync(filePath, "utccdcdf-8");
   return JSON.parse(data);
 };
 
