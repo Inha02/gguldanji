@@ -46,6 +46,7 @@ export default function MyPage() {
                     selling: data.selling,
                     done: data.done,
                     bought: data.bought,
+                    location: data.location || "위치 미정"
                 };
 
                 console.log("mappedUser:", mappedUser);
@@ -86,8 +87,7 @@ export default function MyPage() {
                         })}
                     </div>
                     <div className="mypage-sub text-caption">
-                        {/* 인증한 동네: {user.verifiedAreas} */}
-                        인증한 동네: 청파동, 방배1동
+                        인증한 동네: {user.location}
                     </div>
                 </div>
 
