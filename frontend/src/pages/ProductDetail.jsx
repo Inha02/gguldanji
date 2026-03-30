@@ -91,6 +91,7 @@ export default function ProductDetail() {
     const [priceGuide, setPriceGuide] = useState(null);
 
     const [sellerAnalysis, setSellerAnalysis] = useState(item.sellerAnalysis ?? null);
+    const [isSellerLoading, setIsSellerLoading] = useState(false);
     const [chatLogs, setChatLogs] = useState(null);
 
     const [sellerInfo, setSellerInfo] = useState({
